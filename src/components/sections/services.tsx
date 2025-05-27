@@ -34,7 +34,7 @@ export function Services({ locationString, isDefault }: ServicesProps) {
             {/* Replace these divs with actual partner logos */}
             <div className="h-12 w-24 bg-muted/20 rounded-lg flex items-center justify-center">
               <Image
-                src="/urban_sky_logo.png"
+                src="/urban_sky_logo.jpg"
                 alt="Urban Sky Logo"
                 width={96}
                 height={48}
