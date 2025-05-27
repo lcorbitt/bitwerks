@@ -15,10 +15,12 @@ export const metadata: Metadata = {
 }
 
 interface PageProps {
-  searchParams: { [key: string]: string | string[] | undefined }
+  searchParams: {
+    [key: string]: string | string[] | undefined
+  } | undefined
 }
 
-export default function Home({ searchParams }: PageProps) {
+export default function Home({ searchParams = {} }: PageProps) {
   const location: LocationData = getLocationFromParams(searchParams)
   const locationString = location.isDefault ? "nationwide" : `${location.city}, ${location.state}`
 
