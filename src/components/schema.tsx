@@ -10,18 +10,18 @@ export function LocalBusinessSchema({ location }: SchemaProps) {
     "@type": "ProfessionalService",
     "@id": "https://bitwerks.dev",
     name: "BitWerks",
-    description: "Professional web development and custom software solutions serving businesses nationwide.",
-    url: "https://bitwerks.dev",
+    description: `Professional web development and custom software solutions serving ${location.city}, ${location.state} and businesses nationwide.`,
+    url: `https://bitwerks.dev/web-development/${location.city.toLowerCase()}/${location.state.toLowerCase()}`,
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Fort Collins",
-      addressRegion: "CO",
-      postalCode: "80524",
+      addressLocality: location.city,
+      addressRegion: location.state,
+      postalCode: "80524", // Default Fort Collins zip
       addressCountry: "US"
     },
     geo: {
       "@type": "GeoCoordinates",
-      latitude: 40.5853,
+      latitude: 40.5853, // Default Fort Collins coordinates
       longitude: -105.0844
     },
     areaServed: {
@@ -32,7 +32,7 @@ export function LocalBusinessSchema({ location }: SchemaProps) {
       "@type": "GeoCircle",
       geoMidpoint: {
         "@type": "GeoCoordinates",
-        latitude: 40.5853,
+        latitude: 40.5853, // Default Fort Collins coordinates
         longitude: -105.0844
       },
       geoRadius: "4000" 

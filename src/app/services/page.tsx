@@ -77,7 +77,7 @@ export default function ServicesPage() {
                 <Card>
                   <CardHeader>
                     <CardTitle>Features</CardTitle>
-                    <CardDescription>What's included</CardDescription>
+                    <CardDescription>What&apos;s included</CardDescription>
                   </CardHeader>
                   <CardContent>
                     <ul className="list-disc space-y-2 pl-4 text-sm text-muted-foreground">
@@ -109,7 +109,7 @@ export default function ServicesPage() {
         <div className="rounded-lg bg-muted/40 p-8 text-center">
           <h2 className="mb-4 text-2xl font-bold">Custom Requirements?</h2>
           <p className="mb-8 text-muted-foreground">
-            Need something specific? Let's discuss your unique requirements and create a custom solution.
+            Need something specific? Let&apos;s discuss your unique requirements and create a custom solution.
           </p>
           <Button asChild size="lg">
             <Link href="/contact">Schedule a Consultation</Link>

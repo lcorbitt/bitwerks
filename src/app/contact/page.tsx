@@ -41,11 +41,13 @@ export default function ContactPage() {
     try {
       // Here you would typically send the form data to your backend
       // For now, we'll just simulate a delay
+      console.log(values)
       await new Promise((resolve) => setTimeout(resolve, 1000))
       
       toast.success("Message sent! I'll get back to you soon.")
       form.reset()
     } catch (error) {
+      console.error(error)
       toast.error("Something went wrong. Please try again.")
     } finally {
       setIsSubmitting(false)
@@ -58,7 +60,7 @@ export default function ContactPage() {
         <div className="mb-12 text-center">
           <h1 className="mb-4 text-4xl font-bold">Get in Touch</h1>
           <p className="text-lg text-muted-foreground">
-            Ready to discuss your project? I'm here to help turn your vision into reality.
+            Ready to discuss your project? I&apos;m here to help turn your vision into reality.
           </p>
         </div>
         
@@ -66,7 +68,7 @@ export default function ContactPage() {
           <CardHeader>
             <CardTitle>Contact Form</CardTitle>
             <CardDescription>
-              Fill out the form below and I'll get back to you as soon as possible.
+              Fill out the form below and I&apos;ll get back to you as soon as possible.
             </CardDescription>
           </CardHeader>
           <CardContent>

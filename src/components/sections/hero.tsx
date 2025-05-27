@@ -13,13 +13,13 @@ export function Hero({ locationString }: HeroProps) {
         <div className="mx-auto lg:grid lg:items-center lg:gap-8 lg:grid-cols-2">
           {/* Text content */}
           <div className="flex flex-col text-center lg:text-left w-full">
-            <h1 className="mb-6 text-3xl tracking-tight sm:text-4xl md:text-5xl lg:leading-tight mx-auto lg:mx-0 max-w-3xl lg:max-w-none">
+            <h1 className="mb-6 text-3xl tracking-tight sm:text-4xl md:text-5xl lg:leading-tight mx-auto lg:mx-0 max-w-3xl lg:max-w-none font-bold">
               Transforming Ideas into
               <span className="text-primary block mt-2">Digital Reality</span>
             </h1>
             <p className="mb-8 text-lg text-muted-foreground md:text-xl mx-auto lg:mx-0 max-w-2xl lg:max-w-xl">
-              Professional web development and custom software solutions serving businesses in {locationString}.
-              Based in Fort Collins, CO, we deliver expertise that drives success across the United States.
+              Professional web development and custom software solutions serving businesses {locationString === "nationwide" ? "nationwide" : ` in ${locationString}`}.
+              We deliver purpose-built web technology that drives success.
             </p>
             <div className="flex gap-4 justify-center lg:justify-start">
               <Button 

@@ -124,4 +124,5 @@ const ListItem = React.forwardRef<
       </NavigationMenuLink>
     </li>
   )
-}) 
+})
+ListItem.displayName = "ListItem" 

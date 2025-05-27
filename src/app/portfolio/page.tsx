@@ -73,9 +73,9 @@ export default function PortfolioPage() {
         </div>
 
         <div className="mt-16 text-center">
-          <h2 className="mb-4 text-2xl font-bold">Let's Work Together</h2>
+          <h2 className="mb-4 text-2xl font-bold">Let&apos;s Work Together</h2>
           <p className="mb-8 text-muted-foreground">
-            Have a project in mind? I'd love to help bring your vision to life.
+            Have a project in mind? I&apos;d love to help bring your vision to life.
           </p>
           <Button asChild size="lg">
             <Link href="/contact">Start a Project</Link>

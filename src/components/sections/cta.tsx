@@ -13,8 +13,8 @@ export function CTA({ locationString, isDefault }: CTAProps) {
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="mb-4 text-3xl font-bold">Ready to Transform Your Business?</h2>
           <p className="mb-8 text-muted-foreground">
-            Let's discuss how we can help achieve your technology goals
-            {isDefault ? " no matter where you're located" : ` in ${locationString}`}.
+            Let&apos;s discuss how we can help achieve your technology goals
+            {isDefault ? " no matter where you&apos;re located" : ` in ${locationString}`}.
           </p>
           <Button asChild size="lg">
             <Link href="/contact">Schedule a Consultation</Link>

@@ -100,7 +100,7 @@ export default function AboutPage() {
         <div className="text-center">
           <h2 className="mb-4 text-2xl font-bold">Ready to Start Your Project?</h2>
           <p className="mb-8 text-muted-foreground">
-            Let's discuss how I can help bring your ideas to life with custom software solutions.
+            Let&apos;s discuss how I can help bring your ideas to life with custom software solutions.
           </p>
           <Button asChild size="lg">
             <Link href="/contact">Schedule a Call</Link>

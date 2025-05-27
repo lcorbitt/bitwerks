@@ -1,5 +1,5 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-
+import Image from "next/image"
 interface ServicesProps {
   locationString: string
   isDefault: boolean
@@ -32,7 +32,15 @@ export function Services({ locationString, isDefault }: ServicesProps) {
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-8 items-center justify-items-center">
             {/* Replace these divs with actual partner logos */}
-            <div className="h-12 w-24 bg-muted/20 rounded-lg flex items-center justify-center">Logo 1</div>
+            <div className="h-12 w-24 bg-muted/20 rounded-lg flex items-center justify-center">
+              <Image
+                src="/urban_sky_logo.png"
+                alt="Urban Sky Logo"
+                width={96}
+                height={48}
+                className="object-contain"
+              />
+            </div>
             <div className="h-12 w-24 bg-muted/20 rounded-lg flex items-center justify-center">Logo 2</div>
             <div className="h-12 w-24 bg-muted/20 rounded-lg flex items-center justify-center">Logo 3</div>
             <div className="h-12 w-24 bg-muted/20 rounded-lg flex items-center justify-center">Logo 4</div>
