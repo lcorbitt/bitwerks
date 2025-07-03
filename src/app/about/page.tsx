@@ -103,7 +103,7 @@ export default function AboutPage() {
             Let&apos;s discuss how I can help bring your ideas to life with custom software solutions.
           </p>
           <Button asChild size="lg">
-            <Link href="/contact">Schedule a Call</Link>
+            <Link href="/contact">Get Started</Link>
           </Button>
         </div>
       </div>

@@ -42,7 +42,7 @@ export default function CityPage({ params }: PageProps) {
             Web Development in {location}
           </h1>
           <p className="text-lg text-muted-foreground">
-            Professional web development services tailored to businesses in {location} and nationwide.
+            Professional web development services tailored to businesses {location === "nationwide" ? "across the U.S." : ` in ${location}.`}
           </p>
         </div>
 
@@ -50,7 +50,7 @@ export default function CityPage({ params }: PageProps) {
           <h2 className="mb-6 text-2xl font-semibold">Local Expertise, National Standards</h2>
           <div className="prose prose-gray dark:prose-invert max-w-none">
             <p className="mb-4 text-muted-foreground">
-              Based in Fort Collins, CO, and serving businesses in {location} and across the United States,
+              Based in Fort Collins, CO, and serving businesses {location === "nationwide" ? "across the U.S." : ` in ${location}.`}
               we bring enterprise-grade web development expertise to businesses of all sizes.
               Whether you&apos;re a local startup or an established company, we deliver custom solutions
               that drive growth and enhance your digital presence.
@@ -123,7 +123,7 @@ export default function CityPage({ params }: PageProps) {
         </div>
 
         <div className="rounded-lg bg-muted/40 p-8 text-center">
-          <h2 className="mb-4 text-2xl font-bold">Ready to Start Your Project in {location}?</h2>
+          <h2 className="mb-4 text-2xl font-bold">Ready to Start Your Project?</h2>
           <p className="mb-8 text-muted-foreground">
             Let&apos;s discuss how we can help your business thrive with custom web development solutions.
           </p>

@@ -25,7 +25,7 @@ export function Services({ locationString, isDefault }: ServicesProps) {
       </div>
       
       {/* Partners section */}
-      <section className="bg-white pb-12 w-full">
+      <section className="bg-white dark:bg-primary pb-12 w-full">
         <div className="container mx-auto">
           <h2 className="text-center text-4xl text-muted-foreground mb-8 font-bold">
             Companies we&apos;ve partnered with
@@ -41,8 +41,24 @@ export function Services({ locationString, isDefault }: ServicesProps) {
                 className="object-contain"
               />
             </div>
-            <div className="h-12 w-24 bg-muted/20 rounded-lg flex items-center justify-center">Logo 2</div>
-            <div className="h-12 w-24 bg-muted/20 rounded-lg flex items-center justify-center">Logo 3</div>
+            <div className="h-12 w-24 bg-muted/20 rounded-lg flex items-center justify-center">
+              <Image
+                src="/hodinkee.png"
+                alt="Hodinkee Logo"
+                width={96}
+                height={48}
+                className="object-contain"
+              />
+            </div>
+            <div className="h-12 w-24 bg-muted/20 rounded-lg flex items-center justify-center">
+              <Image
+                src="/spectora.png"
+                alt="Spectora Logo"
+                width={96}
+                height={48}
+                className="object-contain"
+              />
+            </div>
             <div className="h-12 w-24 bg-muted/20 rounded-lg flex items-center justify-center">Logo 4</div>
             <div className="h-12 w-24 bg-muted/20 rounded-lg flex items-center justify-center">Logo 5</div>
             <div className="h-12 w-24 bg-muted/20 rounded-lg flex items-center justify-center">Logo 6</div>
@@ -50,13 +66,15 @@ export function Services({ locationString, isDefault }: ServicesProps) {
         </div>
       </section>
       
-      <section className="bg-white py-16 md:py-20">
+      <section className="bg-white dark:bg-black py-16 md:py-20">
         <div className="container">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl">Services</h2>
-            <p className="mb-12 text-muted-foreground">
-              Comprehensive software solutions designed to meet your unique business needs,
-              available {isDefault ? "across the United States" : `in ${locationString} and beyond`}.
+            <p className="mb-6 text-muted-light dark:text-muted-dark tracking-widest text-sm font-extrabold">
+              WHAT WE DO
+            </p>
+            <h2 className="mb-4 text-5xl font-bold">FROM CONCEPT TO COMPLETION</h2>
+            <p className="mb-16 md:mb-20 text-muted-foreground tracking-wide text-base">
+              At BitWerks, we specialize in custom web and software development for small businesses across the U.S. Every project is hand-coded for performance, stability, and long-term value. No page-builders, no shortcuts. We handle ongoing updates and support, so you're never left stuck. Our focus is on building lasting partnerships and helping your business grow online with confidence.
             </p>
           </div>
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -76,7 +94,7 @@ export function Services({ locationString, isDefault }: ServicesProps) {
             </Card>
             <Card>
               <CardHeader>
-                <CardTitle>Custom Software</CardTitle>
+                <CardTitle>Software Development</CardTitle>
                 <CardDescription>Tailored solutions to solve complex business challenges.</CardDescription>
               </CardHeader>
               <CardContent>

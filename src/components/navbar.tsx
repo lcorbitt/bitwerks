@@ -6,6 +6,7 @@ import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMe
 import { Button } from "@/components/ui/button"
 import { MobileNav } from "@/components/mobile-nav"
 import { cn } from "@/lib/utils"
+import { ThemeToggle } from "@/components/theme-toggle"
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -47,16 +48,16 @@ const navigationItems = [
 
 export function Navbar() {
   return (
-    <header className="sticky top-0 z-50 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 w-full">
+    <header className="sticky top-0 z-50 bg-white dark:bg-black w-full py-4">
       <div className="container flex h-16 items-center justify-between max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center space-x-2">
-          <span className="text-xl font-bold text-brand">Bit<span className="text-black">Werks</span></span>
+          <span className="text-xl font-bold text-brand">Bit<span className="dark:text-white text-black">Werks</span></span>
         </Link>
         <div className="flex items-center space-x-4">
           <NavigationMenu className="hidden md:flex">
             <NavigationMenuList className="gap-2">
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="font-bold">Services</NavigationMenuTrigger>
+                <NavigationMenuTrigger className="font-bold">SERVICES</NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
                     {components.map((component) => (
@@ -75,26 +76,27 @@ export function Navbar() {
                 href="/our-work"
                 className={cn(navigationMenuTriggerStyle(), "font-bold")}
               >
-                Our Work
+                OUR WORK
               </NavigationMenuSimpleLink>
               <NavigationMenuSimpleLink 
                 href="/ "
                 className={cn(navigationMenuTriggerStyle(), "font-bold")}
               >
-                Technologies
+                TECHNOLOGIES
               </NavigationMenuSimpleLink>
               <NavigationMenuSimpleLink 
                 href="/about"
                 className={cn(navigationMenuTriggerStyle(), "font-bold")}
               >
-                About
+                ABOUT
               </NavigationMenuSimpleLink>
             </NavigationMenuList>
           </NavigationMenu>
           <MobileNav items={[...components, ...navigationItems]} />
-          <Button asChild variant="default" className="hidden md:flex">
-            <Link href="/contact">Schedule a Call</Link>
+          <Button asChild variant="default" className="hidden md:flex dark:bg-white dark:text-black">
+            <Link href="/contact">GET STARTED</Link>
           </Button>
+          <ThemeToggle />
         </div>
       </div>
     </header>
