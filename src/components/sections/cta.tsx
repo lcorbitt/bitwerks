@@ -16,7 +16,7 @@ export function CTA({ locationString, isDefault }: CTAProps) {
             Let&apos;s discuss how we can help achieve your technology goals
             {isDefault ? " no matter where you&apos;re located" : ` in ${locationString}`}.
           </p>
-          <Button asChild size="lg">
+          <Button asChild>
             <Link href="/contact">Schedule a Consultation</Link>
           </Button>
         </div>

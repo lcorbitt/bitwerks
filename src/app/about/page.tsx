@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card } from "@/components/ui/card"
 
 const expertise = [
   {
@@ -49,7 +49,7 @@ export default function AboutPage() {
         <div className="mb-16">
           <h2 className="mb-6 text-2xl font-semibold">Areas of Expertise</h2>
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {expertise.map((area) => (
+            {/* {expertise.map((area) => (
               <Card key={area.title}>
                 <CardHeader>
                   <CardTitle>{area.title}</CardTitle>
@@ -63,7 +63,7 @@ export default function AboutPage() {
                   </ul>
                 </CardContent>
               </Card>
-            ))}
+            ))} */}
           </div>
         </div>
 
