@@ -26,7 +26,7 @@ export function MobileNav({ items }: MobileNavProps) {
       <SheetTrigger asChild>
         <Button
           variant="ghost"
-          className="mr-2 px-0 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 md:hidden"
+          className="mr-2 px-0 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 lg:hidden"
         >
           <Menu className="h-6 w-6" />
           <span className="sr-only">Toggle menu</span>
@@ -52,7 +52,7 @@ export function MobileNav({ items }: MobileNavProps) {
               )}
             </Link>
           ))}
-          <Button asChild variant="default" size="lg" className="col-span-2 mt-4">
+          <Button asChild variant="default" className="col-span-2 mt-4">
             <Link href="/contact" onClick={() => setOpen(false)}>
               Get Started
             </Link>

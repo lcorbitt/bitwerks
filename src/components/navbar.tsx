@@ -54,7 +54,7 @@ export function Navbar() {
           <span className="text-3xl font-bold text-brand">Bit<span className="dark:text-white text-black">Werks</span></span>
         </Link>
         <div className="flex items-center space-x-4">
-          <NavigationMenu className="hidden md:flex">
+          <NavigationMenu className="hidden lg:flex">
             <NavigationMenuList className="gap-2">
               <NavigationMenuItem>
                 <NavigationMenuTrigger className="font-bold">SERVICES</NavigationMenuTrigger>
@@ -93,7 +93,7 @@ export function Navbar() {
             </NavigationMenuList>
           </NavigationMenu>
           <MobileNav items={[...components, ...navigationItems]} />
-          <Button asChild variant="default" size="lg" className="hidden md:flex">
+          <Button asChild variant="default" className="hidden lg:flex">
             <Link href="/contact">GET STARTED</Link>
           </Button>
           <ThemeToggle />
@@ -113,7 +113,7 @@ const ListItem = React.forwardRef<
         <a
           ref={ref}
           className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:text-brand focus:text-brand",
             className
           )}
           {...props}

@@ -102,7 +102,7 @@ export default function AboutPage() {
           <p className="mb-8 text-muted-foreground">
             Let&apos;s discuss how I can help bring your ideas to life with custom software solutions.
           </p>
-          <Button asChild variant="default" size="lg">
+          <Button asChild variant="default">
             <Link href="/contact">Get Started</Link>
           </Button>
         </div>

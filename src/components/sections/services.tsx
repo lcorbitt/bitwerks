@@ -13,17 +13,17 @@ export function Services({ locationString, isDefault }: ServicesProps) {
   return (
     <>
       {/* Smooth curved divider */}
-      <div className="w-full h-24 overflow-hidden -mb-1">
+      <div className="w-full h-24 overflow-hidden -mb-1 dark:bg-primary">
         <svg
           viewBox="0 0 1440 96"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="w-full h-full"
+          className="w-full h-full text-light dark:text-primary lg:dark:text-secondary "
           preserveAspectRatio="none"
         >
           <path
             d="M0 0H1440V72C1440 72 1088 0 720 0C352 0 0 72 0 72V0Z"
-            fill="#F6F7F8"
+            fill="currentColor"
           />
         </svg>
       </div>
@@ -66,7 +66,7 @@ export function Services({ locationString, isDefault }: ServicesProps) {
           </div>
         </div>
       <div className="mt-16 text-center">
-        <Button asChild variant="default" size="lg">
+        <Button asChild variant="default">
           <a href="tel:+8167144107">CALL US TODAY</a>
         </Button>
       </div>
