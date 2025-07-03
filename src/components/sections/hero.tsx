@@ -26,7 +26,9 @@ export function Hero({ locationString }: HeroProps) {
             <div className="flex gap-4 justify-center lg:justify-start">
               <Button
                 asChild
-                className="hidden md:flex dark:bg-white dark:text-black"
+                variant="default"
+                size="lg"
+                className="hidden md:flex"
               >
                 <Link href="/contact">GET STARTED</Link>
               </Button>

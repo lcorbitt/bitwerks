@@ -1,5 +1,8 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card } from "@/components/ui/card"
+import { Globe, Cog, Lightbulb } from "lucide-react";
+
 import Image from "next/image"
+import { Button } from "../ui/button";
 interface ServicesProps {
   locationString: string
   isDefault: boolean
@@ -69,59 +72,45 @@ export function Services({ locationString, isDefault }: ServicesProps) {
       <section className="bg-white dark:bg-black py-16 md:py-20">
         <div className="container">
           <div className="mx-auto max-w-2xl text-center">
-            <p className="mb-6 text-muted-light dark:text-muted-dark tracking-widest text-sm font-extrabold">
+            <p className="mb-8 text-muted-light dark:text-muted-dark tracking-widest text-sm font-bold">
               WHAT WE DO
             </p>
-            <h2 className="mb-4 text-5xl font-bold">FROM CONCEPT TO COMPLETION</h2>
-            <p className="mb-16 md:mb-20 text-muted-foreground tracking-wide text-base">
+            <h2 className="mb-16 text-5xl font-bold">FROM CONCEPT TO COMPLETION</h2>
+            <p className="mb-16 md:mb-32 text-muted-foreground tracking-wide text-base">
               At BitWerks, we specialize in custom web and software development for small businesses across the U.S. Every project is hand-coded for performance, stability, and long-term value. No page-builders, no shortcuts. We handle ongoing updates and support, so you're never left stuck. Our focus is on building lasting partnerships and helping your business grow online with confidence.
             </p>
           </div>
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            <Card>
-              <CardHeader>
-                <CardTitle>Web Development</CardTitle>
-                <CardDescription>Modern, responsive websites built with cutting-edge technologies.</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="list-disc space-y-2 pl-4 text-sm text-muted-foreground">
-                  <li>Custom web applications</li>
-                  <li>E-commerce solutions</li>
-                  <li>Progressive Web Apps (PWA)</li>
-                  <li>Performance optimization</li>
-                </ul>
-              </CardContent>
+            {/* Card 1 */}
+            <Card
+              title="Web Development" 
+              description="Modern, responsive websites built with cutting-edge technologies." 
+              linkHref="/contact"
+            >
+              <Globe className="w-12 h-12 text-white" strokeWidth={1.5} />
             </Card>
-            <Card>
-              <CardHeader>
-                <CardTitle>Software Development</CardTitle>
-                <CardDescription>Tailored solutions to solve complex business challenges.</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="list-disc space-y-2 pl-4 text-sm text-muted-foreground">
-                  <li>Business process automation</li>
-                  <li>Data management systems</li>
-                  <li>Integration solutions</li>
-                  <li>Cloud applications</li>
-                </ul>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader>
-                <CardTitle>Technical Consulting</CardTitle>
-                <CardDescription>Strategic guidance for your technology initiatives.</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="list-disc space-y-2 pl-4 text-sm text-muted-foreground">
-                  <li>Technology assessment</li>
-                  <li>Architecture planning</li>
-                  <li>Performance optimization</li>
-                  <li>Security best practices</li>
-                </ul>
-              </CardContent>
+            {/* Card 2 */}
+            <Card
+              title="Software Development" 
+              description="Tailored solutions to solve complex business challenges." 
+              linkHref="/contact"
+            >
+              <Cog className="w-12 h-12 text-white" strokeWidth={1.5} />
+            </Card>{/* Card 3 */}
+            <Card
+              title="Technical Consulting" 
+              description="Strategic guidance for your technology initiatives." 
+              linkHref="/contact"
+            >
+              <Lightbulb className="w-12 h-12 text-white" strokeWidth={1.5} />
             </Card>
           </div>
         </div>
+      <div className="mt-16 text-center">
+        <Button asChild variant="default" size="lg">
+          <a href="tel:+8167144107">CALL US TODAY</a>
+        </Button>
+      </div>
       </section>
     </>
   )

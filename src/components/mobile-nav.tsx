@@ -52,7 +52,7 @@ export function MobileNav({ items }: MobileNavProps) {
               )}
             </Link>
           ))}
-          <Button asChild className="col-span-2 mt-4">
+          <Button asChild variant="default" size="lg" className="col-span-2 mt-4">
             <Link href="/contact" onClick={() => setOpen(false)}>
               Get Started
             </Link>

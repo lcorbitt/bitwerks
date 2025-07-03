@@ -48,10 +48,10 @@ const navigationItems = [
 
 export function Navbar() {
   return (
-    <header className="sticky top-0 z-50 bg-white dark:bg-black w-full py-4">
+    <header className="sticky top-0 z-50 bg-white dark:bg-black w-full py-4 shadow dark:shadow-black/40">
       <div className="container flex h-16 items-center justify-between max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center space-x-2">
-          <span className="text-xl font-bold text-brand">Bit<span className="dark:text-white text-black">Werks</span></span>
+          <span className="text-3xl font-bold text-brand">Bit<span className="dark:text-white text-black">Werks</span></span>
         </Link>
         <div className="flex items-center space-x-4">
           <NavigationMenu className="hidden md:flex">
@@ -93,7 +93,7 @@ export function Navbar() {
             </NavigationMenuList>
           </NavigationMenu>
           <MobileNav items={[...components, ...navigationItems]} />
-          <Button asChild variant="default" className="hidden md:flex dark:bg-white dark:text-black">
+          <Button asChild variant="default" size="lg" className="hidden md:flex">
             <Link href="/contact">GET STARTED</Link>
           </Button>
           <ThemeToggle />
