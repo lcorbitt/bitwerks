@@ -2,7 +2,7 @@ import { Metadata } from "next"
 import Link from "next/link"
 import { notFound } from "next/navigation"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card } from "@/components/ui/card"
 
 interface PageProps {
   params: {
@@ -61,7 +61,7 @@ export default function CityPage({ params }: PageProps) {
         <div className="mb-16">
           <h2 className="mb-6 text-2xl font-semibold">Services Available in {location}</h2>
           <div className="grid gap-8 md:grid-cols-2">
-            <Card>
+            {/* <Card>
               <CardHeader>
                 <CardTitle>Custom Web Development</CardTitle>
                 <CardDescription>Tailored solutions for your business needs</CardDescription>
@@ -88,7 +88,7 @@ export default function CityPage({ params }: PageProps) {
                   <li>Security best practices</li>
                 </ul>
               </CardContent>
-            </Card>
+            </Card> */}
           </div>
         </div>
 
@@ -127,7 +127,7 @@ export default function CityPage({ params }: PageProps) {
           <p className="mb-8 text-muted-foreground">
             Let&apos;s discuss how we can help your business thrive with custom web development solutions.
           </p>
-          <Button asChild size="lg">
+          <Button asChild>
             <Link href="/contact">Schedule a Consultation</Link>
           </Button>
         </div>

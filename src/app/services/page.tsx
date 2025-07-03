@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card } from "@/components/ui/card"
 
 const services = [
   {
@@ -74,7 +74,7 @@ export default function ServicesPage() {
               <p className="mb-8 text-muted-foreground">{service.description}</p>
               
               <div className="grid gap-8 md:grid-cols-2">
-                <Card>
+                {/* <Card>
                   <CardHeader>
                     <CardTitle>Features</CardTitle>
                     <CardDescription>What&apos;s included</CardDescription>
@@ -100,7 +100,7 @@ export default function ServicesPage() {
                       ))}
                     </ul>
                   </CardContent>
-                </Card>
+                </Card> */}
               </div>
             </div>
           ))}
@@ -111,7 +111,7 @@ export default function ServicesPage() {
           <p className="mb-8 text-muted-foreground">
             Need something specific? Let&apos;s discuss your unique requirements and create a custom solution.
           </p>
-          <Button asChild size="lg">
+          <Button asChild>
             <Link href="/contact">Schedule a Consultation</Link>
           </Button>
         </div>

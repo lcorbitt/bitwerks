@@ -1,7 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card } from "@/components/ui/card"
 
 const projects = [
   {
@@ -39,37 +39,37 @@ export default function PortfolioPage() {
         </div>
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {projects.map((project) => (
-            <Card key={project.title} className="overflow-hidden">
-              <div className="aspect-video relative">
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <CardHeader>
-                <CardTitle>{project.title}</CardTitle>
-                <CardDescription>{project.description}</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="mb-4 flex flex-wrap gap-2">
-                  {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-                <Button asChild variant="outline" className="w-full">
-                  <Link href={project.link}>View Project</Link>
-                </Button>
-              </CardContent>
-            </Card>
-          ))}
+          {/* {projects.map((project) => (
+            // <Card key={project.title} className="overflow-hidden">
+            //   <div className="aspect-video relative">
+            //     <Image
+            //       src={project.image}
+            //       alt={project.title}
+            //       fill
+            //       className="object-cover"
+            //     />
+            //   </div>
+            //   <CardHeader>
+            //     <CardTitle>{project.title}</CardTitle>
+            //     <CardDescription>{project.description}</CardDescription>
+            //   </CardHeader>
+            //   <CardContent>
+            //     <div className="mb-4 flex flex-wrap gap-2">
+            //       {project.tags.map((tag) => (
+            //         <span
+            //           key={tag}
+            //           className="rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary"
+            //         >
+            //           {tag}
+            //         </span>
+            //       ))}
+            //     </div>
+            //     <Button asChild variant="outline" className="w-full">
+            //       <Link href={project.link}>View Project</Link>
+            //     </Button>
+            //   </CardContent>
+            // </Card>
+          // ))}*/}
         </div>
 
         <div className="mt-16 text-center">
@@ -77,7 +77,7 @@ export default function PortfolioPage() {
           <p className="mb-8 text-muted-foreground">
             Have a project in mind? I&apos;d love to help bring your vision to life.
           </p>
-          <Button asChild size="lg">
+          <Button asChild>
             <Link href="/contact">Start a Project</Link>
           </Button>
         </div>

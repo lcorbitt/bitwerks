@@ -6,7 +6,7 @@ import { useForm } from "react-hook-form"
 import * as z from "zod"
 import { toast } from "sonner"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 
@@ -64,7 +64,7 @@ export default function ContactPage() {
           </p>
         </div>
         
-        <Card>
+        {/* <Card>
           <CardHeader>
             <CardTitle>Contact Form</CardTitle>
             <CardDescription>
@@ -132,7 +132,7 @@ export default function ContactPage() {
               </Button>
             </form>
           </CardContent>
-        </Card>
+        </Card> */}
       </div>
     </div>
   )
