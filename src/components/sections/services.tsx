@@ -31,11 +31,11 @@ export function Services({ locationString, isDefault }: ServicesProps) {
       <section className="bg-white dark:bg-black pb-16 md:pb-20">
         <div className="container">
           <div className="mx-auto max-w-2xl text-center">
-            <p className="mb-8 text-muted-light dark:text-muted-dark tracking-widest text-sm font-bold">
+            <p className="mb-2 text-muted-light dark:text-muted-dark tracking-widest font-normal">
               WHAT WE DO
             </p>
-            <Heading2 className="mb-16">FROM CONCEPT TO COMPLETION</Heading2>
-            <p className="mb-16 md:mb-32 text-muted-foreground tracking-wide text-base">
+            <Heading2 className="mb-8">From Concept to Completion</Heading2>
+            <p className="mb-16 md:mb-32 text-muted-foreground tracking-wide text-base md:text-lg">
               At BitWerks, we specialize in custom web and software development for small businesses across the U.S. Every project is hand-coded for performance, stability, and long-term value. No page-builders, no shortcuts. We handle ongoing updates and support, so you're never left stuck. Our focus is on building lasting partnerships and helping your business grow online with confidence.
             </p>
           </div>

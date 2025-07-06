@@ -42,5 +42,3 @@ Key Conventions
   - Avoid for data fetching or state management.
 
 Follow Next.js docs for Data Fetching, Rendering, and Routing.
-  
-If you need to ask me to share a file with you, don't. Just use the full context of the application and go find it yourself.

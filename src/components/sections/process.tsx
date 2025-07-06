@@ -1,0 +1,85 @@
+import Image from "next/image";
+import { Phone, Users, TrendingUp } from "lucide-react";
+import { Button } from "../ui/button";
+
+export function Process() {
+  return (
+    <section className="relative bg-[#f6f7f8] py-16">
+      <div className="container mx-auto flex flex-col lg:flex-row items-center gap-12">
+        {/* Left: Heading and Image */}
+        <div className="flex-1 flex flex-col items-start">
+          <h2 className="text-4xl md:text-5xl font-extrabold leading-tight mb-8">
+            <span className="mb-4">Our process.<br /></span>
+            Simple,<br />
+            seamless,<br />
+            streamlined
+            <span className="text-brand">.</span>
+          </h2>
+          <div className="w-full max-w-xs mt-4">
+            <div className="relative aspect-[4/3]">
+              <Image
+                src="/your-image.jpg"
+                alt="Process"
+                fill
+                className="object-cover rounded-[100px]"
+              />
+            </div>
+          </div>
+        </div>
+        {/* Right: Timeline */}
+        <div className="flex-1 flex flex-col gap-12 relative">
+          {/* Vertical dashed line */}
+          <div className="absolute left-6 top-8 bottom-8 w-0.5 border-l-2 border-dashed border-gray-300 z-0" />
+          {/* Step 1 */}
+          <div className="flex items-start gap-6 relative z-10">
+            <div className="flex flex-col items-center">
+              <div className="bg-brand text-white rounded-full w-12 h-12 flex items-center justify-center text-xl shadow-md">
+                <Phone className="w-6 h-6" />
+              </div>
+            </div>
+            <div>
+              <span className="uppercase text-xs text-gray-500 font-bold tracking-widest">Step 1</span>
+              <h3 className="text-xl font-bold mt-1 mb-2">Join exploration call.</h3>
+              <p className="text-gray-600 max-w-md">
+                Tell us more about your business on a discovery call. We'll discuss team structure and approach, success criteria, timescale, budget, and required skill sets to see how we can help.
+              </p>
+            </div>
+          </div>
+          {/* Step 2 */}
+          <div className="flex items-start gap-6 relative z-10">
+            <div className="flex flex-col items-center">
+              <div className="bg-brand text-white rounded-full w-12 h-12 flex items-center justify-center text-xl shadow-md">
+                <Users className="w-6 h-6" />
+              </div>
+            </div>
+            <div>
+              <span className="uppercase text-xs text-gray-500 font-bold tracking-widest">Step 2</span>
+              <h3 className="text-xl font-bold mt-1 mb-2">Discuss solution and team structure.</h3>
+              <p className="text-gray-600 max-w-md">
+                In a matter of days, we will finalize your project specifications, agree on an engagement model, select and onboard your team.
+              </p>
+            </div>
+          </div>
+          {/* Step 3 */}
+          <div className="flex items-start gap-6 relative z-10">
+            <div className="flex flex-col items-center">
+              <div className="bg-brand text-white rounded-full w-12 h-12 flex items-center justify-center text-xl shadow-md">
+                <TrendingUp className="w-6 h-6" />
+              </div>
+            </div>
+            <div>
+              <span className="uppercase text-xs text-gray-500 font-bold tracking-widest">Step 3</span>
+              <h3 className="text-xl font-bold mt-1 mb-2">Get started and track performance.</h3>
+              <p className="text-gray-600 max-w-md">
+                Once we've agreed on milestones, we'll immediately get to work. We'll track progress, report updates, and continuously adapt to your needs.
+              </p>
+              <Button className="mt-4 bg-brand text-white px-6 py-3 rounded-md text-base font-bold">
+                Schedule a Call
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+} 

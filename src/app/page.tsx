@@ -3,6 +3,8 @@ import { LocalBusinessSchema } from "@/components/schema"
 import { getLocationFromParams, type LocationData } from "@/lib/location"
 import { Hero } from "@/components/sections/hero"
 import { Services } from "@/components/sections/services"
+import { Partners } from "@/components/sections/partners"
+import { Process } from "@/components/sections/process"
 import { CTA } from "@/components/sections/cta"
 
 export const metadata: Metadata = {
@@ -27,6 +29,8 @@ export default async function Home({ searchParams = {} }: PageProps) {
       <LocalBusinessSchema location={location} />
       <Hero locationString={locationString} />
       <Services locationString={locationString} isDefault={location.isDefault} />
+      <Partners />
+      <Process />
       <CTA locationString={locationString} isDefault={location.isDefault} />
     </div>
   )

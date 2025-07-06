@@ -49,7 +49,7 @@ const navigationItems = [
 export function Navbar() {
   return (
     <header className="sticky top-0 z-50 bg-white dark:bg-black w-full py-4 shadow dark:shadow-black/40">
-      <div className="container flex h-16 items-center justify-between">
+      <div className="flex h-16 items-center justify-between max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <Link href="/" className="flex items-center space-x-2">
           <span className="text-3xl font-bold text-brand">Bit<span className="dark:text-white text-black">Werks</span></span>
         </Link>

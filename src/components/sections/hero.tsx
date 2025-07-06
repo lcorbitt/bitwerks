@@ -1,6 +1,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
+import { Heading1 } from "../ui/heading"
 
 interface HeroProps {
   locationString: string
@@ -30,14 +31,12 @@ export function Hero({ locationString }: HeroProps) {
         <div className="mx-auto lg:grid lg:items-center lg:gap-8 lg:grid-cols-2">
           {/* Text content */}
           <div className="flex flex-col text-center lg:text-left w-full">
-            <h1 className="mb-6 text-3xl tracking-tight sm:text-4xl md:text-5xl lg:leading-tight mx-auto lg:mx-0 max-w-3xl lg:max-w-none font-bold relative z-10">
-              SMALL BUSINESS
-              <span className="text-primary dark:text-white block mt-2">DIGITAL SOLUTIONS</span>
-            </h1>
-            <p className="mb-8 text-xs text-muted-light dark:text-muted-dark md:text-lg mx-auto lg:mx-0 max-w-2xl lg:max-w-xl relative z-10">
+            <Heading1 className="mx-auto lg:mx-0 max-w-3xl lg:max-w-none relative z-10">Small Business</Heading1>
+            <Heading1 className="mb-6 mx-auto lg:mx-0 max-w-3xl lg:max-w-none relative z-10">Digital Solutions</Heading1>
+            <p className="mb-8 text-sm text-muted-light dark:text-muted-dark md:text-lg mx-auto lg:mx-0 max-w-2xl lg:max-w-xl relative z-10">
               Web Development • Software Development • Technical Consulting
             </p>
-            <p className="mb-8 text-sm text-muted-foreground md:text-lg mx-auto lg:mx-0 max-w-2xl lg:max-w-xl relative z-10">
+            <p className="mb-8 text-basetext-muted-foreground md:text-lg mx-auto lg:mx-0 max-w-2xl lg:max-w-xl relative z-10">
               We build custom websites and software for businesses {locationString === "nationwide" ? "across the U.S." : ` in ${locationString}.`} We focus on the technical implementation so you can focus on what you do best.
             </p>
             <div className="flex gap-4 justify-center lg:justify-start relative z-10">
