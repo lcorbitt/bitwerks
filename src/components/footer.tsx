@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button"
 export function Footer() {
   return (
     <footer className="border-t bg-background">
-      <div className="container py-12 md:py-16 lg:py-20">
+      <div className="container py-8">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           <div className="space-y-4">
             <h3 className="text-lg font-semibold">BitWerks</h3>
