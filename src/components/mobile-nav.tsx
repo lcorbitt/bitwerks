@@ -54,7 +54,7 @@ export function MobileNav({ items }: MobileNavProps) {
           ))}
           <Button asChild variant="default" className="col-span-2 mt-4">
             <Link href="/contact" onClick={() => setOpen(false)}>
-              Get Started
+              Schedule a Call
             </Link>
           </Button>
         </nav>

@@ -4,7 +4,7 @@ import { Button } from "../ui/button";
 
 export function Process() {
   return (
-    <section className="relative bg-[#f6f7f8] py-16">
+    <section className="relative bg-[#f6f7f8] dark:bg-tertiary py-16">
       <div className="container mx-auto flex flex-col lg:flex-row items-center gap-12">
         {/* Left: Heading and Image */}
         <div className="flex-1 flex flex-col items-start">
@@ -18,7 +18,7 @@ export function Process() {
           <div className="w-full max-w-xs mt-4">
             <div className="relative aspect-[4/3]">
               <Image
-                src="/your-image.jpg"
+                src="/dev_productivity.svg"
                 alt="Process"
                 fill
                 className="object-cover rounded-[100px]"
@@ -38,10 +38,10 @@ export function Process() {
               </div>
             </div>
             <div>
-              <span className="uppercase text-xs text-gray-500 font-bold tracking-widest">Step 1</span>
+              <span className="uppercase text-xs text-muted dark:text-muted-dark font-bold tracking-widest">Step 1</span>
               <h3 className="text-xl font-bold mt-1 mb-2">Join exploration call.</h3>
-              <p className="text-gray-600 max-w-md">
-                Tell us more about your business on a discovery call. We'll discuss team structure and approach, success criteria, timescale, budget, and required skill sets to see how we can help.
+              <p className="text-muted dark:text-muted-dark max-w-md">
+                Tell us more about your business on a discovery call. We'll discuss initial goals, success criteria, and timeline to see how we can help.
               </p>
             </div>
           </div>
@@ -53,10 +53,10 @@ export function Process() {
               </div>
             </div>
             <div>
-              <span className="uppercase text-xs text-gray-500 font-bold tracking-widest">Step 2</span>
-              <h3 className="text-xl font-bold mt-1 mb-2">Discuss solution and team structure.</h3>
-              <p className="text-gray-600 max-w-md">
-                In a matter of days, we will finalize your project specifications, agree on an engagement model, select and onboard your team.
+              <span className="uppercase text-xs text-muted dark:text-muted-dark font-bold tracking-widest">Step 2</span>
+              <h3 className="text-xl font-bold mt-1 mb-2">Discuss solution and approach.</h3>
+              <p className="text-muted dark:text-muted-dark max-w-md">
+                In a matter of days, we’ll finalize your project specifications, define the scope of work, and agree on an engagement model.
               </p>
             </div>
           </div>
@@ -68,13 +68,13 @@ export function Process() {
               </div>
             </div>
             <div>
-              <span className="uppercase text-xs text-gray-500 font-bold tracking-widest">Step 3</span>
+              <span className="uppercase text-xs text-muted dark:text-muted-dark font-bold tracking-widest">Step 3</span>
               <h3 className="text-xl font-bold mt-1 mb-2">Get started and track performance.</h3>
-              <p className="text-gray-600 max-w-md">
+              <p className="text-muted dark:text-muted-dark max-w-md">
                 Once we've agreed on milestones, we'll immediately get to work. We'll track progress, report updates, and continuously adapt to your needs.
               </p>
-              <Button className="mt-4 bg-brand text-white px-6 py-3 rounded-md text-base font-bold">
-                Schedule a Call
+              <Button size="lg"  className="mt-4">
+                Get Started
               </Button>
             </div>
           </div>

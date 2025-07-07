@@ -29,8 +29,8 @@ export default async function Home({ searchParams = {} }: PageProps) {
       <LocalBusinessSchema location={location} />
       <Hero locationString={locationString} />
       <Services locationString={locationString} isDefault={location.isDefault} />
-      <Partners />
       <Process />
+      <Partners />
       <CTA locationString={locationString} isDefault={location.isDefault} />
     </div>
   )

@@ -83,8 +83,8 @@ export function Navbar() {
             </NavigationMenuList>
           </NavigationMenu>
           <MobileNav items={[...services, ...navigationItems]} />
-          <Button asChild variant="default" className="hidden lg:flex">
-            <Link href="/contact">GET STARTED</Link>
+          <Button asChild variant="default" className="hidden lg:flex bg-black dark:bg-white dark:text-black">
+            <Link href="/contact">Schedule a Call</Link>
           </Button>
           <ThemeToggle />
         </div>

@@ -3,7 +3,7 @@ import { Heading2 } from "../ui/heading";
 
 export function Partners() {
   return (
-    <section className="bg-light dark:bg-primary py-16 py:pb-20 w-full">
+    <section className="bg-white dark:bg-primary py-16 py:pb-20 w-full">
       <div className="container mx-auto">
         <div className="flex items-stretch flex-col md:flex-row md:items-stretch md:justify-between gap-8 mb-12">
           <div className="flex items-start">

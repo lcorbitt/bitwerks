@@ -43,8 +43,9 @@ export function Hero({ locationString }: HeroProps) {
               <Button
                 asChild
                 variant="default"
+                size="lg"
               >
-                <Link href="/contact">GET STARTED</Link>
+                <Link href="/contact">Get Started</Link>
               </Button>
             </div>
           </div>
