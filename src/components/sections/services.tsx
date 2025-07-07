@@ -36,7 +36,7 @@ export function Services({ locationString, isDefault }: ServicesProps) {
             </p>
             <Heading2 className="mb-8">From Concept to Completion</Heading2>
             <p className="mb-16 md:mb-32 text-muted-foreground tracking-wide text-base md:text-lg">
-              At BitWerks, we specialize in custom web and software development for small businesses across the U.S. Every project is hand-coded for performance, stability, and long-term value. No page-builders, no shortcuts. We handle ongoing updates and support, so you're never left stuck. Our focus is on building lasting partnerships and helping your business grow online with confidence.
+              At BitWerks, we specialize in custom web and software development for small businesses across the U.S. Each project is hand-coded with a focus on performance, reliability, and long-term value—no page-builders, no shortcuts. We provide ongoing updates and support, so you're never left without help. Our goal is to build lasting partnerships and empower your business to grow with confidence.
             </p>
           </div>
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">

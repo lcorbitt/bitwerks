@@ -8,26 +8,18 @@ import { MobileNav } from "@/components/mobile-nav"
 import { cn } from "@/lib/utils"
 import { ThemeToggle } from "@/components/theme-toggle"
 
-const components: { title: string; href: string; description: string }[] = [
+const services: { title: string; href: string; }[] = [
   {
     title: "Web Development",
     href: "/services/web-development",
-    description: "Modern, responsive websites built with the latest technologies.",
   },
   {
     title: "Custom Software",
     href: "/services/custom-software",
-    description: "Tailored software solutions to solve your business challenges.",
-  },
-  {
-    title: "API Integration",
-    href: "/services/api-integration",
-    description: "Seamless integration of third-party services and APIs.",
   },
   {
     title: "Technical Consulting",
     href: "/services/consulting",
-    description: "Expert guidance on technology strategy and implementation.",
   },
 ]
 
@@ -49,7 +41,7 @@ const navigationItems = [
 export function Navbar() {
   return (
     <header className="sticky top-0 z-50 bg-white dark:bg-black w-full py-4 shadow dark:shadow-black/40">
-      <div className="flex h-16 items-center justify-between max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <div className="container flex h-16 items-center justify-between">
         <Link href="/" className="flex items-center space-x-2">
           <span className="text-3xl font-bold text-brand">Bit<span className="dark:text-white text-black">Werks</span></span>
         </Link>
@@ -57,42 +49,40 @@ export function Navbar() {
           <NavigationMenu className="hidden lg:flex">
             <NavigationMenuList className="gap-2">
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="font-bold">SERVICES</NavigationMenuTrigger>
+                <NavigationMenuTrigger className="font-bold hover:text-brand focus:text-brand">SERVICES</NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                    {components.map((component) => (
+                  <ul className="grid w-[250px] p-4 md:grid-cols-1 bg-white">
+                    {services.map((service) => (
                       <ListItem
-                        key={component.title}
-                        title={component.title}
-                        href={component.href}
-                      >
-                        {component.description}
-                      </ListItem>
+                        key={service.title}
+                        title={service.title}
+                        href={service.href}
+                       />
                     ))}
                   </ul>
                 </NavigationMenuContent>
               </NavigationMenuItem>
               <NavigationMenuSimpleLink 
                 href="/our-work"
-                className={cn(navigationMenuTriggerStyle(), "font-bold")}
+                className={cn(navigationMenuTriggerStyle(), "font-bold hover:text-brand focus:text-brand")}
               >
                 OUR WORK
               </NavigationMenuSimpleLink>
               <NavigationMenuSimpleLink 
                 href="/ "
-                className={cn(navigationMenuTriggerStyle(), "font-bold")}
+                className={cn(navigationMenuTriggerStyle(), "font-bold hover:text-brand focus:text-brand")}
               >
                 TECHNOLOGIES
               </NavigationMenuSimpleLink>
               <NavigationMenuSimpleLink 
                 href="/about"
-                className={cn(navigationMenuTriggerStyle(), "font-bold")}
+                className={cn(navigationMenuTriggerStyle(), "font-bold hover:text-brand focus:text-brand")}
               >
                 ABOUT
               </NavigationMenuSimpleLink>
             </NavigationMenuList>
           </NavigationMenu>
-          <MobileNav items={[...components, ...navigationItems]} />
+          <MobileNav items={[...services, ...navigationItems]} />
           <Button asChild variant="default" className="hidden lg:flex">
             <Link href="/contact">GET STARTED</Link>
           </Button>

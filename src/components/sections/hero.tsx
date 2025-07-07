@@ -26,7 +26,7 @@ function HeroBackgroundImage() {
 export function Hero({ locationString }: HeroProps) {
   return (
     <section className="relative overflow-hidden py-16 md:py-20 w-full bg-[#F6F7F8] dark:bg-secondary">
-      <HeroBackgroundImage />
+      {/* <HeroBackgroundImage /> */}
       <div className="container relative z-10">
         <div className="mx-auto lg:grid lg:items-center lg:gap-8 lg:grid-cols-2">
           {/* Text content */}
