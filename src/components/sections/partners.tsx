@@ -6,7 +6,18 @@ export function Partners() {
   return (
     <section className="bg-white dark:bg-primary py-16 md:pb-28 w-full">
       <div className="container mx-auto">
-        <div className="flex items-stretch flex-col md:flex-row md:items-stretch md:justify-between gap-8 mb-12">
+        {/* Mobile layout - centered column */}
+        <div className="md:hidden text-center mb-12">
+          <p className="font-normal tracking-widest mb-2 text-muted-light dark:text-muted-dark">PARTNERS</p>
+          <Heading2>Companies we&apos;ve worked with</Heading2>
+          <div className="w-16 h-px bg-black/10 dark:bg-white/20 mx-auto my-6"></div>
+          <p className="text-primary dark:text-white text-sm max-w-md mx-auto" style={{lineHeight: '1.5'}}>
+            We have worked with clients all over the U.S. for start ups, digital marketing agencies, doctors, and more. No matter what your business is, we can build your website or application that is effective, beautiful, performant, and tailored to your industry.
+          </p>
+        </div>
+
+        {/* Desktop layout - side by side */}
+        <div className="hidden md:flex items-stretch flex-row justify-between gap-8 mb-12">
           <div className="flex items-start">
             <div>
               <p className="font-normal tracking-widest mb-2 text-muted-light dark:text-muted-dark">PARTNERS</p>
