@@ -4,7 +4,7 @@ import { Heading2 } from "../ui/heading";
 export function Partners() {
   
   return (
-    <section className="bg-white dark:bg-primary py-16 py:pb-20 w-full">
+    <section className="bg-white dark:bg-primary py-16 md:pb-28 w-full">
       <div className="container mx-auto">
         <div className="flex items-stretch flex-col md:flex-row md:items-stretch md:justify-between gap-8 mb-12">
           <div className="flex items-start">
@@ -14,7 +14,7 @@ export function Partners() {
             </div>
             <div className="border-l border-black/10 dark:border-white/20 mx-4 self-stretch"></div>
             <div className="md:ml-8 md:w-1/2 flex items-center">
-              <p className="text-primary dark:text-white text-lg p-4" style={{lineHeight: '1.5'}}>
+              <p className="text-primary dark:text-white text-base lg:text-lg p-4" style={{lineHeight: '1.5'}}>
                 We have worked with clients all over the U.S. for start ups, digital marketing agencies, doctors, and more. No matter what your business is, we can build your website or application that is effective, beautiful, performant, and tailored to your industry.
               </p>
             </div>

@@ -24,9 +24,9 @@ export const TechMarqueeSection = () => {
   }, []);
 
   return (
-    <section className="relative pb-16 md:pb-24 pt-48 md:pt-64 dark:bg-tertiary bg-light">
+    <section className="relative pb-16 md:pb-24 pt-48 md:pt-72 dark:bg-tertiary bg-light">
       {/* Decorative image at the top center, overlapping the divider */}
-      <div className="absolute inset-x-0 -top-36 md:-top-56 z-20 flex justify-center">
+      <div className="absolute inset-x-0 -top-36 md:-top-52 z-20 flex justify-center">
         <Image 
           src="progressive-app.svg" 
           alt="Decorative logo" 

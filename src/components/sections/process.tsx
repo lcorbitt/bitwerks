@@ -4,24 +4,24 @@ import { Button } from "../ui/button";
 
 export function Process() {
   return (
-    <section className="relative bg-[#f6f7f8] dark:bg-primary py-16">
+    <section className="relative bg-[#f6f7f8] dark:bg-tertiary pt-16 lg:pt-24 lg:pb-12">
       <div className="container mx-auto flex flex-col lg:flex-row items-center gap-12">
         {/* Left: Heading and Image */}
         <div className="flex-1 flex flex-col items-start">
-          <h2 className="text-4xl md:text-5xl font-extrabold leading-tight mb-8">
+          <h2 className="text-4xl md:text-5xl font-extrabold leading-tight">
             <span className="mb-4">Our process.<br /></span>
             Simple,<br />
             seamless,<br />
             streamlined
             <span className="text-brand">.</span>
           </h2>
-          <div className="w-full max-w-xs mt-4">
-            <div className="relative aspect-[4/3]">
+          <div className="w-full max-w-xs my-8">
+            <div className="relative aspect-[4/3] my-8">
               <Image
-                src="/dev_productivity.svg"
-                alt="Process"
+                src="/se-2.svg"
+                alt="Our Process"
                 fill
-                className="object-cover rounded-[100px]"
+                className="object-cover"
               />
             </div>
           </div>
