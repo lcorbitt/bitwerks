@@ -6,6 +6,7 @@ import { Services } from "@/components/sections/services"
 import { Partners } from "@/components/sections/partners"
 import { Process } from "@/components/sections/process"
 import { CTA } from "@/components/sections/cta"
+import { TechMarqueeSection } from "@/components/sections/tech-marquee-section"
 
 export const metadata: Metadata = {
   title: "BitWerks | Custom Web Development & Software Solutions",
@@ -29,8 +30,9 @@ export default async function Home({ searchParams = {} }: PageProps) {
       <LocalBusinessSchema location={location} />
       <Hero locationString={locationString} />
       <Services locationString={locationString} isDefault={location.isDefault} />
-      <Process />
+      <TechMarqueeSection />
       <Partners />
+      <Process />
       <CTA locationString={locationString} isDefault={location.isDefault} />
     </div>
   )

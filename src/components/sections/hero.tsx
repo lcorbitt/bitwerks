@@ -18,7 +18,6 @@ function HeroBackgroundImage() {
         priority
         className="w-full h-auto object-contain opacity-80"
       />
-      <div className="absolute inset-0 bg-white/80 dark:bg-black/70" />
     </div>
   )
 }

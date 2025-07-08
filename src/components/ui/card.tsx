@@ -10,10 +10,10 @@ interface CardProps {
 
 export function Card({ title, description, linkText, linkHref, children }: CardProps) {
   return (
-    <div className="relative bg-light dark:bg-tertiary rounded-2xl shadow-md py-20 px-8">
+    <div className="relative bg-light dark:bg-tertiary rounded-2xl shadow-md py-12 md:py-20 px-8">
       {/* Icon */}
-      <div className="absolute -top-12 left-8">
-        <div className="bg-black dark:bg-brand rounded-xl w-24 h-24 flex items-center justify-center">
+      <div className="absolute -top-8 md:-top-12 left-8">
+        <div className="bg-black dark:bg-brand rounded-xl w-16 h-16 md:w-24 md:h-24 flex items-center justify-center">
           {children}
         </div>
       </div>
