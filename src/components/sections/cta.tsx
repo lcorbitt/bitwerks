@@ -32,16 +32,18 @@ export function CTA({ locationString, isDefault }: CTAProps) {
           />
         </svg>
       </div>
-      <div className="container relative z-10 pt-40">
+      <div className="container relative z-10 pt-44">
         <div className="mx-auto max-w-3xl text-center">
-          <h2 className="mb-4 text-3xl font-bold">Ready to Transform Your Business?</h2>
-          <p className="mb-8 text-muted-foreground">
-            Let&apos;s discuss how we can help achieve your technology goals
-            {isDefault ? " no matter where you&apos;re located" : ` in ${locationString}`}.
-          </p>
-          <Button asChild>
-            <Link href="/contact">Schedule a Consultation</Link>
-          </Button>
+          <div className="bg-light dark:bg-tertiary rounded-lg p-8 md:p-12 shadow-lg">
+            <h2 className="mb-4 text-3xl font-bold">Ready to Transform Your Business?</h2>
+            <p className="mb-8 text-muted-foreground">
+              Let&apos;s discuss how we can help achieve your technology goals
+              {isDefault ? " no matter where you&apos;re located" : ` in ${locationString}`}.
+            </p>
+            <Button asChild>
+              <Link href="/contact">Schedule a Consultation</Link>
+            </Button>
+          </div>
         </div>
       </div>
     </section>
