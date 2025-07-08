@@ -32,7 +32,7 @@ export function CTA({ locationString, isDefault }: CTAProps) {
           />
         </svg>
       </div>
-      <div className="container relative z-10 pt-44">
+      <div className="container relative z-10 pt-40">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="mb-4 text-3xl font-bold">Ready to Transform Your Business?</h2>
           <p className="mb-8 text-muted-foreground">
