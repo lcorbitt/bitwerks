@@ -9,31 +9,11 @@ interface CTAProps {
 
 export function CTA({ locationString, isDefault }: CTAProps) {
   return (
-    <section className="relative dark:bg-primary py-20 bg-white">
-      {/* Even more dramatic rampart arch: left lower, right much higher and steeper */}
-      <div className="absolute top-0 left-0 w-full overflow-hidden leading-none" style={{ height: "160px" }}>
-        <svg
-          viewBox="0 0 1440 160"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-full h-full"
-          preserveAspectRatio="none"
-        >
-          {/* Mobile - more subtle curve */}
-          <path
-            d="M0,140 C800,140 900,60 1440,160 L1440,0 L0,0 Z"
-            fill="currentColor"
-            className="dark:text-tertiary md:hidden text-light"
-          />
-          {/* Desktop - current dramatic curve */}
-          <path
-            d="M0,140 C800,140 900,-20 1440,160 L1440,0 L0,0 Z"
-            fill="currentColor"
-            className="dark:text-tertiary hidden md:block text-light"
-          />
-        </svg>
+    <section className="relative dark:bg-primary pb-20 bg-white pt-12 md:pt-24 lg:pt-32 xl:pt-40">
+      <div className="absolute top-0 left-0 w-full z-10">
+        <Teardrop7 />
       </div>
-      <div className="container relative z-10 pt-36">
+      <div className="container relative z-10 pt-20">
         <div className="mx-auto max-w-3xl text-center">
           {/* Card */}
           <div className="bg-light dark:bg-tertiary rounded-lg p-8 md:p-12 shadow-lg dark:shadow-2xl border border-black/5 dark:border-white/10">
@@ -51,3 +31,21 @@ export function CTA({ locationString, isDefault }: CTAProps) {
     </section>
   )
 }
+
+export const Teardrop7 = () => (
+  <div className="" style={{ maxWidth: 'none' }}>
+    <svg
+      className="w-full text-light dark:text-tertiary"
+      fill="none"
+      preserveAspectRatio="none"
+      viewBox="0 0 1920 254"
+      xmlns="http://www.w3.org/2000/svg"
+      style={{ display: 'block' }}
+    >
+      <path
+        d="M1668.54 58.137c124.52 31.881 204.12 63.173 251.46 85.537V-4H0v254C356.508 169.957 717.072 91.544 986.268 43.36 1255.46-4.822 1443.9.623 1668.54 58.138Z"
+        fill="currentColor"
+      />
+    </svg>
+  </div>
+)
