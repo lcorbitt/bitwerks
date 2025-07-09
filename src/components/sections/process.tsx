@@ -73,7 +73,7 @@ export function Process() {
               <p className="text-muted dark:text-muted-dark max-w-md">
                 Once we've agreed on milestones, we'll immediately get to work. We'll track progress, report updates, and continuously adapt to your needs.
               </p>
-              <Button size="lg"  className="mt-4">
+              <Button size="lg"  className="mt-8">
                 Get Started
               </Button>
             </div>

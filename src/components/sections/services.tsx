@@ -66,8 +66,8 @@ export function Services({ locationString, isDefault }: ServicesProps) {
           </div>
         </div>
       <div className="mt-16 text-center">
-        <Button asChild variant="default" size="lg">
-          <a href="tel:+8167144107">Get Started</a>
+        <Button asChild variant="default" size="lg" className="bg-accent hover:bg-accent/90 text-white">
+          <a href="tel:+8167144107">Schedule a Call</a>
         </Button>
       </div>
       </section>

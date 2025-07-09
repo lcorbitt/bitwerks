@@ -29,10 +29,7 @@ module.exports = {
         sm: "calc(var(--radius) - 4px)",
       },
       colors: {
-        accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
-        },
+        accent: "#1fb890",
         background: "hsl(var(--background))",
         border: "hsl(var(--border))",
         brand: "#F66135",

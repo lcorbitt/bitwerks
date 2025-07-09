@@ -10,15 +10,15 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "bg-brand text-white shadow-sm hover:shadow-lg border border-brand/20 hover:border-brand/40 hover:bg-brand/90 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 relative overflow-hidden before:absolute before:inset-0 before:bg-white/10 before:opacity-0 hover:before:opacity-100 before:transition-opacity before:duration-200",
+          "bg-brand text-white shadow-sm hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 relative overflow-hidden before:absolute before:inset-0 before:bg-white/10 before:opacity-0 hover:before:opacity-100 before:transition-opacity before:duration-200",
         destructive:
           "bg-destructive text-white shadow-sm hover:shadow-lg hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 relative overflow-hidden before:absolute before:inset-0 before:bg-white/10 before:opacity-0 hover:before:opacity-100 before:transition-opacity before:duration-200",
         outline:
-          "border bg-background shadow-sm hover:shadow-lg hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 relative overflow-hidden before:absolute before:inset-0 before:bg-white/5 before:opacity-0 hover:before:opacity-100 before:transition-opacity before:duration-200",
+          "border bg-background shadow-sm hover:shadow-lg hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 relative overflow-hidden before:absolute before:inset-0 before:bg-white/5 before:opacity-0 hover:before:opacity-100 before:transition-opacity before:duration-200",
         secondary:
           "bg-brand text-white shadow-sm hover:shadow-lg border border-brand/20 hover:border-brand/40 hover:bg-brand/90 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 relative overflow-hidden before:absolute before:inset-0 before:bg-white/10 before:opacity-0 hover:before:opacity-100 before:transition-opacity before:duration-200",
         ghost:
-          "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
+          "hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
       },
       size: {

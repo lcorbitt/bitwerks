@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 
 interface CTAProps {
@@ -32,15 +33,16 @@ export function CTA({ locationString, isDefault }: CTAProps) {
           />
         </svg>
       </div>
-      <div className="container relative z-10 pt-44">
+      <div className="container relative z-10 pt-36">
         <div className="mx-auto max-w-3xl text-center">
-          <div className="bg-light dark:bg-tertiary rounded-lg p-8 md:p-12 shadow-lg">
+          {/* Card */}
+          <div className="bg-light dark:bg-tertiary rounded-lg p-8 md:p-12 shadow-lg dark:shadow-2xl border border-black/5 dark:border-white/10">
             <h2 className="mb-4 text-3xl font-bold">Ready to Transform Your Business?</h2>
             <p className="mb-8 text-muted-foreground">
               Let&apos;s discuss how we can help achieve your technology goals
               {isDefault ? " no matter where you&apos;re located" : ` in ${locationString}`}.
             </p>
-            <Button asChild className="bg-black hover:bg-black/90 dark:bg-white dark:text-primary text-white">
+            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-white">
               <Link href="/contact">Schedule a Call</Link>
             </Button>
           </div>
@@ -48,4 +50,4 @@ export function CTA({ locationString, isDefault }: CTAProps) {
       </div>
     </section>
   )
-} 
+}

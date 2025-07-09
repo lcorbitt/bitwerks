@@ -129,7 +129,7 @@ export function Partners() {
               className="object-contain hidden dark:block transition-transform duration-300 group-hover:scale-110"
             />
             <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-black text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
-              Spectora
+              Loth & Co.
             </div>
           </div>
         </div>
