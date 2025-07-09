@@ -32,27 +32,27 @@ export function MobileNav({ items }: MobileNavProps) {
           <span className="sr-only">Toggle menu</span>
         </Button>
       </SheetTrigger>
-      <SheetContent side="top" className="w-full border-b pt-20">
+      <SheetContent side="top" className="w-full border-b border-black/10 dark:border-white/20 pt-20 bg-white dark:bg-primary">
         <SheetHeader className="mb-4">
-          <SheetTitle>Navigation</SheetTitle>
+          <SheetTitle className="text-black dark:text-white">Navigation</SheetTitle>
         </SheetHeader>
         <nav className="grid grid-cols-2 gap-4">
           {items.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="flex flex-col space-y-1 rounded-md p-3 hover:bg-accent hover:text-accent-foreground"
+              className="flex flex-col space-y-1 rounded-md p-3 hover:bg-accent hover:text-accent-foreground text-black dark:text-white"
               onClick={() => setOpen(false)}
             >
               <span className="text-sm font-medium">{item.title}</span>
               {item.description && (
-                <span className="line-clamp-2 text-sm text-muted-foreground">
+                <span className="line-clamp-2 text-sm text-muted-foreground dark:text-muted-dark">
                   {item.description}
                 </span>
               )}
             </Link>
           ))}
-          <Button asChild variant="default" className="col-span-2 mt-4">
+          <Button asChild variant="default" className="col-span-2 mt-4 bg-black hover:bg-black/90 dark:bg-white dark:text-primary text-white">
             <Link href="/contact" onClick={() => setOpen(false)}>
               Schedule a Call
             </Link>

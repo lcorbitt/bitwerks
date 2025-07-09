@@ -128,7 +128,7 @@ export default function CityPage({ params }: PageProps) {
             Let&apos;s discuss how we can help your business thrive with custom web development solutions.
           </p>
           <Button asChild>
-            <Link href="/contact">Schedule a Consultation</Link>
+            <Link href="/contact">Schedule a Call</Link>
           </Button>
         </div>
       </div>

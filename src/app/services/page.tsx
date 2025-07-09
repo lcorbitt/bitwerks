@@ -112,7 +112,7 @@ export default function ServicesPage() {
             Need something specific? Let&apos;s discuss your unique requirements and create a custom solution.
           </p>
           <Button asChild>
-            <Link href="/contact">Schedule a Consultation</Link>
+            <Link href="/contact">Schedule a Call</Link>
           </Button>
         </div>
       </div>
