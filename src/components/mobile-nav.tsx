@@ -41,7 +41,7 @@ export function MobileNav({ items }: MobileNavProps) {
             <Link
               key={item.href}
               href={item.href}
-              className="flex flex-col space-y-1 rounded-md p-3 hover:bg-accent hover:text-accent-foreground text-black dark:text-white"
+              className="flex flex-col space-y-1 rounded-md p-3 text-black dark:text-white"
               onClick={() => setOpen(false)}
             >
               <span className="text-sm font-medium">{item.title}</span>
