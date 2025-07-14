@@ -20,7 +20,7 @@ export function CTA({ locationString, isDefault }: CTAProps) {
             <h2 className="mb-4 text-3xl font-bold">Ready to Transform Your Business?</h2>
             <p className="mb-8 text-muted-foreground">
               Let&apos;s discuss how we can help achieve your technology goals
-              {isDefault ? " no matter where you&apos;re located" : ` in ${locationString}`}.
+              {isDefault ? " no matter where you're located" : ` in ${locationString}`}.
             </p>
             <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-white">
               <Link href="/contact">Schedule a Call</Link>
