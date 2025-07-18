@@ -14,8 +14,8 @@ const services: { title: string; href: string; }[] = [
     href: "/services/web-development",
   },
   {
-    title: "Custom Software",
-    href: "/services/custom-software",
+    title: "Software Development",
+    href: "/services/software-development",
   },
   {
     title: "Technical Consulting",

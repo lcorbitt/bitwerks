@@ -14,8 +14,8 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "BitWerks | Custom Software Solutions",
-  description: "Professional web development and custom software solutions tailored to your business needs.",
+  title: "BitWerks | Custom Web & Software Development",
+  description: "Professional web and software development tailored to your business needs.",
 };
 
 export default function RootLayout({

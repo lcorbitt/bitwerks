@@ -22,6 +22,9 @@ module.exports = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "wave": "wave 10s -3s linear infinite",
+        "wave-reverse": "wave 18s linear reverse infinite",
+        "wave-slow": "wave 20s -1s reverse infinite",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -66,6 +69,13 @@ module.exports = {
         "accordion-up": {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
+        },
+        "wave": {
+          "2%": { transform: "translateX(1px)" },
+          "25%": { transform: "translateX(-25%)" },
+          "50%": { transform: "translateX(-50%)" },
+          "75%": { transform: "translateX(-25%)" },
+          "100%": { transform: "translateX(1px)" },
         },
       },
     },

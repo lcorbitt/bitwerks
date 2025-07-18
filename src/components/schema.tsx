@@ -10,7 +10,7 @@ export function LocalBusinessSchema({ location }: SchemaProps) {
     "@type": "ProfessionalService",
     "@id": "https://bitwerks.dev",
     name: "BitWerks",
-    description: `Professional web development and custom software solutions serving ${location.city}, ${location.state} and businesses nationwide.`,
+    description: `Professional web and software development serving ${location.city}, ${location.state} and businesses nationwide.`,
     url: `https://bitwerks.dev/web-development/${location.city.toLowerCase()}/${location.state.toLowerCase()}`,
     address: {
       "@type": "PostalAddress",

@@ -16,10 +16,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   
   return {
     title: `Web Development in ${location} | BitWerks`,
-    description: `Professional web development services in ${location}. Custom software solutions, modern web applications, and technical consulting for businesses in your area.`,
+    description: `Professional web and software development services in ${location}.`,
     openGraph: {
       title: `Web Development Services in ${location} | BitWerks`,
-      description: `Transform your business with professional web development services in ${location}. Expert solutions tailored to your needs.`,
+      description: `Transform your business with professional web and software solutions in ${location}. Expert solutions tailored to your needs.`,
     },
   }
 }

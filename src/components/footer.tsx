@@ -9,7 +9,7 @@ export function Footer() {
           <div className="space-y-4">
             <h3 className="text-lg font-semibold"><span className="text-brand">Bit</span>Werks</h3>
             <p className="text-sm text-muted-foreground">
-              Crafting exceptional digital experiences through innovative software solutions.
+              Crafting exceptional digital experiences.
             </p>
           </div>
           <div>
@@ -21,8 +21,8 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/services/custom-software" className="text-muted-foreground hover:text-foreground">
-                  Custom Software
+                <Link href="/services/software-development" className="text-muted-foreground hover:text-foreground">
+                  Software Development
                 </Link>
               </li>
               <li>
@@ -62,8 +62,8 @@ export function Footer() {
             <p className="text-sm text-muted-foreground">
               Ready to discuss your project?
             </p>
-            <Button asChild variant="default">
-              <Link href="/contact">Contact Us</Link>
+            <Button asChild variant="default" className="bg-black hover:bg-black/90 text-white">
+              <Link href="/contact">Schedule a Call</Link>
             </Button>
           </div>
         </div>

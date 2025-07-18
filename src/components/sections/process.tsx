@@ -4,7 +4,7 @@ import { Button } from "../ui/button";
 
 export function Process() {
   return (
-    <section className="relative bg-[#f6f7f8] dark:bg-tertiary py-16 lg:py-24">
+    <section className="relative bg-[#f6f7f8] dark:bg-tertiary pt-16 pb-24 lg:pt-24 lg:pb-12">
       <div className="container mx-auto flex flex-col lg:flex-row items-center gap-12">
         {/* Left: Heading and Image */}
         <div className="flex-1 flex flex-col items-start">

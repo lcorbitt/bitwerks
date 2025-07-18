@@ -1,29 +1,20 @@
 import Link from "next/link"
-import Image from "next/image"
 import { Button } from "@/components/ui/button"
+import { Heading2 } from "@/components/ui/heading"
 
-interface CTAProps {
-  locationString: string
-  isDefault: boolean
-}
-
-export function CTA({ locationString, isDefault }: CTAProps) {
+export function CTA() {
   return (
-    <section className="relative dark:bg-primary pb-20 bg-white pt-12 md:pt-24 lg:pt-32 xl:pt-40">
-      <div className="absolute top-0 left-0 w-full z-10">
-        <Teardrop7 />
-      </div>
-      <div className="container relative z-10 pt-20">
+    <section className="relative dark:bg-primary pb-20 bg-brand">
+      <div className="container relative z-10 pt-12">
         <div className="mx-auto max-w-3xl text-center">
           {/* Card */}
-          <div className="bg-light dark:bg-tertiary rounded-lg p-8 md:p-12 shadow-lg dark:shadow-2xl border border-black/5 dark:border-white/10">
-            <h2 className="mb-4 text-3xl font-bold">Ready to Transform Your Business?</h2>
+          <div className="bg-light dark:bg-tertiary rounded-lg p-8 md:p-12 shadow-lg dark:shadow-2xl dark:border dark:border-white/10">
+            <Heading2 className="mb-4">Ready to Build?</Heading2>
             <p className="mb-8 text-muted-foreground">
-              Let&apos;s discuss how we can help achieve your technology goals
-              {isDefault ? " no matter where you're located" : ` in ${locationString}`}.
+              Whether you’re looking to streamline operations, reach new markets, or bring a big idea to life, we’ll help you design and implement the right solution so you can focus on what matters most.
             </p>
             <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-white">
-              <Link href="/contact">Schedule a Call</Link>
+              <Link href="/contact">Get Started Today</Link>
             </Button>
           </div>
         </div>

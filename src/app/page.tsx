@@ -3,17 +3,18 @@ import { LocalBusinessSchema } from "@/components/schema"
 import { getLocationFromParams, type LocationData } from "@/lib/location"
 import { Hero } from "@/components/sections/hero"
 import { Services } from "@/components/sections/services"
+import { TechMarqueeSection } from "@/components/sections/tech-marquee-section"
 import { Partners } from "@/components/sections/partners"
 import { Process } from "@/components/sections/process"
 import { CTA } from "@/components/sections/cta"
-import { TechMarqueeSection } from "@/components/sections/tech-marquee-section"
+import { WaveGraphic } from "@/components/ui/wave-graphic"
 
 export const metadata: Metadata = {
   title: "BitWerks | Custom Web Development & Software Solutions",
-  description: "Professional web development and custom software solutions based in Fort Collins, CO, serving businesses nationwide. Transform your digital presence with expert technical consulting.",
+  description: "Professional web and software development based in Fort Collins, CO, serving businesses nationwide. Transform your digital presence with expert technical consulting.",
   openGraph: {
     title: "BitWerks | Custom Web Development & Software Solutions",
-    description: "Transform your business with professional web development and custom software solutions. Based in Fort Collins, CO, serving businesses nationwide.",
+    description: "Transform your business with professional web and software solutions. Based in Fort Collins, CO, serving businesses nationwide.",
   },
 }
 
@@ -33,7 +34,8 @@ export default async function Home({ searchParams = {} }: PageProps) {
       <TechMarqueeSection />
       <Partners />
       <Process />
-      <CTA locationString={locationString} isDefault={location.isDefault} />
+      <WaveGraphic />
+      <CTA />
     </div>
   )
 }
