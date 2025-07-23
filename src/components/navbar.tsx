@@ -51,7 +51,7 @@ export function Navbar() {
               <NavigationMenuItem>
                 <NavigationMenuTrigger className="font-bold hover:text-brand focus:text-brand">SERVICES</NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="grid w-[250px] p-4 md:grid-cols-1 bg-white">
+                  <ul className="grid w-[250px] p-4 md:grid-cols-1 bg-white dark:bg-tertiary">
                     {services.map((service) => (
                       <ListItem
                         key={service.title}

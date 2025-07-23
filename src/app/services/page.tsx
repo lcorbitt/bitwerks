@@ -7,11 +7,11 @@ const services = [
     title: "Web Development",
     description: "Custom web applications built with modern technologies.",
     features: [
-      "Responsive web applications",
-      "Progressive Web Apps (PWA)",
-      "E-commerce solutions",
-      "Content Management Systems",
-      "Web portals and dashboards",
+      "Responsive websites",
+      "Custom Web Apps",
+      "E-commerce Solutions",
+      "Customer Relationship Management (CRM)",
+      "Web Portals & Dashboards",
     ],
     benefits: [
       "Fast, responsive user experience",

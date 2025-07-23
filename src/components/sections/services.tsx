@@ -12,7 +12,7 @@ interface ServicesProps {
 export function Services({ locationString, isDefault }: ServicesProps) {
   return (
     <>
-      {/* Smooth curved divider */}
+      {/* Smooth curved divider
       <div className="w-full h-16 md:h-24 overflow-hidden -mb-1 dark:bg-primary">
         <svg
           viewBox="0 0 1440 96"
@@ -26,9 +26,9 @@ export function Services({ locationString, isDefault }: ServicesProps) {
             fill="currentColor"
           />
         </svg>
-      </div>
+      </div> */}
       
-      <section className="bg-white dark:bg-black pb-32 md:40">
+      <section className="bg-white dark:bg-black pt-0 pb-0 -mt-48 z-20">
         <div className="container">
           <div className="mx-auto max-w-2xl text-center">
             <p className="mb-2 text-muted-light dark:text-muted-dark tracking-widest font-normal">
@@ -72,7 +72,7 @@ export function Services({ locationString, isDefault }: ServicesProps) {
       </div>
       </section>
       {/* Smooth curved divider (bottom, mirrored) */}
-      <div className="w-full h-16 md:h-24 overflow-hidden -mt-1 dark:bg-primary rotate-180">
+      {/* <div className="w-full h-16 md:h-24 overflow-hidden -mt-1 dark:bg-primary rotate-180">
         <svg
           viewBox="0 0 1440 96"
           fill="none"
@@ -85,7 +85,7 @@ export function Services({ locationString, isDefault }: ServicesProps) {
             fill="currentColor"
           />
         </svg>
-      </div>
+      </div> */}
     </>
   )
 } 

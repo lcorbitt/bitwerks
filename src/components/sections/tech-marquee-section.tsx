@@ -24,12 +24,12 @@ export const TechMarqueeSection = () => {
   }, []);
 
   return (
-    <section className="relative pb-16 md:pb-24 pt-48 md:pt-72 dark:bg-tertiary bg-light">
-      {/* Decorative image at the top center, overlapping the divider */}
-      <div className="absolute inset-x-0 -top-36 md:-top-52 z-20 flex justify-center">
+    <section className="relative dark:bg-tertiary bg-light pt-52 md:pt-72 -mt-20">
+      {/* Devices image at the top center, overlapping the divider */}
+      <div className="absolute inset-x-0 -top-24 md:-top-44 z-20 flex justify-center">
         <Image 
           src="progressive-app.svg" 
-          alt="Decorative logo" 
+          alt="Devices image" 
           width={800} 
           height={800} 
           className="w-[300px] h-[300px] md:w-[500px] md:h-[500px]" 

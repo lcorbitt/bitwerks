@@ -4,7 +4,7 @@ import { Heading2 } from "../ui/heading";
 export function Partners() {
   
   return (
-    <section className="bg-white dark:bg-primary py-16 md:pb-28 dark:pb-28 w-full">
+    <section className="bg-white dark:bg-primary w-full pb-32">
       <div className="container mx-auto">
         {/* Mobile layout - centered column */}
         <div className="md:hidden text-center mb-12">
