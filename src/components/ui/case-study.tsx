@@ -11,6 +11,7 @@ interface CaseStudyProps {
   imageAlt: string
   caseStudyLink: string
   moreCaseStudiesLink: string
+  orientation?: string
   className?: string
 }
 
@@ -23,6 +24,7 @@ export function CaseStudy({
   imageAlt,
   caseStudyLink,
   moreCaseStudiesLink,
+  orientation = "center",
   className = "",
 }: CaseStudyProps) {
   return (
@@ -83,7 +85,7 @@ export function CaseStudy({
               src={imageSrc}
               alt={imageAlt}
               fill
-              className="object-cover object-right-bottom"
+              className={`object-cover ${orientation}`}
             />
           </div>
         </div>

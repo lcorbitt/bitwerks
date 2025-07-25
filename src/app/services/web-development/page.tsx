@@ -81,7 +81,6 @@ export default async function Solutions({ searchParams = {} }: PageProps) {
       <section className="clip-top-large-circle relative -left-[15%] h-72 w-[130%] bg-white dark:bg-primary -mt-20 md:-mt-52 z-10"></section>
       <Services />
       <section className="clip-bottom-large-circle relative -left-[15%] h-72 w-[130%] bg-white dark:bg-primary -mt-32 z-10"></section>
-      <Process />
       
       {/* Lazy loaded sections below the fold */}
       <Suspense fallback={<div className="py-16 md:py-20 lg:py-24 bg-white dark:bg-black">
@@ -120,6 +119,8 @@ export default async function Solutions({ searchParams = {} }: PageProps) {
       </div>}>
         <LazyWhyChooseUs />
       </Suspense>
+
+      <Process />
       
       <Suspense fallback={<div className="py-16 md:py-20 lg:py-24 bg-light dark:bg-tertiary">
         <div className="container">

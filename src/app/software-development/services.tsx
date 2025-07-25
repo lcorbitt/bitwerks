@@ -3,7 +3,7 @@ import dynamic from "next/dynamic"
 import { Suspense } from "react"
 
 // Lazy load heavy components
-const LazyDeviceShowcase = dynamic(() => import("@/components/ui/device-showcase"), {
+const LazyDeviceShowcase = dynamic(() => import("@/components/ui/software-showcase"), {
   loading: () => <div className="pb-20">
     <div className="container">
       <div className="animate-pulse">
@@ -42,66 +42,66 @@ const LazyCaseStudy = dynamic(() => import("@/components/ui/case-study").then(mo
   </div>
 })
 
-const webDevelopmentServices = [
+const softwareDevelopmentServices = [
   {
-    title: "Responsive Websites",
-    description: "Tailored web solutions built from the ground up to meet your specific business requirements.",
+    title: "Custom Application Development",
+    description: "Tailored software solutions built from the ground up to meet your specific business requirements and workflows.",
     features: [
-      "Optimized for all devices with a fully responsive layout",
-      "Built with clean, scalable, and maintainable code architecture",
-      "Designed for fast load times and high performance",
+      "Scalable architecture designed for growth and performance",
+      "Built with clean, maintainable code and best practices",
+      "Comprehensive testing and quality assurance processes",
     ],
-    icon: "📱",
+    icon: "💻",
   },
   {
-    title: "Custom Software",
-    description: "Complete online store development with payment processing and inventory management.",
+    title: "Enterprise Software Solutions",
+    description: "Robust enterprise-grade applications designed to handle complex business processes and large-scale operations.",
     features: [
-      "Tailored solutions designed around your unique workflows",
-      "Streamlined internal tools to increase team productivity",
-      "Scalable systems built to grow with your organization",
+      "High-performance systems built for enterprise workloads",
+      "Advanced security and compliance features",
+      "Integration with existing enterprise infrastructure",
     ],
-    icon: "⚙️",
+    icon: "🏢",
   },
   {
-    title: "E-commerce Solutions",
-    description: "End-to-end online shopping platforms with secure payment gateways and seamless product management.",
+    title: "API Development & Integration",
+    description: "Comprehensive API development and third-party system integration to connect your business applications seamlessly.",
     features: [
-      "User-friendly storefronts optimized for conversions and engagement",
-      "Integrated payment processing with multiple options and currencies",
-      "Robust inventory and order management to keep your business running smoothly"
-    ],
-    icon: "🛒",
-  },
-  {
-    title: "Customer Relationship Management (CRM)",
-    description: "Custom CRM solutions for managing your customer relationships and sales pipeline.",
-    features: [
-      "Centralized customer data for easy access and management",
-      "Automated sales pipeline tracking",
-      "Customizable dashboards and reports",
-    ],
-    icon: "🤝",
-  },
-  {
-    title: "Web Portals & Dashboards",
-    description: "Custom portals and dashboards for data visualization and business intelligence.",
-    features: [
-      "Real-time data visualization",
-      "User role management",
-      "Data export capabilities",
-    ],
-    icon: "📊",
-  },
-  {
-    title: "API Development",
-    description: "Robust API development for seamless integration with third-party services.",
-    features: [
-      "RESTful API design",
-      "Authentication & authorization",
-      "Comprehensive documentation",
+      "RESTful and GraphQL API design and development",
+      "Secure authentication and authorization systems",
+      "Comprehensive documentation and developer tools",
     ],
     icon: "🔗",
+  },
+  {
+    title: "Database Design & Management",
+    description: "Custom database solutions and data management systems to organize and optimize your business information.",
+    features: [
+      "Custom database schema design and optimization",
+      "Data migration and integration services",
+      "Performance tuning and monitoring solutions",
+    ],
+    icon: "🗄️",
+  },
+  {
+    title: "SaaS Applications",
+    description: "Innovative SaaS applications designed for scalability, reliability, and cost-effectiveness.",
+    features: [
+      "Scalable multi-tenant architecture with containerization",
+      "Efficient cloud deployment and infrastructure management",
+      "Dynamic auto-scaling and load balancing for optimal performance",
+    ],
+    icon: "☁️",
+  },
+  {
+    title: "Legacy System Modernization",
+    description: "Transform and modernize existing legacy systems to improve performance, security, and maintainability.",
+    features: [
+      "Legacy code analysis and refactoring",
+      "Technology stack modernization",
+      "Gradual migration strategies to minimize disruption",
+    ],
+    icon: "🔄",
   },
 ]
 
@@ -126,15 +126,15 @@ export default function Services() {
           </Suspense>
 
           <Heading2 className="mb-8">
-            Web Development Services We Provide
+            Software Development Services We Provide
           </Heading2>
           <p className="text-xl text-muted-light dark:text-muted-dark">
-            From simple websites to complex enterprise solutions, we deliver results that drive growth.
+            From custom applications to enterprise solutions, we deliver robust software that drives business efficiency.
           </p>
         </div>
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {webDevelopmentServices.map((service) => (
+          {softwareDevelopmentServices.map((service) => (
             <div key={service.title} className="bg-white dark:bg-tertiary rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
               <div className="mb-6 text-4xl">{service.icon}</div>
               <h3 className="mb-4 text-2xl font-bold text-gray-900 dark:text-white">{service.title}</h3>
@@ -174,14 +174,14 @@ export default function Services() {
         </div>}>
           <LazyCaseStudy
             title="Case Study"
-            company="Hodinkee"
-            description="In collaboration with BitWerks, Hodinkee successfully implemented a new design system, improved the user experience of their applications, and developed essential internal tools to enhance operational efficiency."
+            company="Urban Sky"
+            description="By partnering with BitWerks, Urban Sky accelerated the development of a robust, mission-critical software application and internal tools tailored for high-performance aerospace operations."
             technologies={["React", "Node.js", "NestJS", "PostgreSQL", "Playwright"]}
-            imageSrc="/hodinkee.png"
-            imageAlt="Hodinkee case study"
-            caseStudyLink="/case-studies/hodinkee"
-            moreCaseStudiesLink="/our-work"
-            orientation="center"
+            imageSrc="/portfolio/dashboard.webp"
+            imageAlt="Urban Sky case study - software development for aerospace operations"
+            caseStudyLink="/case-studies/urbansky"
+            moreCaseStudiesLink="/case-studies"
+            orientation="object-right-bottom"
           />
         </Suspense>
       </div>

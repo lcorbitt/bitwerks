@@ -2,13 +2,13 @@ import { Metadata } from "next"
 import { Suspense } from "react"
 import { LocalBusinessSchema } from "@/components/schema"
 import { getLocationFromParams, type LocationData } from "@/lib/location"
-import { Hero } from "@/app/web-development/hero"
-import Services from "@/app/web-development/services"
+import { Hero } from "@/app/software-development/hero"
+import Services from "@/app/software-development/services"
 import { Process } from "@/components/sections/process"
 import dynamic from "next/dynamic"
 
 // Lazy load components below the fold
-const LazyFAQSection = dynamic(() => import("@/components/ui/faq-section").then(mod => ({ default: mod.FAQSection })), {
+const LazyFAQSection = dynamic(() => import("@/app/software-development/faq").then(mod => ({ default: mod.FAQSection })), {
   loading: () => <div className="py-16 md:py-20 lg:py-24 bg-white dark:bg-black">
     <div className="container">
       <div className="animate-pulse">
@@ -23,7 +23,7 @@ const LazyFAQSection = dynamic(() => import("@/components/ui/faq-section").then(
   </div>
 })
 
-const LazyWhyChooseUs = dynamic(() => import("@/app/web-development/why-choose-us"), {
+const LazyWhyChooseUs = dynamic(() => import("@/app/software-development/why-choose-us"), {
   loading: () => <div className="py-16 md:py-20 lg:py-24 bg-white dark:bg-black">
     <div className="container">
       <div className="animate-pulse">
@@ -58,11 +58,11 @@ const LazyCTA = dynamic(() => import("@/components/sections/cta").then(mod => ({
 })
 
 export const metadata: Metadata = {
-  title: "BitWerks | Custom Web Development & Software Solutions",
-  description: "Professional web and software development based in Fort Collins, CO, serving businesses nationwide. Transform your digital presence with expert technical consulting.",
+  title: "BitWerks | Custom Software Development & Enterprise Solutions",
+  description: "Professional software development based in Fort Collins, CO, serving businesses nationwide. Transform your business with expert custom software solutions.",
   openGraph: {
-    title: "BitWerks | Custom Web Development & Software Solutions",
-    description: "Transform your business with professional web and software solutions. Based in Fort Collins, CO, serving businesses nationwide.",
+    title: "BitWerks | Custom Software Development & Enterprise Solutions",
+    description: "Transform your business with professional custom software solutions. Based in Fort Collins, CO, serving businesses nationwide.",
   },
 }
 
@@ -70,7 +70,7 @@ interface PageProps {
   searchParams?: { [key: string]: string | string[] | undefined }
 }
 
-export default async function Solutions({ searchParams = {} }: PageProps) {
+export default async function SoftwareDevelopment({ searchParams = {} }: PageProps) {
   const location: LocationData = getLocationFromParams(searchParams)
   const locationString = location.isDefault ? "nationwide" : `${location.city}, ${location.state}`
 
@@ -81,7 +81,6 @@ export default async function Solutions({ searchParams = {} }: PageProps) {
       <section className="clip-top-large-circle relative -left-[15%] h-72 w-[130%] bg-white dark:bg-primary -mt-20 md:-mt-52 z-10"></section>
       <Services />
       <section className="clip-bottom-large-circle relative -left-[15%] h-72 w-[130%] bg-white dark:bg-primary -mt-32 z-10"></section>
-      <Process />
       
       {/* Lazy loaded sections below the fold */}
       <Suspense fallback={<div className="py-16 md:py-20 lg:py-24 bg-white dark:bg-black">
@@ -120,6 +119,8 @@ export default async function Solutions({ searchParams = {} }: PageProps) {
       </div>}>
         <LazyWhyChooseUs />
       </Suspense>
+
+      <Process />
       
       <Suspense fallback={<div className="py-16 md:py-20 lg:py-24 bg-light dark:bg-tertiary">
         <div className="container">
@@ -134,4 +135,4 @@ export default async function Solutions({ searchParams = {} }: PageProps) {
       </Suspense>
     </div>
   )
-}
+} 
