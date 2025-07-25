@@ -1,16 +1,61 @@
 import { Metadata } from "next"
+import { Suspense } from "react"
 import { LocalBusinessSchema } from "@/components/schema"
 import { getLocationFromParams, type LocationData } from "@/lib/location"
 import { Hero } from "@/app/web-development/hero"
 import Services from "@/app/web-development/services"
-import { FAQSection } from "@/components/ui/faq-section"
-import WhyChooseUs from "@/app/web-development/why-choose-us"
-// import { Heading2 } from "@/components/ui/heading"
-// import { TechMarqueeSection } from "@/components/sections/tech-marquee-section"
-// import { Partners } from "@/components/sections/partners"
 import { Process } from "@/components/sections/process"
-import { CTA } from "@/components/sections/cta"
-import { CaseStudy } from "@/components/ui/case-study"
+import dynamic from "next/dynamic"
+
+// Lazy load components below the fold
+const LazyFAQSection = dynamic(() => import("@/components/ui/faq-section").then(mod => ({ default: mod.FAQSection })), {
+  loading: () => <div className="py-16 md:py-20 lg:py-24 bg-white dark:bg-black">
+    <div className="container">
+      <div className="animate-pulse">
+        <div className="h-8 bg-gray-200 dark:bg-gray-800 rounded w-1/3 mb-8"></div>
+        <div className="space-y-4">
+          {[...Array(6)].map((_, i) => (
+            <div key={i} className="h-16 bg-gray-200 dark:bg-gray-800 rounded"></div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+})
+
+const LazyWhyChooseUs = dynamic(() => import("@/app/web-development/why-choose-us"), {
+  loading: () => <div className="py-16 md:py-20 lg:py-24 bg-white dark:bg-black">
+    <div className="container">
+      <div className="animate-pulse">
+        <div className="h-8 bg-gray-200 dark:bg-gray-800 rounded w-1/2 mb-8"></div>
+        <div className="grid md:grid-cols-3 gap-8">
+          {[...Array(3)].map((_, i) => (
+            <div key={i} className="space-y-4">
+              <div className="h-12 w-12 bg-gray-200 dark:bg-gray-800 rounded"></div>
+              <div className="h-6 bg-gray-200 dark:bg-gray-800 rounded w-3/4"></div>
+              <div className="space-y-2">
+                <div className="h-4 bg-gray-200 dark:bg-gray-800 rounded"></div>
+                <div className="h-4 bg-gray-200 dark:bg-gray-800 rounded w-5/6"></div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+})
+
+const LazyCTA = dynamic(() => import("@/components/sections/cta").then(mod => ({ default: mod.CTA })), {
+  loading: () => <div className="py-16 md:py-20 lg:py-24 bg-light dark:bg-tertiary">
+    <div className="container">
+      <div className="animate-pulse text-center">
+        <div className="h-8 bg-gray-200 dark:bg-gray-800 rounded w-1/2 mx-auto mb-4"></div>
+        <div className="h-6 bg-gray-200 dark:bg-gray-800 rounded w-3/4 mx-auto mb-8"></div>
+        <div className="h-12 bg-gray-200 dark:bg-gray-800 rounded w-48 mx-auto"></div>
+      </div>
+    </div>
+  </div>
+})
 
 export const metadata: Metadata = {
   title: "BitWerks | Custom Web Development & Software Solutions",
@@ -29,69 +74,6 @@ export default async function Solutions({ searchParams = {} }: PageProps) {
   const location: LocationData = getLocationFromParams(searchParams)
   const locationString = location.isDefault ? "nationwide" : `${location.city}, ${location.state}`
 
-  const webDevelopmentServices = [
-    {
-      title: "Responsive Websites",
-      description: "Tailored web solutions built from the ground up to meet your specific business requirements.",
-      features: [
-        "Optimized for all devices with a fully responsive layout",
-        "Built with clean, scalable, and maintainable code architecture",
-        "Designed for fast load times and high performance",
-      ],
-      icon: "📱",
-    },
-    {
-      title: "Custom Software",
-      description: "Complete online store development with payment processing and inventory management.",
-      features: [
-        "Tailored solutions designed around your unique workflows",
-        "Streamlined internal tools to increase team productivity",
-        "Scalable systems built to grow with your organization",
-      ],
-      icon: "⚙️",
-    },
-    {
-      title: "E-commerce Solutions",
-      description: "End-to-end online shopping platforms with secure payment gateways and seamless product management.",
-      features: [
-        "User-friendly storefronts optimized for conversions and engagement",
-        "Integrated payment processing with multiple options and currencies",
-        "Robust inventory and order management to keep your business running smoothly"
-      ],
-      icon: "🛒",
-    },
-    {
-      title: "Customer Relationship Management (CRM)",
-      description: "Custom CRM solutions for managing your customer relationships and sales pipeline.",
-      features: [
-        "Centralized customer data for easy access and management",
-        "Automated sales pipeline tracking",
-        "Customizable dashboards and reports",
-      ],
-      icon: "🤝",
-    },
-    {
-      title: "Web Portals & Dashboards",
-      description: "Custom portals and dashboards for data visualization and business intelligence.",
-      features: [
-        "Real-time data visualization",
-        "User role management",
-        "Data export capabilities",
-      ],
-      icon: "📊",
-    },
-    {
-      title: "API Development",
-      description: "Robust API development for seamless integration with third-party services.",
-      features: [
-        "RESTful API design",
-        "Authentication & authorization",
-        "Comprehensive documentation",
-      ],
-      icon: "🔗",
-    },
-  ]
-
   return (
     <div className="flex flex-col overflow-hidden">
       <LocalBusinessSchema location={location} />
@@ -99,12 +81,57 @@ export default async function Solutions({ searchParams = {} }: PageProps) {
       <section className="clip-top-large-circle relative -left-[15%] h-72 w-[130%] bg-white dark:bg-primary -mt-20 md:-mt-52 z-10"></section>
       <Services />
       <section className="clip-bottom-large-circle relative -left-[15%] h-72 w-[130%] bg-white dark:bg-primary -mt-32 z-10"></section>
-      <FAQSection />
-      <WhyChooseUs />
-      {/* <TechMarqueeSection /> */}
-      {/* <Partners /> */}
       <Process />
-      <CTA />
+      
+      {/* Lazy loaded sections below the fold */}
+      <Suspense fallback={<div className="py-16 md:py-20 lg:py-24 bg-white dark:bg-black">
+        <div className="container">
+          <div className="animate-pulse">
+            <div className="h-8 bg-gray-200 dark:bg-gray-800 rounded w-1/3 mb-8"></div>
+            <div className="space-y-4">
+              {[...Array(6)].map((_, i) => (
+                <div key={i} className="h-16 bg-gray-200 dark:bg-gray-800 rounded"></div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>}>
+        <LazyFAQSection />
+      </Suspense>
+      
+      <Suspense fallback={<div className="py-16 md:py-20 lg:py-24 bg-white dark:bg-black">
+        <div className="container">
+          <div className="animate-pulse">
+            <div className="h-8 bg-gray-200 dark:bg-gray-800 rounded w-1/2 mb-8"></div>
+            <div className="grid md:grid-cols-3 gap-8">
+              {[...Array(3)].map((_, i) => (
+                <div key={i} className="space-y-4">
+                  <div className="h-12 w-12 bg-gray-200 dark:bg-gray-800 rounded"></div>
+                  <div className="h-6 bg-gray-200 dark:bg-gray-800 rounded w-3/4"></div>
+                  <div className="space-y-2">
+                    <div className="h-4 bg-gray-200 dark:bg-gray-800 rounded"></div>
+                    <div className="h-4 bg-gray-200 dark:bg-gray-800 rounded w-5/6"></div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>}>
+        <LazyWhyChooseUs />
+      </Suspense>
+      
+      <Suspense fallback={<div className="py-16 md:py-20 lg:py-24 bg-light dark:bg-tertiary">
+        <div className="container">
+          <div className="animate-pulse text-center">
+            <div className="h-8 bg-gray-200 dark:bg-gray-800 rounded w-1/2 mx-auto mb-4"></div>
+            <div className="h-6 bg-gray-200 dark:bg-gray-800 rounded w-3/4 mx-auto mb-8"></div>
+            <div className="h-12 bg-gray-200 dark:bg-gray-800 rounded w-48 mx-auto"></div>
+          </div>
+        </div>
+      </div>}>
+        <LazyCTA />
+      </Suspense>
     </div>
   )
 }
