@@ -1,213 +1,137 @@
 import { Metadata } from "next"
-import Link from "next/link"
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import { CaseStudy } from "@/components/ui/case-study"
-import { Heading2 } from "@/components/ui/heading"
-import { FAQSection } from "@/components/ui/faq-section"
-import { Process } from "@/components/sections/process"
-import { CTA } from "@/components/sections/cta"
-import DeviceShowcase from "@/components/ui/device-showcase"
+import { Suspense } from "react"
+import { LocalBusinessSchema } from "@/components/schema"
+import { getLocationFromParams, type LocationData } from "@/lib/location"
 import { Hero } from "@/app/web-development/hero"
+import Services from "@/app/web-development/services"
+import { Process } from "@/components/sections/process"
+import dynamic from "next/dynamic"
+
+// Lazy load components below the fold
+const LazyFAQSection = dynamic(() => import("@/components/ui/faq-section").then(mod => ({ default: mod.FAQSection })), {
+  loading: () => <div className="py-16 md:py-20 lg:py-24 bg-white dark:bg-black">
+    <div className="container">
+      <div className="animate-pulse">
+        <div className="h-8 bg-gray-200 dark:bg-gray-800 rounded w-1/3 mb-8"></div>
+        <div className="space-y-4">
+          {[...Array(6)].map((_, i) => (
+            <div key={i} className="h-16 bg-gray-200 dark:bg-gray-800 rounded"></div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+})
+
+const LazyWhyChooseUs = dynamic(() => import("@/app/web-development/why-choose-us"), {
+  loading: () => <div className="py-16 md:py-20 lg:py-24 bg-white dark:bg-black">
+    <div className="container">
+      <div className="animate-pulse">
+        <div className="h-8 bg-gray-200 dark:bg-gray-800 rounded w-1/2 mb-8"></div>
+        <div className="grid md:grid-cols-3 gap-8">
+          {[...Array(3)].map((_, i) => (
+            <div key={i} className="space-y-4">
+              <div className="h-12 w-12 bg-gray-200 dark:bg-gray-800 rounded"></div>
+              <div className="h-6 bg-gray-200 dark:bg-gray-800 rounded w-3/4"></div>
+              <div className="space-y-2">
+                <div className="h-4 bg-gray-200 dark:bg-gray-800 rounded"></div>
+                <div className="h-4 bg-gray-200 dark:bg-gray-800 rounded w-5/6"></div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+})
+
+const LazyCTA = dynamic(() => import("@/components/sections/cta").then(mod => ({ default: mod.CTA })), {
+  loading: () => <div className="py-16 md:py-20 lg:py-24 bg-light dark:bg-tertiary">
+    <div className="container">
+      <div className="animate-pulse text-center">
+        <div className="h-8 bg-gray-200 dark:bg-gray-800 rounded w-1/2 mx-auto mb-4"></div>
+        <div className="h-6 bg-gray-200 dark:bg-gray-800 rounded w-3/4 mx-auto mb-8"></div>
+        <div className="h-12 bg-gray-200 dark:bg-gray-800 rounded w-48 mx-auto"></div>
+      </div>
+    </div>
+  </div>
+})
 
 export const metadata: Metadata = {
-  title: "Web Development Services | BitWerks",
-  description: "Professional web development services including custom web applications, e-commerce solutions, and modern web technologies.",
+  title: "BitWerks | Custom Web Development & Software Solutions",
+  description: "Professional web and software development based in Fort Collins, CO, serving businesses nationwide. Transform your digital presence with expert technical consulting.",
   openGraph: {
-    title: "Web Development Services | BitWerks",
-    description: "Transform your business with professional web development solutions. Custom web applications, e-commerce, and modern technologies.",
+    title: "BitWerks | Custom Web Development & Software Solutions",
+    description: "Transform your business with professional web and software solutions. Based in Fort Collins, CO, serving businesses nationwide.",
   },
 }
 
-const webDevelopmentServices = [
-  {
-    title: "Responsive Websites",
-    description: "Tailored web solutions built from the ground up to meet your specific business requirements.",
-    features: [
-      "Optimized for all devices with a fully responsive layout",
-      "Built with clean, scalable, and maintainable code architecture",
-      "Designed for fast load times and high performance",
-    ],
-    icon: "📱",
-  },
-  {
-    title: "Custom Software",
-    description: "Complete online store development with payment processing and inventory management.",
-    features: [
-      "Tailored solutions designed around your unique workflows",
-      "Streamlined internal tools to increase team productivity",
-      "Scalable systems built to grow with your organization",
-    ],
-    icon: "⚙️",
-  },
-  {
-    title: "E-commerce Solutions",
-    description: "End-to-end online shopping platforms with secure payment gateways and seamless product management.",
-    features: [
-      "User-friendly storefronts optimized for conversions and engagement",
-      "Integrated payment processing with multiple options and currencies",
-      "Robust inventory and order management to keep your business running smoothly"
-    ],
-    icon: "🛒",
-  },
-  {
-    title: "Customer Relationship Management (CRM)",
-    description: "Custom CRM solutions for managing your customer relationships and sales pipeline.",
-    features: [
-      "Centralized customer data for easy access and management",
-      "Automated sales pipeline tracking",
-      "Customizable dashboards and reports",
-    ],
-    icon: "🤝",
-  },
-  {
-    title: "Web Portals & Dashboards",
-    description: "Custom portals and dashboards for data visualization and business intelligence.",
-    features: [
-      "Interactive charts and graphs",
-      "User role management",
-      "Data export capabilities",
-    ],
-    icon: "📊",
-  },
-  {
-    title: "API Development",
-    description: "Robust API development for seamless integration with third-party services.",
-    features: [
-      "RESTful API design",
-      "Authentication & authorization",
-      "Comprehensive documentation",
-    ],
-    icon: "🔗",
-  },
-]
+interface PageProps {
+  searchParams?: { [key: string]: string | string[] | undefined }
+}
 
-export default function WebDevelopmentPage() {
+export default async function Solutions({ searchParams = {} }: PageProps) {
+  const location: LocationData = getLocationFromParams(searchParams)
+  const locationString = location.isDefault ? "nationwide" : `${location.city}, ${location.state}`
+
   return (
-    <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative overflow-hidden bg-light dark:bg-tertiary">
-        <div className="container">
-          <div className="mx-auto lg:grid lg:items-center lg:gap-8 lg:grid-cols-2">
-            {/* Text content */}
-            <div className="flex flex-col text-center lg:text-left w-full">
-              <p className="mb-2 text-muted-light dark:text-muted-dark tracking-widest font-normal">
-                WEB DEVELOPMENT
-              </p>
-              <h1 className="mb-6 text-5xl font-bold tracking-tight text-gray-900 dark:text-white md:text-6xl">
-                Engaging, performant
-                <br />
-                <span className="text-brand">websites</span>.
-              </h1>
-              <p className="mb-8 text-lg text-gray-600 dark:text-gray-300">
-                Work with a dedicated expert to design and develop your website or web app that looks great and performs even better.
-              </p>
-              <div className="flex flex-col gap-4 sm:flex-row lg:justify-start sm:justify-center">
-                <Button variant="default" size="lg" asChild>
-                  <Link href="/contact">Get Started</Link>
-                </Button>
-              </div>
-            </div>
-
-            {/* Image - hidden on smaller screens */}
-            <div className="hidden lg:flex relative items-center justify-end">
-              <div className="w-full h-auto max-w-[450px]">
-                <Image
-                  src="/web-development.jpg"
-                  alt="Web developer image"
-                  width={500}
-                  height={500}
-                  priority
-                  className="w-full h-auto object-contain rounded-l-lg"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Services Overview */}
-      {/* Smooth curved divider (top) */}
-      <div className="w-full h-16 md:h-24 overflow-hidden -mb-1 bg-white dark:bg-primary">
-        <svg
-          viewBox="0 0 1440 96"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-full h-full text-light dark:text-tertiary"
-          preserveAspectRatio="none"
-        >
-          <path
-            d="M0 0H1440V36C1440 36 1296 0 720 0C144 0 0 36 0 36V0Z"
-            fill="currentColor"
-          />
-        </svg>
-      </div>
-      
-      <section className="bg-white dark:bg-black pt-0">
-        <div className="container">
-          <div className="mx-auto max-w-4xl text-center mb-16">
-            <Heading2 className="mb-6">
-              Web Development Services We Provide
-            </Heading2>
-            <p className="text-xl text-muted-light dark:text-muted-dark">
-              From simple websites to complex enterprise solutions, we deliver results that drive growth.
-            </p>
-          </div>
-
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {webDevelopmentServices.map((service) => (
-              <div key={service.title} className="bg-white dark:bg-tertiary rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
-                <div className="mb-6 text-4xl">{service.icon}</div>
-                <h3 className="mb-4 text-2xl font-bold text-gray-900 dark:text-white">{service.title}</h3>
-                <p className="mb-6 text-gray-600 dark:text-gray-300 leading-relaxed">{service.description}</p>
-                <ul className="space-y-3">
-                  {service.features.map((feature) => (
-                    <li key={feature} className="flex items-start text-gray-600 dark:text-gray-300">
-                      <span className="mr-3 mt-1 text-brand flex-shrink-0">✓</span>
-                      <span className="text-sm leading-relaxed">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <div className="pt-20 pb-10 bg-white dark:bg-primary">
-        <CaseStudy
-          title="Case Study"
-          company="Urban Sky"
-          description="By partnering with BitWerks, Urban Sky accelerated the development of a robust, mission-critical web application and internal tools tailored for high-performance aerospace operations."
-          technologies={["React", "Node.js", "NestJS", "PostgreSQL", "Playwright"]}
-          imageSrc="/portfolio/dashboard.webp"
-          imageAlt="TechCorp case study - developer working on web application"
-          caseStudyLink="/case-studies/techcorp"
-          moreCaseStudiesLink="/case-studies"
-        />
-      </div>
-      
-      
-      {/* Smooth curved divider (bottom, mirrored) */}
-      <div className="w-full h-16 md:h-24 overflow-hidden -mt-1 dark:bg-primary rotate-180">
-        <svg
-          viewBox="0 0 1440 96"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-full h-full text-light dark:text-tertiary"
-          preserveAspectRatio="none"
-        >
-          <path
-            d="M0 0H1440V36C1440 36 1296 0 720 0C144 0 0 36 0 36V0Z"
-            fill="currentColor"
-          />
-        </svg>
-      </div>
-
-      <FAQSection />
+    <div className="flex flex-col overflow-hidden">
+      <LocalBusinessSchema location={location} />
+      <Hero locationString={locationString} />
+      <section className="clip-top-large-circle relative -left-[15%] h-72 w-[130%] bg-white dark:bg-primary -mt-20 md:-mt-52 z-10"></section>
+      <Services />
+      <section className="clip-bottom-large-circle relative -left-[15%] h-72 w-[130%] bg-white dark:bg-primary -mt-32 z-10"></section>
       <Process />
-      <DeviceShowcase />
-      <CTA />
+      
+      {/* Lazy loaded sections below the fold */}
+      <Suspense fallback={<div className="py-16 md:py-20 lg:py-24 bg-white dark:bg-black">
+        <div className="container">
+          <div className="animate-pulse">
+            <div className="h-8 bg-gray-200 dark:bg-gray-800 rounded w-1/3 mb-8"></div>
+            <div className="space-y-4">
+              {[...Array(6)].map((_, i) => (
+                <div key={i} className="h-16 bg-gray-200 dark:bg-gray-800 rounded"></div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>}>
+        <LazyFAQSection />
+      </Suspense>
+      
+      <Suspense fallback={<div className="py-16 md:py-20 lg:py-24 bg-white dark:bg-black">
+        <div className="container">
+          <div className="animate-pulse">
+            <div className="h-8 bg-gray-200 dark:bg-gray-800 rounded w-1/2 mb-8"></div>
+            <div className="grid md:grid-cols-3 gap-8">
+              {[...Array(3)].map((_, i) => (
+                <div key={i} className="space-y-4">
+                  <div className="h-12 w-12 bg-gray-200 dark:bg-gray-800 rounded"></div>
+                  <div className="h-6 bg-gray-200 dark:bg-gray-800 rounded w-3/4"></div>
+                  <div className="space-y-2">
+                    <div className="h-4 bg-gray-200 dark:bg-gray-800 rounded"></div>
+                    <div className="h-4 bg-gray-200 dark:bg-gray-800 rounded w-5/6"></div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>}>
+        <LazyWhyChooseUs />
+      </Suspense>
+      
+      <Suspense fallback={<div className="py-16 md:py-20 lg:py-24 bg-light dark:bg-tertiary">
+        <div className="container">
+          <div className="animate-pulse text-center">
+            <div className="h-8 bg-gray-200 dark:bg-gray-800 rounded w-1/2 mx-auto mb-4"></div>
+            <div className="h-6 bg-gray-200 dark:bg-gray-800 rounded w-3/4 mx-auto mb-8"></div>
+            <div className="h-12 bg-gray-200 dark:bg-gray-800 rounded w-48 mx-auto"></div>
+          </div>
+        </div>
+      </div>}>
+        <LazyCTA />
+      </Suspense>
     </div>
   )
 }

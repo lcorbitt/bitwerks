@@ -83,7 +83,7 @@ export function CaseStudy({
               src={imageSrc}
               alt={imageAlt}
               fill
-              className="object-cover"
+              className="object-cover object-right-bottom"
             />
           </div>
         </div>
