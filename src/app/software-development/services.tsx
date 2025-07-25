@@ -74,14 +74,14 @@ const softwareDevelopmentServices = [
     icon: "🔗",
   },
   {
-    title: "Database Design & Management",
-    description: "Custom database solutions and data management systems to organize and optimize your business information.",
+    title: "QA and Testing",
+    description: "Comprehensive quality assurance and testing services to ensure your software is reliable, secure, and performs optimally.",
     features: [
-      "Custom database schema design and optimization",
-      "Data migration and integration services",
-      "Performance tuning and monitoring solutions",
+      "Automated testing for consistent and efficient validation",
+      "Manual testing to cover edge cases and user experience",
+      "Continuous integration and delivery for rapid feedback",
     ],
-    icon: "🗄️",
+    icon: "🧪",
   },
   {
     title: "SaaS Applications",
