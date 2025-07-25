@@ -8,6 +8,7 @@ import { FAQSection } from "@/components/ui/faq-section"
 import { Process } from "@/components/sections/process"
 import { CTA } from "@/components/sections/cta"
 import DeviceShowcase from "@/components/ui/device-showcase"
+import { Hero } from "@/app/web-development/hero"
 
 export const metadata: Metadata = {
   title: "Web Development Services | BitWerks",
@@ -63,11 +64,9 @@ const webDevelopmentServices = [
     title: "Web Portals & Dashboards",
     description: "Custom portals and dashboards for data visualization and business intelligence.",
     features: [
-      "Real-time data visualization",
       "Interactive charts and graphs",
       "User role management",
       "Data export capabilities",
-      "Responsive design",
     ],
     icon: "📊",
   },
@@ -76,9 +75,7 @@ const webDevelopmentServices = [
     description: "Robust API development for seamless integration with third-party services.",
     features: [
       "RESTful API design",
-      "GraphQL implementation",
       "Authentication & authorization",
-      "Rate limiting",
       "Comprehensive documentation",
     ],
     icon: "🔗",
@@ -113,15 +110,15 @@ export default function WebDevelopmentPage() {
             </div>
 
             {/* Image - hidden on smaller screens */}
-            <div className="hidden lg:flex relative items-center justify-center p-4">
+            <div className="hidden lg:flex relative items-center justify-end">
               <div className="w-full h-auto max-w-[450px]">
                 <Image
-                  src="/hero.svg"
-                  alt="Web development illustration"
+                  src="/web-development.jpg"
+                  alt="Web developer image"
                   width={500}
-                  height={400}
+                  height={500}
                   priority
-                  className="w-full h-auto object-contain"
+                  className="w-full h-auto object-contain rounded-l-lg"
                 />
               </div>
             </div>
@@ -146,7 +143,7 @@ export default function WebDevelopmentPage() {
         </svg>
       </div>
       
-      <section className="bg-white dark:bg-black">
+      <section className="bg-white dark:bg-black pt-0">
         <div className="container">
           <div className="mx-auto max-w-4xl text-center mb-16">
             <Heading2 className="mb-6">

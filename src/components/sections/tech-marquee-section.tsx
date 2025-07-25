@@ -24,7 +24,7 @@ export const TechMarqueeSection = () => {
   }, []);
 
   return (
-    <section className="relative dark:bg-tertiary bg-light pt-52 md:pt-72 -mt-20">
+    <section className="relative dark:bg-tertiary bg-light pt-56 md:pt-80 -mt-20">
       {/* Devices image at the top center, overlapping the divider */}
       <div className="absolute inset-x-0 -top-24 md:-top-44 z-20 flex justify-center">
         <Image 

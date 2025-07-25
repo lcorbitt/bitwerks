@@ -28,7 +28,7 @@ export function Services({ locationString, isDefault }: ServicesProps) {
         </svg>
       </div> */}
       
-      <section className="bg-white dark:bg-black pt-0 pb-0 -mt-48 z-20">
+      <section className="bg-white dark:bg-black pt-0 pb-0 md:pb-16 -mt-48 z-20">
         <div className="container">
           <div className="mx-auto max-w-2xl text-center">
             <p className="mb-2 text-muted-light dark:text-muted-dark tracking-widest font-normal">

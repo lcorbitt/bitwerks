@@ -7,7 +7,6 @@ import { TechMarqueeSection } from "@/components/sections/tech-marquee-section"
 import { Partners } from "@/components/sections/partners"
 import { Process } from "@/components/sections/process"
 import { CTA } from "@/components/sections/cta"
-import { WaveGraphic } from "@/components/ui/wave-graphic"
 
 export const metadata: Metadata = {
   title: "BitWerks | Custom Web Development & Software Solutions",
@@ -30,7 +29,6 @@ export default async function Home({ searchParams = {} }: PageProps) {
     <div className="flex flex-col overflow-hidden">
       <LocalBusinessSchema location={location} />
       <Hero locationString={locationString} />
-      
       {/* Curved section divider */}
       <section className="clip-top-large-circle relative -left-[15%] h-72 w-[130%] bg-white dark:bg-primary -mt-20 md:-mt-52 z-10"></section>
       <Services locationString={locationString} isDefault={location.isDefault} />

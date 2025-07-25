@@ -1,21 +1,22 @@
 "use client"
 
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import { Heading2 } from "./heading"
 
 export function FAQSection() {
   return (
-    <section className="bg-light dark:bg-tertiary">
+    <section className="bg-light dark:bg-tertiary pt-40 -mt-20">
       <div className="container">
-        <div className="mx-auto max-w-4xl text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
+        <div className="mx-auto text-center mb-16">
+          <Heading2 className="mb-6">
             FAQs
-          </h2>
+          </Heading2>
           <p className="text-lg text-gray-600 dark:text-gray-300">
             Common questions about our web development services and process.
           </p>
         </div>
         
-        <div className="mx-auto max-w-3xl">
+        <div className="mx-auto w-full">
           <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="item-1">
               <AccordionTrigger className="text-lg font-semibold text-gray-900 dark:text-white">

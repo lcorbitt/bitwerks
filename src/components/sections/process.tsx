@@ -16,13 +16,11 @@ export function Process() {
             <span className="text-brand">.</span>
           </h2>
           <div className="w-full max-w-xs my-8">
-            <div className="relative aspect-[4/3] my-8">
-              <Image
-                src="/se-2.svg"
-                alt="Our Process"
-                fill
-                className="object-cover"
-              />
+            <div 
+              className="relative aspect-[4/3] my-8 w-full h-full"
+              style={{ clipPath: 'polygon(0% 0%, 75% 0%, 100% 100%, 25% 100%)' }}
+            >
+              <Image src="/process.jpg" alt="Our Process" fill className="object-cover object-center" />
             </div>
           </div>
         </div>

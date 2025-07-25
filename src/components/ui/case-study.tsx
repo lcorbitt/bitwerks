@@ -57,7 +57,7 @@ export function CaseStudy({
             {technologies.map((tech) => (
               <span
                 key={tech}
-                className="px-4 py-2 bg-gray-800 dark:bg-gray-700 text-white text-sm font-medium rounded-full"
+                className="px-4 py-2 bg-accent/50 text-white text-sm font-medium rounded-full"
               >
                 {tech}
               </span>
