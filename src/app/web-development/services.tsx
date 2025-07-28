@@ -1,3 +1,4 @@
+import { DecorativeCircles } from "@/components/ui/decorative-circles"
 import { Heading2 } from "@/components/ui/heading"
 import dynamic from "next/dynamic"
 import { Suspense } from "react"
@@ -107,7 +108,8 @@ const webDevelopmentServices = [
 
 export default function Services() {
   return (
-    <section className="bg-white dark:bg-black py-0 -mt-48 z-20">
+    <section className="bg-white dark:bg-black py-0 -mt-48 z-20 relative">
+      <DecorativeCircles />
       <div className="container pt-0">
         <div className="mx-auto max-w-4xl text-center mb-16">
           <Suspense fallback={<div className="pb-20">
@@ -138,7 +140,7 @@ export default function Services() {
             <div key={service.title} className="bg-white dark:bg-tertiary rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
               <div className="mb-6 text-4xl">{service.icon}</div>
               <h3 className="mb-4 text-2xl font-bold text-gray-900 dark:text-white">{service.title}</h3>
-              <p className="mb-6 text-gray-600 dark:text-gray-300 leading-relaxed">{service.description}</p>
+              {/* <p className="mb-6 text-gray-600 dark:text-gray-300 leading-relaxed">{service.description}</p> */}
               <ul className="space-y-3">
                 {service.features.map((feature) => (
                   <li key={feature} className="flex items-start text-gray-600 dark:text-gray-300">
@@ -176,7 +178,7 @@ export default function Services() {
             title="Case Study"
             company="Hodinkee"
             description="In collaboration with BitWerks, Hodinkee successfully implemented a new design system, improved the user experience of their applications, and developed essential internal tools to enhance operational efficiency."
-            technologies={["React", "Node.js", "NestJS", "PostgreSQL", "Playwright"]}
+            technologies={["React", "Tailwind", "Ruby on Rails", "RSpec", "PostgreSQL"]}
             imageSrc="/hodinkee.png"
             imageAlt="Hodinkee case study"
             caseStudyLink="/case-studies/hodinkee"

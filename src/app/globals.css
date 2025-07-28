@@ -29,8 +29,36 @@
     clip-path: ellipse(50% 45% at 50% 50%);
   }
   .clip-bottom-large-circle {
+    z-index: 0;
     @apply p-0;
     clip-path: ellipse(50% 45% at 50% 50%);
+  }
+  
+  /* Custom bounce animations for decorative circles */
+  .animate-bounce-slow {
+    animation: bounce-slow 6s ease-in-out infinite;
+  }
+  
+  .animate-bounce-slower {
+    animation: bounce-slower 8s ease-in-out infinite;
+  }
+  
+  @keyframes bounce-slow {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-50px);
+    }
+  }
+  
+  @keyframes bounce-slower {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-40px);
+    }
   }
 }
 

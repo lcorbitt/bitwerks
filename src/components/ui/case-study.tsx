@@ -28,7 +28,7 @@ export function CaseStudy({
   className = "",
 }: CaseStudyProps) {
   return (
-    <div className={`w-full lg:w-2/3 lg:mx-auto bg-light dark:bg-tertiary rounded-xl p-8 shadow-lg dark:shadow-2xl ${className}`}>
+    <div className={`w-full lg:w-2/3 lg:mx-auto bg-light dark:bg-tertiary rounded-xl p-8 shadow-lg dark:shadow-2xl z-20 ${className}`}>
       <div className="grid lg:grid-cols-2 gap-8 items-center">
         {/* Left Section - Text Content */}
         <div className="space-y-6">

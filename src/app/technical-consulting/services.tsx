@@ -1,10 +1,10 @@
-import { DecorativeCircles } from "@/components/ui/decorative-circles"
 import { Heading2 } from "@/components/ui/heading"
 import dynamic from "next/dynamic"
 import { Suspense } from "react"
+import { DecorativeCircles } from "@/components/ui/decorative-circles"
 
 // Lazy load heavy components
-const LazyDeviceShowcase = dynamic(() => import("@/components/ui/software-showcase"), {
+const LazyDeviceShowcase = dynamic(() => import("@/components/ui/device-showcase"), {
   loading: () => <div className="pb-20">
     <div className="container">
       <div className="animate-pulse">
@@ -43,73 +43,74 @@ const LazyCaseStudy = dynamic(() => import("@/components/ui/case-study").then(mo
   </div>
 })
 
-const softwareDevelopmentServices = [
+const technicalConsultingServices = [
   {
-    title: "Custom Application Development",
-    description: "Tailored software solutions built from the ground up to meet your specific business requirements and workflows.",
+    title: "Technology Strategy & Planning",
+    description: "Comprehensive technology roadmaps and strategic planning to align your technical decisions with business goals.",
     features: [
-      "Scalable architecture designed for growth and performance",
-      "Built with clean, maintainable code and best practices",
-      "Comprehensive testing and quality assurance processes",
+      "Technology stack evaluation and recommendations",
+      "Digital transformation strategy development",
+      "Scalability and growth planning",
     ],
-    icon: "💻",
+    icon: "📋",
   },
   {
-    title: "Enterprise Software Solutions",
-    description: "Robust enterprise-grade applications designed to handle complex business processes and large-scale operations.",
+    title: "Architecture & System Design",
+    description: "Expert guidance on system architecture, infrastructure planning, and technical design decisions.",
     features: [
-      "High-performance systems built for enterprise workloads",
-      "Advanced security and compliance features",
-      "Integration with existing enterprise infrastructure",
+      "System architecture reviews and recommendations",
+      "Infrastructure planning and optimization",
+      "Security and performance best practices",
     ],
-    icon: "🏢",
+    icon: "🏗️",
   },
   {
-    title: "API Development & Integration",
-    description: "Comprehensive API development and third-party system integration to connect your business applications seamlessly.",
+    title: "Technology Selection & Evaluation",
+    description: "Help choosing the right technologies, platforms, and tools for your specific needs and budget.",
     features: [
-      "RESTful and GraphQL API design and development",
-      "Secure authentication and authorization systems",
-      "Comprehensive documentation and developer tools",
+      "Technology comparison and evaluation",
+      "Cost-benefit analysis of different solutions",
+      "Vendor and platform recommendations",
     ],
-    icon: "🔗",
+    icon: "🔍",
   },
   {
-    title: "QA and Testing",
-    description: "Comprehensive quality assurance and testing services to ensure your software is reliable, secure, and performs optimally.",
+    title: "Technical Problem Solving",
+    description: "Expert troubleshooting and problem-solving for complex technical challenges and system issues.",
     features: [
-      "Automated testing for consistent and efficient validation",
-      "Manual testing to cover edge cases and user experience",
-      "Continuous integration and delivery for rapid feedback",
+      "Performance optimization and debugging",
+      "Integration challenges and solutions",
+      "Technical debt assessment and remediation",
     ],
-    icon: "🧪",
+    icon: "🛠️",
   },
   {
-    title: "SaaS Applications",
-    description: "Innovative SaaS applications designed for scalability, reliability, and cost-effectiveness.",
+    title: "Team Training & Knowledge Transfer",
+    description: "Training and knowledge sharing to help your team understand and work with new technologies.",
     features: [
-      "Scalable multi-tenant architecture with containerization",
-      "Efficient cloud deployment and infrastructure management",
-      "Dynamic auto-scaling and load balancing for optimal performance",
+      "Technology training and workshops",
+      "Best practices and coding standards",
+      "Documentation and process improvement",
     ],
-    icon: "☁️",
+    icon: "👥",
   },
   {
-    title: "Legacy System Modernization",
-    description: "Transform and modernize existing legacy systems to improve performance, security, and maintainability.",
+    title: "Project Planning & Estimation",
+    description: "Realistic project planning, timeline estimation, and resource allocation for technical projects.",
     features: [
-      "Legacy code analysis and refactoring",
-      "Technology stack modernization",
-      "Gradual migration strategies to minimize disruption",
+      "Project scope definition and planning",
+      "Timeline and resource estimation",
+      "Risk assessment and mitigation strategies",
     ],
-    icon: "🔄",
+    icon: "📅",
   },
 ]
 
 export default function Services() {
   return (
-    <section className="bg-white dark:bg-black py-0 -mt-48 z-20 relative">
+    <section className="bg-white dark:bg-black py-0 -mt-48 z-50 relative">
       <DecorativeCircles />
+      
       <div className="container pt-0">
         <div className="mx-auto max-w-4xl text-center mb-16">
           <Suspense fallback={<div className="pb-20">
@@ -124,19 +125,19 @@ export default function Services() {
               </div>
             </div>
           </div>}>
-          {/* <LazyDeviceShowcase /> */}
+            {/* <LazyDeviceShowcase /> */}
           </Suspense>
 
           <Heading2 className="mb-8">
-            Software Development Services We Provide
+            Technical Consulting Services We Provide
           </Heading2>
           <p className="text-xl text-muted-light dark:text-muted-dark">
-            From custom applications to enterprise solutions, we deliver robust software that drives business efficiency.
+            From strategic planning to technical problem-solving, we provide expert guidance to help you make informed technology decisions.
           </p>
         </div>
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {softwareDevelopmentServices.map((service) => (
+          {technicalConsultingServices.map((service) => (
             <div key={service.title} className="bg-white dark:bg-tertiary rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
               <div className="mb-6 text-4xl">{service.icon}</div>
               <h3 className="mb-4 text-2xl font-bold text-gray-900 dark:text-white">{service.title}</h3>
@@ -154,7 +155,7 @@ export default function Services() {
         </div>
       </div>
 
-      <div className="pt-20 px-8 bg-white dark:bg-primary max-w-screen-2xl mx-auto">
+      <div className="pt-20 px-8 bg-white dark:bg-primary max-w-screen-2xl mx-auto z-10">
         <Suspense fallback={<div className="container">
           <div className="animate-pulse">
             <div className="h-8 bg-gray-200 dark:bg-gray-800 rounded w-1/4 mb-4"></div>
@@ -176,14 +177,13 @@ export default function Services() {
         </div>}>
           <LazyCaseStudy
             title="Case Study"
-            company="Urban Sky"
-            description="By partnering with BitWerks, Urban Sky accelerated the development of a robust, mission-critical software application and internal tools tailored for high-performance aerospace operations."
-            technologies={["React", "Tailwind", "Node", "NestJS", "Playwright", "PostgreSQL"]}
-            imageSrc="/portfolio/dashboard.webp"
-            imageAlt="Urban Sky case study - software development for aerospace operations"
-            caseStudyLink="/case-studies/urbansky"
+            company="Local Manufacturing Co."
+            description="By partnering with BitWerks for technical consulting, Local Manufacturing Co. successfully modernized their technology stack and improved operational efficiency by 40% through strategic planning and implementation guidance."
+            technologies={["Technology Strategy", "System Architecture", "Digital Transformation", "Process Optimization"]}
+            imageSrc="/portfolio/consulting.webp"
+            imageAlt="Local Manufacturing Co. case study - technology consulting and digital transformation"
+            caseStudyLink="/case-studies/local-manufacturing"
             moreCaseStudiesLink="/case-studies"
-            orientation="object-right-bottom"
           />
         </Suspense>
       </div>

@@ -19,7 +19,7 @@ const services: { title: string; href: string; }[] = [
   },
   {
     title: "Technical Consulting",
-    href: "/services/consulting",
+    href: "/services/technical-consulting",
   },
 ]
 

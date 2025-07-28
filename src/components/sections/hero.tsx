@@ -55,7 +55,7 @@ export function Hero({ locationString }: HeroProps) {
               Web Development • Software Development • Technical Consulting
             </p>
             <p className="mb-8 text-basetext-muted-foreground md:text-lg mx-auto lg:mx-0 max-w-2xl lg:max-w-xl relative z-10">
-              We build custom websites and software for businesses {locationString === "nationwide" ? "across the U.S." : ` in ${locationString}.`} We focus on the technical implementation so you can focus on what you do best.
+              We build custom websites and software for small businesses {locationString === "nationwide" ? "across the U.S." : ` in ${locationString}.`} We focus on the technical implementation so you can focus on what you do best.
             </p>
             <div className="flex gap-4 justify-center lg:justify-start relative z-10">
               <Button
