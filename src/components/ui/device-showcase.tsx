@@ -1,647 +1,155 @@
-"use client";
+"use client"
 
-import React from 'react';
+import { useState, useEffect } from "react"
 
-const DeviceShowcase = () => {
+export function DeviceShowcase() {
+  const [currentDevice, setCurrentDevice] = useState(0)
+  const devices = ["mobile", "tablet", "laptop"]
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentDevice((prev) => (prev + 1) % devices.length)
+    }, 1000)
+
+    return () => clearInterval(interval)
+  }, [])
+
   return (
-    <div className="pb-20">
-      <div className="container devices">
-        <div className="screen monitor">
-          <div className="content">
-            <div className="pg">
-              <ul className="btns">
-                <li></li><li></li><li></li>
-              </ul>
-              <div className="screen-content">
-                <ul className="txt">
-                  <li></li>        
-                  <li className="big"></li>
-                  <li className="third"></li>
-                  <li className="third"></li>
-                  <li className="third"></li>
-                  <li></li>        
-                  <li></li>
-                  <li className="third"></li>
-                  <li className="third"></li>
-                  <li className="third"></li>
-                  <li className="third"></li>
-                  <li className="third"></li>
-                  <li className="third"></li>
-                  <li></li>        
-                  <li className="big"></li>
-                  <li className="third"></li>
-                  <li className="third"></li>
-                  <li className="third"></li>
-                  <li className="third"></li>
-                  <li className="third"></li>
-                  <li className="third"></li>
-                </ul> 
+    <div className="relative w-full max-w-4xl mx-auto mb-16">
+      <div className="relative aspect-[16/9] bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 rounded-lg overflow-hidden">
+        {/* Mobile Device */}
+        <div className={`absolute inset-0 transition-all duration-500 ease-in-out ${
+          currentDevice === 0 ? "opacity-100 scale-100" : "opacity-0 scale-95"
+        }`}>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+            {/* Mobile Frame */}
+            <div className="relative w-32 h-56 bg-black rounded-3xl p-2">
+              {/* Screen */}
+              <div className="w-full h-full bg-white rounded-2xl overflow-hidden">
+                {/* Status Bar */}
+                <div className="h-6 bg-gray-100 flex justify-between items-center px-3 text-xs">
+                  <span>9:41</span>
+                  <div className="flex space-x-1">
+                    <div className="w-1 h-1 bg-black rounded-full"></div>
+                    <div className="w-1 h-1 bg-black rounded-full"></div>
+                    <div className="w-1 h-1 bg-black rounded-full"></div>
+                  </div>
+                </div>
+                {/* Content */}
+                <div className="p-3">
+                  <div className="h-2 bg-gray-200 rounded mb-2"></div>
+                  <div className="h-2 bg-gray-200 rounded mb-2 w-3/4"></div>
+                  <div className="h-2 bg-gray-200 rounded mb-3 w-1/2"></div>
+                  <div className="h-8 bg-blue-500 rounded mb-2"></div>
+                  <div className="h-8 bg-green-500 rounded mb-2"></div>
+                  <div className="h-8 bg-purple-500 rounded"></div>
+                </div>
+              </div>
+              {/* Home Button */}
+              <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 w-8 h-1 bg-gray-400 rounded-full"></div>
+            </div>
+          </div>
+        </div>
+
+        {/* Tablet Device */}
+        <div className={`absolute inset-0 transition-all duration-500 ease-in-out ${
+          currentDevice === 1 ? "opacity-100 scale-100" : "opacity-0 scale-95"
+        }`}>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+            {/* Tablet Frame */}
+            <div className="relative w-48 h-32 bg-black rounded-2xl p-2">
+              {/* Screen */}
+              <div className="w-full h-full bg-white rounded-xl overflow-hidden">
+                {/* Status Bar */}
+                <div className="h-8 bg-gray-100 flex justify-between items-center px-4 text-sm">
+                  <span>9:41</span>
+                  <div className="flex space-x-1">
+                    <div className="w-2 h-2 bg-black rounded-full"></div>
+                    <div className="w-2 h-2 bg-black rounded-full"></div>
+                    <div className="w-2 h-2 bg-black rounded-full"></div>
+                  </div>
+                </div>
+                {/* Content */}
+                <div className="p-4">
+                  <div className="grid grid-cols-2 gap-3">
+                    <div className="h-4 bg-gray-200 rounded"></div>
+                    <div className="h-4 bg-gray-200 rounded"></div>
+                    <div className="h-8 bg-blue-500 rounded"></div>
+                    <div className="h-8 bg-green-500 rounded"></div>
+                    <div className="h-8 bg-purple-500 rounded"></div>
+                    <div className="h-8 bg-orange-500 rounded"></div>
+                  </div>
+                </div>
+              </div>
+              {/* Home Button */}
+              <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 w-6 h-1 bg-gray-400 rounded-full"></div>
+            </div>
+          </div>
+        </div>
+
+        {/* Laptop Device */}
+        <div className={`absolute inset-0 transition-all duration-500 ease-in-out ${
+          currentDevice === 2 ? "opacity-100 scale-100" : "opacity-0 scale-95"
+        }`}>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+            {/* Laptop Frame */}
+            <div className="relative">
+              {/* Screen */}
+              <div className="w-64 h-40 bg-black rounded-t-lg p-1">
+                <div className="w-full h-full bg-white rounded-t-lg overflow-hidden">
+                  {/* Menu Bar */}
+                  <div className="h-6 bg-gray-100 flex items-center px-3 text-xs">
+                    <div className="flex space-x-2">
+                      <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                      <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                      <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                    </div>
+                    <span className="ml-2">Website</span>
+                  </div>
+                  {/* Browser Content */}
+                  <div className="p-4">
+                    <div className="h-3 bg-gray-200 rounded mb-2"></div>
+                    <div className="h-3 bg-gray-200 rounded mb-2 w-3/4"></div>
+                    <div className="h-3 bg-gray-200 rounded mb-3 w-1/2"></div>
+                    <div className="grid grid-cols-3 gap-2">
+                      <div className="h-6 bg-blue-500 rounded"></div>
+                      <div className="h-6 bg-green-500 rounded"></div>
+                      <div className="h-6 bg-purple-500 rounded"></div>
+                      <div className="h-6 bg-orange-500 rounded"></div>
+                      <div className="h-6 bg-pink-500 rounded"></div>
+                      <div className="h-6 bg-indigo-500 rounded"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {/* Base */}
+              <div className="w-72 h-2 bg-gray-600 rounded-b-lg"></div>
+              {/* Keyboard */}
+              <div className="w-72 h-8 bg-gray-700 rounded-b-lg flex items-center justify-center">
+                <div className="w-16 h-1 bg-gray-500 rounded"></div>
               </div>
             </div>
           </div>
-          <div className="base">
-            <div className="grey-shadow"></div>
-            <div className="foot top"></div>
-            <div className="foot bottom"></div>
+        </div>
+
+        {/* Device Labels */}
+        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
+          <div className="flex space-x-8">
+            {devices.map((device, index) => (
+              <div
+                key={device}
+                className={`text-sm font-medium transition-colors duration-300 ${
+                  currentDevice === index
+                    ? "text-brand"
+                    : "text-gray-400 dark:text-gray-500"
+                }`}
+              >
+                {device.charAt(0).toUpperCase() + device.slice(1)}
+              </div>
+            ))}
           </div>
         </div>
-        
-        <div className="laptop">
-          <div className="content">
-            <ul className="txt">
-              <li></li>        
-              <li className="big"></li>
-              <li className="third"></li>
-              <li className="third"></li>
-              <li className="third"></li>
-              <li></li>        
-              <li></li>
-              <li className="third"></li>
-              <li className="third"></li>
-              <li className="third"></li>
-              <li className="third"></li>
-              <li className="third"></li>
-              <li className="third"></li>
-              <li></li>        
-              <li className="big"></li>
-              <li className="third"></li>
-              <li className="third"></li>
-              <li className="third"></li>
-              <li className="third"></li>
-              <li className="third"></li>
-              <li className="third"></li>
-            </ul>           
-          </div>
-          <div className="btm"></div>
-        </div>
-        
-        <div className="phone">
-          <div className="screen">
-            <div className="content">
-              <ul className="txt">
-                <li></li>
-                <li></li>
-                <li className="half"></li>
-                <li className="half"></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li className="half"></li>
-                <li className="half"></li>
-                <li className="half"></li>
-                <li className="half"></li>
-                <li></li>
-                <li></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        
-        <div className="ipad">
-          <div className="screen">
-            <div className="content screen-content">
-              <ul className="txt">
-                <li></li>
-                <li className="big"></li>
-                <li className="half"></li>
-                <li className="half"></li>
-                <li className="half"></li>
-                <li className="half"></li>
-                <li></li>        
-                <li></li>
-                <li className="half"></li>
-                <li className="half"></li>
-                <li className="half"></li>
-                <li className="half"></li>
-                <li className="half"></li>
-                <li className="half"></li>
-                <li className="half"></li>
-                <li className="half"></li>
-                <li></li>
-              </ul>
-            </div>
-          </div>
-        </div>  
       </div>
-
-      <style jsx>{`
-        * {
-          box-sizing: border-box;
-        }
-
-        .container {
-          max-width: 680px;
-          margin: 2em auto;
-          position: relative;
-        }
-
-        .devices {
-          font-size: 10px;
-          padding: 1em;
-        }
-
-        @media (min-width: 38em) {
-          .devices {
-            font-size: 16px;
-          }
-        }
-
-        .devices > .screen {
-          width: 28.750em;
-          height: 17.5em;
-          position: relative;  
-          background: #f8f8f8;
-          border: 10px solid #1f1f1f;
-          border-radius: 10px;
-          margin: 0 auto;
-        }
-
-        @media (min-width: 38em) {
-          .devices > .screen {
-            border: 20px solid #1f1f1f;
-          }
-        }
-
-        .monitor > div {
-          position: absolute;
-        }
-
-        .monitor:before,
-        .monitor:after,
-        .laptop:before{
-           content: "";
-           position: absolute;
-           left: 50%;
-         }
-
-        .monitor:before,
-        .laptop:before {
-          top: -0.250em;
-          margin: -0.188em 0 0 -0.188em;
-          width: 0.250em;
-          height: 0.250em;
-          border-radius: 0.250em;
-          background: #d8dbe1;
-        }
-
-        @media (min-width: 38em) {
-          .monitor:before,
-          .laptop:before {
-            top: -10px;
-          }
-        }
-
-        .screen:after {
-          width: 8px;
-          height: 8px;
-          border-radius: 8px;
-          bottom: -5px;
-          margin: 0 0 -0.250em -0.250em;
-          background: #e8ebf0;
-        }
-
-        @media (min-width: 38em) {
-          .screen:after {
-            bottom: -10px;
-          }
-        }
-
-        .content {
-          width: 26.25em;
-          height: 15em;
-          left: 50%;
-          margin-left: -13.125em;
-          overflow: hidden;
-        }
-
-        .content:before {
-          content: "";
-          position: absolute;
-          right: -90px;
-          width: 200px;
-          height: 300px;
-          transform: rotate(45deg);
-          background: linear-gradient(to bottom, rgba(255,255,255,0.5) 0%,rgba(255,255,255,0) 100%);
-          z-index: 5;
-        }
-
-        .pg {
-          width: 240px;
-          height: 180px;
-          position: absolute;
-          left: 50%;
-          top: 50%;
-          margin: -90px 0 0 -120px;
-          background: #ffffff;
-          border: 1px solid #e8ebf0;
-          border-top: 20px solid #d8dbe1;
-          border-radius: 5px;
-        }
-
-        .screen-content {
-          overflow: hidden;
-          height: 159px;
-        }
-
-        .btns {
-          position: absolute;
-          top: -20px;
-          left: 7px;
-        }
-
-        .btns:before {
-          content: "";
-          position: absolute;
-          left: 35px;
-          top: 5px;
-          height: 10px;
-          width: 185px;
-          background: #fff;
-          border-radius: 3px;
-        }
-
-        .btns > li {
-          display: inline-block; 
-          list-style: none;
-          width: 5px;
-          height: 5px;
-          border-radius: 5px;
-          background: #fc5254;
-          margin-right: 4px;
-        }
-
-        .btns li:nth-child(2) {
-           background: #fcae52; 
-        }
-
-        .btns li:nth-child(3) {
-           background: #66b34e; 
-        }
-
-        .txt {
-          margin: 10px auto; 
-          width: 85%;
-          text-align: center;
-          font-size: 0;
-        }
-
-        .txt > li {
-          background: #e8ebf0;
-          width: 100%;
-          height: 15px;
-          margin-bottom: 9px;
-          font-size: 10px;
-        }
-
-        @media (min-width: 38em) {
-          .txt > li {
-            font-size: 16px;
-          }
-        }
-
-        .txt > li.big {
-          height: 60px;
-        }
-
-        .screen .txt,
-        .laptop .txt {
-          animation: scroll 4s 1s cubic-bezier(0.250, 0.100, 0.250, 1.000) infinite;
-        }
-
-        @keyframes scroll {
-          20%,60% { transform: translateY(-62%); }
-          80% { margin-top: -50px; }
-        }
-
-        .txt > .third {
-          height: 43px;
-          width: 30%;
-          margin-right: 5%;
-          display: inline-block;  
-        }
-
-        .txt > li:nth-child(5),
-        .txt > li:nth-child(10),
-        .txt > li:nth-child(13), 
-        .txt > li:nth-child(18),
-        .txt > li:nth-child(21) {
-          margin-right: 0;
-        }
-
-        .base {
-          width: 5.625em;
-          height: 3.1em;
-          bottom: -3.9em;
-          left: 50%;
-          margin-left: -2.8125em;
-          background: #e8ebf0;
-        }
-
-        @media (min-width: 38em) {
-          .base {
-            bottom: -4.375em;
-          }
-        }
-
-        .base:before,
-        .base:after,
-        .grey-shadow:before,
-        .grey-shadow:after{
-          content: "";
-          position: absolute;
-          top: 0;
-        }
-
-        .base:before {
-          border-left: 0.813em solid transparent;
-          border-right: 0px solid transparent;
-          border-bottom: 3.125em solid #e8ebf0;
-          left: -0.77em;
-        }
-
-        .base:after {
-          border-right: 0.813em solid transparent;
-          border-left: 0px solid transparent;
-          border-bottom: 3.125em solid #e8ebf0;
-          right: -0.77em;
-        }
-
-        .base > div {
-           position: absolute; 
-        }
-
-        .grey-shadow {
-          width: 5.625em;
-          height: 0.750em;
-          background: #d8dbe1;
-          top: 0;
-        }
-
-        .grey-shadow:before {
-          border-left: 3px solid transparent;
-          border-right: 0px solid transparent;
-          border-bottom: 0.750em solid #d8dbe1;
-          left: -3px;
-        }
-
-        .grey-shadow:after {
-          border-right: 3px solid transparent;
-          border-left: 0px solid transparent;
-          border-bottom: 0.750em solid #d8dbe1;
-          right: -2px;
-          z-index: 1;
-        }
-
-        .foot {
-          background: #e8ebf0;
-        }
-
-        .foot.top {
-          width:7.250em;
-          height: 0.313em;
-          bottom: -0.313em;
-          left: 50%;
-          margin-left: -3.625em;
-        }
-
-        .foot.top:before,
-        .foot.top:after,
-        .foot.bottom:before {
-          content: "";
-          position: absolute;
-          top: 0px;
-        }
-
-        .foot.top:before {
-          border-left: 16px solid transparent;
-          border-right: 0px solid transparent;
-          border-bottom: 5px solid #e8ebf0;
-          left: -16px;
-        }
-
-        .foot.top:after {
-          border-right: 1em solid transparent;
-          border-left: 0px solid transparent;
-          border-bottom: 5px solid #e8ebf0;
-          right: -1em;
-        }
-
-        .foot.bottom {
-          width: 9.375em;
-          height: 0.313em;
-          bottom: -0.625em;
-          left: 50%;
-          margin-left: -4.688em;
-        }
-
-        .laptop {
-          width: 14.688em;
-          height: 9.688em;
-          background: #f8f8f8;
-          border: 0.750em solid #1f1f1f;
-          border-radius: 10px 10px 0 0;
-          position: absolute;
-          bottom: -5em;
-          right: 1.875em;
-          z-index: 2;
-        }
-
-        .laptop:before {
-         top: -6px;
-        }
-
-        .laptop > div {
-          position: absolute; 
-        }
-
-        .laptop > .content {
-          width: 13.188em;
-          height: 8.188em;
-          left: 0;
-          margin-left: 0;
-          background: #fff;
-        }
-
-        .btm {
-          width: 18.500em;
-          height: 0.625em;
-          bottom: -1.188em;
-          left: 50%;
-          margin-left: -9.250em;
-          border-radius: 0 0 20px 20px;
-          background: #e8ebf0;
-          z-index: 1;
-        }
-
-        .btm:before {
-          content: "";
-          position: absolute;
-          width: 42px;
-          height: 4px;
-          left: 50%; 
-          top: 0;
-          margin-left: -21px;
-          border-radius: 0 0 5px 5px;
-          background: #d8dbe1;
-        }
-
-        .phone {
-          width: 4.125em;
-          height: 8.750em;
-          position: absolute;
-          bottom: -5em;
-          left: 1em;
-          border-radius: 8px;
-          background: #1f1f1f;
-          border: 1.563em solid #1f1f1f;
-          border-left: 0.313em solid #1f1f1f;
-          border-right: 0.313em solid #1f1f1f;
-        }
-
-        .phone:before,
-        .phone:after {
-          content: "";
-          position: absolute;
-          left: 50%;
-          background: #474e5d;
-        }
-
-        .phone:before {
-          background: #474e5d;
-          width: 1.250em;
-          height: 0.250em;
-          margin-left: -0.625em;
-          top: -0.750em;
-          border-radius: 2px;
-        }
-
-        .phone:after {
-          width: 0.625em;
-          height: 0.625em;
-          border-radius: 0.625em;
-          bottom: -1.125em;
-          margin-left: -0.313em;
-        }
-
-        .phone .screen {
-          width: 3.50em;
-          height: 5.625em;
-          margin: 0 auto;
-          position: relative;
-          overflow: hidden;
-        }
-
-        .phone .content {
-          background: #fff;
-          width: 100%;
-          height: 21em;
-          left: 0%;
-          margin-left: 0px;
-        }
-
-        .phone .txt > li {
-          height: 1.250em;
-        }
-
-        .txt > li.half {
-          width: 44%;
-          margin-right: 6%;
-          display: inline-block;  
-        }
-
-        .txt > li.half:nth-of-type(even) {
-          margin-right: 0;
-        }
-
-        .ipad {
-          width: 8.75em;
-          height: 12.750em;
-          position: absolute;
-          bottom: -5em;
-          left: 6em;
-          border-radius: 8px;
-          background: #1f1f1f;
-          border: 1.563em solid #1f1f1f;
-          border-left: 0.313em solid #1f1f1f;
-          border-right: 0.313em solid #1f1f1f;
-        }
-
-        .ipad:before,
-        .ipad:after {
-          content: "";
-          position: absolute;
-          left: 50%;
-          background: #474e5d;
-        }
-
-        .ipad:before {
-          background: #474e5d;
-          width: 1.250em;
-          height: 0.250em;
-          margin-left: -0.625em;
-          top: -0.750em;
-          border-radius: 2px;
-        }
-
-        .ipad:after {
-          width: 0.625em;
-          height: 0.625em;
-          border-radius: 0.625em;
-          bottom: -1.125em;
-          margin-left: -0.313em;
-        }
-
-        .ipad .screen {
-          width: 8em;
-          height: 9.7em;
-          margin: 0 auto;
-          position: relative;
-          overflow: hidden;
-        }
-
-        .ipad .content {
-          background: #fff;
-          width: 100%;
-          left: 0%;
-          margin-left: 0px;
-        }
-
-        .ipad .half {
-          height: 35px;
-        }
-          
-        .shadow {
-          position: absolute;
-          width: 350px;
-          height: 15px;
-          left: 50%;
-          margin-left: -175px;
-          z-index: -1;
-          bottom: -20px;
-        }
-
-        .laptop .shadow {
-          width: 450px;
-          margin-left: -225px; 
-          bottom: -26px;
-        }
-
-        .phone .shadow {
-          bottom: -30px;
-          margin-left: -50px;
-          height: 10px;
-          width: 100px
-        }
-
-        .phone .txt {
-          animation: scroll 4s 1s cubic-bezier(0.250, 0.100, 0.250, 1.000) infinite;
-        }
-      `}</style>
     </div>
-  );
-};
-
-export default DeviceShowcase;
+  )
+}

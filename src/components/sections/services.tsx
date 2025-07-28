@@ -4,6 +4,7 @@ import { Heading2 } from "@/components/ui/heading";
 
 import Image from "next/image"
 import { Button } from "../ui/button";
+import { DecorativeCircles } from "../ui/decorative-circles";
 interface ServicesProps {
   locationString: string
   isDefault: boolean
@@ -12,23 +13,8 @@ interface ServicesProps {
 export function Services({ locationString, isDefault }: ServicesProps) {
   return (
     <>
-      {/* Smooth curved divider
-      <div className="w-full h-16 md:h-24 overflow-hidden -mb-1 dark:bg-primary">
-        <svg
-          viewBox="0 0 1440 96"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-full h-full text-light dark:text-secondary"
-          preserveAspectRatio="none"
-        >
-          <path
-            d="M0 0H1440V36C1440 36 1296 0 720 0C144 0 0 36 0 36V0Z"
-            fill="currentColor"
-          />
-        </svg>
-      </div> */}
-      
-      <section className="bg-white dark:bg-black pt-0 pb-0 md:pb-16 -mt-48 z-20">
+      <section className="bg-white dark:bg-black pt-0 pb-0 md:pb-16 -mt-48 z-20 relative">
+        <DecorativeCircles />
         <div className="container">
           <div className="mx-auto max-w-2xl text-center">
             <p className="mb-2 text-muted-light dark:text-muted-dark tracking-widest font-normal">
@@ -71,21 +57,6 @@ export function Services({ locationString, isDefault }: ServicesProps) {
         </Button>
       </div>
       </section>
-      {/* Smooth curved divider (bottom, mirrored) */}
-      {/* <div className="w-full h-16 md:h-24 overflow-hidden -mt-1 dark:bg-primary rotate-180">
-        <svg
-          viewBox="0 0 1440 96"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-full h-full text-light dark:text-tertiary"
-          preserveAspectRatio="none"
-        >
-          <path
-            d="M0 0H1440V36C1440 36 1296 0 720 0C144 0 0 36 0 36V0Z"
-            fill="currentColor"
-          />
-        </svg>
-      </div> */}
     </>
   )
 } 
