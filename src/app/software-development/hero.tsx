@@ -18,9 +18,9 @@ export function Hero({ locationString }: HeroProps) {
               SOFTWARE DEVELOPMENT
             </p>
             <h1 className="mb-6 text-5xl font-bold tracking-tight text-gray-900 dark:text-white md:text-6xl">
-              Powerful, scalable
+              Powerful, custom
               <br />
-              <span className="text-brand">software solutions</span>.
+              <span className="text-brand">software</span>.
             </h1>
             <p className="mb-8 text-lg text-gray-600 dark:text-gray-300">
               Work with a dedicated expert to design and develop custom software applications that streamline your business operations and drive growth.
