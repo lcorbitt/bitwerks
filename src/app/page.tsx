@@ -32,7 +32,7 @@ export default async function Home({ searchParams = {} }: PageProps) {
       {/* Curved section divider */}
       <section className="clip-top-large-circle relative -left-[15%] h-72 w-[130%] bg-white dark:bg-primary -mt-20 md:-mt-52 z-20"></section>
       <Services locationString={locationString} isDefault={location.isDefault} />
-      <section className="clip-bottom-large-circle relative -left-[15%] h-72 w-[130%] bg-white dark:bg-primary -mt-20"></section>
+      <section className="clip-bottom-large-circle relative -left-[15%] h-72 w-[130%] bg-white dark:bg-primary -mt-20 z-10"></section>
       <TechMarqueeSection />
       <Partners />
       <Process />

@@ -29,7 +29,6 @@
     clip-path: ellipse(50% 45% at 50% 50%);
   }
   .clip-bottom-large-circle {
-    z-index: 0;
     @apply p-0;
     clip-path: ellipse(50% 45% at 50% 50%);
   }
