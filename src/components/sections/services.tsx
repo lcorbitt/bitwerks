@@ -23,7 +23,7 @@ export function Services({ locationString, isDefault }: ServicesProps) {
             </p>
             <Heading2 className="mb-8">From Concept to Completion</Heading2>
             <p className="mb-16 md:mb-32 text-muted-foreground tracking-wide text-base md:text-lg">
-              At BitWerks, we specialize in <strong>custom web & software development</strong> for small businesses across the U.S. Each project is hand-coded with a focus on visbility, performance, and reliability. No page-builders, no shortcuts. We provide ongoing updates and support, so you're never left without help. Our goal is to build lasting partnerships and empower your business to grow with confidence.
+              At BitWerks, we specialize in <strong>custom web & software development</strong> for small businesses across the U.S. Each project is hand-coded with a focus on visbility, performance, and reliability. No page-builders, no shortcuts. We provide ongoing updates and support, so you&apos;re never left without help. Our goal is to build lasting partnerships and empower your business to grow with confidence.
             </p>
           </div>
           <div className="grid gap-24 md:gap-8 md:grid-cols-2 lg:grid-cols-3 mt-32">

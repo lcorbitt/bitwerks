@@ -50,7 +50,7 @@ const SoftwareShowcase = () => {
     }, 3000);
 
     return () => clearInterval(tabInterval);
-  }, []);
+  }, [tabs.length]);
 
   useEffect(() => {
     const cursorInterval = setInterval(() => {

@@ -38,7 +38,7 @@ export function FAQSection() {
             
             <AccordionItem value="item-3">
               <AccordionTrigger className="text-lg font-semibold text-gray-900 dark:text-white">
-                Can you help us even if we don't know what we need?
+                Can you help us even if we don&apos;t know what we need?
               </AccordionTrigger>
               <AccordionContent className="text-gray-600 dark:text-gray-300">
                 Absolutely! Many of our clients come to us with general questions or challenges without knowing the specific solutions they need. We start by understanding your business goals and current situation, then help identify the right technical approaches and solutions for your specific needs.
@@ -50,7 +50,7 @@ export function FAQSection() {
                 How much do technical consulting services cost?
               </AccordionTrigger>
               <AccordionContent className="text-gray-600 dark:text-gray-300">
-                Our consulting rates vary based on the complexity and scope of your needs. We offer hourly rates for quick questions, project-based pricing for specific guidance, and retainer arrangements for ongoing advisory relationships. We'll provide transparent pricing upfront so you know exactly what to expect.
+                Our consulting rates vary based on the complexity and scope of your needs. We offer hourly rates for quick questions, project-based pricing for specific guidance, and retainer arrangements for ongoing advisory relationships. We&apos;ll provide transparent pricing upfront so you know exactly what to expect.
               </AccordionContent>
             </AccordionItem>
             
@@ -59,7 +59,7 @@ export function FAQSection() {
                 Do you provide ongoing support after consulting sessions?
               </AccordionTrigger>
               <AccordionContent className="text-gray-600 dark:text-gray-300">
-                Yes! We provide follow-up support including email clarification, additional documentation, and implementation guidance. For ongoing relationships, we offer regular check-ins and can help you implement the recommendations we've provided. We're committed to your success beyond just the initial consultation.
+                Yes! We provide follow-up support including email clarification, additional documentation, and implementation guidance. For ongoing relationships, we offer regular check-ins and can help you implement the recommendations we&apos;ve provided. We&apos;re committed to your success beyond just the initial consultation.
               </AccordionContent>
             </AccordionItem>
             

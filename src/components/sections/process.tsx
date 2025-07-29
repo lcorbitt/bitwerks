@@ -41,7 +41,7 @@ export function Process() {
               <span className="uppercase text-xs text-muted dark:text-muted-dark font-bold tracking-widest">Step 1</span>
               <h3 className="text-xl font-bold mt-1 mb-2">Join exploration call.</h3>
               <p className="text-muted dark:text-muted-dark max-w-md">
-                Tell us more about your business on a discovery call. We'll discuss initial goals, success criteria, and timeline to see how we can help.
+                Tell us more about your business on a discovery call. We&apos;ll discuss initial goals, success criteria, and timeline to see how we can help.
               </p>
             </div>
           </div>
@@ -56,7 +56,7 @@ export function Process() {
               <span className="uppercase text-xs text-muted dark:text-muted-dark font-bold tracking-widest">Step 2</span>
               <h3 className="text-xl font-bold mt-1 mb-2">Discuss solution and approach.</h3>
               <p className="text-muted dark:text-muted-dark max-w-md">
-                In a matter of days, we’ll finalize your project specifications, define the scope of work, and agree on an engagement model.
+                In a matter of days, we&apos;ll finalize your project specifications, define the scope of work, and agree on an engagement model.
               </p>
             </div>
           </div>
@@ -71,7 +71,7 @@ export function Process() {
               <span className="uppercase text-xs text-muted dark:text-muted-dark font-bold tracking-widest">Step 3</span>
               <h3 className="text-xl font-bold mt-1 mb-2">Get started and track performance.</h3>
               <p className="text-muted dark:text-muted-dark max-w-md">
-                Once we've agreed on milestones, we'll immediately get to work. We'll track progress, report updates, and continuously adapt to your needs.
+                Once we&apos;ve agreed on milestones, we&apos;ll immediately get to work. We&apos;ll track progress, report updates, and continuously adapt to your needs.
               </p>
               <Button size="lg"  className="mt-8">
                 Get Started

@@ -23,7 +23,7 @@ export function FAQSection() {
                 How long does it take to build a website?
               </AccordionTrigger>
               <AccordionContent className="text-gray-600 dark:text-gray-300">
-                Project timelines vary based on complexity and features. A simple business website typically takes 2-4 weeks, while complex applications can take 8-12 weeks or more. We'll provide a detailed timeline during our initial consultation.
+                Project timelines vary based on complexity and features. A simple business website typically takes 2-4 weeks, while complex applications can take 8-12 weeks or more. We&apos;ll provide a detailed timeline during our initial consultation.
               </AccordionContent>
             </AccordionItem>
             
@@ -56,7 +56,7 @@ export function FAQSection() {
             
             <AccordionItem value="item-5">
               <AccordionTrigger className="text-lg font-semibold text-gray-900 dark:text-white">
-                What's included in your web development packages?
+                What&apos;s included in your web development packages?
               </AccordionTrigger>
               <AccordionContent className="text-gray-600 dark:text-gray-300">
                 Our packages include custom design, responsive development, content management system setup, SEO optimization, testing across devices, launch support, and training. We also provide hosting recommendations and ongoing support options.
@@ -77,7 +77,7 @@ export function FAQSection() {
                 Do you work with existing websites or only build new ones?
               </AccordionTrigger>
               <AccordionContent className="text-gray-600 dark:text-gray-300">
-                We work with both! Whether you need a complete redesign, specific feature additions, performance improvements, or ongoing maintenance for an existing site, we can help. We'll assess your current setup and recommend the best approach.
+                We work with both! Whether you need a complete redesign, specific feature additions, performance improvements, or ongoing maintenance for an existing site, we can help. We&apos;ll assess your current setup and recommend the best approach.
               </AccordionContent>
             </AccordionItem>
             

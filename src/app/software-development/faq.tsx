@@ -50,7 +50,7 @@ export function FAQSection() {
                 Do you provide training and support after launch?
               </AccordionTrigger>
               <AccordionContent className="text-gray-600 dark:text-gray-300">
-                Yes! We provide comprehensive training for your team, detailed documentation, and ongoing technical support. We offer maintenance packages that include updates, bug fixes, and feature enhancements. We're committed to ensuring your software continues to meet your business needs as you grow.
+                Yes! We provide comprehensive training for your team, detailed documentation, and ongoing technical support. We offer maintenance packages that include updates, bug fixes, and feature enhancements. We&apos;re committed to ensuring your software continues to meet your business needs as you grow.
               </AccordionContent>
             </AccordionItem>
 

@@ -23,7 +23,7 @@ export function Hero({ locationString }: HeroProps) {
               <span className="text-brand">technology decisions</span>.
             </h1>
             <p className="mb-8 text-lg text-gray-600 dark:text-gray-300">
-              Get professional advice on technology strategy, architecture planning, and digital solutions. Whether you need help choosing the right tools or understanding complex technical concepts, we're here to guide you.
+              Get professional advice on technology strategy, architecture planning, and digital solutions. Whether you need help choosing the right tools or understanding complex technical concepts, we&apos;re here to guide you.
             </p>
             <div className="flex flex-col gap-4 sm:flex-row lg:justify-start sm:justify-center">
               <Button variant="default" size="lg" asChild>

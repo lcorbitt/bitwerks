@@ -4,15 +4,20 @@ import { useState, useEffect } from "react"
 
 export function DeviceShowcase() {
   const [currentDevice, setCurrentDevice] = useState(0)
-  const devices = ["mobile", "tablet", "laptop"]
+  
+  const devices = [
+    { name: "Mobile", width: "w-24 h-40", rotation: "rotate-0" },
+    { name: "Tablet", width: "w-40 h-28", rotation: "rotate-[-180deg]" },
+    { name: "Laptop", width: "w-56 h-36", rotation: "rotate-0" }
+  ]
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentDevice((prev) => (prev + 1) % devices.length)
-    }, 2000)
+    }, 1000)
 
     return () => clearInterval(interval)
-  }, [])
+  }, [devices.length])
 
   return (
     <div className="relative w-full max-w-4xl mx-auto mb-16">
@@ -42,7 +47,6 @@ export function DeviceShowcase() {
                   <div className="bg-black rounded-full w-1 h-1"></div>
                 </div>
               </div>
-              
               {/* Content Grid */}
               <div className={`p-2 transition-all duration-1000 ease-in-out ${
                 currentDevice === 0 ? "grid-cols-1 gap-1" : currentDevice === 1 ? "grid-cols-2 gap-2" : "grid-cols-3 gap-2"
@@ -61,12 +65,12 @@ export function DeviceShowcase() {
               <div className="absolute bottom-1 left-1/2 transform -translate-x-1/2 w-6 h-0.5 bg-gray-400 rounded-full"></div>
             )}
           </div>
-          
-          {/* Laptop Base - Only for laptop */}
-          {currentDevice === 2 && (
-            <div className="absolute top-full left-0 w-full h-2 bg-gray-600 rounded-b-lg"></div>
-          )}
         </div>
+        
+        {/* Laptop Base - Only for laptop */}
+        {currentDevice === 2 && (
+          <div className="absolute top-full left-0 w-full h-2 bg-gray-600 rounded-b-lg"></div>
+        )}
       </div>
     </div>
   )

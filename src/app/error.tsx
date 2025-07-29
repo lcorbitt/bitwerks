@@ -18,7 +18,7 @@ export default function Error({
           Something went wrong
         </h2>
         <p className="text-gray-600 dark:text-gray-400 max-w-md">
-          We're experiencing technical difficulties. Please try again later.
+          We&apos;re experiencing technical difficulties. Please try again later.
         </p>
         <div className="flex gap-4 justify-center">
           <Button onClick={reset}>
