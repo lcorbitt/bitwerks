@@ -28,7 +28,7 @@ export const TechMarqueeSection = () => {
       {/* Devices image at the top center, overlapping the divider */}
       <div className="absolute inset-x-0 -top-24 md:-top-44 z-20 flex justify-center">
         <Image 
-          src="progressive-app.svg" 
+          src="/progressive-app.svg" 
           alt="Devices image" 
           width={800} 
           height={800} 
@@ -50,8 +50,8 @@ export const TechMarqueeSection = () => {
       {/* Marquee rows */}
       <div className="overflow-hidden" style={{ height: '9rem' }}>
           {/* Top row: slides left */}
-          <div className={`marquee-container ${isVisible ? 'visible' : 'hidden'}`}>
-            <div className="marquee-content">
+          <div className={`flex overflow-hidden whitespace-nowrap h-16 items-center transition-opacity duration-500 ease-in-out ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
+            <div className="flex animate-scroll">
               {techsRow1.map((tech, i) => (
                 <span
                   key={tech + i}
@@ -71,8 +71,8 @@ export const TechMarqueeSection = () => {
             </div>
           </div>
           {/* Bottom row: slides right */}
-          <div className={`marquee-container-reverse ${isVisible ? 'visible' : 'hidden'}`}>
-            <div className="marquee-content">
+          <div className={`flex overflow-hidden whitespace-nowrap mt-2 h-16 items-center transition-opacity duration-500 ease-in-out ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
+            <div className="flex animate-scroll-reverse">
               {techsRow2.map((tech, i) => (
                 <span
                   key={tech + i}
@@ -102,50 +102,7 @@ export const TechMarqueeSection = () => {
             <span className="ml-2 transition-transform group-hover:translate-x-1 dark:text-white">→</span>
           </a>
         </div>
-      {/* Marquee keyframes */}
-      <style jsx>{`
-        .marquee-container {
-          display: flex;
-          overflow: hidden;
-          white-space: nowrap;
-          opacity: 0;
-          transition: opacity 0.5s ease-in-out;
-          height: 4rem;
-          align-items: center;
-        }
-        
-        .marquee-container-reverse {
-          display: flex;
-          overflow: hidden;
-          white-space: nowrap;
-          margin-top: 0.5rem;
-          opacity: 0;
-          transition: opacity 0.5s ease-in-out;
-          height: 4rem;
-          align-items: center;
-        }
-        
-        .marquee-container.visible,
-        .marquee-container-reverse.visible {
-          opacity: 1;
-        }
-        
-        .marquee-container.hidden,
-        .marquee-container-reverse.hidden {
-          opacity: 0;
-        }
-        
-        .marquee-content {
-          display: flex;
-          animation: scroll 60s linear infinite;
-        }
-        
-        .marquee-container-reverse .marquee-content {
-          animation: scroll-reverse 60s linear infinite;
-        }
-        
-
-        
+      <style jsx global>{`
         @keyframes scroll {
           0% { transform: translateX(0); }
           100% { transform: translateX(-50%); }
@@ -154,6 +111,14 @@ export const TechMarqueeSection = () => {
         @keyframes scroll-reverse {
           0% { transform: translateX(-50%); }
           100% { transform: translateX(0); }
+        }
+        
+        .animate-scroll {
+          animation: scroll 60s linear infinite;
+        }
+        
+        .animate-scroll-reverse {
+          animation: scroll-reverse 60s linear infinite;
         }
       `}</style>
     </section>

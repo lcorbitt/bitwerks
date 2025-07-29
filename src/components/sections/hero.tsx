@@ -1,6 +1,5 @@
-"use client"
-
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Heading1 } from "../ui/heading"
 
@@ -12,13 +11,19 @@ export function Hero({ locationString }: HeroProps) {
   return (
     <section className="relative overflow-hidden pt-16 md:pt-20 pb-32 md:pb-64 w-full h-full">
       {/* Hero background image */}
-      <div
-        className="absolute inset-0 w-full h-full z-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: 'url("/hero.jpg")',
-        }}
-        aria-hidden="true"
-      />
+      <div className="absolute inset-0 w-full h-full z-0">
+        <Image
+          src="/hero.jpg"
+          alt="Hero background"
+          fill
+          priority
+          quality={85}
+          sizes="100vw"
+          className="object-cover"
+          placeholder="blur"
+          blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
+        />
+      </div>
       {/* Solid overlay - mobile light theme */}
       <div 
         className="absolute inset-0 z-10 lg:hidden bg-white/80 dark:hidden"
