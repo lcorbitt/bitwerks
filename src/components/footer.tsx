@@ -13,7 +13,7 @@ export function Footer() {
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
           backgroundAttachment: 'fixed',
-          opacity: 0.3,
+          opacity: 0.2,
         }}
         aria-hidden="true"
       />
@@ -26,7 +26,7 @@ export function Footer() {
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
           backgroundAttachment: 'fixed',
-          opacity: 0.3,
+          opacity: 0.2,
         }}
         aria-hidden="true"
       />

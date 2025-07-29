@@ -51,7 +51,7 @@ export function Navbar() {
               <NavigationMenuItem>
                 <NavigationMenuTrigger className="font-bold hover:text-brand focus:text-brand">SERVICES</NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="grid w-[250px] p-4 md:grid-cols-1 bg-white dark:bg-tertiary border-l-2 border-gray-200 dark:border-gray-700 pl-4">
+                  <ul className="grid w-[250px] p-4 md:grid-cols-1 bg-white dark:bg-tertiary">
                     {services.map((service) => (
                       <ListItem
                         key={service.title}
@@ -98,7 +98,7 @@ const ListItem = React.forwardRef<
   React.ComponentPropsWithoutRef<"a">
 >(({ className, title, children, ...props }, ref) => {
   return (
-    <li>
+    <li className="border-l-2 border-gray-200 dark:border-gray-700 pl-2 ml-2">
       <NavigationMenuLink asChild>
         <a
           ref={ref}
