@@ -178,7 +178,7 @@ export default function Services() {
             title="Case Study"
             company="Urban Sky"
             description="By partnering with BitWerks, Urban Sky accelerated the development of a robust, mission-critical software application and internal tools tailored for high-performance aerospace operations."
-            technologies={["React", "Tailwind", "Node", "NestJS", "Playwright", "PostgreSQL"]}
+            technologies={["React", "Tailwind", "Node", "NestJS", "PostgreSQL"]}
             imageSrc="/portfolio/dashboard.webp"
             imageAlt="Urban Sky case study - software development for aerospace operations"
             caseStudyLink="/case-studies/urbansky"

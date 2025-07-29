@@ -1,71 +1,96 @@
 import { Heading2 } from "@/components/ui/heading"
-
-const ArrowUpRightIcon = () => (
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-  </svg>
-)
-
-const UserIcon = () => (
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-    <circle cx="12" cy="7" r="4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-  </svg>
-)
-
-const ClipboardCheckIcon = () => (
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-  </svg>
-)
+import Image from "next/image"
 
 const whyChooseUsItems = [
   {
-    title: "Technical Expertise",
-    description: "We bring extensive experience as a partner with deep expertise across multiple programming languages, frameworks, and technologies. Our background spans various industries and company partnerships, giving us a well-rounded perspective on solving complex technical challenges.",
-    icon: <ArrowUpRightIcon />,
+    title: "Custom Software Solutions",
+    description: "We build tailored software that fits your specific business needs and workflows, ensuring maximum efficiency and user adoption.",
+    icon: (
+      <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+      </svg>
+    ),
   },
   {
-    title: "Flexible Engagement Models",
-    description: "We offer flexible engagement models to accommodate your specific business needs. Whether you need a complete software build, ongoing maintenance, technical consulting, or custom application development, we adapt our approach to fit your project scope and timeline.",
-    icon: <UserIcon />,
+    title: "Scalable Architecture",
+    description: "Our software is designed to grow with your business, using modern technologies that can handle increased load and new features.",
+    icon: (
+      <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+      </svg>
+    ),
   },
   {
-    title: "Proven Track Record",
-    description: "With years of experience partnering with companies across different industries, we've successfully delivered numerous software projects that drive real business value. Our approach focuses on understanding your unique needs and delivering solutions that exceed expectations.",
-    icon: <ClipboardCheckIcon />,
+    title: "Ongoing Support",
+    description: "We provide continuous maintenance, updates, and support to ensure your software remains secure, efficient, and up-to-date.",
+    icon: (
+      <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+      </svg>
+    ),
   },
 ]
 
 export default function WhyChooseUs() {
   return (
-    <section className="bg-white dark:bg-black py-16 md:py-20 lg:py-24">
+    <section className="bg-white dark:bg-black">
       <div className="container">
-        <div className="mx-auto max-w-4xl text-center mb-16">
-          <Heading2 className="mb-6">
-            Why Choose Us for Your Software Development Needs
-          </Heading2>
-          <p className="text-xl text-muted-light dark:text-muted-dark">
-            We combine technical expertise with business understanding to deliver software solutions that truly make a difference.
-          </p>
-        </div>
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+          {/* Left Column - Heading */}
+          <div className="text-center lg:text-left">
+            <Heading2 className="">
+              Why Choose
+              <br />
+              <span className="text-brand">Bit</span>Werks for Software
+              <br />
+              Development
+            </Heading2>
 
-        <div className="grid gap-8 md:grid-cols-3">
-          {whyChooseUsItems.map((item) => (
-            <div key={item.title} className="text-center">
-              <div className="mb-6 flex justify-center">
-                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-brand/10 text-brand">
+            {/* Desktop Bottom Image */}
+            <div className="mt-16 hidden lg:block">
+              <div className="w-full h-64 md:h-80 lg:h-96 relative rounded-tr-lg rounded-br-lg overflow-hidden">
+                <Image
+                  src="/glasses.jpg"
+                  alt="Software developer working on code"
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column - Informational Blocks */}
+          <div className="space-y-8">
+            {whyChooseUsItems.map((item, index) => (
+              <div key={index} className="flex gap-4">
+                <div className="flex-shrink-0 w-12 h-12 rounded-lg flex items-center justify-center">
                   {item.icon}
                 </div>
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
+                    {item.title}
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                    {item.description}
+                  </p>
+                </div>
               </div>
-              <h3 className="mb-4 text-xl font-bold text-gray-900 dark:text-white">
-                {item.title}
-              </h3>
-              <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                {item.description}
-              </p>
+            ))}
+          </div>
+
+          {/* Mobile Bottom Image */}
+          <div className="mt-16 lg:hidden">
+            <div className="w-full h-64 md:h-80 lg:h-96 relative rounded-tr-lg rounded-br-lg overflow-hidden">
+              <Image
+                src="/glasses.jpg"
+                alt="Software developer working on code"
+                fill
+                className="object-cover"
+                priority
+              />
             </div>
-          ))}
+          </div>
         </div>
       </div>
     </section>

@@ -178,7 +178,7 @@ export default function Services() {
             title="Case Study"
             company="Hodinkee"
             description="In collaboration with BitWerks, Hodinkee successfully implemented a new design system, improved the user experience of their applications, and developed essential internal tools to enhance operational efficiency."
-            technologies={["React", "Tailwind", "Ruby on Rails", "RSpec", "PostgreSQL"]}
+            technologies={["React", "Tailwind", "Ruby on Rails", "PostgreSQL"]}
             imageSrc="/hodinkee.png"
             imageAlt="Hodinkee case study"
             caseStudyLink="/case-studies/hodinkee"
