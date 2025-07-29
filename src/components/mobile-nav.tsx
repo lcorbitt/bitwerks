@@ -64,29 +64,37 @@ export function MobileNav() {
           <div className="space-y-2">
             <button
               onClick={() => setServicesOpen(!servicesOpen)}
-              className="flex w-full items-center justify-between rounded-md p-3 text-left text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800"
+              className="flex w-full items-center justify-between rounded-md p-3 text-left text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200"
             >
               <span className="text-sm font-medium">Services</span>
-              {servicesOpen ? (
-                <ChevronUp className="h-4 w-4" />
-              ) : (
-                <ChevronDown className="h-4 w-4" />
-              )}
+              <div className="transition-transform duration-200 ease-in-out">
+                {servicesOpen ? (
+                  <ChevronUp className="h-4 w-4" />
+                ) : (
+                  <ChevronDown className="h-4 w-4" />
+                )}
+              </div>
             </button>
-            {servicesOpen && (
+            <div 
+              className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                servicesOpen 
+                  ? "max-h-48 opacity-100 translate-y-0" 
+                  : "max-h-0 opacity-0 -translate-y-2"
+              }`}
+            >
               <div className="ml-4 space-y-1 border-l-2 border-gray-200 dark:border-gray-700 pl-4">
                 {services.map((service) => (
                   <Link
                     key={service.href}
                     href={service.href}
-                    className="block rounded-md p-2 text-sm text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-800"
+                    className="block rounded-md p-2 text-sm text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-200"
                     onClick={() => setOpen(false)}
                   >
                     {service.title}
                   </Link>
                 ))}
               </div>
-            )}
+            </div>
           </div>
 
           {/* Other Navigation Items */}
@@ -94,7 +102,7 @@ export function MobileNav() {
             <Link
               key={item.href}
               href={item.href}
-              className="flex items-center rounded-md p-3 text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800"
+              className="flex items-center rounded-md p-3 text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200"
               onClick={() => setOpen(false)}
             >
               <span className="text-sm font-medium">{item.title}</span>
