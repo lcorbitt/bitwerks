@@ -1,11 +1,8 @@
 import { Card } from "@/components/ui/card"
 import { Globe, Cog, Lightbulb } from "lucide-react";
 import { Heading2 } from "@/components/ui/heading";
-
-import Image from "next/image"
 import { Button } from "../ui/button";
 import { DecorativeCircles } from "../ui/decorative-circles";
-import { DeviceShowcase } from "../ui/device-showcase";
 interface ServicesProps {
   locationString: string
   isDefault: boolean
