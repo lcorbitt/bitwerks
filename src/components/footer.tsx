@@ -4,9 +4,22 @@ import { Button } from "@/components/ui/button"
 export function Footer() {
   return (
     <footer className="relative overflow-hidden">
-      {/* Circuit board background */}
+      {/* Circuit board background - mobile (scaled down) */}
       <div
-        className="absolute inset-0 w-full h-full z-0"
+        className="absolute inset-0 w-full h-full z-0 md:hidden"
+        style={{
+          backgroundImage: 'url("/circuit-board.svg")',
+          backgroundSize: '200% 200%',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          backgroundAttachment: 'fixed',
+          opacity: 0.3,
+        }}
+        aria-hidden="true"
+      />
+      {/* Circuit board background - desktop (full size) */}
+      <div
+        className="absolute inset-0 w-full h-full z-0 hidden md:block"
         style={{
           backgroundImage: 'url("/circuit-board.svg")',
           backgroundSize: 'cover',

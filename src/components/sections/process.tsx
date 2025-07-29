@@ -1,13 +1,10 @@
 import Image from "next/image";
 import { Phone, Users, TrendingUp } from "lucide-react";
 import { Button } from "../ui/button";
-import { DecorativeCircles } from "../ui/decorative-circles";
 
 export function Process() {
   return (
     <section className="relative bg-[#f6f7f8] dark:bg-tertiary">
-      <DecorativeCircles inverted />
-      
       <div className="container mx-auto flex flex-col lg:flex-row items-center gap-12">
         {/* Left: Heading and Image */}
         <div className="flex-1 flex flex-col items-start">
@@ -57,7 +54,7 @@ export function Process() {
               <span className="uppercase text-xs text-muted dark:text-muted-dark font-bold tracking-widest">Step 2</span>
               <h3 className="text-xl font-bold mt-1 mb-2">Discuss solution and approach.</h3>
               <p className="text-muted dark:text-muted-dark max-w-md">
-                In a matter of days, we'll finalize your project specifications, define the scope of work, and agree on an engagement model.
+                In a matter of days, we’ll finalize your project specifications, define the scope of work, and agree on an engagement model.
               </p>
             </div>
           </div>
