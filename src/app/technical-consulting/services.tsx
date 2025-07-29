@@ -4,20 +4,20 @@ import { Suspense } from "react"
 import { DecorativeCircles } from "@/components/ui/decorative-circles"
 
 // Lazy load heavy components
-const LazyDeviceShowcase = dynamic(() => import("@/components/ui/device-showcase"), {
-  loading: () => <div className="pb-20">
-    <div className="container">
-      <div className="animate-pulse">
-        <div className="h-64 bg-gray-200 dark:bg-gray-800 rounded-lg mb-8"></div>
-        <div className="flex justify-center space-x-4">
-          <div className="h-32 w-24 bg-gray-200 dark:bg-gray-800 rounded"></div>
-          <div className="h-32 w-24 bg-gray-200 dark:bg-gray-800 rounded"></div>
-          <div className="h-32 w-24 bg-gray-200 dark:bg-gray-800 rounded"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-})
+// const LazyDeviceShowcase = dynamic(() => import("@/components/ui/device-showcase"), {
+//   loading: () => <div className="pb-20">
+//     <div className="container">
+//       <div className="animate-pulse">
+//         <div className="h-64 bg-gray-200 dark:bg-gray-800 rounded-lg mb-8"></div>
+//         <div className="flex justify-center space-x-4">
+//           <div className="h-32 w-24 bg-gray-200 dark:bg-gray-800 rounded"></div>
+//           <div className="h-32 w-24 bg-gray-200 dark:bg-gray-800 rounded"></div>
+//           <div className="h-32 w-24 bg-gray-200 dark:bg-gray-800 rounded"></div>
+//         </div>
+//       </div>
+//     </div>
+//   </div>
+// })
 
 const LazyCaseStudy = dynamic(() => import("@/components/ui/case-study").then(mod => ({ default: mod.CaseStudy })), {
   loading: () => <div className="pt-20 px-8 bg-white dark:bg-primary max-w-screen-2xl mx-auto">
