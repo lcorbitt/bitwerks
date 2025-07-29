@@ -1,6 +1,6 @@
 import * as React from "react"
 import Link from "next/link"
-import { Menu } from "lucide-react"
+import { Menu, ChevronDown, ChevronUp } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import {
   Sheet,
@@ -10,16 +10,39 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet"
 
-interface MobileNavProps {
-  items: {
-    title: string
-    href: string
-    description?: string
-  }[]
-}
+const services = [
+  {
+    title: "Web Development",
+    href: "/services/web-development",
+  },
+  {
+    title: "Software Development", 
+    href: "/services/software-development",
+  },
+  {
+    title: "Technical Consulting",
+    href: "/services/technical-consulting",
+  },
+]
 
-export function MobileNav({ items }: MobileNavProps) {
+const navigationItems = [
+  {
+    title: "Our Work",
+    href: "/our-work",
+  },
+  {
+    title: "Technologies", 
+    href: "/technologies",
+  },
+  {
+    title: "About",
+    href: "/about",
+  },
+]
+
+export function MobileNav() {
   const [open, setOpen] = React.useState(false)
+  const [servicesOpen, setServicesOpen] = React.useState(false)
 
   return (
     <Sheet open={open} onOpenChange={setOpen}>
@@ -36,23 +59,50 @@ export function MobileNav({ items }: MobileNavProps) {
         <SheetHeader className="mb-4">
           <SheetTitle className="text-black dark:text-white">Navigation</SheetTitle>
         </SheetHeader>
-        <nav className="grid grid-cols-2 gap-4">
-          {items.map((item) => (
+        <nav className="space-y-2">
+          {/* Services Dropdown */}
+          <div className="space-y-2">
+            <button
+              onClick={() => setServicesOpen(!servicesOpen)}
+              className="flex w-full items-center justify-between rounded-md p-3 text-left text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800"
+            >
+              <span className="text-sm font-medium">Services</span>
+              {servicesOpen ? (
+                <ChevronUp className="h-4 w-4" />
+              ) : (
+                <ChevronDown className="h-4 w-4" />
+              )}
+            </button>
+            {servicesOpen && (
+              <div className="ml-4 space-y-1 border-l-2 border-gray-200 dark:border-gray-700 pl-4">
+                {services.map((service) => (
+                  <Link
+                    key={service.href}
+                    href={service.href}
+                    className="block rounded-md p-2 text-sm text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-800"
+                    onClick={() => setOpen(false)}
+                  >
+                    {service.title}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
+
+          {/* Other Navigation Items */}
+          {navigationItems.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="flex flex-col space-y-1 rounded-md p-3 text-black dark:text-white"
+              className="flex items-center rounded-md p-3 text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800"
               onClick={() => setOpen(false)}
             >
               <span className="text-sm font-medium">{item.title}</span>
-              {item.description && (
-                <span className="line-clamp-2 text-sm text-muted-foreground dark:text-muted-dark">
-                  {item.description}
-                </span>
-              )}
             </Link>
           ))}
-          <Button asChild variant="default" className="col-span-2 mt-4 bg-black hover:bg-black/90 dark:bg-white dark:text-primary text-white">
+
+          {/* CTA Button */}
+          <Button asChild variant="default" className="w-full mt-6 bg-black hover:bg-black/90 dark:bg-white dark:text-primary text-white">
             <Link href="/contact" onClick={() => setOpen(false)}>
               Schedule a Call
             </Link>

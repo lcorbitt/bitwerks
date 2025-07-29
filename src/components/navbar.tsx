@@ -51,7 +51,7 @@ export function Navbar() {
               <NavigationMenuItem>
                 <NavigationMenuTrigger className="font-bold hover:text-brand focus:text-brand">SERVICES</NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="grid w-[250px] p-4 md:grid-cols-1 bg-white dark:bg-tertiary">
+                  <ul className="grid w-[250px] p-4 md:grid-cols-1 bg-white dark:bg-tertiary border-l-2 border-gray-200 dark:border-gray-700 pl-4">
                     {services.map((service) => (
                       <ListItem
                         key={service.title}
@@ -82,7 +82,7 @@ export function Navbar() {
               </NavigationMenuSimpleLink>
             </NavigationMenuList>
           </NavigationMenu>
-          <MobileNav items={[...services, ...navigationItems]} />
+          <MobileNav />
           <Button asChild variant="default" className="hidden lg:flex bg-black hover:bg-black/90 dark:bg-white dark:text-black">
             <Link href="/contact">Schedule a Call</Link>
           </Button>
