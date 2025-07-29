@@ -93,7 +93,7 @@ export default function WhyChooseUs() {
           <div className="mt-16 lg:hidden">
             <div className="w-full h-64 md:h-80 lg:h-96 relative rounded-tr-lg rounded-br-lg overflow-hidden">
               <Image
-                src="/developer-headphones.jpg"
+                src="/glasses.jpg"
                 alt="Web developer working on laptop"
                 fill
                 className="object-cover"
