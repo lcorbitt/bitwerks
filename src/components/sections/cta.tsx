@@ -6,7 +6,7 @@ import { WaveGraphic } from "@/components/ui/wave-graphic"
 export function CTA() {
   return (
     <>
-    <WaveGraphic />
+      <WaveGraphic />
     <section className="relative dark:bg-primary bg-brand pt-0">
       <div className="container relative z-10">
         <div className="mx-auto max-w-3xl text-center">

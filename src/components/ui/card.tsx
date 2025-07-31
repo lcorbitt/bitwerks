@@ -12,7 +12,7 @@ export function Card({ title, description, linkText, linkHref, children }: CardP
   // Determine animation based on title
   const getAnimationClass = () => {
     if (title.toLowerCase().includes('web')) {
-      return 'group-hover:animate-float' // Globe - floating animation
+      return 'group-hover:animate-flip-horizontal' // Globe - horizontal flip animation
     } else if (title.toLowerCase().includes('software')) {
       return 'group-hover:animate-spin-slow' // Cog - spinning animation
     } else {

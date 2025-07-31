@@ -22,7 +22,7 @@ export function Hero({ locationString }: HeroProps) {
             <Heading1 className="mx-auto lg:mx-0 max-w-3xl lg:max-w-none relative z-10">Sleek, responsive</Heading1>
             <Heading1 className="mb-6 mx-auto lg:mx-0 max-w-3xl lg:max-w-none relative z-10 text-brand">websites</Heading1>
             <p className="mb-8 text-basetext-muted-foreground md:text-lg mx-auto lg:mx-0 max-w-2xl lg:max-w-xl relative z-10">
-              Work with a dedicated expert to design and develop your website or web app that looks great and performs even better.
+              Work with a dedicated expert to design and develop your website that looks great and performs even better.
             </p>
             <div className="flex gap-4 justify-center lg:justify-start relative z-10">
               <Button

@@ -17,14 +17,13 @@ export function Hero({ locationString }: HeroProps) {
             <p className="mb-2 text-muted-light dark:text-muted-dark tracking-widest font-normal">
               SOFTWARE DEVELOPMENT
             </p>
-            <h1 className="mb-6 text-5xl font-bold tracking-tight text-gray-900 dark:text-white md:text-6xl">
+            <Heading1 className="mb-6 text-5xl font-bold tracking-tight text-gray-900 dark:text-white md:text-6xl">
               Powerful, custom
               <br />
-              <span className="text-brand">software</span>.
-            </h1>
-            <p className="mb-8 text-lg text-gray-600 dark:text-gray-300">
-              Work with a dedicated expert to design and develop custom software applications that streamline your business operations and drive growth.
-            </p>
+              <span className="text-brand">software</span>
+            </Heading1>
+            <p className="mb-8 text-basetext-muted-foreground md:text-lg mx-auto lg:mx-0 max-w-2xl lg:max-w-xl relative z-10">
+              Collaborate with a dedicated developer to create software tailored to your workflow and business goals.</p>
             <div className="flex flex-col gap-4 sm:flex-row lg:justify-start sm:justify-center">
               <Button variant="default" size="lg" asChild>
                 <Link href="/contact">Get Started</Link>

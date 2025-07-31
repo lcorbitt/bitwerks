@@ -53,7 +53,7 @@ export function FAQSection() {
                 Yes! We provide comprehensive training for your team, detailed documentation, and ongoing technical support. We offer maintenance packages that include updates, bug fixes, and feature enhancements. We&apos;re committed to ensuring your software continues to meet your business needs as you grow.
               </AccordionContent>
             </AccordionItem>
-
+            
             <AccordionItem value="item-7">
               <AccordionTrigger className="text-lg font-semibold text-gray-900 dark:text-white">
                 How do you ensure our business data is secure?

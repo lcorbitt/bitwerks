@@ -55,54 +55,54 @@ const webDevelopmentServices = [
     icon: "📱",
   },
   {
-    title: "Custom Software",
-    description: "Complete online store development with payment processing and inventory management.",
+    title: "User-Friendly UIs",
+    description: "Intuitive and accessible user interfaces that provide excellent user experience.",
     features: [
-      "Tailored solutions designed around your unique workflows",
-      "Streamlined internal tools to increase team productivity",
-      "Scalable systems built to grow with your organization",
+      "Clean, intuitive navigation and user flows",
+      "Accessibility compliance for all users",
+      "Mobile-first design principles",
     ],
-    icon: "⚙️",
+    icon: "🎨",
   },
   {
-    title: "E-commerce Solutions",
-    description: "End-to-end online shopping platforms with secure payment gateways and seamless product management.",
+    title: "Custom Theming",
+    description: "Unique designs that reflect your brand - no cookie cutter templates or page builders.",
     features: [
-      "User-friendly storefronts optimized for conversions and engagement",
-      "Integrated payment processing with multiple options and currencies",
-      "Robust inventory and order management to keep your business running smoothly"
+      "Bespoke designs tailored to your brand identity",
+      "No generic templates or page builder limitations",
+      "Custom animations and interactive elements",
     ],
-    icon: "🛒",
+    icon: "🎨",
   },
   {
-    title: "Customer Relationship Management (CRM)",
-    description: "Custom CRM solutions for managing your customer relationships and sales pipeline.",
+    title: "SEO Focused",
+    description: "Websites built with search engine optimization in mind from the ground up.",
     features: [
-      "Centralized customer data for easy access and management",
-      "Automated sales pipeline tracking",
-      "Customizable dashboards and reports",
+      "Semantic HTML structure for better search rankings",
+      "Optimized meta tags and structured data",
+      "Fast loading speeds and mobile optimization",
     ],
-    icon: "🤝",
+    icon: "🔍",
   },
   {
-    title: "Web Portals & Dashboards",
-    description: "Custom portals and dashboards for data visualization and business intelligence.",
+    title: "Modern Web Technologies",
+    description: "Built with the latest web standards and technologies for optimal performance.",
     features: [
-      "Real-time data visualization",
-      "User role management",
-      "Data export capabilities",
+      "Latest HTML5, CSS3, and JavaScript features",
+      "Progressive Web App capabilities",
+      "Cross-browser compatibility and testing",
     ],
-    icon: "📊",
+    icon: "⚡",
   },
   {
-    title: "API Development",
-    description: "Robust API development for seamless integration with third-party services.",
+    title: "Performance Optimized",
+    description: "Websites designed for speed and efficiency to provide the best user experience.",
     features: [
-      "RESTful API design",
-      "Authentication & authorization",
-      "Comprehensive documentation",
+      "Optimized images and asset compression",
+      "Minified code and efficient loading",
+      "CDN integration for global performance",
     ],
-    icon: "🔗",
+    icon: "🚀",
   },
 ]
 
@@ -131,7 +131,7 @@ export default function Services() {
             Web Development Services We Provide
           </Heading2>
           <p className="text-xl text-muted-light dark:text-muted-dark">
-            From simple websites to complex enterprise solutions, we deliver results that drive growth.
+            Beautiful, effective websites built to grow your business.
           </p>
         </div>
 
