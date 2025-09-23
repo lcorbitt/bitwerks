@@ -11,7 +11,7 @@ interface HeroProps {
 
 export function Hero({ locationString }: HeroProps) {
   return (
-    <section className="relative overflow-hidden pt-16 md:pt-20 pb-32 md:pb-64 w-full h-full bg-light dark:bg-tertiary">
+    <section className="relative overflow-hidden pb-32 md:pb-64 w-full h-full bg-light dark:bg-tertiary">
       <div className="container relative z-20">
         <div className="mx-auto lg:grid lg:items-center lg:gap-8 lg:grid-cols-2">
           {/* Text content */}

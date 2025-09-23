@@ -7,16 +7,16 @@ import { Quote } from "@/components/ui/quote"
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden pt-16 md:pt-20 pb-32 md:pb-64 w-full h-full bg-light dark:bg-tertiary">
+    <section className="relative overflow-hidden pb-32 md:pb-64 w-full h-full bg-light dark:bg-tertiary">
       <div className="container relative z-20">
-        <div className="mx-auto lg:grid lg:items-center lg:gap-8 lg:grid-cols-2">
+        <div className="mx-auto lg:grid lg:items-start lg:gap-8 lg:grid-cols-2">
           {/* Text content */}
           <div className="flex flex-col text-center lg:text-left w-full">
             <p className="mb-2 text-muted-light dark:text-muted-dark tracking-widest font-normal">
               PRICING
             </p>
-            <Heading1 className="mx-auto lg:mx-0 max-w-3xl lg:max-w-none relative z-10">Choose your path to</Heading1>
-            <Heading1 className="mb-6 mx-auto lg:mx-0 max-w-3xl lg:max-w-none relative z-10 text-brand">success</Heading1>
+            <Heading1 className="mx-auto lg:mx-0 max-w-3xl lg:max-w-none relative z-10">Pricing packages for</Heading1>
+            <Heading1 className="mb-6 mx-auto lg:mx-0 max-w-3xl lg:max-w-none relative z-10 text-brand">every budget</Heading1>
             <p className="mb-8 text-basetext-muted-foreground md:text-lg mx-auto lg:mx-0 max-w-2xl lg:max-w-xl relative z-10">
               Choose the perfect plan for your business needs. All plans include our core services with no hidden fees.
             </p>

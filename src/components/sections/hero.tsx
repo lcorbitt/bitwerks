@@ -9,7 +9,7 @@ interface HeroProps {
 
 export function Hero({ locationString }: HeroProps) {
   return (
-    <section className="relative overflow-hidden pt-16 md:pt-20 pb-32 md:pb-64 w-full h-full">
+    <section className="relative overflow-hidden pb-32 md:pb-64 w-full h-full">
       {/* Hero background image */}
       <div className="absolute inset-0 w-full h-full z-0">
         <Image
