@@ -10,7 +10,7 @@ export function Quote({ quote, author, title, company }: QuoteProps) {
     <div className="relative p-8 rounded-2xl">
       {/* Large decorative quotation marks */}
       <div className="z-10 absolute -top-4 -left-4 text-[12rem] text-brand/50 font-serif leading-none">
-        "
+        &ldquo;
       </div>
       
       {/* Quote card */}

@@ -20,7 +20,7 @@ export function FAQSection() {
           <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="item-1">
               <AccordionTrigger className="text-lg font-semibold text-gray-900 dark:text-white">
-                What's the difference between website and software pricing?
+                What&apos;s the difference between website and software pricing?
               </AccordionTrigger>
               <AccordionContent className="text-gray-600 dark:text-gray-300">
                 Website pricing is for static sites and simple web presence, while Software pricing is for interactive applications with user accounts, databases, and complex functionality. Enterprise tiers include design system handoffs and complete audits/refactoring of existing projects.
@@ -29,7 +29,7 @@ export function FAQSection() {
             
             <AccordionItem value="item-2">
               <AccordionTrigger className="text-lg font-semibold text-gray-900 dark:text-white">
-                What's included in the hosting?
+                What&apos;s included in the hosting?
               </AccordionTrigger>
               <AccordionContent className="text-gray-600 dark:text-gray-300">
                 All plans include 1 year of hosting. Websites use Vercel (optimized for static sites), while Software use Render (better for full-stack applications with databases).
@@ -41,13 +41,13 @@ export function FAQSection() {
                 Can I upgrade my plan later?
               </AccordionTrigger>
               <AccordionContent className="text-gray-600 dark:text-gray-300">
-                Yes! You can upgrade within the same category (Basic to Professional, etc.) or switch between Website and Software pricing. We'll credit your previous payment toward the upgrade.
+                Yes! You can upgrade within the same category (Basic to Professional, etc.) or switch between Website and Software pricing. We&apos;ll credit your previous payment toward the upgrade.
               </AccordionContent>
             </AccordionItem>
             
             <AccordionItem value="item-4">
               <AccordionTrigger className="text-lg font-semibold text-gray-900 dark:text-white">
-                What's included in the Enterprise design system handoff?
+                What&apos;s included in the Enterprise design system handoff?
               </AccordionTrigger>
               <AccordionContent className="text-gray-600 dark:text-gray-300">
                 Enterprise plans include a complete design system with component library, style guide, brand guidelines, and documentation. This allows your internal team to maintain and extend the design consistently across all future projects.
@@ -59,7 +59,7 @@ export function FAQSection() {
                 What does the audit and refactor service include?
               </AccordionTrigger>
               <AccordionContent className="text-gray-600 dark:text-gray-300">
-                We'll analyze your existing website or application for performance issues, security vulnerabilities, outdated code, and UX problems. Then we'll refactor, modernize, and optimize everything while maintaining your brand and functionality.
+                We&apos;ll analyze your existing website or application for performance issues, security vulnerabilities, outdated code, and UX problems. Then we&apos;ll refactor, modernize, and optimize everything while maintaining your brand and functionality.
               </AccordionContent>
             </AccordionItem>
             
@@ -68,7 +68,7 @@ export function FAQSection() {
                 What happens after the first year?
               </AccordionTrigger>
               <AccordionContent className="text-gray-600 dark:text-gray-300">
-                After the first year, hosting costs $25/month for Websites and $50/month for Software. We'll handle the renewal and keep your project running smoothly.
+                After the first year, hosting costs $25/month for Websites and $50/month for Software. We&apos;ll handle the renewal and keep your project running smoothly.
               </AccordionContent>
             </AccordionItem>
             
