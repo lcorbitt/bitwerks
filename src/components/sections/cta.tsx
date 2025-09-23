@@ -1,13 +1,25 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Heading2 } from "@/components/ui/heading"
-import { WaveGraphic } from "@/components/ui/wave-graphic"
 
-export function CTA() {
+interface CTAProps {
+  className?: string
+}
+
+export function CTA({ className = "" }: CTAProps) {
   return (
-    <>
-      <WaveGraphic />
-    <section className="relative dark:bg-primary bg-brand pt-0">
+    <section className={`relative dark:bg-primary bg-brand pt-16 md:pt-24 ${className}`}>
+      {/* Circuit board background */}
+      <div 
+        className="absolute inset-0 opacity-5"
+        style={{
+          backgroundImage: 'url(/circuit-board.svg)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          backgroundAttachment: 'fixed'
+        }}
+      />
       <div className="container relative z-10">
         <div className="mx-auto max-w-3xl text-center">
           {/* Card */}
@@ -23,6 +35,5 @@ export function CTA() {
         </div>
       </div>
     </section>
-    </>
   )
 }

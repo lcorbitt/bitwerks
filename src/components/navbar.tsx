@@ -2,41 +2,10 @@
 
 import * as React from "react"
 import Link from "next/link"
-import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger, NavigationMenuSimpleLink, navigationMenuTriggerStyle } from "@/components/ui/navigation-menu"
 import { Button } from "@/components/ui/button"
 import { MobileNav } from "@/components/mobile-nav"
-import { cn } from "@/lib/utils"
 import { ThemeToggle } from "@/components/theme-toggle"
-
-const services: { title: string; href: string; }[] = [
-  {
-    title: "Web Development",
-    href: "/services/web-development",
-  },
-  {
-    title: "Software Development",
-    href: "/services/software-development",
-  },
-  {
-    title: "Technical Consulting",
-    href: "/services/technical-consulting",
-  },
-]
-
-const navigationItems = [
-  {
-    title: "Services",
-    href: "/services",
-  },
-  {
-    title: "About",
-    href: "/about",
-  },
-  {
-    title: "Portfolio",
-    href: "/portfolio",
-  },
-]
+import { navigationItems } from "./navigation-data"
 
 export function Navbar() {
   return (
@@ -46,42 +15,39 @@ export function Navbar() {
           <span className="text-3xl font-bold text-brand">Bit<span className="dark:text-white text-black">Werks</span></span>
         </Link>
         <div className="flex items-center space-x-4">
-          <NavigationMenu className="hidden lg:flex">
-            <NavigationMenuList className="gap-2">
-              <NavigationMenuItem>
-                <NavigationMenuTrigger className="font-bold hover:text-brand focus:text-brand">SERVICES</NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <ul className="grid w-[250px] p-4 md:grid-cols-1 bg-white dark:bg-tertiary">
-                    {services.map((service) => (
-                      <ListItem
-                        key={service.title}
-                        title={service.title}
-                        href={service.href}
-                       />
-                    ))}
-                  </ul>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
-              <NavigationMenuSimpleLink 
-                href="/our-work"
-                className={cn(navigationMenuTriggerStyle(), "font-bold hover:text-brand focus:text-brand")}
-              >
-                OUR WORK
-              </NavigationMenuSimpleLink>
-              <NavigationMenuSimpleLink 
-                href="/ "
-                className={cn(navigationMenuTriggerStyle(), "font-bold hover:text-brand focus:text-brand")}
-              >
-                TECHNOLOGIES
-              </NavigationMenuSimpleLink>
-              <NavigationMenuSimpleLink 
-                href="/about"
-                className={cn(navigationMenuTriggerStyle(), "font-bold hover:text-brand focus:text-brand")}
-              >
-                ABOUT
-              </NavigationMenuSimpleLink>
-            </NavigationMenuList>
-          </NavigationMenu>
+          <nav className="hidden lg:flex items-center space-x-8">
+            {navigationItems.map((item) => (
+              <div key={item.title} className="relative group">
+                {item.type === 'dropdown' ? (
+                  <>
+                    <button className="font-bold hover:text-brand focus:text-brand transition-colors">
+                      {item.title}
+                    </button>
+                    <div className="absolute top-full left-0 mt-2 w-64 bg-white dark:bg-tertiary rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                      <div className="p-4">
+                        {item.children?.map((child) => (
+                          <Link
+                            key={child.href}
+                            href={child.href}
+                            className="block px-3 py-2 text-sm text-gray-700 dark:text-gray-300 hover:text-brand hover:bg-gray-50 dark:hover:bg-gray-800 rounded-md transition-colors"
+                          >
+                            {child.title}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  </>
+                ) : (
+                  <Link
+                    href={item.href}
+                    className="font-bold hover:text-brand focus:text-brand transition-colors"
+                  >
+                    {item.title}
+                  </Link>
+                )}
+              </div>
+            ))}
+          </nav>
           <MobileNav />
           <Button asChild variant="default" className="hidden lg:flex bg-black hover:bg-black/90 dark:bg-white dark:text-black">
             <Link href="/contact">Schedule a Call</Link>
@@ -92,29 +58,3 @@ export function Navbar() {
     </header>
   )
 }
-
-const ListItem = React.forwardRef<
-  React.ElementRef<"a">,
-  React.ComponentPropsWithoutRef<"a">
->(({ className, title, children, ...props }, ref) => {
-  return (
-    <li className="border-l-2 border-gray-200 dark:border-gray-700 pl-2 ml-2">
-      <NavigationMenuLink asChild>
-        <a
-          ref={ref}
-          className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:text-brand focus:text-brand",
-            className
-          )}
-          {...props}
-        >
-          <div className="text-sm font-medium leading-none">{title}</div>
-          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-            {children}
-          </p>
-        </a>
-      </NavigationMenuLink>
-    </li>
-  )
-})
-ListItem.displayName = "ListItem" 

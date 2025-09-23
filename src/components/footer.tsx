@@ -3,38 +3,10 @@ import { Button } from "@/components/ui/button"
 
 export function Footer() {
   return (
-    <footer className="relative overflow-hidden">
-      {/* Circuit board background - mobile (scaled down) */}
-      <div
-        className="absolute inset-0 w-full h-full z-0 md:hidden"
-        style={{
-          backgroundImage: 'url("/circuit-board.svg")',
-          backgroundSize: '200% 200%',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          backgroundAttachment: 'fixed',
-          opacity: 0.2,
-        }}
-        aria-hidden="true"
-      />
-      {/* Circuit board background - desktop (full size) */}
-      <div
-        className="absolute inset-0 w-full h-full z-0 hidden md:block"
-        style={{
-          backgroundImage: 'url("/circuit-board.svg")',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          backgroundAttachment: 'fixed',
-          opacity: 0.2,
-        }}
-        aria-hidden="true"
-      />
-      {/* White overlay for light mode only */}
-      <div className="block dark:hidden absolute inset-0 bg-white/80 z-10" aria-hidden="true" />
+    <footer className="relative dark:bg-tertiary">
       {/* Footer content */}
-      <div className="relative z-20 dark:text-white">
-        <div className="container pb-4 pt-8">
+      <div className="dark:text-white">
+        <div className="container pb-4 pt-12">
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
             <div className="space-y-4">
               <h3 className="text-lg font-semibold"><span className="text-brand">Bit</span>Werks</h3>
