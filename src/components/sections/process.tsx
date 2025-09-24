@@ -1,3 +1,5 @@
+"use client"
+
 import Image from "next/image";
 import { MessageSquare, FileText, Zap } from "lucide-react";
 import { Button } from "../ui/button";
@@ -31,7 +33,9 @@ export function Process() {
         {/* Right: Timeline */}
         <div className="flex-1 flex flex-col gap-12 relative">
           {/* Vertical dashed line */}
-          <div className="absolute left-6 top-8 bottom-8 w-0.5 border-l-2 border-dashed border-gray-300 z-0" />
+          <div className="absolute left-6 top-8 bottom-8 w-0.5 h-[36rem] border-l-2 border-dashed border-gray-300 z-0 animated-dashed-line" />
+          {/* Fade out overlay at bottom */}
+          <div className="absolute left-6 bottom-4 w-0.5 h-16 bg-gradient-to-t from-[#f6f7f8] to-transparent dark:from-tertiary z-10" />
           {/* Step 1 */}
           <div className="flex items-start gap-6 relative z-10">
             <div className="flex flex-col items-center">
@@ -82,6 +86,24 @@ export function Process() {
           </div>
         </div>
       </div>
+      
+      <style jsx>{`
+        .animated-dashed-line {
+          border-style: dashed;
+          border-color: #d1d5db;
+          animation: dashMove 1s linear infinite;
+        }
+        
+        @keyframes dashMove {
+          0% { 
+            border-image: repeating-linear-gradient(to bottom, #d1d5db 0px, #d1d5db 6px, transparent 6px, transparent 12px) 1;
+          }
+          100% { 
+            border-image: repeating-linear-gradient(to bottom, #d1d5db 0px, #d1d5db 6px, transparent 6px, transparent 12px) 1;
+            transform: translateY(12px);
+          }
+        }
+      `}</style>
     </section>
   );
 } 

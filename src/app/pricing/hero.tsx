@@ -12,7 +12,7 @@ export function Hero() {
         <div className="mx-auto lg:grid lg:items-start lg:gap-8 lg:grid-cols-2">
           {/* Text content */}
           <div className="flex flex-col text-center lg:text-left w-full">
-            <p className="mb-2 text-muted-light dark:text-muted-dark tracking-widest font-normal">
+            <p className="mb-2 text-muted-light dark:text-muted-dark tracking-widest font-normal uppercase">
               PRICING
             </p>
             <Heading1 className="mx-auto lg:mx-0 max-w-3xl lg:max-w-none relative z-10">Plans for</Heading1>
@@ -34,7 +34,7 @@ export function Hero() {
           <div className="hidden lg:flex relative items-center justify-end">
             <div className="w-full h-auto max-w-[450px]">
               <Quote
-                quote="What BitWerks has brought to the team is exactly the bridge I've needed for quite some time: the connection between UX thinking and engineering. I really appreciate how they've helped with architecture improvements, and the overall sharpening of our engineering and design thinking. I feel very encouraged because I feel like I have a real ally in them!"
+                quote="BitWerks delivers the connection I’ve long needed between UX thinking and engineering. I really appreciate how they've helped with architecture improvements, and the overall sharpening of our engineering and design thinking. I feel very encouraged because I feel like I have a real ally in them!"
                 author="Jed B."
                 title="CEO & Founder"
                 company="Votary Films"

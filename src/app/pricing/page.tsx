@@ -2,7 +2,6 @@
 
 import { Button } from "@/components/ui/button"
 import { Check, X } from "lucide-react"
-import { Heading2 } from "@/components/ui/heading"
 import { useState } from "react"
 import { Hero } from "./hero"
 import { FAQSection } from "./faq"

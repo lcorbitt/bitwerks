@@ -77,7 +77,7 @@ export function FAQSection() {
                 Do you provide ongoing support?
               </AccordionTrigger>
               <AccordionContent className="text-gray-600 dark:text-gray-300">
-                Yes! Professional and Enterprise plans include 24/7 support. Basic/Starter plans include email support. All plans include bug fixes and security updates.
+                Yes! All plans include 24/7 support, bug fixes, and security updates.
               </AccordionContent>
             </AccordionItem>
           </Accordion>

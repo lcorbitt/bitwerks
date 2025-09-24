@@ -28,7 +28,7 @@ export function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/services/technical-consulting" className="text-muted-foreground hover:text-foreground dark:text-white/80 dark:hover:text-white">
+                  <Link href="/services/white-label-partnerships" className="text-muted-foreground hover:text-foreground dark:text-white/80 dark:hover:text-white">
                     White Label Partnerships
                   </Link>
                 </li>
@@ -70,7 +70,7 @@ export function Footer() {
             </div>
           </div>
           <div className="mt-8 border-t pt-4">
-            <p className="text-center text-sm text-muted-foreground dark:text-white/80">
+            <p className="text-center text-xs text-muted-foreground dark:text-white/80">
               © {new Date().getFullYear()} BitWerks. All rights reserved.
             </p>
           </div>
