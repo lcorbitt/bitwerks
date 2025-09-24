@@ -23,10 +23,10 @@ const websiteTiers = [
       { name: "Contact Form Integration", included: true },
       { name: "Hosting (1 year)", included: true },
       { name: "Performance Optimization", included: true },
-      { name: "Basic Analytics Setup", included: true },
       { name: "SSL Certificate", included: true },
+      { name: "24/7 Support", included: true },
+      { name: "Basic Analytics Setup", included: false },
       { name: "Content Management", included: false },
-      { name: "24/7 Support", included: false },
     ],
     cta: "Get Started",
     ctaLink: "/contact"
@@ -145,22 +145,32 @@ const softwareAppTiers = [
 function PricingToggle({ activeTab, onTabChange }: { activeTab: 'website' | 'software'; onTabChange: (tab: 'website' | 'software') => void }) {
   return (
     <div className="flex items-center justify-center">
-      <div className="bg-gray-100 dark:bg-gray-800 rounded-lg p-1 flex">
+      <div className="relative bg-gray-100 dark:bg-gray-500 rounded-lg p-1 flex">
+        {/* Sliding background */}
+        <div 
+          className={`absolute top-1 bottom-1 w-[calc(50%-0.25rem)] bg-white dark:bg-gray-700 rounded-md shadow-sm transition-transform duration-300 ease-in-out ${
+            activeTab === 'website' ? 'translate-x-0' : 'translate-x-full'
+          }`}
+        />
+        
+        {/* Website Button */}
         <button
           onClick={() => onTabChange('website')}
-          className={`px-6 py-3 rounded-md text-sm font-semibold transition-all duration-300 ${
+          className={`relative z-10 px-6 py-3 rounded-md text-sm font-semibold transition-colors duration-300 ${
             activeTab === 'website'
-              ? 'bg-white dark:bg-gray-700 text-black dark:text-white shadow-sm'
+              ? 'text-black dark:text-white'
               : 'text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white'
           }`}
         >
           Website
         </button>
+        
+        {/* Software Button */}
         <button
           onClick={() => onTabChange('software')}
-          className={`px-6 py-3 rounded-md text-sm font-semibold transition-all duration-300 ${
+          className={`relative z-10 px-6 py-3 rounded-md text-sm font-semibold transition-colors duration-300 ${
             activeTab === 'software'
-              ? 'bg-white dark:bg-gray-700 text-black dark:text-white shadow-sm'
+              ? 'text-black dark:text-white'
               : 'text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white'
           }`}
         >
@@ -251,29 +261,31 @@ export default function PricingPage() {
         <div className="container mx-auto">
           {/* CTA for Toggle */}
           <div className="text-center">
-            <p className="text-lg font-semibold text-black dark:text-white mb-2">
-              Choose your project type
+            <p className="mb-2 text-muted-light dark:text-muted-dark tracking-widest font-normal uppercase">
+              CHOOSE PROJECT TYPE
             </p>
-            <p className="text-muted-foreground mb-6">
+            <p className="mb-6 text-muted-foreground tracking-wide text-base md:text-lg">
               Select Website or Software below to view pricing tailored to your specific needs.
             </p>
           </div>
           
           {/* Toggle */}
-          <div className="text-center py-6">
+          <div className="text-center mb-6">
           <PricingToggle activeTab={activeTab} onTabChange={setActiveTab} />
           </div>
 
-          <div className="relative pt-24 mb-12">
+          <div className="relative min-h-[600px]">
             {/* Website Pricing */}
             <div 
               className={`transition-all duration-500 ease-in-out ${
-                activeTab === 'website' 
+                activeTab === 'website'
                   ? 'opacity-100 translate-y-0' 
                   : 'opacity-0 translate-y-4 absolute inset-0 pointer-events-none'
               }`}
             >
-              <PricingCards tiers={websiteTiers} />
+              <div className="pt-24">
+                <PricingCards tiers={websiteTiers} />
+              </div>
             </div>
             
             {/* Software Pricing */}
@@ -284,7 +296,9 @@ export default function PricingPage() {
                   : 'opacity-0 translate-y-4 absolute inset-0 pointer-events-none'
               }`}
             >
-              <PricingCards tiers={softwareAppTiers} />
+              <div className="pt-24">
+                <PricingCards tiers={softwareAppTiers} />
+              </div>
             </div>
           </div>
         </div>

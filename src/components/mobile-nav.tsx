@@ -56,7 +56,13 @@ export function MobileNav() {
                 <Link
                   href={item.href}
                   className="flex items-center rounded-md p-3 text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200"
-                  onClick={() => setOpen(false)}
+                  onClick={(e) => {
+                    setOpen(false)
+                    if (item.href === '/' && window.location.pathname === '/') {
+                      e.preventDefault()
+                      window.scrollTo({ top: 0, behavior: 'smooth' })
+                    }
+                  }}
                 >
                   <span className="text-sm font-medium">{item.title}</span>
                 </Link>

@@ -15,7 +15,7 @@ export function Hero() {
             <p className="mb-2 text-muted-light dark:text-muted-dark tracking-widest font-normal">
               PRICING
             </p>
-            <Heading1 className="mx-auto lg:mx-0 max-w-3xl lg:max-w-none relative z-10">Pricing packages for</Heading1>
+            <Heading1 className="mx-auto lg:mx-0 max-w-3xl lg:max-w-none relative z-10">Plans for</Heading1>
             <Heading1 className="mb-6 mx-auto lg:mx-0 max-w-3xl lg:max-w-none relative z-10 text-brand">every budget</Heading1>
             <p className="mb-8 text-basetext-muted-foreground md:text-lg mx-auto lg:mx-0 max-w-2xl lg:max-w-xl relative z-10">
               Choose the perfect plan for your business needs. All plans include our core services with no hidden fees.

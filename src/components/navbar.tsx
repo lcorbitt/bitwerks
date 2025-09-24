@@ -11,7 +11,16 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 bg-white dark:bg-black w-full py-4 shadow dark:shadow-black/40">
       <div className="container flex h-16 items-center justify-between">
-        <Link href="/" className="flex items-center space-x-2">
+        <Link 
+          href="/" 
+          className="flex items-center space-x-2"
+          onClick={(e) => {
+            if (window.location.pathname === '/') {
+              e.preventDefault()
+              window.scrollTo({ top: 0, behavior: 'smooth' })
+            }
+          }}
+        >
           <span className="text-3xl font-bold text-brand">Bit<span className="dark:text-white text-black">Werks</span></span>
         </Link>
         <div className="flex items-center space-x-8">
@@ -41,6 +50,12 @@ export function Navbar() {
                   <Link
                     href={item.href}
                     className="font-bold hover:text-brand focus:text-brand transition-colors"
+                    onClick={(e) => {
+                      if (item.href === '/' && window.location.pathname === '/') {
+                        e.preventDefault()
+                        window.scrollTo({ top: 0, behavior: 'smooth' })
+                      }
+                    }}
                   >
                     {item.title}
                   </Link>
