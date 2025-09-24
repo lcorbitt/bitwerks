@@ -29,7 +29,7 @@ export function Footer() {
                 </li>
                 <li>
                   <Link href="/services/technical-consulting" className="text-muted-foreground hover:text-foreground dark:text-white/80 dark:hover:text-white">
-                    Technical Consulting
+                    White-label Development
                   </Link>
                 </li>
               </ul>

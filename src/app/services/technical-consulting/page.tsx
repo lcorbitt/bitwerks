@@ -58,11 +58,11 @@ const LazyCTA = dynamic(() => import("@/components/sections/cta").then(mod => ({
 })
 
 export const metadata: Metadata = {
-  title: "BitWerks | Technical Consulting & Technology Guidance",
-  description: "Expert technical consulting based in Fort Collins, CO, serving businesses nationwide. Get guidance on technology decisions, architecture planning, and digital strategy.",
+  title: "BitWerks | White-label Development & Agency Partnerships",
+  description: "Partner with BitWerks for white-label development services. We build custom websites and applications under your brand for marketing and SEO agencies nationwide.",
   openGraph: {
-    title: "BitWerks | Technical Consulting & Technology Guidance",
-    description: "Get expert guidance on technology decisions and digital strategy. Based in Fort Collins, CO, serving businesses nationwide.",
+    title: "BitWerks | White-label Development & Agency Partnerships",
+    description: "Partner with us for white-label development services. Custom websites and applications under your brand. Based in Fort Collins, CO, serving agencies nationwide.",
   },
 }
 
@@ -70,7 +70,7 @@ interface PageProps {
   searchParams?: { [key: string]: string | string[] | undefined }
 }
 
-export default async function TechnicalConsulting({ searchParams = {} }: PageProps) {
+export default async function WhiteLabelDevelopment({ searchParams = {} }: PageProps) {
   const location: LocationData = getLocationFromParams(searchParams)
   const locationString = location.isDefault ? "nationwide" : `${location.city}, ${location.state}`
 

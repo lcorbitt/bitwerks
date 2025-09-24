@@ -15,19 +15,19 @@ export function Hero({ locationString }: HeroProps) {
           {/* Text content */}
           <div className="flex flex-col text-center lg:text-left w-full">
             <p className="mb-2 text-muted-light dark:text-muted-dark tracking-widest font-normal">
-              TECHNICAL CONSULTING
+              WHITE-LABEL DEVELOPMENT
             </p>
             <h1 className="mb-6 text-5xl font-bold tracking-tight text-gray-900 dark:text-white md:text-6xl">
-              Expert guidance for your
+              Partner with us to deliver
               <br />
-              <span className="text-brand">technology decisions</span>.
+              <span className="text-brand">custom solutions</span>.
             </h1>
             <p className="mb-8 text-lg text-gray-600 dark:text-gray-300">
-              Get professional advice on technology strategy, architecture planning, and digital solutions. Whether you need help choosing the right tools or understanding complex technical concepts, we&apos;re here to guide you.
+              We work with marketing and SEO agencies to build custom websites and applications under your brand. With our custom designs, development expertise, and perfect Page Speed Scores, we boost the power and performance of any marketing campaign.
             </p>
             <div className="flex flex-col gap-4 sm:flex-row lg:justify-start sm:justify-center">
               <Button variant="default" size="lg" asChild>
-                <Link href="/contact">Get Expert Advice</Link>
+                <Link href="/contact">Start Partnership</Link>
               </Button>
             </div>
           </div>
@@ -36,7 +36,7 @@ export function Hero({ locationString }: HeroProps) {
             <div className="w-full h-auto max-w-[450px]">
               <Image
                 src="/smiling.jpg"
-                alt="Technical consulting meeting"
+                alt="White-label development partnership"
                 width={500}
                 height={500}
                 priority

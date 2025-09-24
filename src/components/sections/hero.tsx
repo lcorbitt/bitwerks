@@ -57,7 +57,7 @@ export function Hero({ locationString }: HeroProps) {
             <Heading1 className="mx-auto lg:mx-0 max-w-3xl lg:max-w-none relative z-10">Small Business</Heading1>
             <Heading1 className="mb-6 mx-auto lg:mx-0 max-w-3xl lg:max-w-none relative z-10">Digital Solutions</Heading1>
             <p className="mb-8 text-sm text-muted-light dark:text-muted-dark md:text-lg mx-auto lg:mx-0 max-w-2xl lg:max-w-xl relative z-10">
-              Web Development • Software Development • Technical Consulting
+              Web Development • Software Development • White-label Development
             </p>
             <p className="mb-8 text-basetext-muted-foreground md:text-lg mx-auto lg:mx-0 max-w-2xl lg:max-w-xl relative z-10">
               We build and ship web & software projects fast, affordable, and hassle-free so you can focus on growing your business. 

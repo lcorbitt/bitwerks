@@ -15,7 +15,7 @@ export function Services({ locationString, isDefault }: ServicesProps) {
         <DecorativeCircles />
         <div className="container">
           <div className="mx-auto max-w-2xl text-center">
-            <p className="mb-2 text-muted-light dark:text-muted-dark tracking-widest font-normal">
+            <p className="mb-2 text-muted-light dark:text-muted-dark tracking-widest font-normal uppercase">
               WHAT WE DO
             </p>
             <Heading2 className="mb-8">From Concept to Completion</Heading2>
@@ -43,8 +43,8 @@ export function Services({ locationString, isDefault }: ServicesProps) {
               <Cog className="w-8 h-8 md:w-12 md:h-12 text-white" strokeWidth={1.5} />
             </Card>{/* Card 3 */}
             <Card
-              title="Technical Consulting" 
-              description="Strategic guidance for your technology initiatives." 
+              title="White-label Development" 
+              description="Partner with agencies to deliver custom websites and applications under your brand." 
               linkHref="/contact"
             >
               <Lightbulb className="w-8 h-8 md:w-12 md:h-12 text-white" strokeWidth={1.5} />

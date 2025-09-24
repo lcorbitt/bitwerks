@@ -10,10 +10,12 @@ export function Process() {
       <div className="container mx-auto flex flex-col lg:flex-row items-center gap-12">
         {/* Left: Heading and Image */}
         <div className="flex-1 flex flex-col items-start">
-          <h2 className="text-4xl md:text-5xl font-extrabold leading-tight">
-            <span className="mb-4">Our process.<br /></span>
-            Simple,<br />
-            seamless,<br />
+          <p className="uppercase mb-2 text-muted-light dark:text-muted-dark tracking-widest font-normal">
+            OUR PROCESS
+          </p>
+          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight">
+            Simple,
+            seamless,
             streamlined
             <span className="text-brand">.</span>
           </h2>
@@ -40,7 +42,7 @@ export function Process() {
             <div>
               <span className="uppercase text-xs text-muted dark:text-muted-dark font-bold tracking-widest">Step 1</span>
               <h3 className="text-xl font-bold mt-1 mb-2">Share your project.</h3>
-              <p className="text-muted dark:text-muted-dark max-w-md">
+              <p className="text-muted dark:text-muted-dark max-w-md text-lg">
                 Tell us about your vision, goals, and requirements. We&apos;ll listen carefully to understand exactly what you need to succeed.
               </p>
             </div>
@@ -55,7 +57,7 @@ export function Process() {
             <div>
               <span className="uppercase text-xs text-muted dark:text-muted-dark font-bold tracking-widest">Step 2</span>
               <h3 className="text-xl font-bold mt-1 mb-2">We scope & quote.</h3>
-              <p className="text-muted dark:text-muted-dark max-w-md">
+              <p className="text-muted dark:text-muted-dark max-w-md text-lg">
                 We&apos;ll analyze your requirements, create a detailed scope of work, and provide you with a transparent, fixed-price quote.
               </p>
             </div>
@@ -70,7 +72,7 @@ export function Process() {
             <div>
               <span className="uppercase text-xs text-muted dark:text-muted-dark font-bold tracking-widest">Step 3</span>
               <h3 className="text-xl font-bold mt-1 mb-2">We deliver fast.</h3>
-              <p className="text-muted dark:text-muted-dark max-w-md">
+              <p className="text-muted dark:text-muted-dark max-w-md text-lg">
                 Once approved, we&apos;ll get to work immediately. We deliver high-quality results quickly, keeping you updated throughout the process.
               </p>
               <Button size="lg"  className="mt-8">

@@ -12,7 +12,7 @@ export function FAQSection() {
             FAQs
           </Heading2>
           <p className="text-lg text-gray-600 dark:text-gray-300">
-            Common questions about our technical consulting services and approach.
+            Common questions about our white-label development services and partnership approach.
           </p>
         </div>
         
@@ -20,73 +20,73 @@ export function FAQSection() {
           <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="item-1">
               <AccordionTrigger className="text-lg font-semibold text-gray-900 dark:text-white">
-                What types of technical consulting do you provide?
+                What types of white-label development do you provide?
               </AccordionTrigger>
               <AccordionContent className="text-gray-600 dark:text-gray-300">
-                We provide comprehensive technical consulting including technology strategy, system architecture, technology selection, problem-solving, team training, and project planning. Whether you need help choosing the right tools, understanding complex concepts, or planning your technical roadmap, we can guide you.
+                We provide comprehensive white-label development including custom website development, web applications, performance optimization, SEO-ready development, content management systems, and ongoing support. We work under your agency&apos;s brand to deliver professional solutions for your clients.
               </AccordionContent>
             </AccordionItem>
             
             <AccordionItem value="item-2">
               <AccordionTrigger className="text-lg font-semibold text-gray-900 dark:text-white">
-                How do your consulting sessions work?
+                How does the white-label partnership work?
               </AccordionTrigger>
               <AccordionContent className="text-gray-600 dark:text-gray-300">
-                We offer flexible consulting sessions including one-time consultations, ongoing advisory relationships, and project-based guidance. Sessions can be conducted remotely or in-person, and we provide detailed documentation and recommendations after each consultation. We adapt our approach to your specific needs and schedule.
+                We work directly with your agency to deliver custom websites and applications under your brand. You can refer clients directly to us, or we can work with you to implement what your clients need. We handle everything from initial consultation to post-launch support, maintaining your agency&apos;s branding throughout the process.
               </AccordionContent>
             </AccordionItem>
             
             <AccordionItem value="item-3">
               <AccordionTrigger className="text-lg font-semibold text-gray-900 dark:text-white">
-                Can you help us even if we don&apos;t know what we need?
+                Can you help us even if we don&apos;t have technical expertise?
               </AccordionTrigger>
               <AccordionContent className="text-gray-600 dark:text-gray-300">
-                Absolutely! Many of our clients come to us with general questions or challenges without knowing the specific solutions they need. We start by understanding your business goals and current situation, then help identify the right technical approaches and solutions for your specific needs.
+                Absolutely! We work with agencies of all technical levels. We handle all the technical aspects while you focus on client relationships and marketing. We provide clear communication throughout the process and can explain technical concepts in business terms that you and your clients can understand.
               </AccordionContent>
             </AccordionItem>
             
             <AccordionItem value="item-4">
               <AccordionTrigger className="text-lg font-semibold text-gray-900 dark:text-white">
-                How much do technical consulting services cost?
+                How much do white-label development services cost?
               </AccordionTrigger>
               <AccordionContent className="text-gray-600 dark:text-gray-300">
-                Our consulting rates vary based on the complexity and scope of your needs. We offer hourly rates for quick questions, project-based pricing for specific guidance, and retainer arrangements for ongoing advisory relationships. We&apos;ll provide transparent pricing upfront so you know exactly what to expect.
+                Our white-label development rates vary based on project complexity and scope. We offer competitive agency pricing with transparent project-based costs. We can work with your budget and provide flexible payment terms. We&apos;ll provide detailed quotes upfront so you can price your services appropriately to your clients.
               </AccordionContent>
             </AccordionItem>
             
             <AccordionItem value="item-5">
               <AccordionTrigger className="text-lg font-semibold text-gray-900 dark:text-white">
-                Do you provide ongoing support after consulting sessions?
+                Do you provide ongoing support after project completion?
               </AccordionTrigger>
               <AccordionContent className="text-gray-600 dark:text-gray-300">
-                Yes! We provide follow-up support including email clarification, additional documentation, and implementation guidance. For ongoing relationships, we offer regular check-ins and can help you implement the recommendations we&apos;ve provided. We&apos;re committed to your success beyond just the initial consultation.
+                Yes! We provide comprehensive ongoing support including maintenance, updates, security patches, and technical support. We offer flexible support packages that can be billed to your clients or included in your service offerings. We&apos;re committed to long-term partnerships and ensuring your clients&apos; websites continue to perform optimally.
               </AccordionContent>
             </AccordionItem>
             
             <AccordionItem value="item-6">
               <AccordionTrigger className="text-lg font-semibold text-gray-900 dark:text-white">
-                Can you help with technology decisions for non-technical teams?
+                Can you help with SEO and marketing optimization?
               </AccordionTrigger>
               <AccordionContent className="text-gray-600 dark:text-gray-300">
-                Definitely! We specialize in translating complex technical concepts into clear, actionable advice for non-technical decision-makers. We help you understand the business implications of technical choices, evaluate costs and benefits, and make informed decisions that align with your business goals.
+                Absolutely! We build all websites with SEO best practices in mind, including perfect Page Speed Scores, semantic HTML structure, and optimized performance. We work closely with your SEO and marketing strategies to ensure the technical foundation supports your campaigns and helps boost your clients&apos; search rankings.
               </AccordionContent>
             </AccordionItem>
             
             <AccordionItem value="item-7">
               <AccordionTrigger className="text-lg font-semibold text-gray-900 dark:text-white">
-                What industries do you have experience consulting for?
+                What types of agencies do you work with?
               </AccordionTrigger>
               <AccordionContent className="text-gray-600 dark:text-gray-300">
-                We have experience across various industries including manufacturing, healthcare, retail, professional services, and technology companies. Our broad experience allows us to understand industry-specific challenges and provide relevant technical guidance regardless of your business sector.
+                We work with marketing agencies, SEO agencies, digital agencies, and creative agencies of all sizes. Our experience spans various industries and client types, allowing us to understand your agency&apos;s needs and deliver solutions that enhance your service offerings and client satisfaction.
               </AccordionContent>
             </AccordionItem>
             
             <AccordionItem value="item-8">
               <AccordionTrigger className="text-lg font-semibold text-gray-900 dark:text-white">
-                How do you stay current with technology trends?
+                How do you ensure quality and performance?
               </AccordionTrigger>
               <AccordionContent className="text-gray-600 dark:text-gray-300">
-                We continuously research and evaluate new technologies, attend industry conferences, participate in technical communities, and maintain hands-on experience with current tools and platforms. This ensures our recommendations are based on current best practices and emerging trends that can benefit your business.
+                We follow industry best practices, use modern development frameworks, and implement rigorous testing and optimization processes. Every website we build is optimized for performance, SEO, and user experience. We stay current with the latest web technologies and trends to ensure your clients get cutting-edge solutions.
               </AccordionContent>
             </AccordionItem>
           </Accordion>

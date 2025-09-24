@@ -43,66 +43,66 @@ const LazyCaseStudy = dynamic(() => import("@/components/ui/case-study").then(mo
   </div>
 })
 
-const technicalConsultingServices = [
+const whiteLabelServices = [
   {
-    title: "Technology Strategy & Planning",
-    description: "Comprehensive technology roadmaps and strategic planning to align your technical decisions with business goals.",
+    title: "Custom Website Development",
+    description: "Build professional websites under your agency's brand with custom designs and functionality.",
     features: [
-      "Technology stack evaluation and recommendations",
-      "Digital transformation strategy development",
-      "Scalability and growth planning",
+      "Custom design and branding",
+      "Responsive mobile-first development",
+      "SEO-optimized structure and performance",
     ],
-    icon: "📋",
+    icon: "🌐",
   },
   {
-    title: "Architecture & System Design",
-    description: "Expert guidance on system architecture, infrastructure planning, and technical design decisions.",
+    title: "Application Development",
+    description: "Create custom web applications and software solutions for your clients' specific needs.",
     features: [
-      "System architecture reviews and recommendations",
-      "Infrastructure planning and optimization",
-      "Security and performance best practices",
+      "Full-stack application development",
+      "Database design and integration",
+      "User authentication and management",
     ],
-    icon: "🏗️",
+    icon: "💻",
   },
   {
-    title: "Technology Selection & Evaluation",
-    description: "Help choosing the right technologies, platforms, and tools for your specific needs and budget.",
+    title: "Performance Optimization",
+    description: "Ensure lightning-fast load times and perfect Page Speed Scores for better SEO results.",
     features: [
-      "Technology comparison and evaluation",
-      "Cost-benefit analysis of different solutions",
-      "Vendor and platform recommendations",
+      "Core Web Vitals optimization",
+      "Image and asset optimization",
+      "Caching and performance tuning",
+    ],
+    icon: "⚡",
+  },
+  {
+    title: "SEO-Ready Development",
+    description: "Build websites that are optimized for search engines from the ground up.",
+    features: [
+      "Semantic HTML structure",
+      "Meta tags and schema markup",
+      "Clean URL structure and navigation",
     ],
     icon: "🔍",
   },
   {
-    title: "Technical Problem Solving",
-    description: "Expert troubleshooting and problem-solving for complex technical challenges and system issues.",
+    title: "Content Management",
+    description: "Easy-to-use CMS solutions that your clients can manage without technical knowledge.",
     features: [
-      "Performance optimization and debugging",
-      "Integration challenges and solutions",
-      "Technical debt assessment and remediation",
+      "User-friendly admin interfaces",
+      "Content editing and publishing",
+      "Media library and asset management",
+    ],
+    icon: "📝",
+  },
+  {
+    title: "Ongoing Support & Maintenance",
+    description: "Reliable support and maintenance services to keep your clients' sites running smoothly.",
+    features: [
+      "Regular updates and security patches",
+      "Backup and monitoring services",
+      "Technical support and troubleshooting",
     ],
     icon: "🛠️",
-  },
-  {
-    title: "Team Training & Knowledge Transfer",
-    description: "Training and knowledge sharing to help your team understand and work with new technologies.",
-    features: [
-      "Technology training and workshops",
-      "Best practices and coding standards",
-      "Documentation and process improvement",
-    ],
-    icon: "👥",
-  },
-  {
-    title: "Project Planning & Estimation",
-    description: "Realistic project planning, timeline estimation, and resource allocation for technical projects.",
-    features: [
-      "Project scope definition and planning",
-      "Timeline and resource estimation",
-      "Risk assessment and mitigation strategies",
-    ],
-    icon: "📅",
   },
 ]
 
@@ -129,15 +129,15 @@ export default function Services() {
           </Suspense>
 
           <Heading2 className="mb-8">
-            Technical Consulting Services We Provide
+            White-label Development Services We Provide
           </Heading2>
           <p className="text-xl text-muted-light dark:text-muted-dark">
-            From strategic planning to technical problem-solving, we provide expert guidance to help you make informed technology decisions.
+            Partner with us to deliver custom websites and applications under your brand. We handle everything from design to development, so you can focus on growing your agency.
           </p>
         </div>
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {technicalConsultingServices.map((service) => (
+          {whiteLabelServices.map((service) => (
             <div key={service.title} className="bg-white dark:bg-tertiary rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
               <div className="mb-6 text-4xl">{service.icon}</div>
               <h3 className="mb-4 text-2xl font-bold text-gray-900 dark:text-white">{service.title}</h3>
@@ -177,11 +177,11 @@ export default function Services() {
         </div>}>
           <LazyCaseStudy
             title="Case Study"
-            company="Local Manufacturing Co."
-            description="By partnering with BitWerks for technical consulting, Local Manufacturing Co. successfully modernized their technology stack and improved operational efficiency by 40% through strategic planning and implementation guidance."
-            technologies={["Technology Strategy", "System Architecture", "Digital Transformation", "Process Optimization"]}
+            company="Digital Marketing Agency"
+            description="By partnering with BitWerks for white-label development, Digital Marketing Agency successfully delivered 15+ custom websites for their clients, improving their client retention by 60% and expanding their service offerings."
+            technologies={["Custom Development", "SEO Optimization", "Performance Tuning", "Client Management"]}
             imageSrc="/portfolio/consulting.webp"
-            imageAlt="Local Manufacturing Co. case study - technology consulting and digital transformation"
+            imageAlt="Digital Marketing Agency case study - white-label development partnership"
             caseStudyLink="/case-studies/local-manufacturing"
             moreCaseStudiesLink="/case-studies"
           />

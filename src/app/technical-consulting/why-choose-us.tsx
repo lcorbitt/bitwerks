@@ -25,18 +25,18 @@ const ClipboardCheckIcon = () => (
 
 const whyChooseUsItems = [
   {
-    title: "Expert Guidance",
-    description: "Get advice from experienced professionals who understand both technology and business needs, helping you make informed decisions about your technical investments.",
+    title: "Agency-Focused Partnership",
+    description: "We understand agency workflows and client management. Our white-label approach ensures seamless integration with your existing processes while maintaining your brand identity.",
     icon: <ArrowUpRightIcon />,
   },
   {
-    title: "Flexible Engagement",
-    description: "Whether you need a one-time consultation or ongoing technical support, we adapt our services to fit your specific needs and budget.",
+    title: "Flexible Collaboration",
+    description: "Whether you need us to work directly with your clients or behind the scenes, we adapt our approach to fit your agency&apos;s preferred workflow and communication style.",
     icon: <UserIcon />,
   },
   {
-    title: "Proven Results",
-    description: "Our consulting has helped businesses optimize their technology stack, improve efficiency, and achieve their technical goals with measurable outcomes.",
+    title: "Proven Performance",
+    description: "Our development expertise delivers websites with perfect Page Speed Scores and SEO optimization, boosting the effectiveness of your marketing campaigns and client satisfaction.",
     icon: <ClipboardCheckIcon />,
   },
 ]
@@ -51,9 +51,9 @@ export default function WhyChooseUs() {
             <Heading2 className="">
               Why Choose
               <br />
-              <span className="text-brand">Bit</span>Werks for Technical
+              <span className="text-brand">Bit</span>Werks for White-label
               <br />
-              Consulting
+              Development
             </Heading2>
 
             {/* Desktop Bottom Image */}
@@ -61,7 +61,7 @@ export default function WhyChooseUs() {
               <div className="w-full h-64 md:h-80 lg:h-96 relative rounded-tr-lg rounded-br-lg overflow-hidden">
                 <Image
                   src="/group-working.jpg"
-                  alt="Technical consultants providing guidance"
+                  alt="White-label development partnership"
                   fill
                   className="object-cover"
                   priority
@@ -94,7 +94,7 @@ export default function WhyChooseUs() {
             <div className="w-full h-64 md:h-80 lg:h-96 relative rounded-tr-lg rounded-br-lg overflow-hidden">
               <Image
                 src="/group-working.jpg"
-                alt="Technical consultants providing guidance"
+                alt="White-label development partnership"
                 fill
                 className="object-cover"
                 priority

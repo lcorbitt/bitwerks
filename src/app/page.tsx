@@ -6,12 +6,14 @@ import { Services } from "@/components/sections/services"
 import { TechMarqueeSection } from "@/components/sections/tech-marquee-section"
 import { Partners } from "@/components/sections/partners"
 import { Process } from "@/components/sections/process"
+import { Testimonials } from "@/components/ui/testimonials"
 import { CTA } from "@/components/sections/cta"
+import { sampleTestimonials } from "@/lib/testimonials-data"
 
 export const metadata: Metadata = {
   title: "BitWerks | Custom Web Development & Software Solutions",
-  description: "Professional web and software development based in Fort Collins, CO, serving businesses nationwide. Transform your digital presence with expert technical consulting.",
-  keywords: ["web development", "software development", "technical consulting", "Fort Collins", "Colorado", "small business"],
+  description: "Professional web and software development based in Fort Collins, CO, serving businesses nationwide. Transform your digital presence with expert white-label development services.",
+  keywords: ["web development", "software development", "white-label development", "Fort Collins", "Colorado", "small business"],
   openGraph: {
     title: "BitWerks | Custom Web Development & Software Solutions",
     description: "Transform your business with professional web and software solutions. Based in Fort Collins, CO, serving businesses nationwide.",
@@ -62,6 +64,7 @@ export default async function Home({ searchParams = {} }: PageProps) {
       <TechMarqueeSection />
       <Partners />
       <Process />
+      <Testimonials testimonials={sampleTestimonials} />
         <CTA />
     </div>
     </>
