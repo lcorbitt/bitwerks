@@ -34,7 +34,7 @@ export function Testimonials({
             <p className="mb-2 text-muted-light dark:text-muted-dark tracking-widest font-normal uppercase">
               {subtitle}
             </p>
-            <Heading2 className="mb-8 titlecase">{title}</Heading2>
+            <Heading2 className="mb-8">{title}</Heading2>
             <p className="mb-16 md:mb-24 text-muted-foreground tracking-wide text-base md:text-lg">
               {/* todto: use location string for improved SEO */}
               {/* {locationString === "nationwide" ? "across the U.S." : ` in ${locationString}.`} */}

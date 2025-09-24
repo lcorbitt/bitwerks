@@ -1,5 +1,5 @@
 import { Card } from "@/components/ui/card"
-import { Globe, Cog, Lightbulb } from "lucide-react";
+import { Code, Laptop, Users } from "lucide-react";
 import { Heading2 } from "@/components/ui/heading";
 import { Button } from "../ui/button";
 import { DecorativeCircles } from "../ui/decorative-circles";
@@ -22,7 +22,7 @@ export function Services({ locationString, isDefault }: ServicesProps) {
             <p className="mb-16 md:mb-32 text-muted-foreground tracking-wide text-base md:text-lg">
               {/* todto: use location string for improved SEO */}
               {/* {locationString === "nationwide" ? "across the U.S." : ` in ${locationString}.`} */}
-              At BitWerks, we specialize in <strong>custom web & software development</strong> for small businesses across the U.S. Each project is hand-coded with a focus on visibility, performance, and reliability, while leveraging AI intelligently to enhance development and deliver smarter solutions. No page-builders, no shortcuts. We provide ongoing updates and support, so you&apos;re never left without help. We are committed to transparency and trust, building lasting partnerships that empower your business to grow with confidence.
+              At BitWerks, we specialize in <strong>custom web & software development</strong> for small businesses across the U.S. Each project is hand-coded with a focus on visibility, performance, and reliability, while leveraging AI intelligently to enhance development and deliver smarter solutions. No page-builders, no shortcuts. We are committed to transparency and trust, building lasting partnerships that empower your business to grow with confidence.
             </p>
           </div>
           <div className="grid gap-24 md:gap-8 md:grid-cols-2 lg:grid-cols-3 mt-32">
@@ -32,7 +32,7 @@ export function Services({ locationString, isDefault }: ServicesProps) {
               description="Modern, responsive websites built with cutting-edge technologies." 
               linkHref="/contact"
             >
-              <Globe className="w-8 h-8 md:w-12 md:h-12 text-white" strokeWidth={1.5} />
+              <Laptop className="w-8 h-8 md:w-12 md:h-12 text-white" strokeWidth={1.5} />
             </Card>
             {/* Card 2 */}
             <Card
@@ -40,14 +40,14 @@ export function Services({ locationString, isDefault }: ServicesProps) {
               description="Tailored solutions to solve complex business challenges." 
               linkHref="/contact"
             >
-              <Cog className="w-8 h-8 md:w-12 md:h-12 text-white" strokeWidth={1.5} />
+              <Code className="w-8 h-8 md:w-12 md:h-12 text-white" strokeWidth={1.5} />
             </Card>{/* Card 3 */}
             <Card
               title="White Label Partnerships" 
               description="Partner with agencies to deliver custom websites and applications under your brand." 
               linkHref="/contact"
             >
-              <Lightbulb className="w-8 h-8 md:w-12 md:h-12 text-white" strokeWidth={1.5} />
+              <Users className="w-8 h-8 md:w-12 md:h-12 text-white" strokeWidth={1.5} />
             </Card>
           </div>
         </div>

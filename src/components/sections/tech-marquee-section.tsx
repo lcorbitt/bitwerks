@@ -5,10 +5,10 @@ import Image from "next/image"
 import { Heading2 } from "../ui/heading"
 
 const techsRow1 = [
-  "Node.js", "Ruby", "Rails", "RSpec", "NestJS", "SQL", "PHP", "PostgreSQL", "MySQL", "Express", "MongoDB", "Redis", "Algoliasearch", "Docker", "AWS", "Heroku", "Vercel",
+  "Docker", "React", "PostgreSQL", "Figma", "Express", "Vue.js", "AWS", "TypeScript", "Laravel", "MongoDB", "Bootstrap", "Heroku", "RSpec", "Tailwind CSS", "MySQL", "Next.js", "Algoliasearch"
 ]
 const techsRow2 = [
-  "JavaScript", "React", "ReactQuery","TypeScript", "Next.js", "Vue.js", "Bootstrap", "Figma", "Tailwind CSS", "Shadcn UI", "MantineUI", "Cypress", "Playwright"
+  "Ruby on Rails", "Shadcn UI", "Redis", "JavaScript", "NestJS", "Cypress", "PHP", "MantineUI", "Node.js", "Playwright", "SQL", "Shopify", "ReactQuery", "WordPress", "Vercel"
 ]
 
 export const TechMarqueeSection = () => {
