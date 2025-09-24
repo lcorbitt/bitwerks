@@ -43,7 +43,7 @@ export function Services({ locationString, isDefault }: ServicesProps) {
               <Cog className="w-8 h-8 md:w-12 md:h-12 text-white" strokeWidth={1.5} />
             </Card>{/* Card 3 */}
             <Card
-              title="White-label Development" 
+              title="White Label Partnerships" 
               description="Partner with agencies to deliver custom websites and applications under your brand." 
               linkHref="/contact"
             >

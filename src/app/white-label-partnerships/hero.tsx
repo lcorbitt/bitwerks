@@ -15,7 +15,7 @@ export function Hero({ locationString }: HeroProps) {
           {/* Text content */}
           <div className="flex flex-col text-center lg:text-left w-full">
             <p className="mb-2 text-muted-light dark:text-muted-dark tracking-widest font-normal">
-              WHITE-LABEL DEVELOPMENT
+              WHITE LABEL PARTNERSHIPS
             </p>
             <h1 className="mb-6 text-5xl font-bold tracking-tight text-gray-900 dark:text-white md:text-6xl">
               Partner with us to deliver
@@ -36,7 +36,7 @@ export function Hero({ locationString }: HeroProps) {
             <div className="w-full h-auto max-w-[450px]">
               <Image
                 src="/smiling.jpg"
-                alt="White-label development partnership"
+                alt="White Label Partnerships"
                 width={500}
                 height={500}
                 priority

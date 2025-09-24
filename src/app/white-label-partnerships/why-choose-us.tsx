@@ -26,7 +26,7 @@ const ClipboardCheckIcon = () => (
 const whyChooseUsItems = [
   {
     title: "Agency-Focused Partnership",
-    description: "We understand agency workflows and client management. Our white-label approach ensures seamless integration with your existing processes while maintaining your brand identity.",
+    description: "We understand agency workflows and client management. Our white label approach ensures seamless integration with your existing processes while maintaining your brand identity.",
     icon: <ArrowUpRightIcon />,
   },
   {
@@ -51,7 +51,7 @@ export default function WhyChooseUs() {
             <Heading2 className="">
               Why Choose
               <br />
-              <span className="text-brand">Bit</span>Werks for White-label
+              <span className="text-brand">Bit</span>Werks for White Label
               <br />
               Development
             </Heading2>

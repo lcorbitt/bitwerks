@@ -12,7 +12,7 @@ export function FAQSection() {
             FAQs
           </Heading2>
           <p className="text-lg text-gray-600 dark:text-gray-300">
-            Common questions about our white-label development services and partnership approach.
+            Common questions about our white label development services and partnership approach.
           </p>
         </div>
         
@@ -20,16 +20,16 @@ export function FAQSection() {
           <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="item-1">
               <AccordionTrigger className="text-lg font-semibold text-gray-900 dark:text-white">
-                What types of white-label development do you provide?
+                What types of white label services do you provide?
               </AccordionTrigger>
               <AccordionContent className="text-gray-600 dark:text-gray-300">
-                We provide comprehensive white-label development including custom website development, web applications, performance optimization, SEO-ready development, content management systems, and ongoing support. We work under your agency&apos;s brand to deliver professional solutions for your clients.
+                We provide comprehensive white label development including custom website development, web applications, performance optimization, SEO-ready development, content management systems, and ongoing support. We work under your agency&apos;s brand to deliver professional solutions for your clients.
               </AccordionContent>
             </AccordionItem>
             
             <AccordionItem value="item-2">
               <AccordionTrigger className="text-lg font-semibold text-gray-900 dark:text-white">
-                How does the white-label partnership work?
+                How does the white label partnership work?
               </AccordionTrigger>
               <AccordionContent className="text-gray-600 dark:text-gray-300">
                 We work directly with your agency to deliver custom websites and applications under your brand. You can refer clients directly to us, or we can work with you to implement what your clients need. We handle everything from initial consultation to post-launch support, maintaining your agency&apos;s branding throughout the process.
@@ -47,10 +47,10 @@ export function FAQSection() {
             
             <AccordionItem value="item-4">
               <AccordionTrigger className="text-lg font-semibold text-gray-900 dark:text-white">
-                How much do white-label development services cost?
+                How much do white label development services cost?
               </AccordionTrigger>
               <AccordionContent className="text-gray-600 dark:text-gray-300">
-                Our white-label development rates vary based on project complexity and scope. We offer competitive agency pricing with transparent project-based costs. We can work with your budget and provide flexible payment terms. We&apos;ll provide detailed quotes upfront so you can price your services appropriately to your clients.
+                Our white label development rates vary based on project complexity and scope. We offer competitive agency pricing with transparent project-based costs. We can work with your budget and provide flexible payment terms. We&apos;ll provide detailed quotes upfront so you can price your services appropriately to your clients.
               </AccordionContent>
             </AccordionItem>
             

@@ -12,8 +12,8 @@ import { sampleTestimonials } from "@/lib/testimonials-data"
 
 export const metadata: Metadata = {
   title: "BitWerks | Custom Web Development & Software Solutions",
-  description: "Professional web and software development based in Fort Collins, CO, serving businesses nationwide. Transform your digital presence with expert white-label development services.",
-  keywords: ["web development", "software development", "white-label development", "Fort Collins", "Colorado", "small business"],
+  description: "Professional web and software development based in northern Colorado, serving businesses nationwide.",
+  keywords: ["web development", "software development", "white label partnerships", "Fort Collins", "Denver", "Boulder", "Colorado Springs", "Colorado", "small business"],
   openGraph: {
     title: "BitWerks | Custom Web Development & Software Solutions",
     description: "Transform your business with professional web and software solutions. Based in Fort Collins, CO, serving businesses nationwide.",

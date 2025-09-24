@@ -27,7 +27,7 @@ export const navigationItems: NavigationItem[] = [
         type: "link"
       },
       {
-        title: "White-label Development",
+        title: "White Label Partnerships",
         href: "/services/technical-consulting",
         type: "link"
       }

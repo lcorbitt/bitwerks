@@ -27,7 +27,7 @@ export function Card({ title, description, linkText, linkHref, children }: CardP
         {description}
       </p>
       {/* Link */}
-      <a href={linkHref} className="hover:bg-gray-200 dark:hover:bg-black/30 rounded-md px-4 py-2 font-bold underline text-primary dark:text-light hover:text-brand dark:hover:text-brand transition-colors duration-200 ease-in-out inline-block">{linkText ? linkText : "Get Started"}</a>
+      <a href={linkHref} className="hover:bg-gray-200 dark:hover:bg-black/30 rounded-md px-4 py-2 underline text-primary dark:text-light hover:text-brand dark:hover:text-brand transition-colors duration-200 ease-in-out inline-block">{linkText ? linkText : "Get Started"}</a>
     </div>
   )
 }

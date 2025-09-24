@@ -2,13 +2,13 @@ import { Metadata } from "next"
 import { Suspense } from "react"
 import { LocalBusinessSchema } from "@/components/schema"
 import { getLocationFromParams, type LocationData } from "@/lib/location"
-import { Hero } from "@/app/technical-consulting/hero"
+import { Hero } from "@/app/white-label-partnerships/hero"
 import { Process } from "@/components/sections/process"
 import dynamic from "next/dynamic"
-import Services from "@/app/technical-consulting/services"
+import Services from "@/app/white-label-partnerships/services"
 
 // Lazy load components below the fold
-const LazyFAQSection = dynamic(() => import("@/app/technical-consulting/faq").then(mod => ({ default: mod.FAQSection })), {
+const LazyFAQSection = dynamic(() => import("@/app/white-label-partnerships/faq").then(mod => ({ default: mod.FAQSection })), {
   loading: () => <div className="py-16 md:py-20 lg:py-24 bg-white dark:bg-black">
     <div className="container">
       <div className="animate-pulse">
@@ -23,7 +23,7 @@ const LazyFAQSection = dynamic(() => import("@/app/technical-consulting/faq").th
   </div>
 })
 
-const LazyWhyChooseUs = dynamic(() => import("@/app/technical-consulting/why-choose-us"), {
+const LazyWhyChooseUs = dynamic(() => import("@/app/white-label-partnerships/why-choose-us"), {
   loading: () => <div className="py-16 md:py-20 lg:py-24 bg-white dark:bg-black">
     <div className="container">
       <div className="animate-pulse">
@@ -58,11 +58,11 @@ const LazyCTA = dynamic(() => import("@/components/sections/cta").then(mod => ({
 })
 
 export const metadata: Metadata = {
-  title: "BitWerks | White-label Development & Agency Partnerships",
-  description: "Partner with BitWerks for white-label development services. We build custom websites and applications under your brand for marketing and SEO agencies nationwide.",
+  title: "BitWerks | White Label Partnerships",
+  description: "Partner with BitWerks for white label development services. We build custom websites and applications under your brand for marketing and SEO agencies nationwide.",
   openGraph: {
-    title: "BitWerks | White-label Development & Agency Partnerships",
-    description: "Partner with us for white-label development services. Custom websites and applications under your brand. Based in Fort Collins, CO, serving agencies nationwide.",
+    title: "BitWerks | White Label Partnerships",
+    description: "Partner with us for white label development services. Custom websites and applications under your brand. Based in Fort Collins, CO, serving agencies nationwide.",
   },
 }
 
