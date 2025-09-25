@@ -35,8 +35,8 @@ const whyChooseUsItems = [
     icon: <UserIcon />,
   },
   {
-    title: "Proven Performance",
-    description: "Our development expertise delivers websites with perfect Page Speed Scores and SEO optimization, boosting the effectiveness of your marketing campaigns and client satisfaction.",
+    title: "Based in the USA",
+    description: "Our USA-based development team provides reliable communication, cultural alignment, and trusted expertise that your clients can count on for professional web development services.",
     icon: <ClipboardCheckIcon />,
   },
 ]

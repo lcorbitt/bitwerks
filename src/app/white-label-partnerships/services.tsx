@@ -66,10 +66,10 @@ export default function Services() {
           </Suspense>
 
           <Heading2 className="mb-8">
-            White Label Development Services We Provide
+            Work With Us
           </Heading2>
           <p className="text-xl text-muted-light dark:text-muted-dark">
-            Partner with us to deliver custom websites and applications under your brand. We handle development, so you can focus on growing your agency.
+             On top of building sites and applications for our clients, we also work with agencies to build their products as well. With our custom development, modern technologies, and performance optimization we handle the technical work so you can focus on strategy and client relationships.
           </p>
         </div>
 
@@ -98,13 +98,14 @@ export default function Services() {
         </div>}>
           <LazyCaseStudy
             title="Case Study"
-            company="Digital Marketing Agency"
-            description="By partnering with BitWerks for white label development, Digital Marketing Agency successfully delivered 15+ custom websites for their clients, improving their client retention by 60% and expanding their service offerings."
+            company="Beyond Blue Media"
+             description="By partnering with BitWerks for white label development, Beyond Blue Media successfully delivered multiple custom websites for their clients, significantly improving their client retention and expanding their service offerings to drive business growth."
             technologies={["Custom Development", "SEO Optimization", "Performance Tuning", "Client Management"]}
-            imageSrc="/portfolio/consulting.webp"
+            imageSrc="/beyond-blue-media.png"
             imageAlt="Digital Marketing Agency case study - white label development partnership"
             caseStudyLink="/case-studies/local-manufacturing"
             moreCaseStudiesLink="/case-studies"
+            device="desktop"
           />
         </Suspense>
       </div>

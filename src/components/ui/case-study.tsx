@@ -1,6 +1,7 @@
 import React from "react"
 import Image from "next/image"
 import Link from "next/link"
+import { LinkWithArrow } from "./link-with-arrow"
 
 interface CaseStudyProps {
   title: string
@@ -13,6 +14,7 @@ interface CaseStudyProps {
   moreCaseStudiesLink: string
   orientation?: string
   className?: string
+  device?: "mobile" | "desktop"
 }
 
 export function CaseStudy({
@@ -26,6 +28,7 @@ export function CaseStudy({
   moreCaseStudiesLink,
   orientation = "center",
   className = "",
+  device = "desktop",
 }: CaseStudyProps) {
   return (
     <div className={`w-full lg:w-2/3 lg:mx-auto bg-light dark:bg-tertiary rounded-xl p-8 shadow-lg dark:shadow-2xl z-20 ${className}`}>
@@ -67,27 +70,56 @@ export function CaseStudy({
           </div>
           
           {/* More Case Studies Link */}
-          <div className="flex justify-end">
-            <Link
-              href={moreCaseStudiesLink}
-              className="text-gray-800 dark:text-gray-200 underline hover:text-brand transition-colors flex items-center gap-2"
-            >
+          <div className="flex justify-start">
+            <LinkWithArrow href={moreCaseStudiesLink}>
               More Case Studies
-              <span className="text-lg">→</span>
-            </Link>
+            </LinkWithArrow>
           </div>
         </div>
         
         {/* Right Section - Image */}
         <div className="flex justify-center lg:justify-end">
-          <div className="relative w-64 h-80 rounded-xl overflow-hidden">
-            <Image
-              src={imageSrc}
-              alt={imageAlt}
-              fill
-              className={`object-cover ${orientation}`}
-            />
-          </div>
+          {device === "mobile" ? (
+            // Mobile Device Mockup
+            <div className="relative">
+              {/* Device Frame */}
+              <div className="w-40 h-80 bg-gray-800 rounded-[2.5rem] p-2 shadow-2xl">
+                {/* Screen */}
+                <div className="w-full h-full bg-black rounded-[2rem] overflow-hidden relative">
+                  {/* Notch */}
+                  <div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-16 h-6 bg-gray-800 rounded-full z-10"></div>
+                  {/* Image */}
+                  <Image
+                    src={imageSrc}
+                    alt={imageAlt}
+                    fill
+                    className={`object-contain ${orientation}`}
+                  />
+                </div>
+              </div>
+              {/* Home Indicator */}
+              <div className="absolute bottom-1 left-1/2 transform -translate-x-1/2 w-12 h-1 bg-gray-600 rounded-full"></div>
+            </div>
+          ) : (
+            // Desktop Monitor Mockup
+            <div className="relative scale-75">
+              {/* Laptop Screen */}
+              <div className="w-96 h-52 bg-gray-800 rounded-md shadow-2xl relative">
+                {/* Screen Bezel */}
+                <div className="absolute inset-2 bg-black rounded-sm overflow-hidden">
+                  {/* Image */}
+                  <Image
+                    src={imageSrc}
+                    alt={imageAlt}
+                    fill
+                    className={`object-cover ${orientation}`}
+                  />
+                </div>
+                {/* Laptop Base */}
+                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-96 h-2 bg-gray-500 rounded-full"></div>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>

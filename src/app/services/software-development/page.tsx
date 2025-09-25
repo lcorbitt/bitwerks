@@ -4,7 +4,6 @@ import { LocalBusinessSchema } from "@/components/schema"
 import { getLocationFromParams, type LocationData } from "@/lib/location"
 import { Hero } from "@/app/software-development/hero"
 import Services from "@/app/software-development/services"
-import { Process } from "@/components/sections/process"
 import dynamic from "next/dynamic"
 import { DecorativeCircles } from "@/components/ui/decorative-circles"
 

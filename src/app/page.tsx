@@ -62,7 +62,7 @@ export default async function Home({ searchParams = {} }: PageProps) {
       {/* Curved section divider */}
       <section className="clip-top-large-circle relative -left-[15%] h-72 w-[130%] bg-white dark:bg-primary -mt-20 md:-mt-52 z-20"></section>
 
-      <DecorativeCircles className="top-[40rem]" />
+      <DecorativeCircles className="top-[90rem] lg:top-[40rem]" />
 
       <Services locationString={locationString} isDefault={location.isDefault} />
 
@@ -71,8 +71,8 @@ export default async function Home({ searchParams = {} }: PageProps) {
       
       <TechMarqueeSection />
       <Partners />
-      <DecorativeCircles inverted className="bottom-16" />
       <Process />
+      <DecorativeCircles inverted className="bottom-32" />
       <Testimonials testimonials={sampleTestimonials} />
       <CTA />
     </div>

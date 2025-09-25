@@ -18,12 +18,12 @@ export function Hero({ locationString }: HeroProps) {
               WHITE LABEL PARTNERSHIPS
             </p>
             <Heading1 className="mb-6 text-5xl font-bold tracking-tight text-gray-900 dark:text-white md:text-6xl">
-              Partner with us for
+              We build it,
               <br />
-              <span className="text-brand">custom solutions</span>.
+              <span className="text-brand">you present it</span>
             </Heading1>
             <p className="mb-8 text-basetext-muted-foreground md:text-lg mx-auto lg:mx-0 max-w-2xl lg:max-w-xl relative z-10">
-              We work with agencies to build custom websites and applications that boost the power and performance of any marketing campaign.
+              We work with agencies to build custom websites and applications that deliver exceptional results for their clients.
             </p>
             <div className="flex gap-4 justify-center lg:justify-start relative z-10">
               <Button
