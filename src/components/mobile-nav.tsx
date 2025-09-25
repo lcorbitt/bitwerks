@@ -2,6 +2,7 @@
 
 import * as React from "react"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 import { Menu } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import {
@@ -15,6 +16,18 @@ import { navigationItems } from "./navigation-data"
 
 export function MobileNav() {
   const [open, setOpen] = React.useState(false)
+  const pathname = usePathname()
+
+  const isActive = (href: string) => {
+    if (href === '/') {
+      return pathname === '/'
+    }
+    return pathname.startsWith(href)
+  }
+
+  const isServicesActive = () => {
+    return pathname.startsWith('/services') || pathname.startsWith('/web-development') || pathname.startsWith('/software-development') || pathname.startsWith('/technical-consulting')
+  }
 
   return (
     <Sheet open={open} onOpenChange={setOpen}>
@@ -36,7 +49,7 @@ export function MobileNav() {
             <div key={item.title}>
               {item.type === 'dropdown' ? (
                 <div className="space-y-2">
-                  <div className="flex w-full items-center justify-between rounded-md p-3 text-left text-black dark:text-white">
+                  <div className={`flex w-full items-center justify-between rounded-md p-3 text-left ${isServicesActive() ? 'text-brand' : 'text-black dark:text-white'}`}>
                     <span className="text-sm font-medium">{item.title}</span>
                   </div>
                   <div className="ml-4 space-y-1 border-l-2 border-gray-200 dark:border-gray-700 pl-4">
@@ -44,7 +57,7 @@ export function MobileNav() {
                       <Link
                         key={child.href}
                         href={child.href}
-                        className="block rounded-md p-2 text-sm text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-200"
+                        className={`block rounded-md p-2 text-sm hover:text-black dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-200 ${isActive(child.href) ? 'text-brand bg-gray-50 dark:bg-gray-800' : 'text-gray-600 dark:text-gray-300'}`}
                         onClick={() => setOpen(false)}
                       >
                         {child.title}
@@ -55,7 +68,7 @@ export function MobileNav() {
               ) : (
                 <Link
                   href={item.href}
-                  className="flex items-center rounded-md p-3 text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200"
+                  className={`flex items-center rounded-md p-3 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200 ${isActive(item.href) ? 'text-brand bg-gray-100 dark:bg-gray-800' : 'text-black dark:text-white'}`}
                   onClick={(e) => {
                     setOpen(false)
                     if (item.href === '/' && window.location.pathname === '/') {

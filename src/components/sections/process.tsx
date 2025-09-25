@@ -8,7 +8,6 @@ import { DecorativeCircles } from "../ui/decorative-circles";
 export function Process() {
   return (
     <section className="relative bg-[#f6f7f8] dark:bg-tertiary">
-      <DecorativeCircles inverted />
       <div className="container mx-auto flex flex-col lg:flex-row items-center gap-12">
         {/* Left: Heading and Image */}
         <div className="flex-1 flex flex-col items-start">

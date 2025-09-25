@@ -24,9 +24,13 @@ export function Hero({ locationString }: HeroProps) {
             </Heading1>
             <p className="mb-8 text-basetext-muted-foreground md:text-lg mx-auto lg:mx-0 max-w-2xl lg:max-w-xl relative z-10">
               Collaborate with a dedicated developer to create software tailored to your workflow and business goals.</p>
-            <div className="flex flex-col gap-4 sm:flex-row lg:justify-start sm:justify-center">
-              <Button variant="default" size="lg" asChild>
-                <Link href="/contact">Get Started</Link>
+            <div className="flex gap-4 justify-center lg:justify-start relative z-10">
+              <Button
+                asChild
+                variant="brand"
+                size="lg"
+              >
+                <Link href="/contact">Start Your Project</Link>
               </Button>
             </div>
           </div>

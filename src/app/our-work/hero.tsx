@@ -16,8 +16,7 @@ export function Hero() {
             <p className="mb-2 text-muted-light dark:text-muted-dark tracking-widest font-normal uppercase">
               OUR WORK
             </p>
-            <Heading1 className="mx-auto lg:mx-0 max-w-3xl lg:max-w-none relative z-10">What we&apos;ve built</Heading1>
-            <Heading1 className="mb-6 mx-auto lg:mx-0 max-w-3xl lg:max-w-none relative z-10 text-brand">over the years</Heading1>
+            <Heading1 className="mb-6 mx-auto lg:mx-0 max-w-3xl lg:max-w-none relative z-10">What we&apos;ve<span className="text-brand"> built</span></Heading1>
             <p className="mb-8 text-basetext-muted-foreground md:text-lg mx-auto lg:mx-0 max-w-2xl lg:max-w-xl relative z-10">
               We&apos;ve helped small businesses across the U.S. build and ship the web & software projects they&apos;ve been dreaming of. We treat every project as a partnership, investing in our clients as much as they invest in us.
             </p>

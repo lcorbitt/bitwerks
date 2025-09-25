@@ -23,7 +23,7 @@ export function ClientShowcase({ clients, className = "" }: ClientShowcaseProps)
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {clients.map((client) => (
-            <div key={client.id} className="bg-light dark:bg-gray-100 rounded-xl p-10 shadow-sm hover:shadow-lg transition-shadow duration-300 cursor-pointer relative overflow-hidden group">
+            <div key={client.id} className="bg-light dark:bg-gray-100 rounded-xl px-10 pb-10 pt-4 shadow-sm hover:shadow-lg transition-shadow duration-300 cursor-pointer relative overflow-hidden group">
               {/* Brand reveal background */}
               <div className="absolute inset-0 bg-brand transform translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"></div>
               

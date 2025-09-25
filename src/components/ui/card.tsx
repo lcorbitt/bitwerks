@@ -1,7 +1,8 @@
-import * as React from "react"
-import { Button } from "./button"
-import { LinkWithArrow } from "./link-with-arrow"
+"use client"
 
+import * as React from "react"
+import { LinkWithArrow } from "./link-with-arrow"
+import { useRouter } from "next/navigation"
 interface CardProps {
   title: string
   description: string
@@ -11,6 +12,7 @@ interface CardProps {
 }
 
 export function Card({ title, description, linkText, linkHref, children }: CardProps) {
+  const router = useRouter()
 
   return (
     <div className="relative">
@@ -24,7 +26,7 @@ export function Card({ title, description, linkText, linkHref, children }: CardP
       </div>
       
       {/* Main Card Container */}
-      <div className="border-accent dark:border-accent-800 relative bg-transparent rounded-3xl shadow-lg hover:shadow-2xl py-12 md:py-20 px-8 group hover:cursor-pointer transition-all duration-500 ease-out hover:-translate-y-2 overflow-hidden border-2">
+      <div className="border-accent dark:border-accent-800 relative bg-transparent rounded-3xl shadow-lg hover:shadow-2xl py-12 md:py-20 px-8 group hover:cursor-pointer transition-all duration-500 ease-out hover:-translate-y-2 overflow-hidden border-2" onClick={() => router.push(linkHref)}>
         {/* Slide Reveal Background */}
         <div className="bg-accent dark:bg-accent-800 absolute inset-[-4px] transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out rounded-3xl"></div>
       

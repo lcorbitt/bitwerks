@@ -53,9 +53,9 @@ const websiteTiers = [
   },
   {
     name: "ENTERPRISE",
-    description: "Comprehensive solution for large businesses and organizations",
-    price: "$5,000",
-    period: "one-time",
+    description: "Comprehensive solution for large organizations",
+    price: "LET'S TALK",
+    period: "",
     popular: false,
     features: [
       { name: "Custom Design & Development", included: true },
@@ -120,8 +120,8 @@ const softwareAppTiers = [
   {
     name: "ENTERPRISE",
     description: "Comprehensive solution for large-scale applications",
-    price: "$18,500",
-    period: "one-time",
+    price: "LET'S TALK",
+    period: "",
     popular: false,
     features: [
       { name: "Custom Design & Development", included: true },

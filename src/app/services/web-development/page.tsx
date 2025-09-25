@@ -4,11 +4,11 @@ import { LocalBusinessSchema } from "@/components/schema"
 import { getLocationFromParams, type LocationData } from "@/lib/location"
 import { Hero } from "@/app/web-development/hero"
 import Services from "@/app/web-development/services"
-import { Process } from "@/components/sections/process"
 import dynamic from "next/dynamic"
+import { DecorativeCircles } from "@/components/ui/decorative-circles"
 
 // Lazy load components below the fold
-const LazyFAQSection = dynamic(() => import("@/components/ui/faq-section").then(mod => ({ default: mod.FAQSection })), {
+const LazyFAQSection = dynamic(() => import("@/app/web-development/faq").then(mod => ({ default: mod.FAQSection })), {
   loading: () => <div className="py-16 md:py-20 lg:py-24 bg-white dark:bg-black">
     <div className="container">
       <div className="animate-pulse">
@@ -78,8 +78,14 @@ export default async function Solutions({ searchParams = {} }: PageProps) {
     <div className="flex flex-col overflow-hidden">
       <LocalBusinessSchema location={location} />
       <Hero locationString={locationString} />
+      {/* Curved section divider */}
       <section className="clip-top-large-circle relative -left-[15%] h-72 w-[130%] bg-white dark:bg-primary -mt-20 md:-mt-52 z-10"></section>
+
       <Services />
+
+      <DecorativeCircles className="bottom-16" />
+
+      {/* Curved section divider */}
       <section className="clip-bottom-large-circle relative -left-[15%] h-72 w-[130%] bg-white dark:bg-primary -mt-32 z-10"></section>
       
       {/* Lazy loaded sections below the fold */}
@@ -120,7 +126,7 @@ export default async function Solutions({ searchParams = {} }: PageProps) {
         <LazyWhyChooseUs />
       </Suspense>
 
-      <Process />
+      <DecorativeCircles inverted className="bottom-48" />
       
       <Suspense fallback={<div className="py-16 md:py-20 lg:py-24 bg-light dark:bg-tertiary">
         <div className="container">

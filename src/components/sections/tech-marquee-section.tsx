@@ -55,7 +55,7 @@ export const TechMarqueeSection = () => {
               {techsRow1.map((tech, i) => (
                 <span
                   key={tech + i}
-                  className="mx-3 lg:mx-6 text-3xl md:text-4xl font-extrabold text-muted-foreground opacity-60"
+                  className="mx-3 lg:mx-6 text-2xl md:text-4xl font-extrabold text-muted-foreground opacity-60"
                 >
                   {tech}
                 </span>
@@ -63,7 +63,7 @@ export const TechMarqueeSection = () => {
               {techsRow1.map((tech, i) => (
                 <span
                   key={tech + i + "dup"}
-                  className="mx-3 lg:mx-6 text-3xl md:text-4xl font-extrabold text-muted-foreground opacity-60"
+                  className="mx-3 lg:mx-6 text-2xl md:text-4xl font-extrabold text-muted-foreground opacity-60"
                 >
                   {tech}
                 </span>
@@ -76,7 +76,7 @@ export const TechMarqueeSection = () => {
               {techsRow2.map((tech, i) => (
                 <span
                   key={tech + i}
-                  className="mx-3 lg:mx-6 text-3xl md:text-4xl font-extrabold text-muted-foreground opacity-60"
+                  className="mx-3 lg:mx-6 text-2xl md:text-4xl font-extrabold text-muted-foreground opacity-60"
                 >
                   {tech}
                 </span>
@@ -84,7 +84,7 @@ export const TechMarqueeSection = () => {
               {techsRow2.map((tech, i) => (
                 <span
                   key={tech + i + "dup"}
-                  className="mx-3 lg:mx-6 text-3xl md:text-4xl font-extrabold text-muted-foreground opacity-60"
+                  className="mx-3 lg:mx-6 text-2xl md:text-4xl font-extrabold text-muted-foreground opacity-60"
                 >
                   {tech}
                 </span>

@@ -13,7 +13,7 @@ export default function OurWorkPage() {
       <section className="clip-top-large-circle relative -left-[15%] h-72 w-[130%] bg-white dark:bg-primary -mt-20 md:-mt-48 z-20"></section>
 
       {/* Client Showcase - Main Section */}
-      <section id="case-studies" className="py-0 -mt-48 z-20 -mb-8 relative">
+      <section id="case-studies" className="py-0 -mt-48 z-20 -mb-8">
         <DecorativeCircles />
         <ClientShowcase clients={sampleClients} />
       </section>
@@ -22,12 +22,10 @@ export default function OurWorkPage() {
       <section className="clip-bottom-large-circle relative -left-[15%] h-72 w-[130%] bg-white dark:bg-primary -mt-32 z-10"></section>
 
       {/* CTA Section */}
-      <div className="relative">
-        <div className="absolute top-24">
-          <DecorativeCircles inverted />
-        </div>
-        <CTA />
+      <div className="absolute top-24">
+        <DecorativeCircles inverted />
       </div>
+      <CTA />
     </div>
   )
 }

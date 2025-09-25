@@ -1,5 +1,7 @@
 import { DecorativeCircles } from "@/components/ui/decorative-circles"
 import { Heading2 } from "@/components/ui/heading"
+import { ServiceCards } from "@/components/ui/service-cards"
+import { softwareDevelopmentServices } from "@/components/ui/software-development-cards"
 import dynamic from "next/dynamic"
 import { Suspense } from "react"
 
@@ -43,73 +45,10 @@ const LazyCaseStudy = dynamic(() => import("@/components/ui/case-study").then(mo
   </div>
 })
 
-const softwareDevelopmentServices = [
-  {
-    title: "Custom Application Development",
-    description: "Tailored software solutions built from the ground up to meet your specific business requirements and workflows.",
-    features: [
-      "Scalable architecture designed for growth and performance",
-      "Built with clean, maintainable code and best practices",
-      "Comprehensive testing and quality assurance processes",
-    ],
-    icon: "💻",
-  },
-  {
-    title: "Enterprise Software Solutions",
-    description: "Robust enterprise-grade applications designed to handle complex business processes and large-scale operations.",
-    features: [
-      "High-performance systems built for enterprise workloads",
-      "Advanced security and compliance features",
-      "Integration with existing enterprise infrastructure",
-    ],
-    icon: "🏢",
-  },
-  {
-    title: "API Development & Integration",
-    description: "Comprehensive API development and third-party system integration to connect your business applications seamlessly.",
-    features: [
-      "RESTful and GraphQL API design and development",
-      "Secure authentication and authorization systems",
-      "Comprehensive documentation and developer tools",
-    ],
-    icon: "🔗",
-  },
-  {
-    title: "QA and Testing",
-    description: "Comprehensive quality assurance and testing services to ensure your software is reliable, secure, and performs optimally.",
-    features: [
-      "Automated testing for consistent and efficient validation",
-      "Manual testing to cover edge cases and user experience",
-      "Continuous integration and delivery for rapid feedback",
-    ],
-    icon: "🧪",
-  },
-  {
-    title: "SaaS Applications",
-    description: "Innovative SaaS applications designed for scalability, reliability, and cost-effectiveness.",
-    features: [
-      "Scalable multi-tenant architecture with containerization",
-      "Efficient cloud deployment and infrastructure management",
-      "Dynamic auto-scaling and load balancing for optimal performance",
-    ],
-    icon: "☁️",
-  },
-  {
-    title: "Legacy System Modernization",
-    description: "Transform and modernize existing legacy systems to improve performance, security, and maintainability.",
-    features: [
-      "Legacy code analysis and refactoring",
-      "Technology stack modernization",
-      "Gradual migration strategies to minimize disruption",
-    ],
-    icon: "🔄",
-  },
-]
 
 export default function Services() {
   return (
     <section className="bg-white dark:bg-black py-0 -mt-48 z-20 relative">
-      <DecorativeCircles />
       <div className="container pt-0">
         <div className="mx-auto max-w-4xl text-center mb-16">
           <Suspense fallback={<div className="pb-20">
@@ -127,30 +66,13 @@ export default function Services() {
           {/* <LazyDeviceShowcase /> */}
           </Suspense>
 
-          <Heading2 className="mb-8">
-            Software Development Services We Provide
-          </Heading2>
+          <Heading2 className="mb-8">Built to Perform and Scale</Heading2>
           <p className="text-xl text-muted-light dark:text-muted-dark">
-            Custom applications, from SaaS to internal tools, designed to make your business run smarter.
+            Custom applications, from SaaS to internal tools and MVP development, designed to make your business run smarter.
           </p>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {softwareDevelopmentServices.map((service) => (
-            <div key={service.title} className="relative bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900 rounded-3xl p-8 shadow-lg border border-gray-100 dark:border-gray-700">
-              <div className="mb-6 text-5xl">{service.icon}</div>
-              <h3 className="mb-6 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{service.title}</h3>
-              <ul className="space-y-4">
-                {service.features.map((feature) => (
-                  <li key={feature} className="flex items-start text-gray-600 dark:text-gray-300">
-                    <span className="mr-3 mt-1 text-brand flex-shrink-0 text-lg">✓</span>
-                    <span className="text-sm leading-relaxed">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
+        <ServiceCards services={softwareDevelopmentServices} />
       </div>
 
       <div className="pt-20 px-8 bg-white dark:bg-primary max-w-screen-2xl mx-auto">

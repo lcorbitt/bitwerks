@@ -9,6 +9,7 @@ import { Process } from "@/components/sections/process"
 import { Testimonials } from "@/components/ui/testimonials"
 import { CTA } from "@/components/sections/cta"
 import { sampleTestimonials } from "@/lib/testimonials-data"
+import { DecorativeCircles } from "@/components/ui/decorative-circles"
 
 export const metadata: Metadata = {
   title: "BitWerks | Custom Web Development & Software Solutions",
@@ -57,15 +58,23 @@ export default async function Home({ searchParams = {} }: PageProps) {
       <div className="flex flex-col overflow-hidden">
       <LocalBusinessSchema location={location} />
       <Hero locationString={locationString} />
-        {/* Curved section divider */}
-        <section className="clip-top-large-circle relative -left-[15%] h-72 w-[130%] bg-white dark:bg-primary -mt-20 md:-mt-52 z-20"></section>
+
+      {/* Curved section divider */}
+      <section className="clip-top-large-circle relative -left-[15%] h-72 w-[130%] bg-white dark:bg-primary -mt-20 md:-mt-52 z-20"></section>
+
+      <DecorativeCircles className="top-[40rem]" />
+
       <Services locationString={locationString} isDefault={location.isDefault} />
-        <section className="clip-bottom-large-circle relative -left-[15%] h-72 w-[130%] bg-white dark:bg-primary -mt-20 z-10"></section>
+
+      {/* Curved section divider */}
+      <section className="clip-bottom-large-circle relative -left-[15%] h-72 w-[130%] bg-white dark:bg-primary -mt-20 z-10"></section>
+      
       <TechMarqueeSection />
       <Partners />
+      <DecorativeCircles inverted className="bottom-16" />
       <Process />
       <Testimonials testimonials={sampleTestimonials} />
-        <CTA />
+      <CTA />
     </div>
     </>
   )

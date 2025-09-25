@@ -17,17 +17,21 @@ export function Hero({ locationString }: HeroProps) {
             <p className="mb-2 text-muted-light dark:text-muted-dark tracking-widest font-normal">
               WHITE LABEL PARTNERSHIPS
             </p>
-            <h1 className="mb-6 text-5xl font-bold tracking-tight text-gray-900 dark:text-white md:text-6xl">
-              Partner with us to deliver
+            <Heading1 className="mb-6 text-5xl font-bold tracking-tight text-gray-900 dark:text-white md:text-6xl">
+              Partner with us for
               <br />
               <span className="text-brand">custom solutions</span>.
-            </h1>
+            </Heading1>
             <p className="mb-8 text-basetext-muted-foreground md:text-lg mx-auto lg:mx-0 max-w-2xl lg:max-w-xl relative z-10">
-              We work with marketing and SEO agencies to build custom websites and applications under your brand. With our custom designs, development expertise, and perfect Page Speed Scores, we boost the power and performance of any marketing campaign.
+              We work with agencies to build custom websites and applications that boost the power and performance of any marketing campaign.
             </p>
-            <div className="flex flex-col gap-4 sm:flex-row lg:justify-start sm:justify-center">
-              <Button variant="default" size="lg" asChild>
-                <Link href="/contact">Start Partnership</Link>
+            <div className="flex gap-4 justify-center lg:justify-start relative z-10">
+              <Button
+                asChild
+                variant="brand"
+                size="lg"
+              >
+                <Link href="/contact">Start Your Project</Link>
               </Button>
             </div>
           </div>

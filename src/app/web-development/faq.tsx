@@ -1,7 +1,7 @@
 "use client"
 
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
-import { Heading2 } from "./heading"
+import { Heading2 } from "../../components/ui/heading"
 
 export function FAQSection() {
   return (

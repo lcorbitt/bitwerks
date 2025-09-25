@@ -11,8 +11,7 @@ interface ServicesProps {
 export function Services({ locationString, isDefault }: ServicesProps) {
   return (
     <>
-      <section className="bg-white dark:bg-black pt-0 pb-0 md:pb-16 -mt-48 z-20 relative">
-        <DecorativeCircles />
+      <section className="bg-white dark:bg-black pt-0 pb-0 md:pb-16 -mt-48 z-20 relative">        
         <div className="container">
           <div className="mx-auto max-w-2xl text-center">
             <p className="mb-2 text-muted-light dark:text-muted-dark tracking-widest font-normal uppercase">
@@ -22,7 +21,7 @@ export function Services({ locationString, isDefault }: ServicesProps) {
             <p className="mb-16 md:mb-32 text-muted-foreground tracking-wide text-lg">
               {/* todto: use location string for improved SEO */}
               {/* {locationString === "nationwide" ? "across the U.S." : ` in ${locationString}.`} */}
-              At BitWerks, we specialize in <strong>custom web & software development</strong> for small businesses across the U.S. Each project is hand-coded with a focus on visibility, performance, and reliability, while leveraging AI intelligently to enhance development and deliver smarter solutions. No page-builders, no shortcuts. We are committed to transparency and trust, building lasting partnerships that empower your business to grow with confidence.
+              At BitWerks, we specialize in <strong>custom web & software development</strong> for startups and small businesses across the U.S. Each project is hand-coded with a focus on visibility, performance, and reliability, while leveraging AI intelligently to enhance development and deliver smarter solutions. No page-builders, no shortcuts. We are committed to transparency and trust, building lasting partnerships that empower your business to grow with confidence.
             </p>
           </div>
           <div className="grid gap-24 md:gap-8 md:grid-cols-2 lg:grid-cols-3 mt-32">
@@ -30,33 +29,34 @@ export function Services({ locationString, isDefault }: ServicesProps) {
             <Card
               title="Web Development" 
               description="Modern, responsive websites built with cutting-edge technologies." 
-              linkHref="/contact"
+              linkHref="/services/web-development"
             >
               <Laptop className="w-8 h-8 md:w-12 md:h-12 text-white" strokeWidth={1.5} />
             </Card>
             {/* Card 2 */}
             <Card
               title="Software Development" 
-              description="Tailored solutions to solve complex business challenges." 
-              linkHref="/contact"
+              description="Custom software solutions and MVP development to launch products quickly and validate market fit." 
+              linkHref="/services/software-development"
             >
               <Code className="w-8 h-8 md:w-12 md:h-12 text-white" strokeWidth={1.5} />
             </Card>
             {/* Card 3 */}
             <Card
               title="White Label Partnerships" 
-              description="Partner with agencies to deliver custom websites and applications under your brand." 
-              linkHref="/contact"
+              description="Partner with us to deliver custom websites and applications under your brand." 
+              linkHref="/services/white-label-partnerships"
             >
               <Users className="w-8 h-8 md:w-12 md:h-12 text-white" strokeWidth={1.5} />
             </Card>
           </div>
         </div>
-      <div className="mt-16 text-center">
-        <Button asChild variant="brand" size="lg" className="z-20">
-          <a href="tel:+8167144107">Get Started</a>
-        </Button>
-      </div>
+
+        <div className="mt-16 text-center">
+          <Button asChild variant="brand" size="lg" className="z-20">
+            <a href="tel:+8167144107">Get Started</a>
+          </Button>
+        </div>
       </section>
     </>
   )
