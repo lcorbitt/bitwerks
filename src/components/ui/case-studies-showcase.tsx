@@ -1,5 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
+import { LinkWithArrow } from "./link-with-arrow"
 
 interface CaseStudy {
   id: string
@@ -23,7 +24,7 @@ export function CaseStudiesShowcase({ caseStudies, className = "" }: CaseStudies
           src={caseStudies[0]?.image || "/placeholder-case-study-1.jpg"}
           alt={caseStudies[0]?.alt || "Case study 1"}
           fill
-          className="object-cover object-left group-hover:scale-105 transition-transform duration-300"
+          className="object-cover object-left"
           priority
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           quality={85}
@@ -31,11 +32,12 @@ export function CaseStudiesShowcase({ caseStudies, className = "" }: CaseStudies
           blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-        <div className="absolute bottom-3 left-3 text-white">
+        {/* <div className="absolute bottom-3 left-3 text-white">
           <h3 className="text-lg font-bold">{caseStudies[0]?.company || "Company 1"}</h3>
-          <p className="text-sm opacity-90">Case study <span className="ml-2">→</span></p>
-        </div>
-        <Link href={caseStudies[0]?.href || "#"} className="absolute inset-0" />
+          <LinkWithArrow href={caseStudies[0]?.href || "#"} variant="white">
+            Case study
+          </LinkWithArrow>
+        </div> */}
       </div>
 
       {/* Case Study 2 - Top Right */}
@@ -52,11 +54,12 @@ export function CaseStudiesShowcase({ caseStudies, className = "" }: CaseStudies
           blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-        <div className="absolute bottom-3 left-3 text-white">
+        {/* <div className="absolute bottom-3 left-3 text-white">
           <h3 className="text-lg font-bold">{caseStudies[1]?.company || "Company 2"}</h3>
-          <p className="text-sm opacity-90">Case study <span className="ml-2">→</span></p>
-        </div>
-        <Link href={caseStudies[1]?.href || "#"} className="absolute inset-0" />
+          <LinkWithArrow href={caseStudies[1]?.href || "#"} variant="white">
+            Case study
+          </LinkWithArrow>
+        </div> */}
       </div>
 
       {/* Case Study 3 - Bottom Left */}
@@ -73,11 +76,12 @@ export function CaseStudiesShowcase({ caseStudies, className = "" }: CaseStudies
           blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-        <div className="absolute bottom-3 left-3 text-white">
+        {/* <div className="absolute bottom-3 left-3 text-white">
           <h3 className="text-lg font-bold">{caseStudies[2]?.company || "Company 3"}</h3>
-          <p className="text-sm opacity-90">Case study <span className="ml-2">→</span></p>
-        </div>
-        <Link href={caseStudies[2]?.href || "#"} className="absolute inset-0" />
+          <LinkWithArrow href={caseStudies[2]?.href || "#"} variant="white">
+            Case study
+          </LinkWithArrow>
+        </div> */}
       </div>
     </div>
   )

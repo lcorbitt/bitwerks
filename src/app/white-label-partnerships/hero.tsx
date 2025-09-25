@@ -22,7 +22,7 @@ export function Hero({ locationString }: HeroProps) {
               <br />
               <span className="text-brand">custom solutions</span>.
             </h1>
-            <p className="mb-8 text-lg text-gray-600 dark:text-gray-300">
+            <p className="mb-8 text-basetext-muted-foreground md:text-lg mx-auto lg:mx-0 max-w-2xl lg:max-w-xl relative z-10">
               We work with marketing and SEO agencies to build custom websites and applications under your brand. With our custom designs, development expertise, and perfect Page Speed Scores, we boost the power and performance of any marketing campaign.
             </p>
             <div className="flex flex-col gap-4 sm:flex-row lg:justify-start sm:justify-center">

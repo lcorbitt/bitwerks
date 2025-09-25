@@ -67,7 +67,7 @@ export function Hero({ locationString }: HeroProps) {
             <div className="flex gap-4 justify-center lg:justify-start relative z-10">
               <Button
                 asChild
-                variant="default"
+                variant="brand"
                 size="lg"
               >
                 <Link href="/contact">Start Your Project</Link>

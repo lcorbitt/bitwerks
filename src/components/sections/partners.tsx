@@ -4,15 +4,15 @@ import { Heading2 } from "../ui/heading";
 export function Partners() {
   
   return (
-    <section className="bg-white dark:bg-primary w-full pb-32">
+    <section className="bg-white dark:bg-primary w-full">
       <div className="container mx-auto">
         {/* Mobile layout - centered column */}
         <div className="md:hidden text-center mb-12">
-          <p className="font-normal tracking-widest mb-2 text-muted-light dark:text-muted-dark">PARTNERS</p>
+          <p className="font-normal tracking-widest mb-2 text-muted-light dark:text-muted-dark uppercase">OUR PARTNERS</p>
           <Heading2>Companies we&apos;ve worked with</Heading2>
-          <div className="w-16 h-px bg-black/10 dark:bg-white/20 mx-auto my-6"></div>
-          <p className="text-primary dark:text-white text-sm max-w-md mx-auto" style={{lineHeight: '1.5'}}>
-            We have worked with clients all over the U.S. for start ups, digital marketing agencies, doctors, and more. No matter what your business is, we can build your website or application that is effective, beautiful, performant, and tailored to your industry.
+          {/* <div className="w-16 h-px bg-black/10 dark:bg-white/20 mx-auto my-6"></div> */}
+          <p className="text-primary dark:text-white text-lg max-w-md mx-auto mt-8" style={{lineHeight: '1.5'}}>
+            We have partnered with clients all over the U.S. for start ups, digital marketing agencies, doctors, and more. No matter what your business is, we can build your website or application that is effective, beautiful, performant, and tailored to your industry.
           </p>
         </div>
 
@@ -20,7 +20,7 @@ export function Partners() {
         <div className="hidden md:flex items-stretch flex-row justify-between gap-8 mb-12">
           <div className="flex items-start">
             <div>
-              <p className="font-normal tracking-widest mb-2 text-muted-light dark:text-muted-dark">PARTNERS</p>
+              <p className="font-normal tracking-widest mb-2 text-muted-light dark:text-muted-dark">OUR PARTNERS</p>
               <Heading2>Companies we&apos;ve worked with</Heading2>
             </div>
             <div className="border-l border-black/10 dark:border-white/20 mx-4 self-stretch"></div>
@@ -31,8 +31,10 @@ export function Partners() {
             </div>
           </div>
         </div>
+
+        {/* Partners Grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 gap-8 items-center justify-items-center">
-          <div className="h-32 w-48 bg-muted/20 rounded-lg flex items-center justify-center relative group cursor-pointer transition-all duration-300 hover:scale-110">
+          <div className="h-24 w-36 md:h-32 md:w-48 bg-muted/20 rounded-lg flex items-center justify-center relative group cursor-pointer transition-all duration-300 hover:scale-110">
             <Image
               src="/urban_sky_dark.png"
               alt="Urban Sky Logo"
@@ -51,7 +53,7 @@ export function Partners() {
               Urban Sky
             </div>
           </div>
-          <div className="h-32 w-48 bg-muted/20 rounded-lg flex items-center justify-center relative group cursor-pointer transition-all duration-300 hover:scale-110">
+          <div className="h-24 w-36 md:h-32 md:w-48 bg-muted/20 rounded-lg flex items-center justify-center relative group cursor-pointer transition-all duration-300 hover:scale-110">
             <Image
               src="/hodinkee_dark.png"
               alt="Hodinkee Logo"
@@ -70,7 +72,7 @@ export function Partners() {
               Hodinkee
             </div>
           </div>
-          <div className="h-32 w-48 bg-muted/20 rounded-lg flex items-center justify-center relative group cursor-pointer transition-all duration-300 hover:scale-110">
+          <div className="h-24 w-36 md:h-32 md:w-48 bg-muted/20 rounded-lg flex items-center justify-center relative group cursor-pointer transition-all duration-300 hover:scale-110">
             <Image
               src="/spectora_dark.png"
               alt="Spectora Logo"
@@ -89,7 +91,7 @@ export function Partners() {
               Spectora
             </div>
           </div>
-          <div className="h-32 w-48 bg-muted/20 rounded-lg flex items-center justify-center relative group cursor-pointer transition-all duration-300 hover:scale-110">
+          <div className="h-24 w-36 md:h-32 md:w-48 bg-muted/20 rounded-lg flex items-center justify-center relative group cursor-pointer transition-all duration-300 hover:scale-110">
             <Image
               src="/tracefirst_dark.png"
               alt="Trace First Logo"
@@ -101,7 +103,7 @@ export function Partners() {
               Trace First
             </div>
           </div>
-          <div className="h-32 w-48 bg-muted/20 rounded-lg flex items-center justify-center relative group cursor-pointer transition-all duration-300 hover:scale-110">
+          <div className="h-24 w-36 md:h-32 md:w-48 bg-muted/20 rounded-lg flex items-center justify-center relative group cursor-pointer transition-all duration-300 hover:scale-110">
             <Image
               src="/errantry_studios.png"
               alt="Errantry Studios Logo"
@@ -113,7 +115,7 @@ export function Partners() {
               Errantry Studios
             </div>
           </div>
-          <div className="h-32 w-48 bg-muted/20 rounded-lg flex items-center justify-center relative group cursor-pointer transition-all duration-300 hover:scale-110">
+          <div className="h-24 w-36 md:h-32 md:w-48 bg-muted/20 rounded-lg flex items-center justify-center relative group cursor-pointer transition-all duration-300 hover:scale-110">
             <Image
               src="/zestful.webp"
               alt="Zestful Logo"

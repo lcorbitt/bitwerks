@@ -40,10 +40,10 @@ export const TechMarqueeSection = () => {
         <p className="mb-2 text-muted-light dark:text-muted-dark tracking-widest font-normal">
           OUR STACK
         </p>
-        <Heading2 className="mb-8">
+        <Heading2>
           Technologies We Use
         </Heading2>
-        <p className="mb-12 text-lg text-muted-foreground">
+        <p className="mb-12 text-lg text-muted-foreground mt-8">
           Our team is comfortable and experienced with a wide range of modern technologies and tools.
         </p>
       </div>
@@ -96,7 +96,7 @@ export const TechMarqueeSection = () => {
         <div className="container mx-auto flex justify-center mt-10">
           <a
             href="#"
-            className="inline-flex items-center text-base font-medium underline underline-offset-4 text-primary hover:text-primary/90 dark:text-white transition-colors group"
+            className="inline-flex items-center text-base font-medium hover:underline text-primary hover:text-primary/90 dark:text-white transition-colors group"
           >
             Our full repertoire
             <span className="ml-2 transition-transform group-hover:translate-x-1 dark:text-white">→</span>

@@ -13,7 +13,7 @@ export const sampleTestimonials: Testimonial[] = [
     company: "Greater Boston, MA"
   },
   {
-    quote: "Lukas delivered exceptional results for our project. He's incredibly efficient, always available for questions, and his technical expertise made the entire process smooth and successful.",
+    quote: "BitWerks delivered exceptional results for our project. He's incredibly efficient, always available for questions, and his technical expertise made the entire process smooth and successful.",
     author: "Gill H.",
     title: "Entrepreneur",
     company: "St. Louis, MO"

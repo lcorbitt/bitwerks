@@ -137,14 +137,13 @@ export default function Services() {
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {webDevelopmentServices.map((service) => (
-            <div key={service.title} className="bg-white dark:bg-tertiary rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
-              <div className="mb-6 text-4xl">{service.icon}</div>
-              <h3 className="mb-4 text-2xl font-bold text-gray-900 dark:text-white">{service.title}</h3>
-              {/* <p className="mb-6 text-gray-600 dark:text-gray-300 leading-relaxed">{service.description}</p> */}
-              <ul className="space-y-3">
+            <div key={service.title} className="relative bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900 rounded-3xl p-8 shadow-lg border border-gray-100 dark:border-gray-700">
+              <div className="mb-6 text-5xl">{service.icon}</div>
+              <h3 className="mb-6 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{service.title}</h3>
+              <ul className="space-y-4">
                 {service.features.map((feature) => (
                   <li key={feature} className="flex items-start text-gray-600 dark:text-gray-300">
-                    <span className="mr-3 mt-1 text-brand flex-shrink-0">✓</span>
+                    <span className="mr-3 mt-1 text-brand flex-shrink-0 text-lg">✓</span>
                     <span className="text-sm leading-relaxed">{feature}</span>
                   </li>
                 ))}
