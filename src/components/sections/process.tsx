@@ -32,7 +32,7 @@ export function Process() {
         {/* Right: Timeline */}
         <div className="flex-1 flex flex-col gap-12 relative">
           {/* Vertical dashed line */}
-          <div className="absolute left-6 top-8 bottom-8 w-0.5 h-[40rem] md:h-[36rem] border-l-2 border-dashed border-gray-300 z-0 animated-dashed-line" />
+          <div className="absolute left-6 top-8 bottom-8 w-0.5 h-[34rem] md:h-[36rem] border-l-2 border-dashed border-gray-300 z-0 animated-dashed-line" />
           {/* Fade out overlay at bottom */}
           <div className="absolute left-6 bottom-4 w-0.5 h-20 md:h-16 bg-gradient-to-t from-[#f6f7f8] to-transparent dark:from-tertiary z-10" />
           {/* Step 1 */}

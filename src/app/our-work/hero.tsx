@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Heading1 } from "@/components/ui/heading"
+import { Heading1, Heading2 } from "@/components/ui/heading"
 import { CaseStudiesShowcase } from "@/components/ui/case-studies-showcase"
 import { sampleCaseStudies } from "@/lib/case-studies-data"
 
@@ -18,11 +18,12 @@ export function Hero() {
             </p>
             <Heading1 className="mb-6 mx-auto lg:mx-0 max-w-3xl lg:max-w-none relative z-10">What we&apos;ve<span className="text-brand"> built</span></Heading1>
             <p className="mb-8 text-basetext-muted-foreground md:text-lg mx-auto lg:mx-0 max-w-2xl lg:max-w-xl relative z-10">
-              We&apos;ve helped small businesses across the U.S. build and ship the web & software projects they&apos;ve been dreaming of. We treat every project as a partnership, investing in our clients as much as they invest in us.
+              We take immense pride in our exceptional roster of clients who share our commitment to excellence and innovation.
+              Here are just a few businesses we&apos;ve assisted in creating a significant impact on the web.
             </p>
             <div className="flex gap-4 justify-center lg:justify-start relative z-10">
               <Button
-                variant="default"
+                variant="brand"
                 size="lg"
                 onClick={() => {
                   const nextSection = document.getElementById('case-studies')

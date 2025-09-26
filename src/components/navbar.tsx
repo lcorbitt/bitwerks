@@ -10,6 +10,7 @@ import { navigationItems } from "./navigation-data"
 
 export function Navbar() {
   const pathname = usePathname()
+  const [isServicesOpen, setIsServicesOpen] = React.useState(false)
 
   const isActive = (href: string) => {
     if (href === '/') {
@@ -43,16 +44,25 @@ export function Navbar() {
               <div key={item.title} className="relative group">
                 {item.type === 'dropdown' ? (
                   <>
-                    <button className={`font-bold hover:text-brand focus:text-brand transition-colors cursor-default ${isServicesActive() ? 'text-brand' : ''}`}>
+                    <button 
+                      className={`font-bold hover:text-brand focus:text-brand transition-colors cursor-default ${isServicesActive() ? 'text-brand' : ''}`}
+                      onMouseEnter={() => setIsServicesOpen(true)}
+                      onMouseLeave={() => setIsServicesOpen(false)}
+                    >
                       {item.title}
                     </button>
-                    <div className="absolute top-full left-0 mt-2 w-64 bg-white dark:bg-tertiary rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                    <div 
+                      className={`absolute top-full left-0 mt-2 w-64 bg-white dark:bg-tertiary rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 transition-all duration-200 z-50 ${isServicesOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}
+                      onMouseEnter={() => setIsServicesOpen(true)}
+                      onMouseLeave={() => setIsServicesOpen(false)}
+                    >
                       <div className="p-4">
                         {item.children?.map((child) => (
                           <Link
                             key={child.href}
                             href={child.href}
                             className={`block px-3 py-2 text-sm hover:text-brand hover:bg-gray-50 dark:hover:bg-black/30 rounded-md transition-colors ${isActive(child.href) ? 'text-brand bg-gray-50 dark:bg-black/30' : 'text-gray-700 dark:text-gray-300'}`}
+                            onClick={() => setIsServicesOpen(false)}
                           >
                             {child.title}
                           </Link>

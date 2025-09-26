@@ -72,7 +72,7 @@ export default async function Home({ searchParams = {} }: PageProps) {
       <TechMarqueeSection />
       <Partners />
       <Process />
-      <DecorativeCircles inverted className="bottom-32" />
+      <DecorativeCircles inverted className="bottom-48" />
       <Testimonials testimonials={sampleTestimonials} />
       <CTA />
     </div>

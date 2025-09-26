@@ -105,6 +105,7 @@ export default function Services() {
             caseStudyLink="/case-studies/urbansky"
             moreCaseStudiesLink="/case-studies"
             orientation="object-right-bottom"
+            imageClassName="scale-[1.2]"
           />
         </Suspense>
       </div>

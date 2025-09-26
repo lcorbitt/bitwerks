@@ -93,6 +93,7 @@ export default function Services() {
             moreCaseStudiesLink="/our-work"
             orientation="center"
             device="mobile"
+            imageClassName="mt-2"
           />
         </Suspense>
       </div>

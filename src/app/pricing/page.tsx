@@ -183,14 +183,14 @@ function PricingToggle({ activeTab, onTabChange }: { activeTab: 'website' | 'sof
 // Pricing Cards Component
 function PricingCards({ tiers }: { tiers: typeof websiteTiers }) {
   return (
-    <div className="grid gap-8 md:grid-cols-3 max-w-7xl mx-auto">
+    <div className="grid gap-16 lg:gap-8 md:grid-cols-3 max-w-7xl mx-auto">
       {tiers.map((tier, index) => (
         <div
           key={tier.name}
           className={`relative rounded-2xl p-8 ${
             tier.popular
               ? 'bg-brand text-white shadow-2xl scale-105'
-              : 'bg-white dark:bg-tertiary text-black dark:text-white shadow-lg'
+              : 'bg-white border border-brand dark:bg-tertiary text-black dark:text-white shadow-lg'
           }`}
         >
           {tier.popular && (
@@ -256,8 +256,8 @@ export default function PricingPage() {
 
       {/* Pricing Cards */}
       <section id="pricing" className="py-0 -mt-48 z-20 -mb-8 relative">
-        <DecorativeCircles />
-        <div className="container mx-auto">
+        <DecorativeCircles className="bottom-40" />
+        <div className="container dark:bg-primary mx-auto">
           {/* CTA for Toggle */}
           <div className="text-center">
             <p className="mb-2 text-muted-light dark:text-muted-dark tracking-widest font-normal uppercase">
@@ -282,7 +282,7 @@ export default function PricingPage() {
                   : 'opacity-0 translate-y-4 absolute inset-0 pointer-events-none'
               }`}
             >
-              <div className="pt-24">
+              <div className="pt-12 lg:pt-24">
                 <PricingCards tiers={websiteTiers} />
               </div>
             </div>
@@ -310,12 +310,8 @@ export default function PricingPage() {
       <FAQSection />
 
       {/* CTA Section */}
-      <div className="relative">
-        <div className="absolute top-24">
-          <DecorativeCircles inverted />
-        </div>
-        <CTA />
-      </div>
+      <DecorativeCircles inverted className="bottom-32" />
+      <CTA />
     </div>
   )
 }

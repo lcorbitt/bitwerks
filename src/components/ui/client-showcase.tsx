@@ -1,5 +1,7 @@
+"use client"
+
 import Image from "next/image"
-import Link from "next/link"
+import { Heading3 } from "./heading"
 
 interface Client {
   id: string
@@ -9,7 +11,7 @@ interface Client {
     dark: string
   }
   caseStudyLink?: string
-  icons: string[]
+  services?: string[]
 }
 
 interface ClientShowcaseProps {
@@ -19,66 +21,39 @@ interface ClientShowcaseProps {
 
 export function ClientShowcase({ clients, className = "" }: ClientShowcaseProps) {
   return (
-    <section className={`bg-white dark:bg-primary py-8 ${className}`}>
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+    <section className={`bg-white dark:bg-primary ${className}`} >
+      <div className="container mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
           {clients.map((client) => (
-            <div key={client.id} className="bg-light dark:bg-gray-100 rounded-xl px-10 pb-10 pt-4 shadow-sm hover:shadow-lg transition-shadow duration-300 cursor-pointer relative overflow-hidden group">
-              {/* Brand reveal background */}
-              <div className="absolute inset-0 bg-brand transform translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"></div>
-              
-              {/* Artistic icons overlay */}
-              <div className="absolute inset-0 opacity-20 transform translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out">
-                {client.icons.map((icon, index) => {
-                  const positions = [
-                    "top-8 left-8 text-lg",
-                    "top-6 right-12 text-sm", 
-                    "bottom-12 left-6 text-2xl",
-                    "bottom-8 right-8 text-lg",
-                    "top-1/2 left-1/2 text-sm transform -translate-x-1/2 -translate-y-1/2",
-                    "top-1/4 right-1/4 text-xl",
-                    "bottom-1/4 left-1/4 text-lg",
-                    "top-3/4 right-1/3 text-sm"
-                  ];
-                  return (
-                    <div key={index} className={`absolute text-white ${positions[index % positions.length]}`}>
-                      {icon}
-                    </div>
-                  );
-                })}
+            <div key={client.id} className="aspect-square bg-light dark:bg-gray-100 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer relative overflow-hidden group">
+              {/* Background Image */}
+              <div className="absolute inset-4">
+                <Image
+                  src={client.logo.light}
+                  alt={`${client.name} Logo`}
+                  fill
+                  className="object-contain dark:hidden"
+                />
+                <Image
+                  src={client.logo.dark}
+                  alt={`${client.name} Logo`}
+                  fill
+                  className="object-contain hidden dark:block"
+                />
               </div>
               
-              {/* Content with relative positioning */}
-              <div className="relative z-10 flex flex-col h-full">
-              {client.caseStudyLink && (
-                <div className="flex justify-end mb-4">
-                  <Link 
-                    href={client.caseStudyLink}
-                    className="text-sm text-muted-light dark:text-white group-hover:text-white transition-colors duration-300"
-                  >
-                    See case study <span className="ml-2">→</span>
-                  </Link>
+              {/* Dark overlay on hover */}
+              <div onClick={() => window.open(client.caseStudyLink, '_blank')} className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-80 transition-all duration-300 flex items-center justify-center">
+                <div className="text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 -mt-16">
+                  <p className="text-white text-sm font-thin mb-2">{client.services?.join(', ')}</p>
+                  {client.caseStudyLink && (
+                    <Heading3 
+                      className="text-white text-sm hover:text-gray-300 transition-colors duration-200"
+                    >
+                      {client.name}
+                    </Heading3>
+                  )}
                 </div>
-              )}
-              
-              <div className="flex items-center justify-center flex-1">
-                <div className="h-12 w-32 flex items-center justify-center">
-                  <Image
-                    src={client.logo.light}
-                    alt={`${client.name} Logo`}
-                    width={128}
-                    height={48}
-                    className="object-contain dark:hidden"
-                  />
-                  <Image
-                    src={client.logo.dark}
-                    alt={`${client.name} Logo`}
-                    width={128}
-                    height={48}
-                    className="object-contain hidden dark:block"
-                  />
-                </div>
-              </div>
               </div>
             </div>
           ))}

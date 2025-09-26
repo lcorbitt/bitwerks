@@ -15,6 +15,7 @@ interface CaseStudyProps {
   orientation?: string
   className?: string
   device?: "mobile" | "desktop"
+  imageClassName?: string
 }
 
 export function CaseStudy({
@@ -29,6 +30,7 @@ export function CaseStudy({
   orientation = "center",
   className = "",
   device = "desktop",
+  imageClassName = "",
 }: CaseStudyProps) {
   return (
     <div className={`w-full lg:w-2/3 lg:mx-auto bg-light dark:bg-tertiary rounded-xl p-8 shadow-lg dark:shadow-2xl z-20 ${className}`}>
@@ -93,7 +95,7 @@ export function CaseStudy({
                     src={imageSrc}
                     alt={imageAlt}
                     fill
-                    className={`object-cover ${orientation}`}
+                    className={`object-cover ${imageClassName} ${orientation}`}
                   />
                 </div>
               </div>
@@ -104,7 +106,7 @@ export function CaseStudy({
             // Desktop Monitor Mockup
             <div className="relative w-full max-w-sm mx-auto">
               {/* Laptop Screen */}
-              <div className="w-full aspect-[16/10] bg-gray-800 rounded-md shadow-2xl relative">
+              <div className="w-full aspect-[16/10] bg-gray-800 rounded-tl-md rounded-tr-md shadow-2xl relative">
                 {/* Screen Bezel */}
                 <div className="absolute inset-2 bg-black rounded-sm overflow-hidden">
                   {/* Image */}
@@ -112,11 +114,11 @@ export function CaseStudy({
                     src={imageSrc}
                     alt={imageAlt}
                     fill
-                    className={`object-cover ${orientation}`}
+                    className={`object-cover ${imageClassName} ${orientation}`}
                   />
                 </div>
                 {/* Laptop Base */}
-                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-3/4 h-2 bg-gray-500 rounded-full"></div>
+                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-full h-2 bg-gray-500 rounded-bl-sm rounded-br-sm"></div>
               </div>
             </div>
           )}

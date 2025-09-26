@@ -6,7 +6,7 @@ interface Client {
     dark: string
   }
   caseStudyLink?: string
-  icons: string[]
+  services?: string[]
 }
 
 export const sampleClients: Client[] = [
@@ -18,7 +18,7 @@ export const sampleClients: Client[] = [
       dark: "/urban_sky_white.png"
     },
     caseStudyLink: "/case-studies/urban-sky",
-    icons: ["🚀", "🛰️", "✈️", "🌌", "🛸", "🌍", "⭐", "🔭"]
+    services: ["Software Development", "NestJS", "React", "Tailwind", "PostgreSQL", "Playwright", "AWS"],
   },
   {
     id: "hodinkee",
@@ -28,7 +28,7 @@ export const sampleClients: Client[] = [
       dark: "/hodinkee_white.svg"
     },
     caseStudyLink: "/case-studies/hodinkee",
-    icons: ["💎", "⭐", "✨", "🔥", "⌚", "💍", "👑", "🌟"]
+    services: ["Software Development", "Ruby on Rails", "React", "Tailwind", "RSpec","PostgreSQL", "AWS"],
   },
   {
     id: "spectora",
@@ -38,7 +38,7 @@ export const sampleClients: Client[] = [
       dark: "/spectora_white.png"
     },
     caseStudyLink: "/case-studies/spectora",
-    icons: ["🔍", "📊", "🎯", "⚡", "🏠", "📋", "✅", "📈"]
+    services: ["Software Development", "Ruby on Rails", "React", "Tailwind", "RSpec","PostgreSQL", "AWS"],
   },
   {
     id: "trace-first",
@@ -48,7 +48,7 @@ export const sampleClients: Client[] = [
       dark: "/tracefirst_dark.png"
     },
     caseStudyLink: "/case-studies/trace-first",
-    icons: ["🔗", "📈", "💡", "🚀", "🌐", "📊", "⚡", "🎯"]
+    services: ["Software Development", "Ruby on Rails", "JavaScript", "Bootstrap", "RSpec","PostgreSQL", "AWS"],
   },
   {
     id: "errantry-studios",
@@ -58,7 +58,7 @@ export const sampleClients: Client[] = [
       dark: "/errantry_studios.png"
     },
     caseStudyLink: "/case-studies/errantry-studios",
-    icons: ["🎨", "✨", "💎", "🔥", "🎭", "🖼️", "🌈", "🎪"]
+    services: ["Web Development", "Next.js", "React", "Tailwind"],
   },
   {
     id: "zestful",
@@ -68,7 +68,7 @@ export const sampleClients: Client[] = [
       dark: "/zestful.webp"
     },
     caseStudyLink: "/case-studies/zestful",
-    icons: ["🌟", "💫", "⚡", "🎯", "💪", "🚀", "✨", "🔥"]
+    services: ["Software Development", "Ruby on Rails", "Stimulus.js", "Tailwind"],
   }
 ]
 
