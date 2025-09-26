@@ -14,6 +14,19 @@ interface CardProps {
 export function Card({ title, description, linkText, linkHref, children }: CardProps) {
   const router = useRouter()
 
+  const handleClick = () => {
+    // Check if it's mobile (screen width < 768px)
+    if (window.innerWidth < 768) {
+      // Wait 1 second on mobile to allow animation to complete
+      setTimeout(() => {
+        router.push(linkHref)
+      }, 1000)
+    } else {
+      // Navigate immediately on desktop
+      router.push(linkHref)
+    }
+  }
+
   return (
     <div className="relative">
       {/* Icon - positioned outside the card to allow overflow */}
@@ -26,7 +39,7 @@ export function Card({ title, description, linkText, linkHref, children }: CardP
       </div>
       
       {/* Main Card Container */}
-      <div className="border-accent dark:border-accent-800 relative bg-transparent rounded-3xl shadow-lg hover:shadow-2xl py-12 md:py-20 px-8 group hover:cursor-pointer transition-all duration-500 ease-out hover:-translate-y-2 overflow-hidden border-2" onClick={() => router.push(linkHref)}>
+      <div className="border-accent dark:border-accent-800 relative bg-transparent rounded-3xl shadow-lg hover:shadow-2xl py-12 md:py-20 px-8 group hover:cursor-pointer transition-all duration-500 ease-out hover:-translate-y-2 overflow-hidden border-2" onClick={handleClick}>
         {/* Slide Reveal Background */}
         <div className="bg-accent dark:bg-accent-800 absolute inset-[-4px] transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out rounded-3xl"></div>
       

@@ -83,17 +83,17 @@ export function CaseStudy({
             // Mobile Device Mockup
             <div className="relative">
               {/* Device Frame */}
-              <div className="w-40 h-80 bg-gray-800 rounded-[2.5rem] p-2 shadow-2xl">
+              <div className="w-40 h-80 bg-gray-800 rounded-[1.5rem] p-2 shadow-2xl">
                 {/* Screen */}
-                <div className="w-full h-full bg-black rounded-[2rem] overflow-hidden relative">
+                <div className="w-full h-full bg-white rounded-[1rem] overflow-hidden relative">
                   {/* Notch */}
-                  <div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-16 h-6 bg-gray-800 rounded-full z-10"></div>
+                  <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-16 h-2 bg-gray-800 rounded-bl-full rounded-br-full z-10"></div>
                   {/* Image */}
                   <Image
                     src={imageSrc}
                     alt={imageAlt}
                     fill
-                    className={`object-contain ${orientation}`}
+                    className={`object-cover ${orientation}`}
                   />
                 </div>
               </div>

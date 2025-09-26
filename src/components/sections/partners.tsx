@@ -9,7 +9,7 @@ export function Partners() {
         {/* Mobile layout - centered column */}
         <div className="md:hidden text-center mb-12">
           <p className="font-normal tracking-widest mb-2 text-muted-light dark:text-muted-dark uppercase">OUR PARTNERS</p>
-          <Heading2>Proud to work with<span className="text-brand"> . . .</span></Heading2>
+          <Heading2>Proud to work with</Heading2>
           {/* <div className="w-16 h-px bg-black/10 dark:bg-white/20 mx-auto my-6"></div> */}
           {/* <p className="text-primary dark:text-white text-lg max-w-md mx-auto mt-8" style={{lineHeight: '1.5'}}>
             We have partnered with clients from start ups to digital marketing agencies to doctors, and more. No matter what your business is, we can build your website or application that is effective, beautiful, performant, and tailored to your industry.
@@ -21,7 +21,7 @@ export function Partners() {
           <div className="flex items-start">
             <div>
               <p className="font-normal tracking-widest mb-2 text-muted-light dark:text-muted-dark">OUR PARTNERS</p>
-              <Heading2>Proud to work with<span className="text-brand"> . . .</span></Heading2>
+              <Heading2>Proud to work with</Heading2>
             </div>
             <div className="border-l border-black/10 dark:border-white/20 mx-4 self-stretch"></div>
             <div className="md:ml-8 md:w-1/2 flex items-center">
