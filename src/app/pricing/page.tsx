@@ -310,7 +310,7 @@ export default function PricingPage() {
       <FAQSection />
 
       {/* CTA Section */}
-      <DecorativeCircles inverted className="bottom-32" />
+      <DecorativeCircles inverted className="bottom-44" />
       <CTA />
     </div>
   )

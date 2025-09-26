@@ -13,7 +13,7 @@ export function DecorativeCircles({ className = "", inverted = false }: Decorati
           <div className="z-30 absolute w-72 h-72 bg-gray-500 dark:bg-gray-600 rounded-full animate-bounce-slow opacity-20"></div>
         </div>
         <div className="absolute -left-[20rem] pointer-events-none z-30">
-          <div className="z-30 absolute w-96 h-96 border-2 border-black dark:border-white rounded-full animate-bounce-slower opacity-30 translate-x-32 translate-y-16"></div>
+          <div className="z-30 absolute w-[23rem] h-[23rem] border-2 border-black dark:border-white rounded-full animate-bounce-slower opacity-30 translate-x-32 translate-y-16"></div>
         </div>
       </div>
     )

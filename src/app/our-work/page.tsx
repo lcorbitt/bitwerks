@@ -15,7 +15,7 @@ export default function OurWorkPage() {
       <section className="clip-top-large-circle relative -left-[15%] h-72 w-[130%] bg-white dark:bg-primary -mt-20 md:-mt-48 z-20"></section>
 
       {/* Client Showcase - Main Section */}
-      <section id="case-studies" className="py-0 -mt-48 z-20 -mb-8">
+      <section id="case-studies" className="py-0 -mt-48 z-20 mb-16">
         <div className="container mx-auto text-center max-w-4xl"> 
           <Heading2 className="mb-4">
             10 Years of Delivering
@@ -31,7 +31,7 @@ export default function OurWorkPage() {
       </section>
 
       {/* Curved section divider */}
-      <section className="clip-bottom-large-circle relative -left-[15%] h-72 w-[130%] bg-white dark:bg-primary -mt-32 z-10"></section>
+      <section className="clip-bottom-large-circle relative -left-[15%] h-72 w-[130%] bg-white dark:bg-primary -mt-32 z-20"></section>
 
       <Process />
       {/* CTA Section */}
