@@ -120,7 +120,7 @@ export function CaseStudy({
                 {/* Laptop Base */}
                 <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-full h-3 bg-gray-500 rounded-bl-sm rounded-br-sm">
                   {/* Notch */}
-                  <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-16 h-2 bg-gray-700 rounded-bl-full rounded-br-full"></div>
+                  <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-16 h-[0.3rem] bg-gray-700 rounded-bl-full rounded-br-full"></div>
                 </div>
               </div>
             </div>
