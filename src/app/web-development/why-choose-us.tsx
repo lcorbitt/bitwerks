@@ -25,18 +25,18 @@ const ClipboardCheckIcon = () => (
 
 const whyChooseUsItems = [
   {
-    title: "Technical Expertise",
-    description: "We bring extensive experience as a partner with deep expertise across multiple programming languages, frameworks, and technologies. Our background spans various industries and company partnerships, giving us a well-rounded perspective on solving complex technical challenges.",
+    title: "Modern Web Technologies",
+    description: "We specialize in cutting-edge web development using React, Next.js, TypeScript, and modern CSS frameworks. Our expertise spans responsive design, performance optimization, and accessibility standards to create websites that work flawlessly across all devices and browsers.",
     icon: <ArrowUpRightIcon />,
   },
   {
-    title: "Flexible Engagement Models",
-    description: "We offer flexible engagement models to accommodate your specific business needs. Whether you need a complete website build, ongoing maintenance, technical consulting, or custom software development, we adapt our approach to fit your project scope and timeline.",
+    title: "Custom Web Solutions",
+    description: "From simple landing pages to complex web applications, we build custom websites tailored to your business needs. Whether you need e-commerce functionality, content management systems, or interactive features, we create solutions that grow with your business.",
     icon: <UserIcon />,
   },
   {
-    title: "Proven Track Record",
-    description: "With years of experience partnering with companies across different industries, we've successfully delivered numerous projects that drive real business value. Our approach focuses on understanding your unique needs and delivering solutions that exceed expectations.",
+    title: "Performance & SEO Focused",
+    description: "Every website we build is optimized for speed, search engine visibility, and user experience. We implement best practices for Core Web Vitals, mobile-first design, and technical SEO to ensure your website ranks well and converts visitors into customers.",
     icon: <ClipboardCheckIcon />,
   },
 ]

@@ -78,7 +78,7 @@ export function CaseStudy({
         </div>
         
         {/* Right Section - Image */}
-        <div className="flex justify-center lg:justify-end">
+        <div className={`flex justify-center lg:justify-end ${device === "desktop" ? "scale-75" : ""}`}>
           {device === "mobile" ? (
             // Mobile Device Mockup
             <div className="relative">
@@ -102,9 +102,9 @@ export function CaseStudy({
             </div>
           ) : (
             // Desktop Monitor Mockup
-            <div className="relative scale-75">
+            <div className="relative w-full max-w-sm mx-auto">
               {/* Laptop Screen */}
-              <div className="w-96 h-52 bg-gray-800 rounded-md shadow-2xl relative">
+              <div className="w-full aspect-[16/10] bg-gray-800 rounded-md shadow-2xl relative">
                 {/* Screen Bezel */}
                 <div className="absolute inset-2 bg-black rounded-sm overflow-hidden">
                   {/* Image */}
@@ -116,7 +116,7 @@ export function CaseStudy({
                   />
                 </div>
                 {/* Laptop Base */}
-                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-96 h-2 bg-gray-500 rounded-full"></div>
+                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-3/4 h-2 bg-gray-500 rounded-full"></div>
               </div>
             </div>
           )}

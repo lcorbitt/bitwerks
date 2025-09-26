@@ -78,7 +78,7 @@ export function Process() {
               <p className="text-muted dark:text-muted-dark max-w-md text-lg">
                 Once approved, we&apos;ll get to work immediately. We deliver high-quality results quickly, keeping you updated throughout the process.
               </p>
-              <Button size="lg"  className="mt-8">
+              <Button size="lg" variant="brand" className="mt-8">
                 Get Started
               </Button>
             </div>
