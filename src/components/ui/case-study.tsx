@@ -108,7 +108,7 @@ export function CaseStudy({
               {/* Laptop Screen */}
               <div className="w-full aspect-[16/10] bg-gray-800 rounded-tl-md rounded-tr-md shadow-2xl relative">
                 {/* Screen Bezel */}
-                <div className="absolute inset-2 bg-black rounded-sm overflow-hidden">
+                <div className="absolute inset-2 bg-black rounded-tl-md rounded-tr-md overflow-hidden">
                   {/* Image */}
                   <Image
                     src={imageSrc}
