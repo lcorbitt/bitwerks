@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { MessageSquare, FileText, Zap } from "lucide-react";
 import { Button } from "../ui/button";
-import { DecorativeCircles } from "../ui/decorative-circles";
 
 export function Process() {
   return (

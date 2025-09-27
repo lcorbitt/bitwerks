@@ -183,7 +183,7 @@ function PricingToggle({ activeTab, onTabChange }: { activeTab: 'website' | 'sof
 // Pricing Cards Component
 function PricingCards({ tiers }: { tiers: typeof websiteTiers }) {
   return (
-    <div className="grid gap-16 lg:gap-8 md:grid-cols-3 max-w-7xl mx-auto">
+    <div className="grid gap-16 lg:gap-8 md:grid-cols-3 w-full mx-auto">
       {tiers.map((tier, index) => (
         <div
           key={tier.name}
@@ -282,7 +282,7 @@ export default function PricingPage() {
                   : 'opacity-0 translate-y-4 absolute inset-0 pointer-events-none'
               }`}
             >
-              <div className="pt-12 lg:pt-24">
+              <div className="pt-8 lg:pt-24">
                 <PricingCards tiers={websiteTiers} />
               </div>
             </div>
@@ -310,7 +310,7 @@ export default function PricingPage() {
       <FAQSection />
 
       {/* CTA Section */}
-      <DecorativeCircles inverted className="bottom-44" />
+      <DecorativeCircles inverted className="bottom-36" />
       <CTA />
     </div>
   )
