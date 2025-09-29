@@ -255,7 +255,7 @@ export default function PricingPage() {
       <section className="clip-top-large-circle relative -left-[15%] h-72 w-[130%] bg-white dark:bg-primary -mt-20 md:-mt-48 z-20"></section>
 
       {/* Pricing Cards */}
-      <section id="pricing" className="py-0 -mt-48 z-20 -mb-8 relative">
+      <section id="pricing" className="py-0 -mt-48 z-20 -mb-4 relative">
         <DecorativeCircles className="bottom-40" />
         <div className="container dark:bg-primary mx-auto">
           {/* CTA for Toggle */}
