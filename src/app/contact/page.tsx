@@ -162,7 +162,7 @@ export default function ContactPage() {
     setCurrentStep(1)
   }
 
-  const renderStep1 = () => {
+  const Step1 = () => {
     const form = useForm<z.infer<typeof step1Schema>>({
       resolver: zodResolver(step1Schema),
       defaultValues: {
@@ -236,7 +236,7 @@ export default function ContactPage() {
     )
   }
 
-  const renderStep2 = () => {
+  const Step2 = () => {
     const form = useForm<z.infer<typeof step2Schema>>({
       resolver: zodResolver(step2Schema),
       defaultValues: {
@@ -300,7 +300,7 @@ export default function ContactPage() {
     )
   }
 
-  const renderStep3 = () => {
+  const Step3 = () => {
     const form = useForm<z.infer<typeof step3Schema>>({
       resolver: zodResolver(step3Schema),
       defaultValues: {
@@ -361,7 +361,7 @@ export default function ContactPage() {
     )
   }
 
-  const renderStep4 = () => {
+  const Step4 = () => {
     const form = useForm<z.infer<typeof step4Schema>>({
       resolver: zodResolver(step4Schema),
       defaultValues: {
@@ -466,7 +466,7 @@ export default function ContactPage() {
     )
   }
 
-  const renderStep5 = () => {
+  const Step5 = () => {
     const form = useForm<z.infer<typeof step5Schema>>({
       resolver: zodResolver(step5Schema),
       defaultValues: {
@@ -518,7 +518,7 @@ export default function ContactPage() {
       <div>
         <h2 className="text-2xl font-bold mb-2">Thank You!</h2>
         <p className="text-muted-foreground">
-          We've received your project details and will get back to you within 24 hours with a personalized proposal.
+          We&apos;ve received your project details and will get back to you within 24 hours with a personalized proposal.
         </p>
       </div>
       <Button onClick={clearSavedData} variant="outline">
@@ -529,11 +529,11 @@ export default function ContactPage() {
 
   const renderCurrentStep = () => {
     switch (currentStep) {
-      case 1: return renderStep1()
-      case 2: return renderStep2()
-      case 3: return renderStep3()
-      case 4: return renderStep4()
-      case 5: return renderStep5()
+      case 1: return <Step1 />
+      case 2: return <Step2 />
+      case 3: return <Step3 />
+      case 4: return <Step4 />
+      case 5: return <Step5 />
       default: return renderSuccess()
     }
   }
