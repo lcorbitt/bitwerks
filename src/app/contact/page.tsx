@@ -5,6 +5,7 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import * as z from "zod"
 import { toast } from "sonner"
+import emailjs from "@emailjs/browser"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
@@ -133,9 +134,53 @@ export default function ContactPage() {
   const handleSubmit = async () => {
     setIsSubmitting(true)
     try {
-      // Here you would typically send the form data to your backend
-      console.log("Form submission:", formData)
-      await new Promise((resolve) => setTimeout(resolve, 1000))
+      // Format the form data for EmailJS
+      const projectTypeLabels: Record<string, string> = {
+        "website": "Website",
+        "software": "Software Application",
+        "white-label": "White Label Partnership"
+      }
+      
+      const projectScopeLabels: Record<string, string> = {
+        "new": "New Project",
+        "existing": "Existing Project",
+        "update": "Update/Redesign"
+      }
+      
+      const timelineLabels: Record<string, string> = {
+        "asap": "ASAP",
+        "1-3months": "1-3 Months",
+        "3-6months": "3-6 Months",
+        "6months+": "6+ Months",
+        "flexible": "Flexible"
+      }
+      
+      const budgetLabels: Record<string, string> = {
+        "under-1k": "Under $1,000",
+        "1k-5k": "$1,000 - $5,000",
+        "5k-10k": "$5,000 - $10,000",
+        "10k+": "$10,000+",
+        "discuss": "Let's discuss"
+      }
+
+      const emailParams = {
+        from_name: formData.name || "",
+        from_email: formData.email || "",
+        company: formData.company || "Not provided",
+        project_type: projectTypeLabels[formData.projectType as string] || formData.projectType || "Not selected",
+        project_scope: projectScopeLabels[formData.projectScope as string] || formData.projectScope || "Not selected",
+        timeline: timelineLabels[formData.timeline as string] || formData.timeline || "Not selected",
+        budget: budgetLabels[formData.budget as string] || formData.budget || "Not selected",
+        message: formData.message || "",
+      }
+
+      // Send email via EmailJS
+      await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "service_w0qm9cn",
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "",
+        emailParams,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || ""
+      )
       
       // Clear saved data after successful submission
       if (typeof window !== 'undefined') {
@@ -146,7 +191,7 @@ export default function ContactPage() {
       toast.success("Thank you! We'll get back to you within 24 hours.")
       updateStep(totalSteps + 1) // Show success state
     } catch (error) {
-      console.error(error)
+      console.error("EmailJS error:", error)
       toast.error("Something went wrong. Please try again.")
     } finally {
       setIsSubmitting(false)
@@ -570,7 +615,7 @@ export default function ContactPage() {
             This quick quiz helps us understand your needs.
           </p>
           {Object.keys(formData).length > 0 && currentStep > 1 && (
-            <div className="mt-4 inline-flex items-center px-3 py-1 rounded-full text-sm bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200">
+            <div className="mt-4 inline-flex items-center px-3 py-1 rounded-full text-sm bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200">
               <Check className="w-4 h-4 mr-1" />
               Progress saved automatically
             </div>
