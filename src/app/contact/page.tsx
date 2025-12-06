@@ -18,7 +18,7 @@ const step1Schema = z.object({
 })
 
 const step2Schema = z.object({
-  projectType: z.enum(["website", "software", "both"]),
+  projectType: z.enum(["website", "software", "white-label"]),
 })
 
 const step3Schema = z.object({
@@ -26,15 +26,11 @@ const step3Schema = z.object({
 })
 
 const step4Schema = z.object({
-  services: z.array(z.string()).min(1, "Please select at least one service."),
+  timeline: z.enum(["asap", "1-3months", "3-6months", "6months+", "flexible"]),
+  budget: z.enum(["under-1k", "1k-5k", "5k-10k", "10k+", "discuss"]),
 })
 
 const step5Schema = z.object({
-  timeline: z.enum(["asap", "1-3months", "3-6months", "6months+", "flexible"]),
-  budget: z.enum(["under-5k", "5k-15k", "15k-50k", "50k+", "discuss"]),
-})
-
-const step6Schema = z.object({
   message: z.string().min(10, "Please provide more details about your project."),
 })
 
@@ -42,32 +38,18 @@ type FormData = z.infer<typeof step1Schema> &
   z.infer<typeof step2Schema> & 
   z.infer<typeof step3Schema> & 
   z.infer<typeof step4Schema> & 
-  z.infer<typeof step5Schema> & 
-  z.infer<typeof step6Schema>
+  z.infer<typeof step5Schema>
 
 const projectTypes = [
   { value: "website", label: "Website", description: "Custom website design and development", icon: Globe },
   { value: "software", label: "Software Application", description: "Custom software or web application", icon: Code },
-  { value: "both", label: "Both", description: "Website and software development", icon: Building },
+  { value: "white-label", label: "White Label Partnership", description: "We build it, you present it", icon: Building },
 ]
 
 const projectScopes = [
   { value: "new", label: "New Project", description: "Starting from scratch" },
   { value: "existing", label: "Existing Project", description: "Have an existing project to improve" },
   { value: "update", label: "Update/Redesign", description: "Looking to update or redesign current solution" },
-]
-
-const serviceOptions = [
-  { value: "design", label: "UI/UX Design" },
-  { value: "frontend", label: "Frontend Development" },
-  { value: "backend", label: "Backend Development" },
-  { value: "database", label: "Database Design" },
-  { value: "api", label: "API Development" },
-  { value: "mobile", label: "Mobile App" },
-  { value: "ecommerce", label: "E-commerce" },
-  { value: "seo", label: "SEO Optimization" },
-  { value: "analytics", label: "Analytics Setup" },
-  { value: "hosting", label: "Hosting & Deployment" },
 ]
 
 const timelineOptions = [
@@ -79,10 +61,10 @@ const timelineOptions = [
 ]
 
 const budgetOptions = [
-  { value: "under-5k", label: "Under $5,000" },
-  { value: "5k-15k", label: "$5,000 - $15,000" },
-  { value: "15k-50k", label: "$15,000 - $50,000" },
-  { value: "50k+", label: "$50,000+" },
+  { value: "under-1k", label: "Under $1,000" },
+  { value: "1k-5k", label: "$1,000 - $5,000" },
+  { value: "5k-10k", label: "$5,000 - $10,000" },
+  { value: "10k+", label: "$10,000+" },
   { value: "discuss", label: "Let's discuss" },
 ]
 
@@ -91,7 +73,7 @@ export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [formData, setFormData] = useState<Partial<FormData>>({})
 
-  const totalSteps = 6
+  const totalSteps = 5
 
   // Load saved data from localStorage on component mount
   React.useEffect(() => {
@@ -382,76 +364,13 @@ export default function ContactPage() {
   const renderStep4 = () => {
     const form = useForm<z.infer<typeof step4Schema>>({
       resolver: zodResolver(step4Schema),
-      defaultValues: { services: formData.services || [] },
-    })
-
-    const onSubmit = (values: z.infer<typeof step4Schema>) => {
-      updateFormData(values)
-      nextStep()
-    }
-
-    const handleServiceChange = (service: string, checked: boolean) => {
-      const currentServices = form.getValues("services") || []
-      const newServices = checked
-        ? [...currentServices, service]
-        : currentServices.filter(s => s !== service)
-      form.setValue("services", newServices)
-    }
-
-    return (
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {serviceOptions.map((service) => (
-            <label
-              key={service.value}
-              className={`relative flex items-center space-x-3 p-4 rounded-lg border-2 cursor-pointer transition-all hover:shadow-md ${
-                (form.watch("services") || []).includes(service.value)
-                  ? "border-brand bg-brand/5"
-                  : "border-gray-200 dark:border-gray-700 hover:border-brand/50"
-              }`}
-            >
-              <input
-                type="checkbox"
-                checked={(form.watch("services") || []).includes(service.value)}
-                onChange={(e) => handleServiceChange(service.value, e.target.checked)}
-                className="sr-only"
-              />
-              <div className={`flex-shrink-0 w-6 h-6 rounded border-2 flex items-center justify-center ${
-                (form.watch("services") || []).includes(service.value)
-                  ? "border-brand bg-brand"
-                  : "border-gray-300 dark:border-gray-600"
-              }`}>
-                {(form.watch("services") || []).includes(service.value) && (
-                  <Check className="w-4 h-4 text-white" />
-                )}
-              </div>
-              <span className="font-medium">{service.label}</span>
-            </label>
-          ))}
-        </div>
-        
-        <div className="flex space-x-4">
-          <Button type="button" variant="outline" onClick={prevStep} className="flex-1">
-            <ArrowLeft className="w-4 h-4 mr-2" /> Back
-          </Button>
-          <Button type="submit" className="flex-1" size="lg">
-            Continue <ArrowRight className="w-4 h-4 ml-2" />
-          </Button>
-        </div>
-      </form>
-    )
-  }
-
-  const renderStep5 = () => {
-    const form = useForm<z.infer<typeof step5Schema>>({
-      resolver: zodResolver(step5Schema),
       defaultValues: {
         timeline: formData.timeline || undefined,
         budget: formData.budget || undefined,
       },
     })
 
-    const onSubmit = (values: z.infer<typeof step5Schema>) => {
+    const onSubmit = (values: z.infer<typeof step4Schema>) => {
       updateFormData(values)
       nextStep()
     }
@@ -547,15 +466,15 @@ export default function ContactPage() {
     )
   }
 
-  const renderStep6 = () => {
-    const form = useForm<z.infer<typeof step6Schema>>({
-      resolver: zodResolver(step6Schema),
+  const renderStep5 = () => {
+    const form = useForm<z.infer<typeof step5Schema>>({
+      resolver: zodResolver(step5Schema),
       defaultValues: {
         message: formData.message || "",
       },
     })
 
-    const onSubmit = (values: z.infer<typeof step6Schema>) => {
+    const onSubmit = (values: z.infer<typeof step5Schema>) => {
       updateFormData(values)
       handleSubmit()
     }
@@ -615,7 +534,6 @@ export default function ContactPage() {
       case 3: return renderStep3()
       case 4: return renderStep4()
       case 5: return renderStep5()
-      case 6: return renderStep6()
       default: return renderSuccess()
     }
   }
@@ -625,9 +543,8 @@ export default function ContactPage() {
       case 1: return "Let's get to know you"
       case 2: return "What type of project?"
       case 3: return "Project scope"
-      case 4: return "Services needed"
-      case 5: return "Timeline & budget"
-      case 6: return "Additional details"
+      case 4: return "Timeline & budget"
+      case 5: return "Additional details"
       default: return "Success!"
     }
   }
@@ -635,11 +552,10 @@ export default function ContactPage() {
   const getStepDescription = () => {
     switch (currentStep) {
       case 1: return "Tell us a bit about yourself so we can personalize our approach."
-      case 2: return "What kind of project are you looking to build?"
+      case 2: return "What can we help you with?"
       case 3: return "Is this a new project or are you looking to improve something existing?"
-      case 4: return "Select all the services you need for your project."
-      case 5: return "Help us understand your timeline and budget preferences."
-      case 6: return "Any additional details that will help us create the perfect solution?"
+      case 4: return "Help us understand your timeline and budget preferences."
+      case 5: return "Any additional details that will help us create the perfect solution?"
       default: return ""
     }
   }
