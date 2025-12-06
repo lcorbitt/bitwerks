@@ -131,9 +131,12 @@ export default function ContactPage() {
     }
   }
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (finalFormData?: Partial<FormData>) => {
     setIsSubmitting(true)
     try {
+      // Use the passed formData or fall back to state
+      const dataToSubmit = finalFormData || formData
+      
       // Format the form data for EmailJS
       const projectTypeLabels: Record<string, string> = {
         "website": "Website",
@@ -164,14 +167,14 @@ export default function ContactPage() {
       }
 
       const emailParams = {
-        from_name: formData.name || "",
-        from_email: formData.email || "",
-        company: formData.company || "Not provided",
-        project_type: projectTypeLabels[formData.projectType as string] || formData.projectType || "Not selected",
-        project_scope: projectScopeLabels[formData.projectScope as string] || formData.projectScope || "Not selected",
-        timeline: timelineLabels[formData.timeline as string] || formData.timeline || "Not selected",
-        budget: budgetLabels[formData.budget as string] || formData.budget || "Not selected",
-        message: formData.message || "",
+        from_name: dataToSubmit.name || "",
+        from_email: dataToSubmit.email || "",
+        company: dataToSubmit.company || "Not provided",
+        project_type: projectTypeLabels[dataToSubmit.projectType as string] || dataToSubmit.projectType || "Not selected",
+        project_scope: projectScopeLabels[dataToSubmit.projectScope as string] || dataToSubmit.projectScope || "Not selected",
+        timeline: timelineLabels[dataToSubmit.timeline as string] || dataToSubmit.timeline || "Not selected",
+        budget: budgetLabels[dataToSubmit.budget as string] || dataToSubmit.budget || "Not selected",
+        message: dataToSubmit.message || "",
       }
 
       // Send email via EmailJS
@@ -521,7 +524,9 @@ export default function ContactPage() {
 
     const onSubmit = (values: z.infer<typeof step5Schema>) => {
       updateFormData(values)
-      handleSubmit()
+      // Pass the complete form data including the message
+      const completeFormData = { ...formData, ...values }
+      handleSubmit(completeFormData)
     }
 
     return (
