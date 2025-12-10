@@ -13,7 +13,7 @@ export const sampleClients: Client[] = [
     id: "clickk",
     name: "Clickk",
     logo: {
-      light: "/clickk-light.png",
+      light: "/clickk.png",
     },
     caseStudyLink: "/case-studies/clickk",
     services: ["Web Development", "Next.js", "React", "Tailwind"],

@@ -14,7 +14,7 @@ const partners: Partner[] = [
   {
     name: "Clickk",
     alt: "Clickk Logo",
-    lightImage: "/clickk-light.png",
+    lightImage: "/clickk.png",
     darkImage: "/clickk-dark.png",
   },
   {
