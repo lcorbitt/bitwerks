@@ -3,7 +3,6 @@ interface Client {
   name: string
   logo: {
     light: string
-    dark: string
   }
   caseStudyLink?: string
   services?: string[]
@@ -11,11 +10,19 @@ interface Client {
 
 export const sampleClients: Client[] = [
   {
+    id: "clickk",
+    name: "Clickk",
+    logo: {
+      light: "/clickk-light.png",
+    },
+    caseStudyLink: "/case-studies/clickk",
+    services: ["Web Development", "Next.js", "React", "Tailwind"],
+  },
+  {
     id: "urban-sky",
     name: "Urban Sky",
     logo: {
       light: "/urban_sky_dark.png",
-      dark: "/urban_sky_white.png"
     },
     caseStudyLink: "/case-studies/urban-sky",
     services: ["Software Development", "NestJS", "React", "Tailwind", "PostgreSQL", "Playwright", "AWS"],
@@ -25,7 +32,6 @@ export const sampleClients: Client[] = [
     name: "Hodinkee",
     logo: {
       light: "/hodinkee_dark.png",
-      dark: "/hodinkee_white.svg"
     },
     caseStudyLink: "/case-studies/hodinkee",
     services: ["Software Development", "Ruby on Rails", "React", "Tailwind", "RSpec","PostgreSQL", "AWS"],
@@ -35,7 +41,6 @@ export const sampleClients: Client[] = [
     name: "Spectora",
     logo: {
       light: "/spectora_dark.png",
-      dark: "/spectora_white.png"
     },
     caseStudyLink: "/case-studies/spectora",
     services: ["Software Development", "Ruby on Rails", "React", "Tailwind", "RSpec","PostgreSQL", "AWS"],
@@ -45,7 +50,6 @@ export const sampleClients: Client[] = [
     name: "Trace First",
     logo: {
       light: "/tracefirst_dark.png",
-      dark: "/tracefirst_dark.png"
     },
     caseStudyLink: "/case-studies/trace-first",
     services: ["Software Development", "Ruby on Rails", "JavaScript", "Bootstrap", "RSpec","PostgreSQL", "AWS"],
@@ -55,21 +59,19 @@ export const sampleClients: Client[] = [
     name: "Errantry Studios",
     logo: {
       light: "/errantry_studios.png",
-      dark: "/errantry_studios.png"
     },
     caseStudyLink: "/case-studies/errantry-studios",
     services: ["Web Development", "Next.js", "React", "Tailwind"],
   },
-  {
-    id: "zestful",
-    name: "Zestful",
-    logo: {
-      light: "/zestful.webp",
-      dark: "/zestful.webp"
-    },
-    caseStudyLink: "/case-studies/zestful",
-    services: ["Software Development", "Ruby on Rails", "Stimulus.js", "Tailwind"],
-  }
+  // {
+  //   id: "zestful",
+  //   name: "Zestful",
+  //   logo: {
+  //     light: "/zestful.webp",
+  //   },
+  //   caseStudyLink: "/case-studies/zestful",
+  //   services: ["Software Development", "Ruby on Rails", "Stimulus.js", "Tailwind"],
+  // }
 ]
 
 export type { Client }

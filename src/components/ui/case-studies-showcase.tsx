@@ -19,7 +19,7 @@ export function CaseStudiesShowcase({ caseStudies, className = "" }: CaseStudies
   return (
     <div className={`relative w-full max-w-2xl mx-auto h-[28rem] ${className}`}>
       {/* Case Study 1 - Top Left */}
-      <div className="absolute top-0 left-0 w-80 h-48 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 z-30 group">
+      <div className="absolute top-0 left-0 w-80 h-48 rounded-lg overflow-hidden shadow-lg transition-shadow duration-300 z-30 group">
         <Image
           src={caseStudies[0]?.image || "/placeholder-case-study-1.jpg"}
           alt={caseStudies[0]?.alt || "Case study 1"}
@@ -41,12 +41,12 @@ export function CaseStudiesShowcase({ caseStudies, className = "" }: CaseStudies
       </div>
 
       {/* Case Study 2 - Top Right */}
-      <div className="absolute top-8 -right-56 w-80 h-48 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 z-20 group">
+      <div className="absolute top-8 -right-56 w-80 h-48 rounded-lg overflow-hidden shadow-lg transition-shadow duration-300 z-20 group">
         <Image
           src={caseStudies[1]?.image || "/placeholder-case-study-2.jpg"}
           alt={caseStudies[1]?.alt || "Case study 2"}
           fill
-          className="object-cover object-left group-hover:scale-105 transition-transform duration-300"
+          className="object-cover object-left transition-transform duration-300"
           priority
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           quality={85}
@@ -63,12 +63,12 @@ export function CaseStudiesShowcase({ caseStudies, className = "" }: CaseStudies
       </div>
 
       {/* Case Study 3 - Bottom Left */}
-      <div className="absolute bottom-0 left-16 w-80 h-48 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 z-10 group">
+      <div className="absolute bottom-0 left-16 w-80 h-48 rounded-lg overflow-hidden shadow-lg transition-shadow duration-300 z-10 group">
         <Image
           src={caseStudies[2]?.image || "/placeholder-case-study-3.jpg"}
           alt={caseStudies[2]?.alt || "Case study 3"}
           fill
-          className="object-cover object-left group-hover:scale-105 transition-transform duration-300"
+          className="object-cover object-left transition-transform duration-300"
           priority
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           quality={85}

@@ -8,7 +8,6 @@ interface Client {
   name: string
   logo: {
     light: string
-    dark: string
   }
   caseStudyLink?: string
   services?: string[]
@@ -34,12 +33,12 @@ export function ClientShowcase({ clients, className = "" }: ClientShowcaseProps)
                   fill
                   className="object-contain dark:hidden"
                 />
-                <Image
+                {/* <Image
                   src={client.logo.dark}
                   alt={`${client.name} Logo`}
                   fill
                   className="object-contain hidden dark:block"
-                />
+                /> */}
               </div>
               
               {/* Dark overlay on hover */}

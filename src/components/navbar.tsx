@@ -2,6 +2,7 @@
 
 import * as React from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { MobileNav } from "@/components/mobile-nav"
@@ -36,7 +37,13 @@ export function Navbar() {
             }
           }}
         >
-          <span className="text-3xl font-bold text-brand">BW</span>
+          <Image 
+            src="/logo.png" 
+            alt="BitWerks Logo" 
+            width={120} 
+            height={40}
+            className="h-16 w-auto"
+          />
         </Link>
         <div className="flex items-center space-x-8">
           <nav className="hidden lg:flex items-center space-x-8">
