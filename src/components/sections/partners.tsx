@@ -88,7 +88,7 @@ export function Partners() {
           {partners.map((partner) => (
             <div
               key={partner.name}
-              className="h-24 w-36 md:h-32 md:w-48 bg-muted/20 rounded-lg flex items-center justify-center relative group cursor-pointer transition-all duration-300 hover:scale-110"
+              className="h-24 w-36 md:h-32 md:w-48 bg-muted/20 rounded-lg flex items-center justify-center relative transition-all duration-300"
             >
               {partner.darkImage ? (
                 <>
@@ -97,14 +97,14 @@ export function Partners() {
                     alt={partner.alt}
                     width={128}
                     height={64}
-                    className="w-full object-contain dark:hidden transition-transform duration-300 group-hover:scale-110"
+                    className="w-full object-contain dark:hidden transition-transform duration-300"
                   />
                   <Image
                     src={partner.darkImage}
                     alt={partner.alt}
                     width={128}
                     height={64}
-                    className="w-full object-contain hidden dark:block transition-transform duration-300 group-hover:scale-110"
+                    className="w-full object-contain hidden dark:block transition-transform duration-300"
                   />
                 </>
               ) : (
@@ -113,10 +113,10 @@ export function Partners() {
                   alt={partner.alt}
                   width={128}
                   height={64}
-                  className="w-full object-contain transition-transform duration-300 group-hover:scale-110"
+                  className="w-full object-contain transition-transform duration-300"
                 />
               )}
-              <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 bg-black text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+              <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 bg-black text-white text-xs px-2 py-1 rounded opacity-0 transition-opacity duration-300 whitespace-nowrap">
                 {partner.name}
               </div>
             </div>
