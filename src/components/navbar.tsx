@@ -36,7 +36,7 @@ export function Navbar() {
             }
           }}
         >
-          <span className="text-3xl font-bold text-brand">Bit<span className="dark:text-white text-black">Werks</span></span>
+          <span className="text-3xl font-bold text-brand">BW</span>
         </Link>
         <div className="flex items-center space-x-8">
           <nav className="hidden lg:flex items-center space-x-8">

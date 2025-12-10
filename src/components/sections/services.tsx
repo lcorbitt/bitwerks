@@ -21,7 +21,7 @@ export function Services({ locationString, isDefault }: ServicesProps) {
             <p className="mb-16 md:mb-32 text-muted-foreground tracking-wide text-lg">
               {/* todto: use location string for improved SEO */}
               {/* {locationString === "nationwide" ? "across the U.S." : ` in ${locationString}.`} */}
-              At BitWerks, we specialize in <strong>custom web & software development</strong> for startups and small businesses across the U.S. Each project is hand-coded with a focus on visibility, performance, and reliability, while leveraging AI intelligently to enhance development and deliver smarter solutions. No page-builders, no shortcuts. We are committed to transparency and trust, building lasting partnerships that empower your business to grow with confidence.
+              At BitWerks, we specialize in <strong>custom web & software development</strong> for startups and small businesses across the U.S. Each project is hand-coded with a focus on visibility, performance, and reliability. No page-builders, no shortcuts. We are committed to transparency and trust, building lasting partnerships that empower your business to grow with confidence.
             </p>
           </div>
           <div className="grid gap-24 md:gap-8 md:grid-cols-2 lg:grid-cols-3 mt-32">
@@ -54,7 +54,7 @@ export function Services({ locationString, isDefault }: ServicesProps) {
 
         <div className="mt-16 text-center">
           <Button asChild variant="brand" size="lg" className="z-20">
-            <a href="tel:+8167144107">Get Started</a>
+            <a href="/contact">Get Started</a>
           </Button>
         </div>
       </section>

@@ -1,8 +1,58 @@
 import Image from "next/image";
 import { Heading2 } from "../ui/heading";
 
+interface Partner {
+  name: string;
+  alt: string;
+  lightImage: string;
+  darkImage?: string;
+  width?: number;
+  height?: number;
+}
+
+const partners: Partner[] = [
+  {
+    name: "Clickk",
+    alt: "Clickk Logo",
+    lightImage: "/clickk.png",
+  },
+  {
+    name: "Urban Sky",
+    alt: "Urban Sky Logo",
+    lightImage: "/urban_sky_dark.png",
+    darkImage: "/urban_sky_white.png",
+  },
+  {
+    name: "Hodinkee",
+    alt: "Hodinkee Logo",
+    lightImage: "/hodinkee_dark.png",
+    darkImage: "/hodinkee_white.svg",
+  },
+  {
+    name: "Spectora",
+    alt: "Spectora Logo",
+    lightImage: "/spectora_dark.png",
+    darkImage: "/spectora_white.png",
+  },
+  {
+    name: "Trace First",
+    alt: "Trace First Logo",
+    lightImage: "/tracefirst_dark.png",
+  },
+  {
+    name: "Errantry Studios",
+    alt: "Errantry Studios Logo",
+    lightImage: "/errantry_studios.png",
+  },
+  // {
+  //   name: "Zestful",
+  //   alt: "Zestful Logo",
+  //   lightImage: "/zestful.webp",
+  //   darkImage: "/zestful.webp",
+  // },
+];
+
 export function Partners() {
-  
   return (
     <section className="bg-white dark:bg-primary w-full">
       <div className="container mx-auto">
@@ -34,106 +84,42 @@ export function Partners() {
 
         {/* Partners Grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 gap-8 items-center justify-items-center">
-          <div className="h-24 w-36 md:h-32 md:w-48 bg-muted/20 rounded-lg flex items-center justify-center relative group cursor-pointer transition-all duration-300 hover:scale-110">
-            <Image
-              src="/urban_sky_dark.png"
-              alt="Urban Sky Logo"
-              width={128}
-              height={64}
-              className="w-full object-contain dark:hidden transition-transform duration-300 group-hover:scale-110"
-            />
-            <Image
-              src="/urban_sky_white.png"
-              alt="Urban Sky Logo"
-              width={128}
-              height={64}
-              className="w-full object-contain hidden dark:block transition-transform duration-300 group-hover:scale-110"
-            />
-            <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 bg-black text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
-              Urban Sky
+          {partners.map((partner) => (
+            <div
+              key={partner.name}
+              className="h-24 w-36 md:h-32 md:w-48 bg-muted/20 rounded-lg flex items-center justify-center relative group cursor-pointer transition-all duration-300 hover:scale-110"
+            >
+              {partner.darkImage ? (
+                <>
+                  <Image
+                    src={partner.lightImage}
+                    alt={partner.alt}
+                    width={128}
+                    height={64}
+                    className="w-full object-contain dark:hidden transition-transform duration-300 group-hover:scale-110"
+                  />
+                  <Image
+                    src={partner.darkImage}
+                    alt={partner.alt}
+                    width={128}
+                    height={64}
+                    className="w-full object-contain hidden dark:block transition-transform duration-300 group-hover:scale-110"
+                  />
+                </>
+              ) : (
+                <Image
+                  src={partner.lightImage}
+                  alt={partner.alt}
+                  width={128}
+                  height={64}
+                  className="w-full object-contain transition-transform duration-300 group-hover:scale-110"
+                />
+              )}
+              <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 bg-black text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+                {partner.name}
+              </div>
             </div>
-          </div>
-          <div className="h-24 w-36 md:h-32 md:w-48 bg-muted/20 rounded-lg flex items-center justify-center relative group cursor-pointer transition-all duration-300 hover:scale-110">
-            <Image
-              src="/hodinkee_dark.png"
-              alt="Hodinkee Logo"
-              width={128}
-              height={64}
-              className="w-full object-contain dark:hidden transition-transform duration-300 group-hover:scale-110"
-            />
-            <Image
-              src="/hodinkee_white.svg"
-              alt="Hodinkee Logo"
-              width={128}
-              height={64}
-              className="w-full object-contain hidden dark:block transition-transform duration-300 group-hover:scale-110"
-            />
-            <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 bg-black text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
-              Hodinkee
-            </div>
-          </div>
-          <div className="h-24 w-36 md:h-32 md:w-48 bg-muted/20 rounded-lg flex items-center justify-center relative group cursor-pointer transition-all duration-300 hover:scale-110">
-            <Image
-              src="/spectora_dark.png"
-              alt="Spectora Logo"
-              width={128}
-              height={64}
-              className="w-full object-contain dark:hidden transition-transform duration-300 group-hover:scale-110"
-            />
-            <Image
-              src="/spectora_white.png"
-              alt="Spectora Logo"
-              width={128}
-              height={64}
-              className="w-full object-contain hidden dark:block transition-transform duration-300 group-hover:scale-110"
-            />
-            <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 bg-black text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
-              Spectora
-            </div>
-          </div>
-          <div className="h-24 w-36 md:h-32 md:w-48 bg-muted/20 rounded-lg flex items-center justify-center relative group cursor-pointer transition-all duration-300 hover:scale-110">
-            <Image
-              src="/tracefirst_dark.png"
-              alt="Trace First Logo"
-              width={128}
-              height={64}
-              className="w-full object-contain transition-transform duration-300 group-hover:scale-110"
-            />
-            <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 bg-black text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
-              Trace First
-            </div>
-          </div>
-          <div className="h-24 w-36 md:h-32 md:w-48 bg-muted/20 rounded-lg flex items-center justify-center relative group cursor-pointer transition-all duration-300 hover:scale-110">
-            <Image
-              src="/errantry_studios.png"
-              alt="Errantry Studios Logo"
-              width={128}
-              height={64}
-              className="w-full object-contain transition-transform duration-300 group-hover:scale-110"
-            />
-            <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 bg-black text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
-              Errantry Studios
-            </div>
-          </div>
-          <div className="h-24 w-36 md:h-32 md:w-48 bg-muted/20 rounded-lg flex items-center justify-center relative group cursor-pointer transition-all duration-300 hover:scale-110">
-            <Image
-              src="/zestful.webp"
-              alt="Zestful Logo"
-              width={128}
-              height={64}
-              className="w-full object-contain dark:hidden transition-transform duration-300 group-hover:scale-110"
-            />
-            <Image
-              src="/zestful.webp"
-              alt="Zestful Logo"
-              width={128}
-              height={64}
-              className="w-full object-contain hidden dark:block transition-transform duration-300 group-hover:scale-110"
-            />
-            <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 bg-black text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
-              Zestful
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>

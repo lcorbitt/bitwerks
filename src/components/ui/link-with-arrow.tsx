@@ -13,10 +13,10 @@ export function LinkWithArrow({
   className = "", 
   variant = "default" 
 }: LinkWithArrowProps) {
-  const baseClasses = "inline-flex items-center text-sm font-semibold transition-colors duration-300 ease-in-out border-b-2 border-transparent pb-1"
+  const baseClasses = "inline-flex items-center text-sm font-semibold transition-colors duration-300 ease-in-out pb-1"
   
   const variantClasses = {
-    default: "text-gray-900 dark:text-white group-hover:text-white group-hover:border-white/50",
+    default: "text-gray-900 dark:text-white group-hover:border-b group-hover:border-black dark:group-hover:border-white",
     white: "text-white border-white/50 hover:border-white/80",
     brand: "text-brand border-brand/50 hover:border-brand/80"
   }

@@ -54,8 +54,7 @@ export function Hero({ locationString }: HeroProps) {
         <div className="mx-auto lg:grid lg:items-center lg:gap-8 lg:grid-cols-2">
           {/* Text content */}
           <div className="flex flex-col text-center lg:text-left w-full">
-            <Heading1 className="mx-auto lg:mx-0 max-w-3xl lg:max-w-none relative z-10">Custom Web &</Heading1>
-            <Heading1 className="mb-6 mx-auto lg:mx-0 max-w-3xl lg:max-w-none relative z-10">Software Development</Heading1>
+            <Heading1 className="mx-auto lg:mx-0 max-w-3xl lg:max-w-none relative z-10"><span className="text-brand">Bit</span><span className="dark:text-white text-black">Werks</span></Heading1>
             <p className="mb-8 text-sm text-muted-light dark:text-muted-dark md:text-lg mx-auto lg:mx-0 max-w-2xl lg:max-w-xl relative z-10">
               Web Development • Software Development<span className="hidden lg:inline"> • White Label Partnerships</span>
             </p>
@@ -63,7 +62,7 @@ export function Hero({ locationString }: HeroProps) {
               {/* Your partner for dependable, modern web and software development.  */}
               {/* Build beautifully and scale successfully. */}
 
-              A digital product agency that builds it <span className="text-brand">right.</span>
+              BitWerks is a digital agency specializing <span className="text-brand">in custom web & software solutions</span>.
               {/* TODO: add location string for improved SEO */}
               {/* {locationString === "nationwide" ? "across the U.S." : ` in ${locationString}.`} */}
             </p>
