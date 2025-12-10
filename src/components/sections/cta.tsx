@@ -28,7 +28,7 @@ export function CTA({ className = "" }: CTAProps) {
             {/* <p className="mb-8 text-muted-foreground">
               Build beautifully and scale successfully.
             </p> */}
-            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 dark:bg-accent/50 text-white">
+            <Button variant="brand" asChild size="lg">
               <Link href="/contact">Get In Touch</Link>
             </Button>
           </div>

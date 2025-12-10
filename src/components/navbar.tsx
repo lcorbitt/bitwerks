@@ -88,7 +88,7 @@ export function Navbar() {
             ))}
           </nav>
           <MobileNav />
-          <Button asChild variant="default" className="hidden lg:flex bg-black hover:bg-black/90 dark:bg-white dark:text-black">
+          <Button asChild variant="outline">
             <Link href="/contact">Schedule a Call</Link>
           </Button>
           <ThemeToggle />
