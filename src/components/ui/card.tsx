@@ -39,7 +39,7 @@ export function Card({ title, description, linkText, linkHref, children }: CardP
       </div>
       
       {/* Main Card Container */}
-      <div className="dark:border-white/20 border-black/50 relative bg-transparent rounded-3xl shadow-lg hover:shadow-2xl py-12 md:py-20 px-8 group hover:cursor-pointer transition-all duration-500 ease-out hover:-translate-y-2 overflow-hidden border" onClick={handleClick}>
+      <div className="dark:border-white/20 border-black/50 relative bg-transparent rounded-3xl shadow-lg hover:shadow-2xl py-12 md:py-20 px-8 group hover:cursor-pointer transition-all duration-500 ease-out hover:-translate-y-2 overflow-hidden border transition-colors duration-300" onClick={handleClick}>
         {/* Content with relative positioning */}
         <div className="relative z-10">
           <h3 className="text-2xl font-bold tracking-tight text-black dark:text-white mb-4 transition-colors duration-300 group-hover:text-brand">{title}</h3>

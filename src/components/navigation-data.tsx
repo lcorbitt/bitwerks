@@ -38,11 +38,11 @@ export const navigationItems: NavigationItem[] = [
     href: "/our-work",
     type: "link"
   },
-  {
-    title: "PRICING",
-    href: "/pricing",
-    type: "link"
-  },
+  // {
+  //   title: "PRICING",
+  //   href: "/pricing",
+  //   type: "link"
+  // },
   {
     title: "ABOUT",
     href: "/about",

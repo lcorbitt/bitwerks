@@ -32,7 +32,7 @@ export function FAQSection() {
                 What&apos;s included in the hosting?
               </AccordionTrigger>
               <AccordionContent className="text-gray-600 dark:text-gray-300">
-                All plans include 1 year of hosting. Websites use Vercel (optimized for static sites), while Software use Render (better for full-stack applications with databases).
+                All plans include 1 year of hosting.
               </AccordionContent>
             </AccordionItem>
             

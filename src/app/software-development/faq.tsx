@@ -9,7 +9,7 @@ export function FAQSection() {
       <div className="container">
         <div className="mx-auto text-center mb-16">
           <Heading2 className="mb-6">
-            FAQs
+            Software Development FAQs
           </Heading2>
           <p className="text-lg text-gray-600 dark:text-gray-300">
             Common questions about our software development services and process.

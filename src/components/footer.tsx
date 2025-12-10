@@ -18,17 +18,17 @@ export function Footer() {
               <h4 className="mb-4 text-sm font-semibold">Services</h4>
               <ul className="space-y-2 text-sm">
                 <li>
-                  <Link href="/services/web-development" className="text-muted-foreground hover:text-foreground dark:text-white/80 dark:hover:text-white">
+                  <Link href="/services/web-development" className="text-muted-foreground hover:text-brand dark:text-white/80 dark:hover:text-white transition-colors duration-300">
                     Web Development
                   </Link>
                 </li>
                 <li>
-                  <Link href="/services/software-development" className="text-muted-foreground hover:text-foreground dark:text-white/80 dark:hover:text-white">
+                  <Link href="/services/software-development" className="text-muted-foreground hover:text-brand dark:text-white/80 dark:hover:text-white transition-colors duration-300">
                     Software Development
                   </Link>
                 </li>
                 <li>
-                  <Link href="/services/white-label-partnerships" className="text-muted-foreground hover:text-foreground dark:text-white/80 dark:hover:text-white">
+                  <Link href="/services/white-label-partnerships" className="text-muted-foreground hover:text-brand dark:text-white/80 dark:hover:text-white transition-colors duration-300">
                     White Label Partnerships
                   </Link>
                 </li>
@@ -38,22 +38,22 @@ export function Footer() {
               <h4 className="mb-4 text-sm font-semibold">Company</h4>
               <ul className="space-y-2 text-sm">
                 <li>
-                  <Link href="/services" className="text-muted-foreground hover:text-foreground dark:text-white/80 dark:hover:text-white">
+                  <Link href="/services" className="text-muted-foreground hover:text-brand dark:text-white/80 dark:hover:text-white transition-colors duration-300">
                     Services
                   </Link>
                 </li>
                 <li>
-                  <Link href="/our-work" className="text-muted-foreground hover:text-foreground dark:text-white/80 dark:hover:text-white">
+                  <Link href="/our-work" className="text-muted-foreground hover:text-brand dark:text-white/80 dark:hover:text-white transition-colors duration-300">
                     Our Work
                   </Link>
                 </li>
                 <li>
-                  <Link href="/contact" className="text-muted-foreground hover:text-foreground dark:text-white/80 dark:hover:text-white">
+                  <Link href="/contact" className="text-muted-foreground hover:text-brand dark:text-white/80 dark:hover:text-white transition-colors duration-300">
                     Technologies
                   </Link>
                 </li>
                 <li>
-                  <Link href="/contact" className="text-muted-foreground hover:text-foreground dark:text-white/80 dark:hover:text-white">
+                  <Link href="/contact" className="text-muted-foreground hover:text-brand dark:text-white/80 dark:hover:text-white transition-colors duration-300">
                     About
                   </Link>
                 </li>
