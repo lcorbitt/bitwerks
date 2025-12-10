@@ -31,7 +31,7 @@ export function ClientShowcase({ clients, className = "" }: ClientShowcaseProps)
                   src={client.logo.light}
                   alt={`${client.name} Logo`}
                   fill
-                  className="object-contain dark:hidden"
+                  className="object-contain"
                 />
                 {/* <Image
                   src={client.logo.dark}
