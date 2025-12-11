@@ -102,11 +102,13 @@ export function MobileNav() {
           ))}
 
           {/* CTA Button */}
-          <Button asChild variant="outline">
-            <Link href="/contact" onClick={() => setOpen(false)}>
-              Schedule a Call
-            </Link>
-          </Button>
+          <div className="flex justify-center">
+            <Button asChild variant="outline" className="w-full">
+              <Link href="/contact" onClick={() => setOpen(false)}>
+                Schedule a Call
+              </Link>
+            </Button>
+          </div>
         </nav>
       </SheetContent>
     </Sheet>
