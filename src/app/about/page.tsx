@@ -45,25 +45,48 @@ export default function AboutPage() {
       {/* Hero Section */}
       <section className="relative overflow-hidden pb-32 md:pb-64 w-full h-full bg-light dark:bg-tertiary">
         <div className="container relative z-20">
-          <div className="mx-auto max-w-4xl text-center">
-            <p className="mb-2 text-muted-light dark:text-muted-dark tracking-widest font-normal uppercase">
-              ABOUT US
-            </p>
-            <Heading1 className="mb-6 mx-auto max-w-3xl lg:max-w-none relative z-10">
-              Building digital products that <span className="text-brand">matter</span>
-            </Heading1>
-            <p className="mb-8 text-basetext-muted-foreground md:text-lg mx-auto max-w-2xl lg:max-w-xl relative z-10">
-              At BitWerks, we&apos;re your partners in building custom web and software solutions that help your business thrive in the digital age.
-            </p>
+          <div className="mx-auto lg:grid lg:items-center lg:gap-8 lg:grid-cols-2">
+            {/* Text content */}
+            <div className="flex flex-col text-center lg:text-left w-full">
+              <p className="mb-2 text-muted-light dark:text-muted-dark tracking-widest font-normal uppercase">
+                ABOUT US
+              </p>
+              <Heading1 className="mx-auto lg:mx-0 max-w-3xl lg:max-w-none relative z-10 mb-6">Building digital products that <span className="text-brand">matter</span></Heading1>
+              <p className="mb-8 text-basetext-muted-foreground md:text-lg mx-auto lg:mx-0 max-w-2xl lg:max-w-xl relative z-10">
+                At BitWerks, we&apos;re your partners in building custom web and software solutions that help your business thrive in the digital age.
+              </p>
+              <div className="flex gap-4 justify-center lg:justify-start relative z-10">
+                <Button
+                  asChild
+                  variant="brand"
+                  size="lg"
+                >
+                  <Link href="/contact">Start Your Project</Link>
+                </Button>
+              </div>
+            </div>
+            {/* Image - hidden on smaller screens */}
+            <div className="hidden lg:flex relative items-center justify-end">
+              <div className="w-full h-auto max-w-[450px]">
+                <Image
+                  src="/about-hero.png"
+                  alt="About us hero image"
+                  width={250}
+                  height={250}
+                  priority
+                  className="w-full h-auto object-contain rounded-l-lg"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Curved section divider */}
-      <section className="clip-top-large-circle relative -left-[15%] h-72 w-[130%] bg-white dark:bg-primary -mt-20 md:-mt-52 z-20"></section>
+      {/* <section className="clip-top-large-circle relative -left-[15%] h-72 w-[130%] bg-white dark:bg-primary -mt-20 md:-mt-52 z-20"></section> */}
 
       {/* Our Mission Section */}
-      <section className="bg-white dark:bg-black pt-0 pb-16 md:pb-32 -mt-48 z-20 relative">
+      {/* <section className="bg-white dark:bg-black pt-0 pb-16 md:pb-32 -mt-48 z-20 relative">
         <div className="container">
           <div className="mx-auto max-w-4xl text-center mb-16">
             <p className="mb-2 text-muted-light dark:text-muted-dark tracking-widest font-normal uppercase">
@@ -78,10 +101,10 @@ export default function AboutPage() {
             </p>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Our Values Section */}
-      <section className="bg-light dark:bg-tertiary py-16 md:py-32">
+      {/* <section className="bg-light dark:bg-tertiary py-16 md:py-32">
         <div className="container">
           <div className="mx-auto max-w-4xl text-center mb-16">
             <p className="mb-2 text-muted-light dark:text-muted-dark tracking-widest font-normal uppercase">
@@ -115,10 +138,10 @@ export default function AboutPage() {
           </div>
         </div>
         <DecorativeCircles className="top-96" />
-      </section>
+      </section> */}
 
       {/* What We Do Section */}
-      <section className="bg-white dark:bg-black py-16 md:py-32">
+      {/* <section className="bg-white dark:bg-black py-16 md:py-32">
         <div className="container">
           <div className="mx-auto max-w-4xl">
             <div className="text-center mb-16">
@@ -155,10 +178,10 @@ export default function AboutPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Our Approach Section */}
-      <section className="bg-light dark:bg-tertiary py-16 md:py-32">
+      {/* <section className="bg-light dark:bg-tertiary py-16 md:py-32">
         <div className="container">
           <div className="mx-auto max-w-4xl">
             <div className="text-center mb-16">
@@ -203,18 +226,18 @@ export default function AboutPage() {
           </div>
         </div>
         <DecorativeCircles inverted className="bottom-32" />
-      </section>
+      </section> */}
 
       {/* Curved section divider */}
       <section className="clip-bottom-large-circle relative -left-[15%] h-72 w-[130%] bg-white dark:bg-primary -mt-32 z-10"></section>
 
       {/* Lukas Section - Personal Section at Bottom */}
-      <section className="bg-white dark:bg-black py-16 md:py-32 -mt-48 z-20 relative">
+      <section className="bg-white dark:bg-black pt-0 -mt-48 z-20 relative">
         <div className="container">
           <div className="mx-auto max-w-4xl">
             <div className="text-center mb-12">
               <p className="mb-2 text-muted-light dark:text-muted-dark tracking-widest font-normal uppercase">
-                MEET THE FOUNDER
+                LEADING THE WAY
               </p>
               <Heading2 className="mb-8">Lukas Corbitt</Heading2>
             </div>
@@ -222,7 +245,7 @@ export default function AboutPage() {
               <div className="order-2 md:order-1">
                 <div className="relative aspect-square w-full max-w-md mx-auto">
                   <Image
-                    src="/lukas-headshot.jpg"
+                    src="/lukas-headshot.png"
                     alt="Lukas Corbitt, Founder and Lead Engineer at BitWerks"
                     fill
                     className="object-cover rounded-lg"
@@ -232,13 +255,10 @@ export default function AboutPage() {
               </div>
               <div className="order-1 md:order-2 space-y-6">
                 <p className="text-muted-foreground text-lg">
-                  As the owner, operator, and lead engineer at BitWerks, I&apos;ve dedicated my career to building exceptional digital products that help businesses succeed. Over the years, I&apos;ve had the privilege of working on projects spanning from ecommerce platforms to aerospace software, each one teaching me something new about solving complex problems with elegant code.
+                  As the founder and lead engineer at BitWerks, I&apos;ve spent my career building digital products and websites that help businesses succeed online. From ecommerce platforms to custom web applications and even aerospace software, each project has taught me something new about solving complex problems with elegant, thoughtful code. I enjoy turning ideas into intuitive and reliable digital experiences that make a real difference for users.
                 </p>
                 <p className="text-muted-foreground text-lg">
-                  This diverse experience has given me a unique perspective on software development—whether it&apos;s optimizing a shopping cart for conversion, building mission-critical systems for aerospace applications, or creating intuitive interfaces for complex workflows. I understand that great software isn&apos;t just about writing code; it&apos;s about understanding your business, your users, and your goals.
-                </p>
-                <p className="text-muted-foreground text-lg">
-                  With a strong foundation in modern web technologies and a commitment to clean, maintainable code, I specialize in building custom software solutions that not only meet current needs but are built to evolve with your business. I believe in writing clean, well-documented code and following industry best practices to ensure long-term maintainability and performance. Every project is an opportunity to create something meaningful that drives real value.
+                  This mix of experiences gives me a unique perspective on web development and software alike. I understand that great websites and software require more than just writing code; they need a clear understanding of your business, your users, and your goals. I focus on clean, maintainable solutions that meet current needs while allowing your digital presence to grow and evolve over time. Every project is an opportunity to create meaningful experiences that deliver real value.
                 </p>
                 <div className="pt-4">
                   <Button asChild variant="brand" size="lg">

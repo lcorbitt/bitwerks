@@ -24,7 +24,7 @@ export function Process() {
               className="relative aspect-[4/3] my-8 w-full h-full"
               style={{ clipPath: 'polygon(0% 0%, 75% 0%, 100% 100%, 25% 100%)' }}
             >
-              <Image src="/process.jpg" alt="Our Process" fill className="object-cover object-center" />
+              <Image src="/process.png" alt="Our Process" fill className="object-cover object-center" />
             </div>
           </div>
         </div>
