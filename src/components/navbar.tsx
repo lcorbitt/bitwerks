@@ -25,11 +25,12 @@ export function Navbar() {
   }
 
   return (
-    <header className="sticky top-0 z-50 bg-white dark:bg-black w-full py-4 shadow dark:shadow-black/40">
+    <header className="sticky top-0 z-50 bg-white dark:bg-black w-full py-2 md:py-4 shadow dark:shadow-black/40">
       <div className="container flex h-16 items-center justify-between">
+        {/* Logo */}
         <Link 
           href="/" 
-          className="flex items-center space-x-2 h-16"
+          className="flex h-16"
           onClick={(e) => {
             if (window.location.pathname === '/') {
               e.preventDefault()
@@ -56,7 +57,9 @@ export function Navbar() {
             />
           </div>
         </Link>
-        <div className="flex items-center space-x-8">
+
+        {/* Navigation Links*/}
+        <div className="flex items-center space-x-4 md:space-x-8">
           <nav className="hidden lg:flex items-center space-x-8">
             {navigationItems.map((item) => (
               <div key={item.title} className="relative group">

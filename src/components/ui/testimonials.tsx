@@ -28,7 +28,7 @@ export function Testimonials({
 }: TestimonialsProps) {
   return (
     <section className={` bg-white dark:bg-tertiary pb-16 ${className}`}>
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto">
         {/* Header */}
         <div className="mx-auto max-w-2xl text-center">
             <p className="mb-2 text-muted-light dark:text-muted-dark tracking-widest font-normal uppercase">

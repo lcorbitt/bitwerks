@@ -93,7 +93,7 @@ export const TechMarqueeSection = () => {
           </div>
         </div>
         {/* Button */}
-        <div className="container mx-auto flex justify-center mt-10">
+        <div className="container mx-auto flex justify-center mt-12 md:mt-16">
           <a
             href="#"
             className="inline-flex items-center text-base font-medium hover:underline text-primary hover:text-primary/90 dark:text-white transition-colors group"

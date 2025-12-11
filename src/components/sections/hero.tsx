@@ -58,11 +58,8 @@ export function Hero({ locationString }: HeroProps) {
             <p className="mb-8 text-sm text-muted-light dark:text-muted-dark md:text-lg mx-auto lg:mx-0 max-w-2xl lg:max-w-xl relative z-10">
               Web Development • Software Development<span className="hidden lg:inline"> • White Label Partnerships</span>
             </p>
-            <p className="mb-8 text-basetext-muted-foreground md:text-lg mx-auto lg:mx-0 max-w-2xl lg:max-w-xl relative z-10">
-              {/* Your partner for dependable, modern web and software development.  */}
-              {/* Build beautifully and scale successfully. */}
-
-              BitWerks is a digital agency specializing <span className="text-brand">in custom web & software solutions</span>.
+            <p className="mb-8 text-base text-black dark:text-white md:text-lg mx-auto max-w-[16rem] md:max-w-xl relative z-10">
+              A digital agency specializing in <span className="text-brand">custom web & software solutions</span>.
               {/* TODO: add location string for improved SEO */}
               {/* {locationString === "nationwide" ? "across the U.S." : ` in ${locationString}.`} */}
             </p>

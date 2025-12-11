@@ -66,9 +66,13 @@
     @apply bg-background text-foreground;
   }
 
+  .container {
+    @apply w-full max-w-7xl mx-auto px-3 md:px-4 lg:px-6;
+  }
+
   /* Performance optimizations */
   section {
-    @apply py-8 md:py-24;
+    @apply py-16 md:py-24;
     will-change: auto;
   }
 
