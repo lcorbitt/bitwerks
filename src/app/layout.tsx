@@ -24,7 +24,11 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   icons: {
-    icon: '/logo-light.png',
+    icon: [
+      { url: '/logo-light.png', type: 'image/png' },
+    ],
+    shortcut: '/logo-light.png',
+    apple: '/logo-light.png',
   },
   openGraph: {
     type: 'website',
@@ -40,7 +44,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <head>
-        <link rel="icon" href="/logo-light.png" type="image/png" />
+        <link rel="icon" type="image/png" href="/logo-light.png" />
+        <link rel="shortcut icon" type="image/png" href="/logo-light.png" />
+        <link rel="apple-touch-icon" href="/logo-light.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
