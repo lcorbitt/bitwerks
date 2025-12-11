@@ -7,29 +7,21 @@ import { Button } from "../ui/button";
 export function Process() {
   return (
     <section className="relative bg-[#f6f7f8] dark:bg-tertiary">
-      <div className="container mx-auto flex flex-col lg:flex-row items-center gap-12">
-        {/* Left: Heading and Image */}
-        <div className="flex-1 flex flex-col items-start">
+      <div className="container mx-auto flex flex-col lg:flex-row gap-12">
+        {/* Left: Heading */}
+        <div className="flex-1 flex flex-col lg:order-1 items-center text-center md:text-left md:items-start">
           <p className="uppercase mb-2 text-muted-light dark:text-muted-dark tracking-widest font-normal">
             OUR PROCESS
           </p>
-          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight">
+          <h2 className="items-center md:items-start text-4xl md:text-5xl font-extrabold tracking-tight leading-tight">
             Simple,
             seamless,
             streamlined
             <span className="text-brand">.</span>
           </h2>
-          <div className="w-full max-w-xs my-8">
-            <div 
-              className="relative aspect-[4/3] my-8 w-full h-full"
-              style={{ clipPath: 'polygon(0% 0%, 75% 0%, 100% 100%, 25% 100%)' }}
-            >
-              <Image src="/process.png" alt="Our Process" fill className="object-cover object-center" />
-            </div>
-          </div>
         </div>
         {/* Right: Timeline */}
-        <div className="flex-1 flex flex-col gap-12 relative">
+        <div className="flex-1 flex flex-col gap-12 relative order-2 lg:order-2">
           {/* Vertical dashed line */}
           <div className="absolute left-6 top-8 bottom-8 w-0.5 h-[34rem] md:h-[36rem] border-l-2 border-dashed border-gray-300 z-0 animated-dashed-line" />
           {/* Fade out overlay at bottom */}
@@ -77,10 +69,22 @@ export function Process() {
               <p className="text-muted dark:text-muted-dark max-w-md text-lg">
                 Once approved, we&apos;ll get to work immediately. We deliver high-quality results quickly, keeping you updated throughout the process.
               </p>
-              <Button size="lg" variant="brand" className="mt-8">
-                Get Started
-              </Button>
             </div>
+          </div>
+
+          <div className="flex justify-center md:justify-start">
+            <Button size="lg" variant="brand" className="w-fit mt-12 md:mt-16">
+              Get Started
+            </Button>
+          </div>
+        </div>
+        {/* Image - below timeline on mobile, in left column on desktop */}
+        <div className="w-full max-w-xs my-8 mx-auto lg:mx-0 order-3 lg:order-1 lg:flex-1 lg:flex lg:justify-start">
+          <div 
+            className="relative aspect-[4/3] my-8 w-full h-full"
+            style={{ clipPath: 'polygon(0% 0%, 75% 0%, 100% 100%, 25% 100%)' }}
+          >
+            <Image src="/process.png" alt="Our Process" fill className="object-cover object-center" />
           </div>
         </div>
       </div>

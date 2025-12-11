@@ -9,7 +9,7 @@ interface HeroProps {
 
 export function Hero({ locationString }: HeroProps) {
   return (
-    <section className="relative overflow-hidden pb-32 md:pb-64 w-full h-full">
+    <section className="relative overflow-hidden pb-32 md:pb-[18rem] w-full h-full">
       {/* Hero background image */}
       <div className="absolute inset-0 w-full h-full z-0">
         <Image
@@ -58,7 +58,7 @@ export function Hero({ locationString }: HeroProps) {
             <p className="mb-8 text-sm text-muted-light dark:text-muted-dark md:text-lg mx-auto lg:mx-0 max-w-2xl lg:max-w-xl relative z-10">
               Web Development • Software Development<span className="hidden lg:inline"> • White Label Partnerships</span>
             </p>
-            <p className="mb-8 text-base text-black dark:text-white md:text-lg mx-auto max-w-[16rem] md:max-w-xl relative z-10">
+            <p className="mb-8 text-base text-black dark:text-white md:text-lg mx-auto md:mx-0 max-w-[16rem] md:max-w-xl relative z-10">
               A digital agency specializing in <span className="text-brand">custom web & software solutions</span>.
               {/* TODO: add location string for improved SEO */}
               {/* {locationString === "nationwide" ? "across the U.S." : ` in ${locationString}.`} */}

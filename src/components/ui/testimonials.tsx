@@ -27,8 +27,8 @@ export function Testimonials({
   className = ""
 }: TestimonialsProps) {
   return (
-    <section className={` bg-white dark:bg-tertiary pb-16 ${className}`}>
-      <div className="container mx-auto">
+    <section className={` bg-white dark:bg-tertiary pb-16 pt-0 md:pt-16 ${className}`}>
+      <div className="container mx-auto grid gap-12">
         {/* Header */}
         <div className="mx-auto max-w-2xl text-center">
             <p className="mb-2 text-muted-light dark:text-muted-dark tracking-widest font-normal uppercase">
@@ -42,7 +42,7 @@ export function Testimonials({
             {/* </p> */}
           </div>
         {/* Testimonials Grid */}
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-16 md:gap-8 max-w-6xl mx-auto">
           {testimonials.map((testimonial, index) => (
             <Quote
               key={index}
