@@ -69,7 +69,7 @@ export function Footer() {
               </Button>
             </div>
           </div>
-          <div className="mt-8 border-t pt-4">
+          <div className="mt-8 pt-4">
             <p className="text-center text-xs text-muted-foreground dark:text-white/80">
               © {new Date().getFullYear()} BitWerks. All rights reserved.
             </p>

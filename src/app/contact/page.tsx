@@ -320,7 +320,7 @@ export default function ContactPage() {
                 <div className={`flex-shrink-0 w-12 h-12 rounded-lg flex items-center justify-center ${
                   form.watch("projectType") === type.value
                     ? "bg-brand text-white"
-                    : "bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400"
+                    : "bg-gray-100 dark:bg-[#1f1f1f]/70 text-gray-600 dark:text-gray-400"
                 }`}>
                   <Icon className="w-6 h-6" />
                 </div>
@@ -382,7 +382,7 @@ export default function ContactPage() {
               <div className={`flex-shrink-0 w-12 h-12 rounded-lg flex items-center justify-center ${
                 form.watch("projectScope") === scope.value
                   ? "bg-brand text-white"
-                  : "bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400"
+                  : "bg-gray-100 dark:bg-[#1f1f1f]/70 text-gray-600 dark:text-gray-400"
               }`}>
                 <Building className="w-6 h-6" />
               </div>

@@ -15,7 +15,7 @@ export function ServiceCards({ services, className = "" }: ServiceCardsProps) {
       {services.map((service, index) => (
         <div 
           key={service.title} 
-          className="group bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-xl border border-gray-100 dark:border-gray-700 transition-all duration-300 p-8 hover:-translate-y-2 hover:scale-105"
+          className="group bg-white dark:bg-[#1f1f1f]/70 rounded-lg shadow-sm hover:shadow-xl border border-gray-100 dark:border-[#1f1f1f]/70 transition-all duration-300 p-8 hover:-translate-y-2 hover:scale-105"
         >
           {/* Icon - Simple black outline style */}
           <div className="mb-6">

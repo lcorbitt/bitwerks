@@ -9,11 +9,11 @@ import { Suspense } from "react"
 //   loading: () => <div className="pb-20">
 //     <div className="container">
 //       <div className="animate-pulse">
-//         <div className="h-64 bg-gray-200 dark:bg-gray-800 rounded-lg mb-8"></div>
+//         <div className="h-64 bg-gray-200 dark:bg-[#1f1f1f]/70 rounded-lg mb-8"></div>
 //         <div className="flex justify-center space-x-4">
-//           <div className="h-32 w-24 bg-gray-200 dark:bg-gray-800 rounded"></div>
-//           <div className="h-32 w-24 bg-gray-200 dark:bg-gray-800 rounded"></div>
-//           <div className="h-32 w-24 bg-gray-200 dark:bg-gray-800 rounded"></div>
+//           <div className="h-32 w-24 bg-gray-200 dark:bg-[#1f1f1f]/70 rounded"></div>
+//           <div className="h-32 w-24 bg-gray-200 dark:bg-[#1f1f1f]/70 rounded"></div>
+//           <div className="h-32 w-24 bg-gray-200 dark:bg-[#1f1f1f]/70 rounded"></div>
 //         </div>
 //       </div>
 //     </div>
@@ -24,17 +24,17 @@ const LazyCaseStudy = dynamic(() => import("@/components/ui/case-study").then(mo
   loading: () => <div className="pt-20 px-8 bg-white dark:bg-primary max-w-screen-2xl mx-auto">
     <div className="container">
       <div className="animate-pulse">
-        <div className="h-8 bg-gray-200 dark:bg-gray-800 rounded w-1/4 mb-4"></div>
-        <div className="h-6 bg-gray-200 dark:bg-gray-800 rounded w-1/2 mb-8"></div>
+        <div className="h-8 bg-gray-200 dark:bg-[#1f1f1f]/70 rounded w-1/4 mb-4"></div>
+        <div className="h-6 bg-gray-200 dark:bg-[#1f1f1f]/70 rounded w-1/2 mb-8"></div>
         <div className="grid md:grid-cols-2 gap-8">
-          <div className="h-64 bg-gray-200 dark:bg-gray-800 rounded-lg"></div>
+          <div className="h-64 bg-gray-200 dark:bg-[#1f1f1f]/70 rounded-lg"></div>
           <div className="space-y-4">
-            <div className="h-6 bg-gray-200 dark:bg-gray-800 rounded w-3/4"></div>
-            <div className="h-4 bg-gray-200 dark:bg-gray-800 rounded w-full"></div>
-            <div className="h-4 bg-gray-200 dark:bg-gray-800 rounded w-5/6"></div>
+            <div className="h-6 bg-gray-200 dark:bg-[#1f1f1f]/70 rounded w-3/4"></div>
+            <div className="h-4 bg-gray-200 dark:bg-[#1f1f1f]/70 rounded w-full"></div>
+            <div className="h-4 bg-gray-200 dark:bg-[#1f1f1f]/70 rounded w-5/6"></div>
             <div className="flex flex-wrap gap-2">
               {[...Array(5)].map((_, i) => (
-                <div key={i} className="h-6 w-16 bg-gray-200 dark:bg-gray-800 rounded"></div>
+                <div key={i} className="h-6 w-16 bg-gray-200 dark:bg-[#1f1f1f]/70 rounded"></div>
               ))}
             </div>
           </div>
@@ -53,11 +53,11 @@ export default function Services() {
           <Suspense fallback={<div className="pb-20">
             <div className="container">
               <div className="animate-pulse">
-                <div className="h-64 bg-gray-200 dark:bg-gray-800 rounded-lg mb-8"></div>
+                <div className="h-64 bg-gray-200 dark:bg-[#1f1f1f]/70 rounded-lg mb-8"></div>
                 <div className="flex justify-center space-x-4">
-                  <div className="h-32 w-24 bg-gray-200 dark:bg-gray-800 rounded"></div>
-                  <div className="h-32 w-24 bg-gray-200 dark:bg-gray-800 rounded"></div>
-                  <div className="h-32 w-24 bg-gray-200 dark:bg-gray-800 rounded"></div>
+                  <div className="h-32 w-24 bg-gray-200 dark:bg-[#1f1f1f]/70 rounded"></div>
+                  <div className="h-32 w-24 bg-gray-200 dark:bg-[#1f1f1f]/70 rounded"></div>
+                  <div className="h-32 w-24 bg-gray-200 dark:bg-[#1f1f1f]/70 rounded"></div>
                 </div>
               </div>
             </div>
@@ -79,17 +79,17 @@ export default function Services() {
       <div className="pt-20 px-8 bg-white dark:bg-primary max-w-screen-2xl mx-auto z-10">
         <Suspense fallback={<div className="container">
           <div className="animate-pulse">
-            <div className="h-8 bg-gray-200 dark:bg-gray-800 rounded w-1/4 mb-4"></div>
-            <div className="h-6 bg-gray-200 dark:bg-gray-800 rounded w-1/2 mb-8"></div>
+            <div className="h-8 bg-gray-200 dark:bg-[#1f1f1f]/70 rounded w-1/4 mb-4"></div>
+            <div className="h-6 bg-gray-200 dark:bg-[#1f1f1f]/70 rounded w-1/2 mb-8"></div>
             <div className="grid md:grid-cols-2 gap-8">
-              <div className="h-64 bg-gray-200 dark:bg-gray-800 rounded-lg"></div>
+              <div className="h-64 bg-gray-200 dark:bg-[#1f1f1f]/70 rounded-lg"></div>
               <div className="space-y-4">
-                <div className="h-6 bg-gray-200 dark:bg-gray-800 rounded w-3/4"></div>
-                <div className="h-4 bg-gray-200 dark:bg-gray-800 rounded w-full"></div>
-                <div className="h-4 bg-gray-200 dark:bg-gray-800 rounded w-5/6"></div>
+                <div className="h-6 bg-gray-200 dark:bg-[#1f1f1f]/70 rounded w-3/4"></div>
+                <div className="h-4 bg-gray-200 dark:bg-[#1f1f1f]/70 rounded w-full"></div>
+                <div className="h-4 bg-gray-200 dark:bg-[#1f1f1f]/70 rounded w-5/6"></div>
                 <div className="flex flex-wrap gap-2">
                   {[...Array(5)].map((_, i) => (
-                    <div key={i} className="h-6 w-16 bg-gray-200 dark:bg-gray-800 rounded"></div>
+                    <div key={i} className="h-6 w-16 bg-gray-200 dark:bg-[#1f1f1f]/70 rounded"></div>
                   ))}
                 </div>
               </div>
