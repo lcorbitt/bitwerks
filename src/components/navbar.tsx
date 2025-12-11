@@ -106,7 +106,7 @@ export function Navbar() {
             ))}
           </nav>
           <MobileNav />
-          <Button asChild variant="outline">
+          <Button asChild variant="outline" className="hidden lg:inline-flex">
             <Link href="/contact">Schedule a Call</Link>
           </Button>
           <ThemeToggle />
