@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button"
 
 export function Footer() {
   return (
-    <footer className="relative dark:bg-tertiary">
+    <footer className="relative dark:bg-primary">
       {/* Footer content */}
       <div className="dark:text-white">
         <div className="container pb-4 pt-12">
@@ -11,7 +11,7 @@ export function Footer() {
             <div className="space-y-4">
               <h3 className="text-lg font-semibold"><span className="text-brand">Bit</span>Werks</h3>
               <p className="text-sm text-muted-foreground dark:text-white/80">
-                We build beautiful, hand-crafted websites, custom software to empower your business.
+                We build beautiful, hand-crafted websites and custom software to empower your business.
               </p>
             </div>
             <div>

@@ -27,7 +27,7 @@ export function Testimonials({
   className = ""
 }: TestimonialsProps) {
   return (
-    <section className={` bg-white dark:bg-tertiary pb-16 pt-0 md:pt-16 ${className}`}>
+    <section className={` bg-white dark:bg-primary pb-16 md:pt-16 ${className}`}>
       <div className="container mx-auto grid gap-12">
         {/* Header */}
         <div className="mx-auto max-w-2xl text-center">

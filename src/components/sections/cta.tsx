@@ -8,7 +8,7 @@ interface CTAProps {
 
 export function CTA({ className = "" }: CTAProps) {
   return (
-    <section className={`relative dark:bg-primary bg-brand pt-16 md:pt-24 overflow-hidden ${className}`}>
+    <section className={`relative bg-brand dark:bg-brand/50 pt-16 md:pt-24 overflow-hidden ${className}`}>
       {/* Circuit board background */}
       <div 
         className="absolute -inset-24 md:-inset-2 scale-75 md:scale-100 opacity-5"
