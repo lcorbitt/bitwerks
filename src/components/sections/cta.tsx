@@ -24,7 +24,7 @@ export function CTA({ className = "" }: CTAProps) {
         <div className="mx-auto max-w-4xl text-center">
           {/* Card */}
           <div className="bg-white dark:bg-tertiary rounded-lg p-8 md:p-12 shadow-lg dark:shadow-2xl">
-            <Heading3 className="mb-8">Let&apos;s develop something awesome <span className="text-brand">together.</span></Heading3>
+            <Heading3 className="mb-8">Let&apos;s bring your vision to <span className="text-brand">life.</span></Heading3>
             {/* <p className="mb-8 text-muted-foreground">
               Build beautifully and scale successfully.
             </p> */}

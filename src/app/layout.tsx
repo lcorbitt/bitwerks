@@ -6,7 +6,6 @@ import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { Toaster } from "sonner";
 import { ThemeProvider } from "@/components/theme-provider";
-import { PerformanceMonitor } from "@/components/performance-monitor";
 
 const outfit = Outfit({ 
   subsets: ["latin"],
@@ -52,7 +51,6 @@ export default function RootLayout({
       </head>
       <body className={cn(outfit.className, "min-h-screen bg-background antialiased")}>
         <ThemeProvider>
-          <PerformanceMonitor />
           <Navbar />
           <main>{children}</main>
           <Footer />

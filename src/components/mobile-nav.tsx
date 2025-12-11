@@ -44,22 +44,24 @@ export function MobileNav() {
       <SheetContent side="top" className="w-full bg-white dark:bg-primary">
         <SheetHeader className="mb-4">
           <div className="relative h-20 w-auto mx-auto">
-            <Image 
-              src="/logo-light.png" 
-              alt="BitWerks Logo" 
-              width={160}
-              height={64}
-              className="h-20 w-auto dark:hidden transition-opacity duration-300 object-contain"
-              priority
-            />
-            <Image 
-              src="/logo-dark.png" 
-              alt="BitWerks Logo" 
-              width={160} 
-              height={64}
-              className="h-20 w-auto hidden dark:block transition-opacity duration-300 object-contain"
-              priority
-            />
+            <Link href="/" onClick={() => setOpen(false)}>
+              <Image 
+                src="/logo-light.png" 
+                alt="BitWerks Logo" 
+                width={160}
+                height={64}
+                className="h-20 w-auto dark:hidden transition-opacity duration-300 object-contain"
+                priority
+              />
+              <Image 
+                src="/logo-dark.png" 
+                alt="BitWerks Logo" 
+                width={160} 
+                height={64}
+                className="h-20 w-auto hidden dark:block transition-opacity duration-300 object-contain"
+                priority
+              />
+            </Link>
           </div>
         </SheetHeader>
         <nav className="space-y-2">

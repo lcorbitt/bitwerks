@@ -13,6 +13,12 @@ export function Navbar() {
   const pathname = usePathname()
   const [isServicesOpen, setIsServicesOpen] = React.useState(false)
 
+  React.useEffect(() => {
+    if (pathname === "/") {
+      window.scrollTo({ top: 0, behavior: "smooth" })
+    }
+  }, [pathname])
+
   const isActive = (href: string) => {
     if (href === '/') {
       return pathname === '/'
@@ -73,7 +79,7 @@ export function Navbar() {
                       {item.title}
                     </button>
                     <div 
-                      className={`absolute top-full left-0 mt-2 w-64 bg-white dark:bg-tertiary rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 transition-all duration-200 z-50 ${isServicesOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}
+                      className={`absolute top-full left-0 mt-2 w-64 bg-white dark:bg-tertiary rounded-lg shadow-lg border border-gray-200 dark:border-[#1f1f1f]/70 transition-all duration-200 z-50 ${isServicesOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}
                       onMouseEnter={() => setIsServicesOpen(true)}
                       onMouseLeave={() => setIsServicesOpen(false)}
                     >
