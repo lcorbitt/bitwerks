@@ -38,11 +38,18 @@ export function Navbar() {
           }}
         >
           <Image 
-            src="/logo.png" 
+            src="/logo-light.png" 
             alt="BitWerks Logo" 
             width={120} 
             height={40}
-            className="h-16 w-auto"
+            className="h-16 w-auto dark:hidden"
+          />
+          <Image 
+            src="/logo-dark.png" 
+            alt="BitWerks Logo" 
+            width={120} 
+            height={40}
+            className="h-16 w-auto hidden dark:block"
           />
         </Link>
         <div className="flex items-center space-x-8">
