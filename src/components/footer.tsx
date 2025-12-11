@@ -64,7 +64,7 @@ export function Footer() {
               <p className="text-sm text-muted-foreground dark:text-white/80">
                 Ready to discuss your project?
               </p>
-              <Button asChild variant="outline" className="bg-black hover:bg-black/90 text-white dark:bg-white dark:text-black">
+              <Button asChild variant="outline">
                 <Link href="/contact">Schedule a Call</Link>
               </Button>
             </div>
