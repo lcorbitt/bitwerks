@@ -29,7 +29,7 @@ export function Navbar() {
       <div className="container flex h-16 items-center justify-between">
         <Link 
           href="/" 
-          className="flex items-center space-x-2"
+          className="flex items-center space-x-2 h-16"
           onClick={(e) => {
             if (window.location.pathname === '/') {
               e.preventDefault()
@@ -37,20 +37,24 @@ export function Navbar() {
             }
           }}
         >
-          <Image 
-            src="/logo-light.png" 
-            alt="BitWerks Logo" 
-            width={120} 
-            height={40}
-            className="h-16 w-auto dark:hidden"
-          />
-          <Image 
-            src="/logo-dark.png" 
-            alt="BitWerks Logo" 
-            width={120} 
-            height={40}
-            className="h-16 w-auto hidden dark:block"
-          />
+          <div className="relative h-16 w-auto">
+            <Image 
+              src="/logo-light.png" 
+              alt="BitWerks Logo" 
+              width={160} 
+              height={64}
+              className="h-16 w-auto dark:hidden transition-opacity duration-300 object-contain"
+              priority
+            />
+            <Image 
+              src="/logo-dark.png" 
+              alt="BitWerks Logo" 
+              width={160} 
+              height={64}
+              className="h-16 w-auto hidden dark:block transition-opacity duration-300 object-contain"
+              priority
+            />
+          </div>
         </Link>
         <div className="flex items-center space-x-8">
           <nav className="hidden lg:flex items-center space-x-8">
