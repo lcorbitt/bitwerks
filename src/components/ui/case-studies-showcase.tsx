@@ -7,7 +7,6 @@ interface CaseStudy {
   company: string
   image: string
   alt: string
-  href: string
 }
 
 interface CaseStudiesShowcaseProps {

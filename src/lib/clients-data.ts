@@ -15,8 +15,8 @@ export const sampleClients: Client[] = [
     logo: {
       light: "/clickk.png",
     },
-    caseStudyLink: "/case-studies/clickk",
-    services: ["Web Development", "Next.js", "React", "Tailwind"],
+    caseStudyLink: "https://clickk.com/",
+    services: ["Software Development", "Next.js", "React", "Tailwind", "PostgreSQL", "AWS"],
   },
   {
     id: "urban-sky",
@@ -24,7 +24,7 @@ export const sampleClients: Client[] = [
     logo: {
       light: "/urban_sky_dark.png",
     },
-    caseStudyLink: "/case-studies/urban-sky",
+    caseStudyLink: "https://urbansky.com/",
     services: ["Software Development", "NestJS", "React", "Tailwind", "PostgreSQL", "Playwright", "AWS"],
   },
   {
@@ -33,7 +33,7 @@ export const sampleClients: Client[] = [
     logo: {
       light: "/hodinkee_dark.png",
     },
-    caseStudyLink: "/case-studies/hodinkee",
+    caseStudyLink: "https://hodinkee.com/",
     services: ["Software Development", "Ruby on Rails", "React", "Tailwind", "RSpec","PostgreSQL", "AWS"],
   },
   {
@@ -42,7 +42,7 @@ export const sampleClients: Client[] = [
     logo: {
       light: "/spectora_dark.png",
     },
-    caseStudyLink: "/case-studies/spectora",
+    caseStudyLink: "https://spectora.com/",
     services: ["Software Development", "Ruby on Rails", "React", "Tailwind", "RSpec","PostgreSQL", "AWS"],
   },
   {
@@ -51,7 +51,7 @@ export const sampleClients: Client[] = [
     logo: {
       light: "/tracefirst_dark.png",
     },
-    caseStudyLink: "/case-studies/trace-first",
+    caseStudyLink: "https://tracefirst.com/",
     services: ["Software Development", "Ruby on Rails", "JavaScript", "Bootstrap", "RSpec","PostgreSQL", "AWS"],
   },
   {
@@ -60,7 +60,7 @@ export const sampleClients: Client[] = [
     logo: {
       light: "/errantry_studios.png",
     },
-    caseStudyLink: "/case-studies/errantry-studios",
+    caseStudyLink: "https://errantrystudios.com/",
     services: ["Web Development", "Next.js", "React", "Tailwind"],
   },
   // {
