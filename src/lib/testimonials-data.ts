@@ -20,7 +20,7 @@ export const sampleTestimonials: Testimonial[] = [
   },
   {
     quote: "I approached BitWerks with a very specific vision for our new website, and they knocked it out of the park. I was looking for a clean, original design and a faster site. They absolutely delivered.",
-    author: "Brandan C.",
+    author: "Brandan T.",
     title: "Founder & Executive Producer",
     company: "Nashville, TN"
   }
