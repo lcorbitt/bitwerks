@@ -13,12 +13,23 @@ export function Process() {
           <p className="uppercase mb-2 text-muted-light dark:text-muted-dark tracking-widest font-normal">
             OUR PROCESS
           </p>
+
           <h2 className="items-center md:items-start text-4xl md:text-5xl font-extrabold tracking-tight leading-tight">
             Simple,
             seamless,
             streamlined
             <span className="text-brand">.</span>
           </h2>
+
+          {/* Desktop Image */}
+          <div className="w-full max-w-xs my-8 mx-auto lg:mx-0 order-3 lg:order-1 lg:justify-start lg:flex hidden">
+            <div 
+              className="relative aspect-[4/3] w-full"
+              style={{ clipPath: 'polygon(0% 0%, 75% 0%, 100% 100%, 25% 100%)' }}
+            >
+              <Image src="/process.png" alt="Our Process" fill className="object-cover object-center" />
+            </div>
+          </div>
         </div>
         {/* Right: Timeline */}
         <div className="flex-1 flex flex-col gap-12 relative order-2 lg:order-2">
@@ -78,8 +89,8 @@ export function Process() {
             </Button>
           </div>
         </div>
-        {/* Image - below timeline on mobile, in left column on desktop */}
-        <div className="w-full max-w-xs my-8 mx-auto lg:mx-0 order-3 lg:order-1 lg:flex-1 lg:flex lg:justify-start">
+        {/* Mobile Image */}
+        <div className="w-full max-w-xs my-8 mx-auto order-3 lg:hidden">
           <div 
             className="relative aspect-[4/3] my-8 w-full h-full"
             style={{ clipPath: 'polygon(0% 0%, 75% 0%, 100% 100%, 25% 100%)' }}
