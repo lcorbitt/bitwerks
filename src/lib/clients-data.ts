@@ -64,15 +64,6 @@ export const sampleClients: Client[] = [
     services: ["Web Development", "Next.js", "React", "Tailwind"],
   },
   {
-    id: "zestful",
-    name: "Zestful",
-    logo: {
-      light: "/zestful.webp",
-    },
-    caseStudyLink: "/case-studies/zestful",
-    services: ["Software Development", "Ruby on Rails", "Stimulus.js", "Tailwind"],
-  },
-  {
     id: "inner-strength-healing",
     name: "Inner Strength Healing",
     logo: {
@@ -89,6 +80,14 @@ export const sampleClients: Client[] = [
     },
     caseStudyLink: "https://superconductor-studios.vercel.app/",
     services: ["Web Development", "WordPress", "Oxygen"],
+  },
+  {
+    id: "zestful",
+    name: "Zestful",
+    logo: {
+      light: "/zestful.webp",
+    },
+    services: ["Software Development", "Ruby on Rails", "Stimulus.js", "Tailwind"],
   },
 ]
 

@@ -32,22 +32,36 @@ export function ClientShowcase({ clients, className = "", initialCount = 8 }: Cl
       <div className="container mx-auto mb-8">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
           {displayedClients.map((client) => (
-            <Link 
-              key={client.id} 
-              href={client.caseStudyLink || "#"}
-              className="aspect-square bg-light dark:bg-gray-100 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer relative overflow-hidden group block"
-              target="_blank"
-            >
-              <div className="absolute inset-4 z-40">
-                <Image
-                  src={client.logo.light}
-                  alt={`${client.name} Logo`}
-                  fill
-                  className="object-contain"
-                />
-              </div>
-            </Link>
-          ))}
+            client.caseStudyLink ? (
+              <Link 
+                key={client.id} 
+                href={client.caseStudyLink || "#"}
+                className="aspect-square bg-light dark:bg-gray-100 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer relative overflow-hidden group block"
+                target={client.caseStudyLink ? "_blank" : undefined}
+              >
+                <div className="absolute inset-4 z-40">
+                  <Image
+                    src={client.logo.light}
+                    alt={`${client.name} Logo`}
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+              </Link>
+              ) : (
+                <div key={client.id} className="aspect-square bg-light dark:bg-gray-100 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer relative overflow-hidden group block">
+                  <div className="absolute inset-4 z-40">
+                    <Image
+                      src={client.logo.light}
+                      alt={`${client.name} Logo`}
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
+                </div>
+              )
+            ))
+          }
         </div>
         {hasMore && !showAll && (
           <div className="flex justify-center mt-8">
