@@ -53,51 +53,15 @@ export function CaseStudy({
           </div>
           
           {/* Image Section - appears between company and description on mobile */}
-          <div className={`flex justify-center lg:hidden order-2 my-10 ${device === "desktop" ? "scale-75" : ""}`}>
-            {device === "mobile" ? (
-              // Mobile Device Mockup
-              <div className="relative">
-                {/* Device Frame */}
-                <div className="w-40 h-80 bg-gray-800 rounded-[1.5rem] p-2 shadow-2xl">
-                  {/* Screen */}
-                  <div className="w-full h-full bg-white rounded-[1rem] overflow-hidden relative">
-                    {/* Notch */}
-                    <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-16 h-2 bg-gray-800 rounded-bl-full rounded-br-full z-10"></div>
-                    {/* Image */}
-                    <Image
-                      src={imageSrc}
-                      alt={imageAlt}
-                      fill
-                      className={`object-cover ${imageClassName} ${orientation}`}
-                    />
-                  </div>
-                </div>
-                {/* Home Indicator */}
-                <div className="absolute bottom-1 left-1/2 transform -translate-x-1/2 w-12 h-1 bg-gray-600 rounded-full"></div>
-              </div>
-            ) : (
-              // Desktop Monitor Mockup
-              <div className="relative w-full max-w-sm mx-auto">
-                {/* Laptop Screen */}
-                <div className="w-full aspect-[16/10] bg-gray-800 rounded-tl-md rounded-tr-md shadow-2xl relative">
-                  {/* Screen Bezel */}
-                  <div className="absolute inset-2 bg-black rounded-tl-md rounded-tr-md overflow-hidden">
-                    {/* Image */}
-                    <Image
-                      src={imageSrc}
-                      alt={imageAlt}
-                      fill
-                      className={`object-cover ${imageClassName} ${orientation}`}
-                    />
-                  </div>
-                  {/* Laptop Base */}
-                  <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-full h-3 bg-gray-500 rounded-bl-sm rounded-br-sm">
-                    {/* Notch */}
-                    <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-16 h-[0.3rem] bg-gray-700 rounded-bl-full rounded-br-full"></div>
-                  </div>
-                </div>
-              </div>
-            )}
+          <div className="flex justify-center lg:hidden order-2 my-10">
+            <div className="relative w-full max-w-md aspect-video rounded-lg overflow-hidden">
+              <Image
+                src={imageSrc}
+                alt={imageAlt}
+                fill
+                className={`object-cover ${imageClassName} ${orientation}`}
+              />
+            </div>
           </div>
           
           {/* Description and rest of content - appears after image on mobile */}
@@ -138,51 +102,15 @@ export function CaseStudy({
         </div>
         
         {/* Right Section - Image (desktop only) */}
-        <div className={`hidden lg:flex justify-end lg:order-2 ${device === "desktop" ? "scale-75" : ""}`}>
-          {device === "mobile" ? (
-            // Mobile Device Mockup
-            <div className="relative">
-              {/* Device Frame */}
-              <div className="w-40 h-80 bg-gray-800 rounded-[1.5rem] p-2 shadow-2xl">
-                {/* Screen */}
-                <div className="w-full h-full bg-white rounded-[1rem] overflow-hidden relative">
-                  {/* Notch */}
-                  <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-16 h-2 bg-gray-800 rounded-bl-full rounded-br-full z-10"></div>
-                  {/* Image */}
-                  <Image
-                    src={imageSrc}
-                    alt={imageAlt}
-                    fill
-                    className={`object-cover ${imageClassName} ${orientation}`}
-                  />
-                </div>
-              </div>
-              {/* Home Indicator */}
-              <div className="absolute bottom-1 left-1/2 transform -translate-x-1/2 w-12 h-1 bg-gray-600 rounded-full"></div>
-            </div>
-          ) : (
-            // Desktop Monitor Mockup
-            <div className="relative w-full max-w-sm mx-auto">
-              {/* Laptop Screen */}
-              <div className="w-full aspect-[16/10] bg-gray-800 rounded-tl-md rounded-tr-md shadow-2xl relative">
-                {/* Screen Bezel */}
-                <div className="absolute inset-2 bg-black rounded-tl-md rounded-tr-md overflow-hidden">
-                  {/* Image */}
-                  <Image
-                    src={imageSrc}
-                    alt={imageAlt}
-                    fill
-                    className={`object-cover ${imageClassName} ${orientation}`}
-                  />
-                </div>
-                {/* Laptop Base */}
-                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-full h-3 bg-gray-500 rounded-bl-sm rounded-br-sm">
-                  {/* Notch */}
-                  <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-16 h-[0.3rem] bg-gray-700 rounded-bl-full rounded-br-full"></div>
-                </div>
-              </div>
-            </div>
-          )}
+        <div className="hidden lg:flex justify-end lg:order-2">
+          <div className="relative w-full max-w-md aspect-video rounded-lg overflow-hidden">
+            <Image
+              src={imageSrc}
+              alt={imageAlt}
+              fill
+              className={`object-cover ${imageClassName} ${orientation}`}
+            />
+          </div>
         </div>
       </div>
     </div>

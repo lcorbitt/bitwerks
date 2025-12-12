@@ -101,7 +101,7 @@ export default function Services() {
             company="Beyond Blue Media"
              description="By partnering with BitWerks for white label development, Beyond Blue Media successfully delivered multiple custom websites for their clients, significantly improving their client retention and expanding their service offerings to drive business growth."
             technologies={["Custom Development", "SEO Optimization", "Performance Tuning", "Client Management"]}
-            imageSrc="/beyond-blue-media.png"
+            imageSrc="/beyond-blue-media-mockup.png"
             imageAlt="Digital Marketing Agency case study - white label development partnership"
             caseStudyLink="/case-studies/local-manufacturing"
             moreCaseStudiesLink="/case-studies"
