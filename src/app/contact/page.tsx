@@ -33,10 +33,10 @@ const step4Schema = z.object({
 
 const step5Schema = z.object({
   message: z.string()
-    .min(1, "Could you share a bit more about your project?")
+    .min(1, "Please share more about your project.")
     .refine(
       (val) => val.trim().split(/\s+/).filter(word => word.length > 0).length >= 3,
-      { message: "Could you share a bit more about your project?" }
+      { message: "Please share more about your project." }
     ),
 })
 
