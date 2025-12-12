@@ -36,7 +36,7 @@ export function Navbar() {
         {/* Logo */}
         <Link 
           href="/" 
-          className="flex items-center -ml-4"
+          className="flex items-center -ml-2"
           onClick={(e) => {
             if (window.location.pathname === '/') {
               e.preventDefault()
