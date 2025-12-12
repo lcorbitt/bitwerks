@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { Heading3 } from "./heading"
@@ -22,10 +22,29 @@ interface ClientShowcaseProps {
   initialCount?: number
 }
 
-export function ClientShowcase({ clients, className = "", initialCount = 8 }: ClientShowcaseProps) {
+export function ClientShowcase({ clients, className = "", initialCount }: ClientShowcaseProps) {
   const [showAll, setShowAll] = useState(false)
-  const displayedClients = showAll ? clients : clients.slice(0, initialCount)
-  const hasMore = clients.length > initialCount
+  const [responsiveInitialCount, setResponsiveInitialCount] = useState(8)
+
+  useEffect(() => {
+    const updateInitialCount = () => {
+      // Mobile: 6 cards (2 columns x 3 rows)
+      // Desktop: 8 cards (4 columns x 2 rows)
+      if (window.innerWidth < 768) {
+        setResponsiveInitialCount(6)
+      } else {
+        setResponsiveInitialCount(8)
+      }
+    }
+
+    updateInitialCount()
+    window.addEventListener("resize", updateInitialCount)
+    return () => window.removeEventListener("resize", updateInitialCount)
+  }, [])
+
+  const count = initialCount ?? responsiveInitialCount
+  const displayedClients = showAll ? clients : clients.slice(0, count)
+  const hasMore = clients.length > count
 
   return (
     <div className={`bg-white dark:bg-primary pt-8 ${className}`} >
