@@ -10,7 +10,7 @@ export const sampleTestimonials: Testimonial[] = [
     quote: "BitWerks is exactly what every senior executive is looking for. They volunteer for challenging tasks and crush them with precision, operate with a calm sense of urgency, and have great UI/UX solution ideas.",
     author: "Jed B.",
     title: "CEO & Founder",
-    company: "Greater Boston, MA"
+    company: "Boston, MA"
   },
   {
     quote: "BitWerks delivered exceptional results for our project. They're incredibly efficient, always available for questions, and their technical expertise made the entire process smooth and successful.",
