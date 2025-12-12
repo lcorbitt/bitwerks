@@ -13,7 +13,7 @@ export function Hero({ locationString }: HeroProps) {
       {/* Hero background image */}
       <div className="absolute inset-0 w-full h-full z-0">
         <Image
-          src="/hero.jpg"
+          src="/mockup-background.png"
           alt="Hero background"
           fill
           priority
@@ -36,7 +36,7 @@ export function Hero({ locationString }: HeroProps) {
       />
       {/* Gradient overlay - light theme - lg and up */}
       <div 
-        className="absolute inset-0 z-10 hidden lg:block"
+        className="absolute inset-0 z-10 hidden lg:block dark:hidden"
         style={{
           background: 'linear-gradient(to right, #F6F7F8 02%, #F6F7F8 40%, rgba(246, 247, 248, 0.8) 50%, rgba(246, 247, 248, 0.4) 70%, rgba(246, 247, 248, 0) 100%)',
         }}

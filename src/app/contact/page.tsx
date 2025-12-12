@@ -277,7 +277,7 @@ export default function ContactPage() {
           </div>
         </div>
         
-        <Button type="submit" className="w-full" size="lg">
+        <Button type="submit" className="w-full hover:bg-brand/90" size="lg">
           Continue <ArrowRight className="w-4 h-4 ml-2" />
         </Button>
       </form>
@@ -340,7 +340,7 @@ export default function ContactPage() {
           <Button type="button" variant="outline" onClick={prevStep} className="flex-1">
             <ArrowLeft className="w-4 h-4 mr-2" /> Back
           </Button>
-          <Button type="submit" className="flex-1" size="lg">
+          <Button type="submit" className="flex-1 hover:bg-brand/90" size="lg">
             Continue <ArrowRight className="w-4 h-4 ml-2" />
           </Button>
         </div>
@@ -401,7 +401,7 @@ export default function ContactPage() {
           <Button type="button" variant="outline" onClick={prevStep} className="flex-1">
             <ArrowLeft className="w-4 h-4 mr-2" /> Back
           </Button>
-          <Button type="submit" className="flex-1" size="lg">
+          <Button type="submit" className="flex-1 hover:bg-brand/90" size="lg">
             Continue <ArrowRight className="w-4 h-4 ml-2" />
           </Button>
         </div>
@@ -506,7 +506,7 @@ export default function ContactPage() {
           <Button type="button" variant="outline" onClick={prevStep} className="flex-1">
             <ArrowLeft className="w-4 h-4 mr-2" /> Back
           </Button>
-          <Button type="submit" className="flex-1" size="lg">
+          <Button type="submit" className="flex-1 hover:bg-brand/90" size="lg">
             Continue <ArrowRight className="w-4 h-4 ml-2" />
           </Button>
         </div>
@@ -552,7 +552,7 @@ export default function ContactPage() {
           <Button type="button" variant="outline" onClick={prevStep} className="flex-1">
             <ArrowLeft className="w-4 h-4 mr-2" /> Back
           </Button>
-          <Button type="submit" className="flex-1" size="lg" disabled={isSubmitting}>
+          <Button type="submit" variant="brand" className="flex-1" size="lg" disabled={isSubmitting}>
             {isSubmitting ? "Submitting..." : "Submit Project Request"}
           </Button>
         </div>
@@ -644,7 +644,7 @@ export default function ContactPage() {
         )}
 
         {/* Step Content */}
-        <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-lg p-8 border border-gray-200 dark:border-[#1f1f1f]/70">
+        <div className="bg-white dark:bg-[#1f1f1f]/70 rounded-2xl shadow-lg p-8 border border-gray-200 dark:border-[#1f1f1f]/70">
           {currentStep <= totalSteps && (
             <div className="mb-8">
               <h2 className="text-2xl font-bold mb-2">{getStepTitle()}</h2>
