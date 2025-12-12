@@ -22,7 +22,7 @@ import { Suspense } from "react"
 // })
 
 const LazyCaseStudy = dynamic(() => import("@/components/ui/case-study").then(mod => ({ default: mod.CaseStudy })), {
-  loading: () => <div className="pt-20 px-8 bg-white dark:bg-primary max-w-screen-2xl mx-auto">
+  loading: () => <div className="pt-20 px-4 md:px-8 bg-white dark:bg-primary max-w-screen-2xl mx-auto">
     <div className="container">
       <div className="animate-pulse">
         <div className="h-8 bg-gray-200 dark:bg-[#1f1f1f]/70 rounded w-1/4 mb-4"></div>
@@ -75,7 +75,7 @@ export default function Services() {
         <ServiceCards services={softwareDevelopmentServices} />
       </div>
 
-      <div className="pt-20 px-8 bg-white dark:bg-primary max-w-screen-2xl mx-auto">
+      <div className="pt-20 px-4 md:px-8 bg-white dark:bg-primary max-w-screen-2xl mx-auto">
         <Suspense fallback={<div className="container">
           <div className="animate-pulse">
             <div className="h-8 bg-gray-200 dark:bg-[#1f1f1f]/70 rounded w-1/4 mb-4"></div>
