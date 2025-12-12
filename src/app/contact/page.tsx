@@ -33,7 +33,7 @@ const step4Schema = z.object({
 
 const step5Schema = z.object({
   message: z.string()
-    .min(1, "Please provide additional details about your project.")
+    .min(1, "Could you share a bit more about your project?")
     .refine(
       (val) => val.trim().split(/\s+/).filter(word => word.length > 0).length >= 3,
       { message: "Could you share a bit more about your project?" }
@@ -249,7 +249,7 @@ export default function ContactPage() {
               placeholder="Enter your full name"
             />
             {form.formState.errors.name && (
-              <p className="text-sm text-destructive">{form.formState.errors.name.message}</p>
+              <p className="text-sm text-red-500 dark:text-red-400">{form.formState.errors.name.message}</p>
             )}
           </div>
           
@@ -265,7 +265,7 @@ export default function ContactPage() {
               placeholder="Enter your email address"
             />
             {form.formState.errors.email && (
-              <p className="text-sm text-destructive">{form.formState.errors.email.message}</p>
+              <p className="text-sm text-red-500 dark:text-red-400">{form.formState.errors.email.message}</p>
             )}
           </div>
           
@@ -548,7 +548,7 @@ export default function ContactPage() {
               placeholder="Tell us more about your project, goals, and any specific requirements..."
             />
             {form.formState.errors.message && (
-              <p className="text-sm text-destructive">{form.formState.errors.message.message}</p>
+              <p className="text-sm text-red-500 dark:text-red-400">{form.formState.errors.message.message}</p>
             )}
           </div>
         </div>
