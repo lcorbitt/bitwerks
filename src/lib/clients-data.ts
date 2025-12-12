@@ -60,7 +60,7 @@ export const sampleClients: Client[] = [
     logo: {
       light: "/errantry_studios.png",
     },
-    caseStudyLink: "https://errantrystudios.com/",
+    caseStudyLink: "https://errantry-studios.vercel.app/",
     services: ["Web Development", "Next.js", "React", "Tailwind"],
   },
   // {
