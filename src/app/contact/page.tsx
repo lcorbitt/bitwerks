@@ -558,7 +558,7 @@ export default function ContactPage() {
             <ArrowLeft className="w-4 h-4 mr-2" /> Back
           </Button>
           <Button type="submit" variant="brand" className="flex-1" size="lg" disabled={isSubmitting}>
-            {isSubmitting ? "Submitting..." : "Submit Project Request"}
+            {isSubmitting ? "Submitting..." : "Submit"}
           </Button>
         </div>
       </form>
