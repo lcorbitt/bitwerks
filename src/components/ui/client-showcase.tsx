@@ -1,8 +1,10 @@
 "use client"
 
+import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { Heading3 } from "./heading"
+import { Button } from "./button"
 
 interface Client {
   id: string
@@ -17,14 +19,19 @@ interface Client {
 interface ClientShowcaseProps {
   clients: Client[]
   className?: string
+  initialCount?: number
 }
 
-export function ClientShowcase({ clients, className = "" }: ClientShowcaseProps) {
+export function ClientShowcase({ clients, className = "", initialCount = 8 }: ClientShowcaseProps) {
+  const [showAll, setShowAll] = useState(false)
+  const displayedClients = showAll ? clients : clients.slice(0, initialCount)
+  const hasMore = clients.length > initialCount
+
   return (
     <div className={`bg-white dark:bg-primary pt-8 ${className}`} >
       <div className="container mx-auto mb-8">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-          {clients.map((client) => (
+          {displayedClients.map((client) => (
             <Link 
               key={client.id} 
               href={client.caseStudyLink || "#"}
@@ -42,6 +49,17 @@ export function ClientShowcase({ clients, className = "" }: ClientShowcaseProps)
             </Link>
           ))}
         </div>
+        {hasMore && !showAll && (
+          <div className="flex justify-center mt-8">
+            <Button
+              variant="outline-brand"
+              size="lg"
+              onClick={() => setShowAll(true)}
+            >
+              See More
+            </Button>
+          </div>
+        )}
       </div>
     </div>
   )

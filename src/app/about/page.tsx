@@ -51,7 +51,7 @@ export default function AboutPage() {
               <p className="mb-2 text-muted-light dark:text-muted-dark tracking-widest font-normal uppercase">
                 ABOUT US
               </p>
-              <Heading1 className="mx-auto lg:mx-0 max-w-3xl lg:max-w-none relative z-10 mb-6">Building digital products that <span className="text-brand">matter</span></Heading1>
+              <Heading1 className="mx-auto lg:mx-0 max-w-3xl lg:max-w-none relative z-10 mb-6">Your partners in <span className="text-brand">digital excellence</span></Heading1>
               <p className="mb-8 text-basetext-muted-foreground md:text-lg mx-auto lg:mx-0 max-w-2xl lg:max-w-xl relative z-10">
                 At BitWerks, we&apos;re your partners in building custom web and software solutions that help your business thrive in the digital age.
               </p>
