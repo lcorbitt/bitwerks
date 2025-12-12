@@ -32,7 +32,12 @@ const step4Schema = z.object({
 })
 
 const step5Schema = z.object({
-  message: z.string().min(10, "Please provide more details about your project."),
+  message: z.string()
+    .min(1, "Please provide additional details about your project.")
+    .refine(
+      (val) => val.trim().split(/\s+/).filter(word => word.length > 0).length >= 3,
+      { message: "Could you share a bit more about your project?" }
+    ),
 })
 
 type FormData = z.infer<typeof step1Schema> & 
