@@ -308,7 +308,7 @@ export default function ContactPage() {
                 className={`relative flex items-start space-x-4 p-4 rounded-lg border-2 cursor-pointer transition-all hover:shadow-md ${
                   form.watch("projectType") === type.value
                     ? "border-brand bg-brand/5"
-                    : "border-gray-200 dark:border-gray-700 hover:border-brand/50"
+                    : "border-gray-200 dark:border-[#1f1f1f]/70 hover:border-brand/50"
                 }`}
               >
                 <input
@@ -370,7 +370,7 @@ export default function ContactPage() {
               className={`relative flex items-start space-x-4 p-4 rounded-lg border-2 cursor-pointer transition-all hover:shadow-md ${
                 form.watch("projectScope") === scope.value
                   ? "border-brand bg-brand/5"
-                  : "border-gray-200 dark:border-gray-700 hover:border-brand/50"
+                  : "border-gray-200 dark:border-[#1f1f1f]/70 hover:border-brand/50"
               }`}
             >
               <input
@@ -438,7 +438,7 @@ export default function ContactPage() {
                   className={`relative flex items-center space-x-3 p-3 rounded-lg border-2 cursor-pointer transition-all hover:shadow-md ${
                     form.watch("timeline") === option.value
                       ? "border-brand bg-brand/5"
-                      : "border-gray-200 dark:border-gray-700 hover:border-brand/50"
+                      : "border-gray-200 dark:border-[#1f1f1f]/70 hover:border-brand/50"
                   }`}
                 >
                   <input
@@ -477,7 +477,7 @@ export default function ContactPage() {
                   className={`relative flex items-center space-x-3 p-3 rounded-lg border-2 cursor-pointer transition-all hover:shadow-md ${
                     form.watch("budget") === option.value
                       ? "border-brand bg-brand/5"
-                      : "border-gray-200 dark:border-gray-700 hover:border-brand/50"
+                      : "border-gray-200 dark:border-[#1f1f1f]/70 hover:border-brand/50"
                   }`}
                 >
                   <input
@@ -634,7 +634,7 @@ export default function ContactPage() {
               <span className="text-sm font-medium">Step {currentStep} of {totalSteps}</span>
               <span className="text-sm text-muted-foreground">{Math.round((currentStep / totalSteps) * 100)}%</span>
             </div>
-            <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+            <div className="w-full bg-gray-200 dark:bg-[#1f1f1f]/70 rounded-full h-2">
               <div 
                 className="bg-brand h-2 rounded-full transition-all duration-300"
                 style={{ width: `${(currentStep / totalSteps) * 100}%` }}
@@ -644,7 +644,7 @@ export default function ContactPage() {
         )}
 
         {/* Step Content */}
-        <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-lg p-8 border border-gray-200 dark:border-gray-700">
+        <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-lg p-8 border border-gray-200 dark:border-[#1f1f1f]/70">
           {currentStep <= totalSteps && (
             <div className="mb-8">
               <h2 className="text-2xl font-bold mb-2">{getStepTitle()}</h2>
