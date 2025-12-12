@@ -43,7 +43,7 @@ export default function AboutPage() {
   return (
     <div className="flex flex-col overflow-hidden">
       {/* Hero Section */}
-      <section className="relative overflow-hidden pb-32 md:pb-64 w-full h-full bg-light dark:bg-tertiary">
+      <section className="relative overflow-hidden pb-48 md:pb-64 w-full h-full bg-light dark:bg-tertiary">
         <div className="container relative z-20">
           <div className="mx-auto lg:grid lg:items-center lg:gap-8 lg:grid-cols-2">
             {/* Text content */}
@@ -260,9 +260,9 @@ export default function AboutPage() {
                 <p className="text-muted-foreground text-lg">
                   This mix of experiences gives me a unique perspective on web development and software alike. I understand that great websites and software require more than just writing code; they need a clear understanding of your business, your users, and your goals. I focus on clean, maintainable solutions that meet current needs while allowing your digital presence to grow and evolve over time. Every project is an opportunity to create meaningful experiences that deliver real value.
                 </p>
-                <div className="pt-4">
+                <div className="pt-4 text-center">
                   <Button asChild variant="brand" size="lg">
-                    <Link href="/contact">Let&apos;s Work Together</Link>
+                    <Link href="/contact">Let&apos;s Work</Link>
                   </Button>
                 </div>
               </div>
