@@ -9,7 +9,7 @@ const nextConfig = {
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
   experimental: {
-    optimizeCss: false, // Disable CSS optimization to avoid critters issues
+    optimizeCss: true, // Enable CSS optimization for better performance
     optimizePackageImports: ['lucide-react', '@radix-ui/react-icons'],
   },
   compiler: {

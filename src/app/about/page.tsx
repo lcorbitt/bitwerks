@@ -73,8 +73,8 @@ export default function AboutPage() {
                   alt="About us hero image"
                   width={250}
                   height={250}
-                  priority
                   className="w-full h-auto object-contain rounded-l-lg"
+                  quality={75}
                 />
               </div>
             </div>

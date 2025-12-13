@@ -33,7 +33,6 @@ export const TechMarqueeSection = () => {
           width={800} 
           height={800} 
           className="w-[300px] h-[300px] md:w-[500px] md:h-[500px]" 
-          priority 
         />
       </div>
       <div className="container mx-auto text-center">

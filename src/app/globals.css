@@ -73,7 +73,6 @@
   /* Performance optimizations */
   section {
     @apply py-16 md:py-24;
-    will-change: auto;
   }
 
   /* Target notifications section */
@@ -81,10 +80,10 @@
     @apply p-0;
   }
 
-  /* Optimize animations */
+  /* Optimize animations - only set will-change when animating */
   .animate-scroll,
   .animate-scroll-reverse {
-    will-change: transform;
+    /* will-change removed to prevent forced reflows */
   }
 
   /* Optimize images */
@@ -129,17 +128,17 @@
 
   .animate-wave {
     animation: wave 10s -3s linear infinite;
-    will-change: transform;
+    /* will-change removed to prevent forced reflows */
   }
 
   .animate-wave-reverse {
     animation: wave-reverse 18s linear reverse infinite;
-    will-change: transform;
+    /* will-change removed to prevent forced reflows */
   }
 
   .animate-wave-slow {
     animation: wave-slow 20s -1s reverse infinite;
-    will-change: transform;
+    /* will-change removed to prevent forced reflows */
   }
 
   /* Optimize decorative circles */
@@ -155,12 +154,12 @@
 
   .animate-bounce-slow {
     animation: bounce-slow 3s ease-in-out infinite;
-    will-change: transform;
+    /* will-change removed to prevent forced reflows */
   }
 
   .animate-bounce-slower {
     animation: bounce-slower 4s ease-in-out infinite;
-    will-change: transform;
+    /* will-change removed to prevent forced reflows */
   }
 
   /* Cool icon hover animations */

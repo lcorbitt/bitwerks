@@ -10,9 +10,10 @@ import { ThemeProvider } from "@/components/theme-provider";
 const outfit = Outfit({ 
   subsets: ["latin"],
   display: 'swap',
-  weight: ['400', '500', '600', '700', '800'],
+  weight: ['400', '600', '700'], // Reduced from 5 weights to 3 for better performance
   preload: true,
   fallback: ['system-ui', 'arial'],
+  adjustFontFallback: true,
 });
 
 export const metadata: Metadata = {
@@ -90,8 +91,6 @@ export default function RootLayout({
         <link rel="icon" type="image/png" href="/logo-light.png" />
         <link rel="shortcut icon" type="image/png" href="/logo-light.png" />
         <link rel="apple-touch-icon" href="/logo-light.png" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
       <body className={cn(outfit.className, "min-h-screen bg-background antialiased")}>
         <ThemeProvider>
