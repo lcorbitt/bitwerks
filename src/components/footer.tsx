@@ -55,7 +55,7 @@ export function Footer() {
                     </Link>
                   </li>
                   <li>
-                    <Link href="/sitemap.xml" className="text-muted-foreground hover:text-brand dark:text-white/80 dark:hover:text-brand transition-colors duration-300">
+                    <Link href="/sitemap.xml" target="_blank" className="text-muted-foreground hover:text-brand dark:text-white/80 dark:hover:text-brand transition-colors duration-300">
                       Sitemap
                     </Link>
                   </li>
