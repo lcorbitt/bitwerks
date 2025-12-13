@@ -10,8 +10,6 @@ interface CaseStudyProps {
   technologies: string[]
   imageSrc: string
   imageAlt: string
-  caseStudyLink: string
-  moreCaseStudiesLink: string
   orientation?: string
   className?: string
   device?: "mobile" | "desktop"
@@ -25,8 +23,6 @@ export function CaseStudy({
   technologies,
   imageSrc,
   imageAlt,
-  caseStudyLink,
-  moreCaseStudiesLink,
   orientation = "center",
   className = "",
   device = "desktop",
@@ -94,7 +90,7 @@ export function CaseStudy({
             
             {/* More Case Studies Link */}
             <div className="flex justify-start">
-              <LinkWithArrow href={moreCaseStudiesLink}>
+              <LinkWithArrow href={"/our-work"}>
                 More Case Studies
               </LinkWithArrow>
             </div>

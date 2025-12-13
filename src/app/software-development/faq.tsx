@@ -23,7 +23,7 @@ export function FAQSection() {
                 What types of software can you build for small businesses?
               </AccordionTrigger>
               <AccordionContent className="text-gray-600 dark:text-gray-300">
-                We specialize in custom business software including inventory management systems, customer relationship management (CRM) tools, order processing systems, employee scheduling applications, accounting integrations, and workflow automation tools. We focus on solutions that streamline your specific business operations.
+                We&apos;ve worked across a diverse range of industries and products, and we&apos;re confident we can design and develop a tailored solution for your business. Every project is unique, so we&apos;ll work closely with you to understand your specific needs and requirements.
               </AccordionContent>
             </AccordionItem>
             
