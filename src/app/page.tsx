@@ -14,10 +14,10 @@ import { DecorativeCircles } from "@/components/ui/decorative-circles"
 export const metadata: Metadata = {
   title: "BitWerks | Custom Web Development & Software Solutions",
   description: "Professional web and software development based in northern Colorado, serving businesses nationwide.",
-  keywords: ["web development", "software development", "white label partnerships", "Fort Collins", "Denver", "Boulder", "Colorado Springs", "Colorado", "small business"],
+  keywords: ["web development", "software development", "white label partnerships", "Denver", "Boulder", "Colorado Springs", "Colorado", "small business"],
   openGraph: {
     title: "BitWerks | Custom Web Development & Software Solutions",
-    description: "Transform your business with professional web and software solutions. Based in Fort Collins, CO, serving businesses nationwide.",
+    description: "Transform your business with professional web and software solutions. Based in Denver, CO, serving businesses nationwide.",
     type: "website",
     locale: "en_US",
   },

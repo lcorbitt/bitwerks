@@ -16,9 +16,34 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "BitWerks | Custom Web & Software Development",
-  description: "Professional web and software development tailored to your business needs.",
-  metadataBase: new URL('https://bitwerks.com'),
+  title: {
+    default: "BitWerks | Custom Web & Software Development",
+    template: "%s | BitWerks",
+  },
+  description: "Professional grade web and software development tailored to your business needs. Serving businesses nationwide from Denver, CO.",
+  metadataBase: new URL('https://bitwerks.dev'),
+  keywords: [
+    "web development",
+    "software development",
+    "custom software",
+    "web design",
+    "app development",
+    "Denver",
+    "Fort Collins",
+    "Boulder",
+    "Colorado Springs",
+    "Aurora",
+    "Thornton",
+    "Westminster",
+    "Arvada",
+    "Lakewood",
+    "Thornton",
+    "Colorado",
+    "nationwide",
+    "small business",
+    "startup",
+    "white label partnerships",
+  ],
   alternates: {
     canonical: '/',
   },
@@ -32,6 +57,25 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
+    siteName: 'BitWerks',
+    title: 'BitWerks | Custom Web & Software Development',
+    description: 'Professional grade web and software development serving businesses nationwide from Denver, CO.',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'BitWerks | Custom Web & Software Development',
+    description: 'Professional grade web and software development serving businesses nationwide from Denver, CO.',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 };
 

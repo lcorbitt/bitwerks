@@ -62,7 +62,7 @@ export const metadata: Metadata = {
   description: "Partner with BitWerks for white label development services. We build custom websites and applications under your brand for marketing and SEO agencies nationwide.",
   openGraph: {
     title: "BitWerks | White Label Partnerships",
-    description: "Partner with us for white label development services. Custom websites and applications under your brand. Based in Fort Collins, CO, serving agencies nationwide.",
+    description: "Partner with us for white label development services. Custom websites and applications under your brand. Based in Denver, CO, serving agencies nationwide.",
   },
 }
 

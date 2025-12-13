@@ -11,19 +11,14 @@ export function Footer() {
             <div className="space-y-4 text-left">
               <h3 className="text-lg font-semibold"><span className="text-brand">Bit</span>Werks</h3>
               <p className="text-sm text-muted-foreground dark:text-white/80">
-                We build beautiful and performant websites and custom software to power your business.
+                Based in Denver, CO. Building beautiful and performant digital solutions to power your business nationwide.
               </p>
             </div>
             <div className="hidden md:block text-left">
-              <h4 className="mb-4 text-sm font-semibold">Contact</h4>
+              <h4 className="mb-4 text-sm font-semibold">Say Hello</h4>
               <ul className="space-y-2 text-sm">
                 <li>
-                  <Link href="tel:8167144107" className="text-muted-foreground hover:text-brand dark:text-white/80 dark:hover:text-white transition-colors duration-300">
-                    816-714-4107
-                  </Link>
-                </li>
-                <li>
-                  <Link href="mailto:bitwerksco@gmail.com" className="text-muted-foreground hover:text-brand dark:text-white/80 dark:hover:text-white transition-colors duration-300">
+                  <Link href="mailto:bitwerksco@gmail.com" className="text-muted-foreground hover:text-brand dark:text-white/80 dark:hover:text-brand transition-colors duration-300">
                     bitwerksco@gmail.com
                   </Link>
                 </li>
@@ -35,28 +30,33 @@ export function Footer() {
                 <h4 className="mb-4 text-sm font-semibold">Links</h4>
                 <ul className="space-y-2 text-sm">
                   <li>
-                    <Link href="/services/web-development" className="text-muted-foreground hover:text-brand dark:text-white/80 dark:hover:text-white transition-colors duration-300">
+                    <Link href="/services/web-development" className="text-muted-foreground hover:text-brand dark:text-white/80 dark:hover:text-brand transition-colors duration-300">
                       Web Development
                     </Link>
                   </li>
                   <li>
-                    <Link href="/services/software-development" className="text-muted-foreground hover:text-brand dark:text-white/80 dark:hover:text-white transition-colors duration-300">
+                    <Link href="/services/software-development" className="text-muted-foreground hover:text-brand dark:text-white/80 dark:hover:text-brand transition-colors duration-300">
                       Software Development
                     </Link>
                   </li>
                   <li>
-                    <Link href="/services/white-label-partnerships" className="text-muted-foreground hover:text-brand dark:text-white/80 dark:hover:text-white transition-colors duration-300">
+                    <Link href="/services/white-label-partnerships" className="text-muted-foreground hover:text-brand dark:text-white/80 dark:hover:text-brand transition-colors duration-300">
                       White Label Partnerships
                     </Link>
                   </li>
                   <li>
-                    <Link href="/our-work" className="text-muted-foreground hover:text-brand dark:text-white/80 dark:hover:text-white transition-colors duration-300">
+                    <Link href="/our-work" className="text-muted-foreground hover:text-brand dark:text-white/80 dark:hover:text-brand transition-colors duration-300">
                       Our Work
                     </Link>
                   </li>
                   <li>
-                    <Link href="/about" className="text-muted-foreground hover:text-brand dark:text-white/80 dark:hover:text-white transition-colors duration-300">
+                    <Link href="/about" className="text-muted-foreground hover:text-brand dark:text-white/80 dark:hover:text-brand transition-colors duration-300">
                       About
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/sitemap.xml" className="text-muted-foreground hover:text-brand dark:text-white/80 dark:hover:text-brand transition-colors duration-300">
+                      Sitemap
                     </Link>
                   </li>
                 </ul>

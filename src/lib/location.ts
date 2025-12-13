@@ -7,7 +7,7 @@ export interface LocationData {
 }
 
 const DEFAULT_LOCATION: LocationData = {
-  city: "Fort Collins",
+  city: "Denver",
   state: "CO",
   isDefault: true
 }

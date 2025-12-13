@@ -59,7 +59,7 @@ export function Hero({ locationString }: HeroProps) {
               Web Development • Software Development<span className="hidden lg:inline"> • White Label Partnerships</span>
             </p>
             <p className="mb-8 text-base text-black dark:text-white md:text-lg mx-auto md:mx-0 max-w-[16rem] md:max-w-xl relative z-10">
-              A digital agency specializing in <span className="text-brand">custom web & software solutions</span>.
+              A digital agency specializing in <span className="text-brand">custom web and software development</span>.
               {/* TODO: add location string for improved SEO */}
               {/* {locationString === "nationwide" ? "across the U.S." : ` in ${locationString}.`} */}
             </p>

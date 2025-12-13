@@ -59,10 +59,10 @@ const LazyCTA = dynamic(() => import("@/components/sections/cta").then(mod => ({
 
 export const metadata: Metadata = {
   title: "BitWerks | Custom Software Development & Enterprise Solutions",
-  description: "Professional software development based in Fort Collins, CO, serving businesses nationwide. Transform your business with expert custom software solutions.",
+  description: "Professional software development based in Denver, CO, serving businesses nationwide. Transform your business with expert custom software solutions.",
   openGraph: {
     title: "BitWerks | Custom Software Development & Enterprise Solutions",
-    description: "Transform your business with professional custom software solutions. Based in Fort Collins, CO, serving businesses nationwide.",
+    description: "Transform your business with professional custom software solutions. Based in Denver, CO, serving businesses nationwide.",
   },
 }
 

@@ -7,9 +7,10 @@ import { Heading1 } from "@/components/ui/heading"
 
 interface HeroProps {
   locationString: string
+  location?: string
 }
 
-export function Hero({ locationString }: HeroProps) {
+export function Hero({ locationString, location }: HeroProps) {
   return (
     <section className="relative overflow-hidden pb-32 md:pb-64 w-full h-full bg-light dark:bg-tertiary">
       <div className="container relative z-20">
@@ -17,7 +18,7 @@ export function Hero({ locationString }: HeroProps) {
           {/* Text content */}
           <div className="flex flex-col text-center lg:text-left w-full">
             <p className="mb-2 text-muted-light dark:text-muted-dark tracking-widest font-normal">
-              WEB DEVELOPMENT
+              {location ? `${location.toUpperCase()} | ` : ""}WEB DEVELOPMENT
             </p>
             <Heading1 className="mx-auto lg:mx-0 max-w-3xl lg:max-w-none relative z-10">Sleek, responsive</Heading1>
             <Heading1 className="mb-6 mx-auto lg:mx-0 max-w-3xl lg:max-w-none relative z-10 text-brand">websites</Heading1>

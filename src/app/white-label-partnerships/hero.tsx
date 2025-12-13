@@ -5,9 +5,10 @@ import { Heading1 } from "@/components/ui/heading"
 
 interface HeroProps {
   locationString: string
+  location?: string
 }
 
-export function Hero({ locationString }: HeroProps) {
+export function Hero({ locationString, location }: HeroProps) {
   return (
     <section className="relative overflow-hidden bg-light dark:bg-tertiary pb-32 md:pb-64 w-full h-full">
       <div className="container">
@@ -15,7 +16,7 @@ export function Hero({ locationString }: HeroProps) {
           {/* Text content */}
           <div className="flex flex-col text-center lg:text-left w-full">
             <p className="mb-2 text-muted-light dark:text-muted-dark tracking-widest font-normal">
-              WHITE LABEL PARTNERSHIPS
+              {location ? `${location.toUpperCase()} | ` : ""}WHITE LABEL PARTNERSHIPS
             </p>
             <Heading1 className="mb-6 text-5xl font-bold tracking-tight text-gray-900 dark:text-white md:text-6xl">
               We build it,
