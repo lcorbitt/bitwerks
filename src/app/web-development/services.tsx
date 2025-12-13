@@ -55,7 +55,7 @@ export default function Services() {
             Boost your Brand & Conversions
           </Heading2>
           <p className="text-xl text-muted-light dark:text-muted-dark">
-            We provide expert web development services, focusing on the details of each project and delivering highly optimized custom solutions.
+            We provide expert web design and development services, focusing on the details of each project and delivering highly optimized custom solutions that combine beautiful design with powerful functionality.
           </p>
         </div>
 

@@ -80,8 +80,17 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   if (!city) {
     return {
-      title: "Web Development Services | BitWerks",
-      description: "Professional web development services serving businesses nationwide. Based in Denver, CO.",
+      title: "Web Design & Development Services | BitWerks",
+      description: "Professional web design and development services serving businesses nationwide. Expert designers and developers based in Denver, CO.",
+      keywords: [
+        "web design",
+        "web development",
+        "web design and development",
+        "custom web design",
+        "responsive web design",
+        "website design",
+        "website development",
+      ],
     }
   }
 

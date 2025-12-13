@@ -10,7 +10,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 const outfit = Outfit({ 
   subsets: ["latin"],
   display: 'swap',
-  weight: ['400', '600', '700'], // Reduced from 5 weights to 3 for better performance
+  weight: ['400', '600', '700'],
   preload: true,
   fallback: ['system-ui', 'arial'],
   adjustFontFallback: true,

@@ -8,7 +8,7 @@ interface LocationMetadataOptions {
 }
 
 const serviceNames = {
-  "web-development": "Web Development",
+  "web-development": "Web Design & Development",
   "software-development": "Software Development",
   "white-label-partnerships": "White Label Partnerships",
   "web-design": "Web Design",
@@ -16,7 +16,7 @@ const serviceNames = {
 }
 
 const serviceDescriptions = {
-  "web-development": "custom web development",
+  "web-development": "custom web design and development",
   "software-development": "custom software development",
   "white-label-partnerships": "white label development partnerships",
   "web-design": "web design",
@@ -49,8 +49,16 @@ export function generateLocationMetadata({
       `${serviceName.toLowerCase()} ${locationString}`,
       `${serviceName.toLowerCase()} ${city.city}`,
       `${serviceName.toLowerCase()} ${city.stateName}`,
+      ...(service === "web-development" ? [
+        "web design",
+        "web development",
+        "web design and development",
+        "custom web design",
+        "responsive web design",
+        "website design",
+        "website development",
+      ] : []),
       "custom software",
-      "web design",
       "app development",
       city.city,
       city.stateName,
