@@ -16,7 +16,7 @@ const serviceNames = {
 }
 
 const serviceDescriptions = {
-  "web-development": "custom web design and development",
+  "web-development": "custom web design & development",
   "software-development": "custom software development",
   "white-label-partnerships": "white label development partnerships",
   "web-design": "web design",

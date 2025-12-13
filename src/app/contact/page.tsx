@@ -47,7 +47,7 @@ type FormData = z.infer<typeof step1Schema> &
   z.infer<typeof step5Schema>
 
 const projectTypes = [
-  { value: "website", label: "Website", description: "Custom website design and development", icon: Globe },
+  { value: "website", label: "Website", description: "Custom website design & development", icon: Globe },
   { value: "software", label: "Software Application", description: "Custom software or web application", icon: Code },
   { value: "white-label", label: "White Label Partnership", description: "We build it, you present it", icon: Building },
 ]
