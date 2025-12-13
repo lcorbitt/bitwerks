@@ -281,3 +281,11 @@ export function getCitiesByState(state: string): USCity[] {
 export function getAllStates(): string[] {
   return Array.from(new Set(majorUSCities.map((city) => city.state))).sort()
 }
+
+// Get cities by slug (without state requirement)
+// Returns all cities matching the slug, sorted by priority (highest first)
+export function getCitiesBySlug(citySlug: string): USCity[] {
+  return majorUSCities
+    .filter((city) => city.slug === citySlug)
+    .sort((a, b) => a.priority - b.priority) // Lower priority number = higher priority
+}
