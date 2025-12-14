@@ -11,7 +11,7 @@ export function Footer() {
             <div className="space-y-4 text-left">
               <h3 className="text-lg font-semibold"><span className="text-brand">Bit</span>Werks</h3>
               <p className="text-sm text-muted-foreground dark:text-white/80">
-                Based in Denver, CO. Building beautiful and performant digital solutions to power your business nationwide.
+                Building beautiful and performant digital solutions to power your business. Based in Denver, CO.
               </p>
             </div>
             <div className="hidden md:block text-left">

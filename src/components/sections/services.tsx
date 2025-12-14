@@ -21,7 +21,7 @@ export function Services({ locationString, isDefault }: ServicesProps) {
             <p className="mb-16 md:mb-32 text-muted-foreground tracking-wide text-lg">
               {/* todto: use location string for improved SEO */}
               {/* {locationString === "nationwide" ? "across the U.S." : ` in ${locationString}.`} */}
-              At BitWerks, we specialize in <strong>custom web & software development</strong> for businesses across the U.S. Each project is hand-coded with a focus on visibility, performance, and reliability. No page-builders, no shortcuts. We are committed to transparency and trust, building lasting partnerships that empower your business to grow with confidence.
+              At BitWerks, we specialize in <strong>custom web & software development</strong> for businesses across the U.S. Each project is hand-coded where thoughtful design meets exceptional performance and reliability. No page-builders, no shortcuts. We are committed to transparency and trust, building lasting partnerships that empower your business to grow with confidence.
             </p>
           </div>
           <div className="grid gap-24 md:gap-8 md:grid-cols-2 lg:grid-cols-3 mt-32">

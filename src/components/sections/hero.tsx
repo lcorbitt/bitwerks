@@ -9,7 +9,7 @@ interface HeroProps {
 
 export function Hero({ locationString }: HeroProps) {
   return (
-    <section className="relative overflow-hidden pb-32 md:pb-[18rem] w-full h-full">
+    <section className="relative overflow-hidden pb-32 md:pb-[18rem] w-full h-full animate-fade-in">
       {/* Hero background image */}
       <div className="absolute inset-0 w-full h-full z-0">
         <Image
@@ -52,17 +52,15 @@ export function Hero({ locationString }: HeroProps) {
         aria-hidden="true"
       />
       <div className="container relative z-20">
-        <div className="mx-auto lg:grid lg:items-center lg:gap-8 lg:grid-cols-2">
+        <div className="mx-auto lg:items-center">
           {/* Text content */}
           <div className="flex flex-col text-center lg:text-left w-full">
-            <Heading1 className="mx-auto lg:mx-0 max-w-3xl lg:max-w-none relative z-10"><span className="text-brand">Bit</span><span className="dark:text-white text-black">Werks</span></Heading1>
-            <p className="mb-8 text-sm text-muted-light dark:text-muted-dark md:text-lg mx-auto lg:mx-0 max-w-2xl lg:max-w-xl relative z-10">
-              Web Development • Software Development<span className="hidden lg:inline"> • White Label Partnerships</span>
+            <Heading1 className="mx-auto lg:mx-0 max-w-3xl lg:max-w-none relative z-10 mb-2 md:mb-4"><span className="text-brand">Bit</span><span className="dark:text-white text-black">Werks</span></Heading1>
+            <p className="mb-8 text-sm text-muted-light dark:text-muted-dark md:text-lg mx-auto lg:mx-0 max-w-2xl relative z-10">
+              Web Design & Development • Software Development<span className="hidden lg:inline"> • White Label Partnerships</span>
             </p>
             <p className="mb-8 text-base text-black dark:text-white md:text-lg mx-auto md:mx-0 max-w-[16rem] md:max-w-xl relative z-10">
-              A digital agency specializing in <span className="text-brand">custom web and software development</span>.
-              {/* TODO: add location string for improved SEO */}
-              {/* {locationString === "nationwide" ? "across the U.S." : ` in ${locationString}.`} */}
+              A digital agency building <span className="text-brand">beautiful, high-performing</span> digital solutions to power your business.
             </p>
             <div className="flex gap-4 justify-center lg:justify-start relative z-10">
               <Button
