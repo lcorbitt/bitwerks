@@ -89,8 +89,6 @@ export default function Services() {
             technologies={["React", "Tailwind", "Ruby on Rails", "PostgreSQL"]}
             imageSrc="/hodinkee-mockup.png"
             imageAlt="Hodinkee case study"
-            caseStudyLink="/case-studies/hodinkee"
-            moreCaseStudiesLink="/our-work"
             orientation="center"
             device="mobile"
           />

@@ -102,8 +102,6 @@ export default function Services() {
             technologies={["React", "Tailwind", "Node", "NestJS", "PostgreSQL"]}
             imageSrc="/urban-sky-mockup.png"
             imageAlt="Urban Sky case study - software development for aerospace operations"
-            caseStudyLink="/case-studies/urbansky"
-            moreCaseStudiesLink="/case-studies"
             orientation="object-center"
             imageClassName="scale-[1.2]"
           />

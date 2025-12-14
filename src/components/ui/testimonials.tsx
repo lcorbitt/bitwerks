@@ -22,7 +22,7 @@ interface TestimonialsProps {
 export function Testimonials({ 
   title = "Trusted Across the Country",
   subtitle = "OUR PROOF", 
-  description = "We’ve helped small businesses across the U.S. build and ship the web & software projects they’ve been dreaming of. We treat every project as a partnership, investing in our clients as much as they invest in us.",
+  description = "We’ve helped businesses across the U.S. build and ship the web & software projects they’ve been dreaming of. We treat every project as a partnership, investing in our clients as much as they invest in us.",
   testimonials,
   className = ""
 }: TestimonialsProps) {

@@ -24,7 +24,7 @@ export default function OurWorkPage() {
           </Heading2>
 
           {/* <p className="text-xl text-muted-light dark:text-muted-dark">
-            From startups to established businesses, we&apos;ve partnered with companies across various industries to create custom web and software solutions that deliver exceptional results.
+            We&apos;ve partnered with companies across various industries to create custom web and software solutions that deliver exceptional results.
           </p> */}
         </div>
 

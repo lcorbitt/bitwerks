@@ -20,7 +20,7 @@ export function FAQSection() {
           <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="item-1">
               <AccordionTrigger className="text-lg font-semibold text-gray-900 dark:text-white">
-                What types of software can you build for small businesses?
+                What types of software can you build?
               </AccordionTrigger>
               <AccordionContent className="text-gray-600 dark:text-gray-300">
                 We&apos;ve worked across a diverse range of industries and products, and we&apos;re confident we can design and develop a tailored solution for your business. Every project is unique, so we&apos;ll work closely with you to understand your specific needs and requirements.

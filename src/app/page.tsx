@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "BitWerks | Custom Web Development & Software Solutions",
-    description: "Professional web and software development for small businesses.",
+    description: "Professional web and software development serving businesses nationwide.",
   },
   robots: {
     index: true,

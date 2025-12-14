@@ -11,7 +11,7 @@ import { DecorativeCircles } from "@/components/ui/decorative-circles"
 const websiteTiers = [
   {
     name: "STARTER",
-    description: "Perfect for small businesses and startups",
+    description: "Perfect for businesses getting started",
     price: "$1,500",
     period: "one-time",
     popular: false,
@@ -32,7 +32,7 @@ const websiteTiers = [
   },
   {
     name: "PROFESSIONAL",
-    description: "Ideal for growing businesses with more complex needs",
+    description: "Ideal for businesses with more complex needs",
     price: "$2,500",
     period: "one-time",
     popular: true,
@@ -98,7 +98,7 @@ const softwareAppTiers = [
   },
   {
     name: "PROFESSIONAL",
-    description: "Ideal for growing businesses with complex requirements",
+    description: "Ideal for businesses with complex requirements",
     price: "$6,500",
     period: "one-time",
     popular: true,

@@ -94,7 +94,7 @@ export default function AboutPage() {
             </p>
             <Heading2 className="mb-8">Excellence in Every Line of Code</Heading2>
             <p className="mb-8 text-muted-foreground tracking-wide text-lg">
-              We specialize in <strong>custom web & software development</strong> for startups and small businesses across the U.S. Each project is hand-coded with a focus on visibility, performance, and reliability.
+              We specialize in <strong>custom web & software development</strong> for businesses across the U.S. Each project is hand-coded with a focus on visibility, performance, and reliability.
             </p>
             <p className="text-muted-foreground tracking-wide text-lg">
               No page-builders, no shortcuts. We are committed to transparency and trust, building lasting partnerships that empower your business to grow with confidence.
