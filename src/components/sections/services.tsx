@@ -15,7 +15,7 @@ export function Services() {
             </p>
             <Heading2 className="mb-8">From Concept to Completion</Heading2>
             <p className="mb-16 md:mb-32 text-muted-foreground tracking-wide text-lg">
-              At BitWerks, we specialize in <strong>custom web & software development</strong> for businesses across the U.S. Each project is hand-coded where thoughtful design meets exceptional performance and reliability. No page-builders, no shortcuts. We are committed to transparency and trust, building lasting partnerships that empower your business to grow with confidence.
+              BitWerks delivers custom digital solutions for businesses, from websites and e-commerce to full web and mobile apps, SaaS platforms, and internal tools. We cover strategy, UX/UI design, full-stack engineering, and ongoing support. Every build is hand-coded so thoughtful design meets high performance and reliability. No page builders and no shortcuts, just a transparent partnership focused on results that help your business grow.
             </p>
           </div>
           <div className="grid gap-24 md:gap-8 md:grid-cols-2 lg:grid-cols-3 mt-32">

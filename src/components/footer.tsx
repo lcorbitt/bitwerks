@@ -11,16 +11,26 @@ export function Footer() {
             <div className="space-y-4 text-left">
               <h3 className="text-lg font-semibold"><span className="text-brand">Bit</span>Werks</h3>
               <p className="text-sm text-muted-foreground dark:text-white/80">
-                Building beautiful and performant digital solutions to power your business. Based in Denver, CO.
+                Building beautiful and performant digital solutions to power your business.
               </p>
             </div>
             <div className="hidden md:block text-left">
-              <h4 className="mb-4 text-sm font-semibold">Say Hello</h4>
+              <h4 className="mb-4 text-sm font-semibold">Company</h4>
               <ul className="space-y-2 text-sm">
                 <li>
                   <Link href="mailto:bitwerksco@gmail.com" className="text-muted-foreground hover:text-brand dark:text-white/80 dark:hover:text-brand transition-colors duration-300">
                     bitwerksco@gmail.com
                   </Link>
+                </li>
+                <li>
+                  <Link href="tel:8167144107" className="text-muted-foreground hover:text-brand dark:text-white/80 dark:hover:text-brand transition-colors duration-300">
+                    (816) 714-4107
+                  </Link>
+                </li>
+                <li>
+                  <div className="text-muted-foreground hover:text-brand dark:text-white/80 dark:hover:text-brand transition-colors duration-300">
+                    Denver, CO
+                  </div>
                 </li>
               </ul>
             </div>
