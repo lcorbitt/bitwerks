@@ -6,6 +6,7 @@ import { Hero } from "@/app/software-development/hero"
 import Services from "@/app/software-development/services"
 import dynamic from "next/dynamic"
 import { DecorativeCircles } from "@/components/ui/decorative-circles"
+import { ScrollFadeIn } from "@/components/ui/scroll-fade-in"
 
 // Lazy load components below the fold
 const LazyFAQSection = dynamic(() => import("@/app/software-development/faq").then(mod => ({ default: mod.FAQSection })), {
@@ -77,54 +78,60 @@ export default async function SoftwareDevelopment({ searchParams = {} }: PagePro
   return (
     <div className="flex flex-col overflow-hidden">
       <LocalBusinessSchema location={location} />
-      <Hero locationString={locationString} />
-      {/* Curved section divider */}
-      <section className="clip-top-large-circle relative -left-[15%] h-72 w-[130%] bg-white dark:bg-primary -mt-20 md:-mt-52 z-10"></section>
+      <ScrollFadeIn>
+        <Hero locationString={locationString} />
+        {/* Curved section divider */}
+        <section className="clip-top-large-circle relative -left-[15%] h-72 w-[130%] bg-white dark:bg-primary -mt-20 md:-mt-52 z-10"></section>
 
-      <Services />
+        <Services />
+      </ScrollFadeIn>
 
       <DecorativeCircles className="bottom-16" />
 
       {/* Curved section divider */}
       <section className="clip-bottom-large-circle relative -left-[15%] h-72 w-[130%] bg-white dark:bg-primary -mt-32 z-10"></section>
       
-      {/* Lazy loaded sections below the fold */}
-      <Suspense fallback={<div className="py-16 md:py-20 lg:py-24 bg-white dark:bg-black">
-        <div className="container">
-          <div className="animate-pulse">
-            <div className="h-8 bg-gray-200 dark:bg-[#1f1f1f]/70 rounded w-1/3 mb-8"></div>
-            <div className="space-y-4">
-              {[...Array(6)].map((_, i) => (
-                <div key={i} className="h-16 bg-gray-200 dark:bg-[#1f1f1f]/70 rounded"></div>
-              ))}
+      <ScrollFadeIn>
+        {/* Lazy loaded sections below the fold */}
+        <Suspense fallback={<div className="py-16 md:py-20 lg:py-24 bg-white dark:bg-black">
+          <div className="container">
+            <div className="animate-pulse">
+              <div className="h-8 bg-gray-200 dark:bg-[#1f1f1f]/70 rounded w-1/3 mb-8"></div>
+              <div className="space-y-4">
+                {[...Array(6)].map((_, i) => (
+                  <div key={i} className="h-16 bg-gray-200 dark:bg-[#1f1f1f]/70 rounded"></div>
+                ))}
+              </div>
             </div>
           </div>
-        </div>
-      </div>}>
-        <LazyFAQSection />
-      </Suspense>
+        </div>}>
+          <LazyFAQSection />
+        </Suspense>
+      </ScrollFadeIn>
       
-      <Suspense fallback={<div className="py-16 md:py-20 lg:py-24 bg-white dark:bg-black">
-        <div className="container">
-          <div className="animate-pulse">
-            <div className="h-8 bg-gray-200 dark:bg-[#1f1f1f]/70 rounded w-1/2 mb-8"></div>
-            <div className="grid md:grid-cols-3 gap-8">
-              {[...Array(3)].map((_, i) => (
-                <div key={i} className="space-y-4">
-                  <div className="h-12 w-12 bg-gray-200 dark:bg-[#1f1f1f]/70 rounded"></div>
-                  <div className="h-6 bg-gray-200 dark:bg-[#1f1f1f]/70 rounded w-3/4"></div>
-                  <div className="space-y-2">
-                    <div className="h-4 bg-gray-200 dark:bg-[#1f1f1f]/70 rounded"></div>
-                    <div className="h-4 bg-gray-200 dark:bg-[#1f1f1f]/70 rounded w-5/6"></div>
+      <ScrollFadeIn>
+        <Suspense fallback={<div className="py-16 md:py-20 lg:py-24 bg-white dark:bg-black">
+          <div className="container">
+            <div className="animate-pulse">
+              <div className="h-8 bg-gray-200 dark:bg-[#1f1f1f]/70 rounded w-1/2 mb-8"></div>
+              <div className="grid md:grid-cols-3 gap-8">
+                {[...Array(3)].map((_, i) => (
+                  <div key={i} className="space-y-4">
+                    <div className="h-12 w-12 bg-gray-200 dark:bg-[#1f1f1f]/70 rounded"></div>
+                    <div className="h-6 bg-gray-200 dark:bg-[#1f1f1f]/70 rounded w-3/4"></div>
+                    <div className="space-y-2">
+                      <div className="h-4 bg-gray-200 dark:bg-[#1f1f1f]/70 rounded"></div>
+                      <div className="h-4 bg-gray-200 dark:bg-[#1f1f1f]/70 rounded w-5/6"></div>
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
-        </div>
-      </div>}>
-        <LazyWhyChooseUs />
-      </Suspense>
+        </div>}>
+          <LazyWhyChooseUs />
+        </Suspense>
+      </ScrollFadeIn>
 
       <DecorativeCircles inverted className="bottom-48" />
 

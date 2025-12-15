@@ -1,5 +1,5 @@
-import { DecorativeCircles } from "@/components/ui/decorative-circles"
 import { Heading2 } from "@/components/ui/heading"
+import { ScrollFadeIn } from "@/components/ui/scroll-fade-in"
 import { ServiceCards } from "@/components/ui/service-cards"
 import { softwareDevelopmentServices } from "@/components/ui/software-development-cards"
 import dynamic from "next/dynamic"
@@ -66,9 +66,9 @@ export default function Services() {
           {/* <LazyDeviceShowcase /> */}
           </Suspense>
 
-          <Heading2 className="mb-8">Built to Perform and Scale</Heading2>
+          <Heading2 className="mb-8">Your Product Engineering Partner</Heading2>
           <p className="text-xl text-muted-light dark:text-muted-dark">
-            Custom applications, from SaaS to internal tools and MVP development, designed to make your business run smarter.
+            Whether you&apos;re building new custom applications or looking to improve and enhance existing software, we create solutions designed to make your business run smarter and adapt to your evolving needs.
           </p>
         </div>
 
@@ -95,6 +95,7 @@ export default function Services() {
             </div>
           </div>
         </div>}>
+        <ScrollFadeIn>  
           <LazyCaseStudy
             title="Case Study"
             company="Urban Sky"
@@ -105,6 +106,7 @@ export default function Services() {
             orientation="object-center"
             imageClassName="scale-[1.2]"
           />
+        </ScrollFadeIn>
         </Suspense>
       </div>
     </section>

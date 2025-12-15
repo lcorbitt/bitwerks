@@ -24,7 +24,7 @@ export function Hero({ locationString, location }: HeroProps) {
               <span className="text-brand">software</span>
             </Heading1>
             <p className="mb-8 text-basetext-muted-foreground md:text-lg mx-auto lg:mx-0 max-w-2xl lg:max-w-xl relative z-10">
-              Collaborate with a dedicated developer to create software tailored to your workflow and business goals.
+              Collaborate with a dedicated developer to design and build MVPs, SaaS products, or internal tools tailored to your business goals.
             </p>
             <div className="flex gap-4 justify-center lg:justify-start relative z-10">
               <Button
