@@ -97,7 +97,6 @@ export default function CityPage({ params }: PageProps) {
   const city = getCityBySlug(citySlug, stateSlug)
 
   const locationDisplay = city ? formatLocationDisplay(city) : null
-  const locationString = city ? `${city.city}, ${city.state}` : "nationwide"
   const locationData: LocationData = city 
     ? { city: city.city, state: city.state, isDefault: false }
     : { city: "Denver", state: "CO", isDefault: true }
@@ -113,7 +112,7 @@ export default function CityPage({ params }: PageProps) {
       )}
       <div className="flex flex-col overflow-hidden">
         <LocalBusinessSchema location={locationData} />
-        <Hero locationString={locationString} location={locationDisplay || undefined} />
+        <Hero location={locationDisplay || undefined} />
         {/* Curved section divider */}
         <section className="clip-top-large-circle relative -left-[15%] h-72 w-[130%] bg-white dark:bg-primary -mt-20 md:-mt-52 z-10"></section>
 

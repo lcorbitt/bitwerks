@@ -17,8 +17,6 @@ interface TestimonialsProps {
   className?: string
 }
 
-// todo: use location string for improved SEO
-// {locationString === "nationwide" ? "across the U.S." : ` in ${locationString}.`}
 export function Testimonials({ 
   title = "Trusted Across the Country",
   subtitle = "OUR PROOF", 
@@ -35,11 +33,6 @@ export function Testimonials({
               {subtitle}
             </p>
             <Heading2 className="mb-8">{title}</Heading2>
-            {/* <p className="mb-16 md:mb-24 text-muted-foreground tracking-wide text-base md:text-lg"> */}
-              {/* todto: use location string for improved SEO */}
-              {/* {locationString === "nationwide" ? "across the U.S." : ` in ${locationString}.`} */}
-              {/* {description} */}
-            {/* </p> */}
           </div>
         {/* Testimonials Grid */}
         <div className="grid md:grid-cols-3 gap-16 md:gap-8 max-w-6xl mx-auto">

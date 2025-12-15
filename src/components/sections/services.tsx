@@ -2,12 +2,9 @@ import { Card } from "@/components/ui/card"
 import { Code, Laptop, Users } from "lucide-react";
 import { Heading2 } from "@/components/ui/heading";
 import { Button } from "../ui/button";
-interface ServicesProps {
-  locationString: string
-  isDefault: boolean
-}
 
-export function Services({ locationString, isDefault }: ServicesProps) {
+
+export function Services() {
   return (
     <>
       <section className="bg-white dark:bg-black pt-0 pb-0 md:pb-16 -mt-48 z-20 relative">        
@@ -18,8 +15,6 @@ export function Services({ locationString, isDefault }: ServicesProps) {
             </p>
             <Heading2 className="mb-8">From Concept to Completion</Heading2>
             <p className="mb-16 md:mb-32 text-muted-foreground tracking-wide text-lg">
-              {/* todto: use location string for improved SEO */}
-              {/* {locationString === "nationwide" ? "across the U.S." : ` in ${locationString}.`} */}
               At BitWerks, we specialize in <strong>custom web & software development</strong> for businesses across the U.S. Each project is hand-coded where thoughtful design meets exceptional performance and reliability. No page-builders, no shortcuts. We are committed to transparency and trust, building lasting partnerships that empower your business to grow with confidence.
             </p>
           </div>

@@ -73,13 +73,12 @@ interface PageProps {
 
 export default async function SoftwareDevelopment({ searchParams = {} }: PageProps) {
   const location: LocationData = getLocationFromParams(searchParams)
-  const locationString = location.isDefault ? "nationwide" : `${location.city}, ${location.state}`
 
   return (
     <div className="flex flex-col overflow-hidden">
       <LocalBusinessSchema location={location} />
       <ScrollFadeIn>
-        <Hero locationString={locationString} />
+        <Hero />
         {/* Curved section divider */}
         <section className="clip-top-large-circle relative -left-[15%] h-72 w-[130%] bg-white dark:bg-primary -mt-20 md:-mt-52 z-10"></section>
 

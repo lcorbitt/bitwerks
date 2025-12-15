@@ -1,6 +1,6 @@
 import { Metadata } from "next"
 import { redirect } from "next/navigation"
-import { getCityBySlug, formatLocationString, formatLocationDisplay } from "@/lib/us-cities"
+import { getCityBySlug } from "@/lib/us-cities"
 import { generateLocationMetadata } from "@/lib/seo-utils"
 
 interface PageProps {

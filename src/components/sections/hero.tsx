@@ -3,11 +3,7 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Heading1 } from "../ui/heading"
 
-interface HeroProps {
-  locationString: string
-}
-
-export function Hero({ locationString }: HeroProps) {
+export function Hero() {
   return (
     <section className="relative overflow-hidden pb-32 md:pb-[18rem] w-full h-full">
       {/* Hero background image */}

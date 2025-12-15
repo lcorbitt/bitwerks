@@ -46,7 +46,6 @@ interface PageProps {
 
 export default async function Home({ searchParams = {} }: PageProps) {
   const location: LocationData = getLocationFromParams(searchParams)
-  const locationString = location.isDefault ? "nationwide" : `${location.city}, ${location.state}`
 
   return (
     <>
@@ -56,7 +55,7 @@ export default async function Home({ searchParams = {} }: PageProps) {
       <div className="flex flex-col overflow-hidden">
       <LocalBusinessSchema location={location} />
       <ScrollFadeIn>
-        <Hero locationString={locationString} />
+        <Hero />
       
 
         {/* Curved section divider */}
@@ -64,7 +63,7 @@ export default async function Home({ searchParams = {} }: PageProps) {
 
         <DecorativeCircles className="top-[90rem] lg:top-[40rem]" />
 
-        <Services locationString={locationString} isDefault={location.isDefault} />
+        <Services />
       </ScrollFadeIn>
       {/* Curved section divider */}
       <section className="clip-bottom-large-circle relative -left-[15%] h-72 w-[130%] bg-white dark:bg-primary -mt-20 z-10"></section>
