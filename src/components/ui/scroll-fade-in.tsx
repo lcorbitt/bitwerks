@@ -25,7 +25,7 @@ export function ScrollFadeIn({ children, className = "", delay = 0, useTransform
         }
       },
       {
-        threshold: 0.2,
+        threshold: 0.15,
         rootMargin: "0px 0px -50px 0px",
       }
     )
@@ -45,7 +45,7 @@ export function ScrollFadeIn({ children, className = "", delay = 0, useTransform
   // Note: opacity < 1 temporarily creates a stacking context during animation (800ms)
   // After animation completes (opacity = 1), no stacking context remains
   const animationStyle: React.CSSProperties = {
-    transitionDuration: "1000ms",
+    transitionDuration: "1250ms",
     transitionProperty: useTransform ? "opacity, transform" : "opacity",
     transitionTimingFunction: "ease-out",
     opacity: isVisible ? 1 : 0,

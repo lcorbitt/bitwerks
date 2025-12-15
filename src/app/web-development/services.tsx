@@ -4,6 +4,7 @@ import { ServiceCards } from "@/components/ui/service-cards"
 import { webDevelopmentServices } from "@/components/ui/web-development-cards"
 import dynamic from "next/dynamic"
 import { Suspense } from "react"
+import { ScrollFadeIn } from "@/components/ui/scroll-fade-in"
 
 // Lazy load heavy components
 // const LazyDeviceShowcase = dynamic(() => import("@/components/ui/device-showcase"), {
@@ -82,16 +83,18 @@ export default function Services() {
             </div>
           </div>
         </div>}>
-          <LazyCaseStudy
-            title="Case Study"
-            company="Hodinkee"
-            description="In collaboration with BitWerks, Hodinkee successfully implemented a new design system, improved the user experience of their applications, and developed essential internal tools to enhance operational efficiency."
-            technologies={["React", "Tailwind", "Ruby on Rails", "PostgreSQL"]}
-            imageSrc="/hodinkee-mockup.png"
-            imageAlt="Hodinkee case study"
-            orientation="center"
-            device="mobile"
-          />
+          <ScrollFadeIn>
+            <LazyCaseStudy
+              title="Case Study"
+              company="Hodinkee"
+              description="In collaboration with BitWerks, Hodinkee successfully implemented a new design system, improved the user experience of their applications, and developed essential internal tools to enhance operational efficiency."
+              technologies={["React", "Tailwind", "Ruby on Rails", "PostgreSQL"]}
+              imageSrc="/hodinkee-mockup.png"
+              imageAlt="Hodinkee case study"
+              orientation="center"
+              device="mobile"
+            />
+          </ScrollFadeIn>
         </Suspense>
       </div>
     </section>

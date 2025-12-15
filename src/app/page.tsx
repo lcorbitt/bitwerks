@@ -83,9 +83,7 @@ export default async function Home({ searchParams = {} }: PageProps) {
       <ScrollFadeIn>
         <Testimonials testimonials={sampleTestimonials} />
       </ScrollFadeIn>
-      <ScrollFadeIn>
-        <CTA />
-      </ScrollFadeIn>
+      <CTA />
     </div>
     </>
   )

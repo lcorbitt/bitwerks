@@ -6,11 +6,10 @@ import { Button } from "@/components/ui/button"
 import { Heading1 } from "@/components/ui/heading"
 
 interface HeroProps {
-  locationString: string
   location?: string
 }
 
-export function Hero({ locationString, location }: HeroProps) {
+export function Hero({ location }: HeroProps) {
   return (
     <section className="relative overflow-hidden pb-32 md:pb-64 w-full h-full bg-light dark:bg-tertiary">
       <div className="container relative z-20">
