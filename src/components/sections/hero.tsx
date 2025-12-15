@@ -9,7 +9,7 @@ interface HeroProps {
 
 export function Hero({ locationString }: HeroProps) {
   return (
-    <section className="relative overflow-hidden pb-32 md:pb-[18rem] w-full h-full animate-fade-in">
+    <section className="relative overflow-hidden pb-32 md:pb-[18rem] w-full h-full">
       {/* Hero background image */}
       <div className="absolute inset-0 w-full h-full z-0">
         <Image
@@ -67,6 +67,7 @@ export function Hero({ locationString }: HeroProps) {
                 asChild
                 variant="brand"
                 size="lg"
+                className="bg-brand"
               >
                 <Link href="/contact">Start Your Project</Link>
               </Button>

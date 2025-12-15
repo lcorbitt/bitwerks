@@ -2,7 +2,6 @@ import { Card } from "@/components/ui/card"
 import { Code, Laptop, Users } from "lucide-react";
 import { Heading2 } from "@/components/ui/heading";
 import { Button } from "../ui/button";
-import { DecorativeCircles } from "../ui/decorative-circles";
 interface ServicesProps {
   locationString: string
   isDefault: boolean

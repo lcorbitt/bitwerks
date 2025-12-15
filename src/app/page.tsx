@@ -10,6 +10,7 @@ import { Testimonials } from "@/components/ui/testimonials"
 import { CTA } from "@/components/sections/cta"
 import { sampleTestimonials } from "@/lib/testimonials-data"
 import { DecorativeCircles } from "@/components/ui/decorative-circles"
+import { ScrollFadeIn } from "@/components/ui/scroll-fade-in"
 
 export const metadata: Metadata = {
   title: "BitWerks | Custom Web Development & Software Solutions",
@@ -54,24 +55,37 @@ export default async function Home({ searchParams = {} }: PageProps) {
       
       <div className="flex flex-col overflow-hidden">
       <LocalBusinessSchema location={location} />
-      <Hero locationString={locationString} />
+      <ScrollFadeIn>
+        <Hero locationString={locationString} />
+      
 
-      {/* Curved section divider */}
-      <section className="clip-top-large-circle relative -left-[15%] h-72 w-[130%] bg-white dark:bg-primary -mt-20 md:-mt-52 z-20"></section>
+        {/* Curved section divider */}
+        <section className="clip-top-large-circle relative -left-[15%] h-72 w-[130%] bg-white dark:bg-primary -mt-20 md:-mt-52 z-20"></section>
 
-      <DecorativeCircles className="top-[90rem] lg:top-[40rem]" />
+        <DecorativeCircles className="top-[90rem] lg:top-[40rem]" />
 
-      <Services locationString={locationString} isDefault={location.isDefault} />
-
+        <Services locationString={locationString} isDefault={location.isDefault} />
+      </ScrollFadeIn>
       {/* Curved section divider */}
       <section className="clip-bottom-large-circle relative -left-[15%] h-72 w-[130%] bg-white dark:bg-primary -mt-20 z-10"></section>
       
-      <TechMarqueeSection />
-      <Partners />
-      <Process />
+      {/* <ScrollFadeIn> */}
+        <TechMarqueeSection />
+      {/* </ScrollFadeIn> */}
+
+      <ScrollFadeIn>
+        <Partners />
+      </ScrollFadeIn>
+      <ScrollFadeIn>
+        <Process />
+      </ScrollFadeIn>
       <DecorativeCircles inverted className="bottom-48" />
-      <Testimonials testimonials={sampleTestimonials} />
-      <CTA />
+      <ScrollFadeIn>
+        <Testimonials testimonials={sampleTestimonials} />
+      </ScrollFadeIn>
+      <ScrollFadeIn>
+        <CTA />
+      </ScrollFadeIn>
     </div>
     </>
   )
