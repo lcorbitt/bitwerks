@@ -1,4 +1,5 @@
 import { Heading2 } from "@/components/ui/heading"
+import { ScrollFadeIn } from "@/components/ui/scroll-fade-in"
 import { ServiceCards } from "@/components/ui/service-cards"
 import { whiteLabelServices } from "@/components/ui/white-label-cards"
 import dynamic from "next/dynamic"
@@ -96,15 +97,17 @@ export default function Services() {
             </div>
           </div>
         </div>}>
-          <LazyCaseStudy
-            title="Case Study"
-            company="Beyond Blue Media"
-             description="By partnering with BitWerks for white label development, Beyond Blue Media successfully delivered multiple custom websites for their clients, significantly improving their client retention and expanding their service offerings to drive business growth."
-            technologies={["Web Design & Development", "WordPress", "Oxygen", "SEO Optimization"]}
-            imageSrc="/beyond-blue-mockup.png"
-            imageAlt="Digital Marketing Agency case study - white label development partnership"
-            device="desktop"
-          />
+          <ScrollFadeIn>
+            <LazyCaseStudy
+              title="Case Study"
+              company="Beyond Blue Media"
+              description="By partnering with BitWerks for white label development, Beyond Blue Media successfully delivered multiple custom websites for their clients, significantly improving their client retention and expanding their service offerings to drive business growth."
+              technologies={["Web Design & Development", "WordPress", "Oxygen", "SEO Optimization"]}
+              imageSrc="/beyond-blue-mockup.png"
+              imageAlt="Digital Marketing Agency case study - white label development partnership"
+              device="desktop"
+            />
+          </ScrollFadeIn>
         </Suspense>
       </div>
     </section>
