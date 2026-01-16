@@ -9,7 +9,7 @@ export function Hero() {
       {/* Hero background image */}
       <div className="absolute inset-0 w-full h-full z-0">
         <Image
-          src="/mockup-background.png"
+          src="/hero-background.png"
           alt="Hero background"
           fill
           priority

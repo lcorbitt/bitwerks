@@ -50,7 +50,7 @@ export default async function Home({ searchParams = {} }: PageProps) {
   return (
     <>
       {/* Resource hints for critical assets */}
-      <link rel="preload" href="/mockup-background.png" as="image" type="image/png" />
+      <link rel="preload" href="/hero-background.png" as="image" type="image/png" />
       
       <div className="flex flex-col overflow-hidden">
       <LocalBusinessSchema location={location} />
