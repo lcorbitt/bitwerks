@@ -56,7 +56,7 @@ export function Hero() {
               Web Design & Development • Software Development<span className="hidden lg:inline"> • White Label Partnerships</span>
             </p>
             <p className="mb-8 text-base text-black dark:text-white md:text-lg mx-auto md:mx-0 max-w-[16rem] md:max-w-xl relative z-10">
-              A digital agency building <span className="text-brand">beautiful, high-performing</span> digital solutions to power your business.
+              Building <span className="text-brand">beautiful, high-performing</span> digital solutions to power your business.
             </p>
             <div className="flex gap-4 justify-center lg:justify-start relative z-10">
               <Button
