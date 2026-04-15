@@ -5,11 +5,6 @@ import { notFound } from "next/navigation"
 import { Button } from "@/components/ui/button"
 
 const SERVICE_PAGES: Record<string, { title: string; description: string }> = {
-  "strategy-consulting": {
-    title: "Strategy & Consulting",
-    description:
-      "Discovery, roadmaps, and technical planning so your product and platform investments align with business outcomes.",
-  },
   "seo-growth": {
     title: "SEO & Growth",
     description:
