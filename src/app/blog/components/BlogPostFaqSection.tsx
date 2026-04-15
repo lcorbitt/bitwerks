@@ -17,7 +17,7 @@ export const BlogPostFaqSection = ({ items }: BlogPostFaqSectionProps) => {
   const defaultOpenValues = items.map((_, index) => `faq-${index}`)
 
   return (
-    <aside className="mt-16 md:mt-20 border-t border-black/10 pt-16" aria-labelledby="blog-faq-heading">
+    <aside className="mt-16 md:mt-20 border-t border-black/10 dark:border-white/10 pt-16" aria-labelledby="blog-faq-heading">
       <h2
         id="blog-faq-heading"
         className="text-2xl font-semibold tracking-tight text-foreground md:text-3xl"
