@@ -1,85 +1,59 @@
 import type { Metadata } from "next"
-import Link from "next/link"
 
+import { BlogIndexHero } from "@/app/blog/components/BlogIndexHero"
+import { BlogPostGridCard } from "@/app/blog/components/BlogPostGridCard"
 import { listPublishedPostsPublic } from "@/lib/blog/queries-public"
-import type { BlogPostWithImages } from "@/types/blog"
 
 export const metadata: Metadata = {
   title: "Blog",
-  description: "Articles and updates from Your Company.",
-}
-
-const listCardImageUrl = (post: BlogPostWithImages): string | null => {
-  const cover = post.cover_image_url?.trim()
-  if (cover) return cover
-  const og = post.og_image_url?.trim()
-  if (og) return og
-  return null
-}
-
-const listCardImageAlt = (post: BlogPostWithImages, imageUrl: string | null): string => {
-  if (!imageUrl) return ""
-  const fromAttachment = post.images?.find((i) => i.public_url === imageUrl)?.alt?.trim()
-  if (fromAttachment) return fromAttachment
-  return `${post.title} — cover`
+  description: "Articles on web development, software delivery, and how we build at BitWerks.",
 }
 
 export default async function BlogIndexPage() {
   const posts = await listPublishedPostsPublic()
+  const [featured, ...rest] = posts
 
   return (
-    <div className="container py-16 md:py-24">
-      <div className="mx-auto max-w-3xl">
-        <h1 className="text-3xl md:text-4xl font-semibold tracking-tight">Blog</h1>
-        <p className="mt-3 text-muted-foreground">Thoughts, guides, and updates. Swap this copy in code.</p>
+    <div className="relative overflow-hidden">
+      <div
+        className="pointer-events-none absolute inset-x-0 top-0 h-[min(42rem,85vh)] bg-gradient-to-b from-brand/[0.07] via-transparent to-transparent dark:from-brand/10"
+        aria-hidden
+      />
 
-        <div className="mt-10 grid gap-6">
-          {posts.map((post) => {
-            const thumbUrl = listCardImageUrl(post)
-            const thumbAlt = listCardImageAlt(post, thumbUrl)
+      <div className="relative mx-auto max-w-6xl px-4 pb-20 sm:px-6 md:pb-28">
+        {featured ? (
+          <div className="mt-12 md:mt-16">
+            <BlogIndexHero post={featured} />
+          </div>
+        ) : null}
 
-            return (
-              <Link
-                key={post.id}
-                href={`/blog/${post.slug}`}
-                className="block overflow-hidden rounded-2xl border bg-white/50 transition-colors hover:bg-white dark:bg-black/20 dark:hover:bg-black/30"
-              >
-                <div className="flex flex-col gap-0 sm:flex-row sm:items-stretch">
-                  {thumbUrl ? (
-                    <div className="relative aspect-[16/10] w-full shrink-0 overflow-hidden bg-muted/40 sm:aspect-auto sm:min-h-[9rem] sm:w-44 sm:self-stretch md:w-52">
-                      <img
-                        src={thumbUrl}
-                        alt={thumbAlt}
-                        className="h-full w-full object-cover sm:absolute sm:inset-0 sm:h-full sm:w-full"
-                        loading="lazy"
-                        decoding="async"
-                      />
-                    </div>
-                  ) : null}
-                  <div className="flex flex-1 flex-col justify-between gap-4 p-6 sm:min-w-0">
-                    <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
-                      <div className="min-w-0">
-                        <h2 className="text-xl font-semibold">{post.title}</h2>
-                        {post.excerpt ? <p className="mt-2 text-muted-foreground">{post.excerpt}</p> : null}
-                      </div>
-                      <span className="shrink-0 text-sm text-muted-foreground sm:pt-0.5">
-                        {post.published_at ? new Date(post.published_at).toLocaleDateString() : ""}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </Link>
-            )
-          })}
-
-          {posts.length === 0 ? (
-            <div className="rounded-2xl border bg-white/50 p-6 text-muted-foreground dark:bg-black/20">
-              No published posts yet.
+        {rest.length > 0 ? (
+          <section className="mt-16 md:mt-24" aria-labelledby="blog-more-heading">
+            <div className="mb-10 flex flex-col items-start justify-between gap-4 border-b border-border/50 pb-6 sm:flex-row sm:items-end">
+              <div>
+                <h2 id="blog-more-heading" className="text-xl font-semibold tracking-tight text-foreground md:text-2xl">
+                  More articles
+                </h2>
+                <p className="mt-1 text-sm text-muted-foreground">Browse the archive, newest first.</p>
+              </div>
             </div>
-          ) : null}
-        </div>
+            <ul className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-10">
+              {rest.map((post) => (
+                <li key={post.id}>
+                  <BlogPostGridCard post={post} />
+                </li>
+              ))}
+            </ul>
+          </section>
+        ) : null}
+
+        {!featured ? (
+          <div className="mx-auto mt-16 max-w-lg rounded-2xl border border-dashed border-border/70 bg-muted/20 px-8 py-14 text-center">
+            <p className="text-lg font-medium text-foreground">No published posts yet</p>
+            <p className="mt-2 text-sm text-muted-foreground">Check back soon for guides and updates from the team.</p>
+          </div>
+        ) : null}
       </div>
     </div>
   )
 }
-
