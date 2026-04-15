@@ -40,8 +40,10 @@ export const BlogLayerEditor = ({ post, onPostChange }: BlogLayerEditorProps) =>
   const [faqItems, setFaqItems] = React.useState<BlogFaqPair[]>(() => [...post.faq_schema])
 
   const [isSaving, setIsSaving] = React.useState(false)
-  const [coverUploading, setCoverUploading] = React.useState(false)
-  const [errorMessage, setErrorMessage] = React.useState<string | null>(null)
+  const [saveError, setSaveError] = React.useState<string | null>(null)
+  type CoverOp = "idle" | "uploading" | "removing"
+  const [coverOp, setCoverOp] = React.useState<CoverOp>("idle")
+  const [coverError, setCoverError] = React.useState<string | null>(null)
 
   const lastSyncedPostIdRef = React.useRef<string | null>(null)
 
@@ -61,12 +63,15 @@ export const BlogLayerEditor = ({ post, onPostChange }: BlogLayerEditorProps) =>
       setKeywordsInput(listToInput(post.seo_keywords))
       setTagsInput(listToInput(post.tags))
       setFaqItems([...post.faq_schema])
+      setSaveError(null)
+      setCoverError(null)
+      setCoverOp("idle")
     }
   }, [post])
 
   const onSave = async () => {
     setIsSaving(true)
-    setErrorMessage(null)
+    setSaveError(null)
     try {
       const saved = await savePostAction({
         postId: post.id,
@@ -88,17 +93,18 @@ export const BlogLayerEditor = ({ post, onPostChange }: BlogLayerEditorProps) =>
       setContentDocument(saved.content_document ?? getEmptyBlogDocument())
     } catch (error) {
       const message = error instanceof Error ? error.message : "Save failed."
-      setErrorMessage(message)
+      setSaveError(message)
     } finally {
       setIsSaving(false)
     }
   }
 
-  const onCoverFile = async (files: FileList | null) => {
-    const file = files?.[0]
+  const onCoverInputChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0]
+    e.target.value = ""
     if (!file) return
-    setCoverUploading(true)
-    setErrorMessage(null)
+    setCoverOp("uploading")
+    setCoverError(null)
     try {
       const formData = new FormData()
       formData.set("postId", post.id)
@@ -106,10 +112,10 @@ export const BlogLayerEditor = ({ post, onPostChange }: BlogLayerEditorProps) =>
       const nextPost = await uploadBlogCoverImageAction(formData)
       onPostChange(nextPost)
     } catch (error) {
-      const message = error instanceof Error ? error.message : "Cover upload failed."
-      setErrorMessage(message)
+      const message = error instanceof Error ? error.message : "Cover upload failed. Try again or use a smaller file."
+      setCoverError(message)
     } finally {
-      setCoverUploading(false)
+      setCoverOp("idle")
     }
   }
 
@@ -186,43 +192,84 @@ export const BlogLayerEditor = ({ post, onPostChange }: BlogLayerEditorProps) =>
           the editor (Insert image).
         </p>
         <div className="flex flex-wrap items-center gap-4">
-          {post.cover_image_url ? (
-            <BlogAttachmentThumbnail
-              src={post.cover_image_url}
-              alt="Cover preview"
-              size="md"
-              className="ring-2 ring-brand/30"
-            />
-          ) : (
-            <div
-              className="flex h-16 w-24 shrink-0 items-center justify-center rounded-lg border border-dashed text-[10px] text-muted-foreground"
-              aria-hidden
-            >
-              No cover
-            </div>
-          )}
+          <div className="relative inline-block shrink-0">
+            {post.cover_image_url ? (
+              <BlogAttachmentThumbnail
+                src={post.cover_image_url}
+                alt="Cover preview"
+                size="md"
+                className={`ring-2 ring-brand/30 ${coverOp !== "idle" ? "opacity-60" : ""}`}
+              />
+            ) : (
+              <div
+                className={`flex h-16 w-24 shrink-0 items-center justify-center rounded-lg border border-dashed text-[10px] text-muted-foreground ${coverOp !== "idle" ? "opacity-60" : ""}`}
+                aria-hidden
+              >
+                No cover
+              </div>
+            )}
+            {coverOp !== "idle" ? (
+              <div
+                className="absolute inset-0 flex items-center justify-center rounded-lg bg-background/70 text-[10px] font-medium text-foreground"
+                aria-live="polite"
+              >
+                {coverOp === "uploading" ? "Uploading…" : "Removing…"}
+              </div>
+            ) : null}
+          </div>
           <div className="flex min-w-0 flex-1 flex-col gap-2">
-            <label className="w-fit cursor-pointer text-xs font-medium text-brand underline underline-offset-4">
-              {coverUploading ? "Uploading…" : post.cover_image_url ? "Replace cover image…" : "Choose cover image…"}
+            <label
+              className={`w-fit text-xs font-medium underline underline-offset-4 ${coverOp !== "idle" ? "cursor-not-allowed text-muted-foreground no-underline" : "cursor-pointer text-brand"}`}
+            >
+              {coverOp === "uploading"
+                ? "Uploading…"
+                : post.cover_image_url
+                  ? "Replace cover image…"
+                  : "Choose cover image…"}
               <input
                 className="sr-only"
                 type="file"
                 accept="image/*"
-                disabled={coverUploading}
-                onChange={(e) => onCoverFile(e.target.files)}
+                disabled={coverOp !== "idle"}
+                onChange={onCoverInputChange}
               />
             </label>
             <button
               type="button"
               className="h-9 w-fit rounded-lg border bg-background px-3 text-xs disabled:opacity-50"
-              disabled={!post.cover_image_url || coverUploading}
+              disabled={!post.cover_image_url || coverOp !== "idle"}
               onClick={async () => {
-                const nextPost = await clearBlogCoverImageAction({ postId: post.id })
-                onPostChange(nextPost)
+                setCoverOp("removing")
+                setCoverError(null)
+                try {
+                  const nextPost = await clearBlogCoverImageAction({ postId: post.id })
+                  onPostChange(nextPost)
+                } catch (error) {
+                  const message =
+                    error instanceof Error ? error.message : "Could not remove the cover image. Try again."
+                  setCoverError(message)
+                } finally {
+                  setCoverOp("idle")
+                }
               }}
             >
               Remove cover
             </button>
+            {coverOp === "uploading" ? (
+              <p className="text-xs text-muted-foreground" aria-live="polite">
+                Uploading your cover image. Keep this tab open until it finishes.
+              </p>
+            ) : null}
+            {coverOp === "removing" ? (
+              <p className="text-xs text-muted-foreground" aria-live="polite">
+                Removing the cover image from storage and this post.
+              </p>
+            ) : null}
+            {coverError ? (
+              <div className="rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-xs text-red-800 dark:border-red-900/60 dark:bg-red-950/40 dark:text-red-200" role="alert">
+                {coverError}
+              </div>
+            ) : null}
           </div>
         </div>
       </div>
@@ -253,7 +300,11 @@ export const BlogLayerEditor = ({ post, onPostChange }: BlogLayerEditorProps) =>
         />
       </div>
 
-      {errorMessage ? <div className="text-sm text-red-600">{errorMessage}</div> : null}
+      {saveError ? (
+        <div className="rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-800 dark:border-red-900/60 dark:bg-red-950/40 dark:text-red-200" role="alert">
+          {saveError}
+        </div>
+      ) : null}
     </div>
   )
 }
