@@ -73,11 +73,11 @@ export const navigationItems: NavigationItem[] = [
   //   href: "/pricing",
   //   type: "link"
   // },
-  {
-    title: "ABOUT",
-    href: "/about",
-    type: "link"
-  },
+  // {
+  //   title: "ABOUT",
+  //   href: "/about",
+  //   type: "link"
+  // },
   {
     title: "BLOG",
     href: "/blog",

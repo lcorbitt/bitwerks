@@ -71,13 +71,14 @@ export function Navbar() {
               <div key={item.title} className="relative group">
                 {item.type === 'dropdown' ? (
                   <>
-                    <button 
-                      className={`font-bold hover:text-brand focus:text-brand transition-colors cursor-default ${isServicesActive() ? 'text-brand' : ''}`}
+                    <Link 
+                      href={item.href}
+                      className={`font-bold hover:text-brand focus:text-brand transition-colors cursor-pointer ${isServicesActive() ? 'text-brand' : ''}`}
                       onMouseEnter={() => setIsServicesOpen(true)}
                       onMouseLeave={() => setIsServicesOpen(false)}
                     >
                       {item.title}
-                    </button>
+                    </Link>
                     <div 
                       className={`absolute top-full left-1/2 z-50 mt-2 w-[min(42rem,calc(100vw-2rem))] max-h-[min(70vh,28rem)] -translate-x-1/2 overflow-y-auto bg-white dark:bg-tertiary rounded-lg shadow-lg border border-gray-200 dark:border-[#1f1f1f]/70 transition-all duration-200 ${isServicesOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}
                       onMouseEnter={() => setIsServicesOpen(true)}

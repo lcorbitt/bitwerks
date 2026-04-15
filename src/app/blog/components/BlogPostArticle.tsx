@@ -2,6 +2,9 @@ import Link from "next/link"
 
 import type { BlogPostWithImages } from "@/types/blog"
 
+import { faqAnswerMarkdownToSafeHtml } from "@/lib/blog/faq-answer"
+import { sanitizeBlogHtml } from "@/lib/blog/sanitize"
+
 import { BlogDocument } from "./BlogDocument"
 
 interface BlogPostArticleProps {
@@ -86,6 +89,28 @@ export const BlogPostArticle = ({ post, variant = "public" }: BlogPostArticlePro
             </header>
 
             <BlogDocument html={post.content_html} />
+
+            {post.faq_schema.length ? (
+              <section className="mt-14 border-t border-border/40 pt-12" aria-labelledby="blog-faq-heading">
+                <h2 id="blog-faq-heading" className="text-2xl font-semibold tracking-tight">
+                  FAQ
+                </h2>
+                <dl className="mt-8 space-y-8">
+                  {post.faq_schema.map((item, index) => (
+                    <div key={`${item.question}-${index}`}>
+                      <dt className="text-base font-medium text-foreground">{item.question}</dt>
+                      <dd className="mt-2 text-muted-foreground prose prose-neutral max-w-none dark:prose-invert prose-p:my-0 prose-a:text-brand prose-a:underline-offset-4">
+                        <p
+                          dangerouslySetInnerHTML={{
+                            __html: sanitizeBlogHtml(faqAnswerMarkdownToSafeHtml(item.answer)),
+                          }}
+                        />
+                      </dd>
+                    </div>
+                  ))}
+                </dl>
+              </section>
+            ) : null}
           </div>
         </div>
       </article>

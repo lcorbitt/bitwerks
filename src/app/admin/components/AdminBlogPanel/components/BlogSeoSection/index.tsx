@@ -141,7 +141,8 @@ export const BlogSeoSection = ({
           </button>
         </div>
         <p className="text-xs text-muted-foreground">
-          Each pair becomes FAQ structured data. Questions and answers should match copy users see on the page.
+          Each pair becomes FAQ structured data and the FAQ block on the public post. Use the hint beside each Answer field
+          for manual links (no editor button).
         </p>
         <div className="grid gap-3">
           {faqItems.map((item, index) => (
@@ -161,11 +162,24 @@ export const BlogSeoSection = ({
                 />
               </label>
               <label className="grid gap-1">
-                <span className="text-xs font-medium">Answer</span>
+                <span className="flex flex-wrap items-baseline justify-between gap-x-2 gap-y-1 text-xs">
+                  <span className="font-medium">Answer</span>
+                  <span className="max-w-full font-normal text-muted-foreground">
+                    Manual link:{" "}
+                    <code className="whitespace-nowrap rounded bg-muted px-1 py-0.5 font-mono text-[0.65rem] text-foreground/90">
+                      [link text](https://…)
+                    </code>{" "}
+                    or{" "}
+                    <code className="whitespace-nowrap rounded bg-muted px-1 py-0.5 font-mono text-[0.65rem] text-foreground/90">
+                      [link text](/page-path)
+                    </code>
+                  </span>
+                </span>
                 <textarea
                   className="min-h-16 rounded-lg border bg-background px-2 py-1.5 text-sm"
                   value={item.answer}
                   onChange={(e) => updateFaq(index, { answer: e.target.value })}
+                  placeholder='e.g. See [our contact page](/contact) or [this guide](https://example.com).'
                 />
               </label>
             </div>

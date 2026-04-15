@@ -9,13 +9,13 @@ export function Footer() {
         <div className="container pb-4 pt-12">
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
             <div className="space-y-4 text-left">
-              <h3 className="text-lg font-semibold"><span className="text-brand">Bit</span>Werks</h3>
+              <h3 className="text-lg font-bold"><span className="text-brand">Bit</span>Werks</h3>
               <p className="text-sm text-muted-foreground dark:text-white/80">
-                Building beautiful and performant digital solutions to power your business.
+                Since 2017, we&apos;ve built software for businesses of all sizes, from early-stage startups to established organizations.
               </p>
             </div>
             <div className="hidden md:block text-left">
-              <h4 className="mb-4 text-sm font-semibold">Company</h4>
+              <h4 className="mb-4 text-sm font-extrabold">Company</h4>
               <ul className="space-y-2 text-sm">
                 <li>
                   <Link href="mailto:bitwerksco@gmail.com" className="text-muted-foreground hover:text-brand dark:text-white/80 dark:hover:text-brand transition-colors duration-300">
@@ -37,8 +37,13 @@ export function Footer() {
             {/* Links and Get in Touch - side by side on mobile */}
             <div className="grid grid-cols-2 gap-8 md:contents">
               <div className="text-left">
-                <h4 className="mb-4 text-sm font-semibold">Links</h4>
+                <h4 className="mb-4 text-sm font-extrabold">Links</h4>
                 <ul className="space-y-2 text-sm">
+                  <li>
+                    <Link href="/" className="text-muted-foreground hover:text-brand dark:text-white/80 dark:hover:text-brand transition-colors duration-300">
+                      Home
+                    </Link>
+                  </li>
                   <li>
                     <Link href="/services/web-development" className="text-muted-foreground hover:text-brand dark:text-white/80 dark:hover:text-brand transition-colors duration-300">
                       Web Development
@@ -64,10 +69,20 @@ export function Footer() {
                       About
                     </Link>
                   </li>
+                  <li>
+                    <Link href="/blog" className="text-muted-foreground hover:text-brand dark:text-white/80 dark:hover:text-brand transition-colors duration-300">
+                      Blog
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/sitemap.xml" className="text-muted-foreground hover:text-brand dark:text-white/80 dark:hover:text-brand transition-colors duration-300">
+                      Sitemap
+                    </Link>
+                  </li>
                 </ul>
               </div>
               <div className="space-y-4 text-left">
-                <h4 className="text-sm font-semibold">Get in Touch</h4>
+                <h4 className="text-sm font-extrabold">Get in Touch</h4>
                 <p className="text-sm text-muted-foreground dark:text-white/80">
                   Ready to discuss your project?
                 </p>
@@ -79,7 +94,7 @@ export function Footer() {
           </div>
           <div className="mt-8 pt-4">
             <p className="text-center text-xs text-muted-foreground dark:text-white/80">
-              © {new Date().getFullYear()} BitWerks. All rights reserved.
+              © 2017 - {new Date().getFullYear()} BitWerks. All rights reserved.
             </p>
           </div>
         </div>

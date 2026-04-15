@@ -1,5 +1,6 @@
 import type { BlogPostWithImages } from "@/types/blog"
 
+import { faqAnswerToStructuredDataPlainText } from "@/lib/blog/faq-answer"
 import { getSiteBaseUrl } from "@/lib/blog/site-base-url"
 
 interface BlogPostJsonLdProps {
@@ -37,7 +38,10 @@ export const BlogPostJsonLd = ({ post }: BlogPostJsonLdProps) => {
       mainEntity: post.faq_schema.map((item) => ({
         "@type": "Question",
         name: item.question,
-        acceptedAnswer: { "@type": "Answer", text: item.answer },
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: faqAnswerToStructuredDataPlainText(item.answer),
+        },
       })),
     })
   }
