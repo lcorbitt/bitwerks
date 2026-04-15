@@ -81,7 +81,7 @@ export const BlogPostArticle = ({ post, variant = "public" }: BlogPostArticlePro
             ) : null}
 
             <header className="mb-10">
-              <h1 className="text-3xl md:text-5xl font-semibold tracking-tight">{post.title}</h1>
+              <h1 className="text-3xl md:text-5xl font-semibold tracking-tight leading-tight">{post.title}</h1>
               <div className="mt-4 text-sm text-muted-foreground">
                 {post.published_at ? new Date(post.published_at).toLocaleDateString() : null}
               </div>
