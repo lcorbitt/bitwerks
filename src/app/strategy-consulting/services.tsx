@@ -31,10 +31,9 @@ export default function Services() {
     <section className="relative z-20 -mt-48 bg-white py-0 dark:bg-black">
       <div className="container pt-0">
         <div className="mx-auto mb-16 max-w-4xl text-center">
-          <Heading2 className="mb-8">From ambiguity to specs your team can ship</Heading2>
+          <Heading2 className="mb-8">Turn ambiguity into shippable specs</Heading2>
           <p className="text-xl text-muted-light dark:text-muted-dark">
-            Technical discovery, traceable requirements, and systems your team can maintain. We connect stakeholders,
-            design, and engineering without generic slide decks.
+            Turn business goals and technical complexity into structured product roadmaps and requirements
           </p>
         </div>
 

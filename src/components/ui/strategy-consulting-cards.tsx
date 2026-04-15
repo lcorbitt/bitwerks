@@ -35,6 +35,6 @@ export const strategyConsultingServices = [
     icon: Milestone,
     title: "Roadmaps and Release Planning",
     description:
-      "Phased slices, dependency order, cut lines for MVP versus later, and backlog inputs sized for engineering leads.",
+      "Phased slices, dependency order, cut lines for MVP versus later, and backlog sizing that fits how your team ships.",
   },
 ]

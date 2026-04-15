@@ -12,7 +12,7 @@ export function FAQSection() {
           <div className="mx-auto mb-16 text-center">
             <Heading2 className="mb-6">Strategy & Consulting FAQs</Heading2>
             <p className="text-lg text-gray-600 dark:text-gray-300">
-              How we run technical discovery, documentation handoffs, and collaboration with your engineering team.
+              Common questions about our strategy and consulting services.
             </p>
           </div>
 
@@ -20,12 +20,12 @@ export function FAQSection() {
             <Accordion type="single" collapsible className="w-full">
               <AccordionItem value="item-1">
                 <AccordionTrigger className="text-lg font-semibold text-gray-900 dark:text-white">
-                  What do we walk away with after a discovery engagement?
+                  What do you get from a discovery engagement?
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-600 dark:text-gray-300">
                   Prioritized backlog slices, written acceptance criteria, architecture or integration notes, content or
-                  CMS modeling where relevant, and UX artifacts tied to measurable behavior. Not a slide deck in a
-                  folder: everything is formatted so your leads can estimate and sequence work.
+                  CMS modeling where relevant, and UX artifacts tied to measurable behavior. Real working materials your
+                  team can use to estimate and sequence web or software work, not a slide deck alone.
                 </AccordionContent>
               </AccordionItem>
 
@@ -68,19 +68,19 @@ export function FAQSection() {
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-600 dark:text-gray-300">
                   Most discovery passes run two to four weeks depending on surface area, number of integrations, and
-                  how much of the stack we need to read. Larger replatforms may sequence multiple sprints with clear
-                  handoff milestones.
+                  how much of the stack we need to read. Larger replatforms may use multiple sprints with clear
+                  checkpoints between phases.
                 </AccordionContent>
               </AccordionItem>
 
               <AccordionItem value="item-6">
                 <AccordionTrigger className="text-lg font-semibold text-gray-900 dark:text-white">
-                  How does this connect to implementation if we hire you to build?
+                  How does this tie into web or software development with BitWerks?
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-600 dark:text-gray-300">
-                  The same artifacts feed estimation and sequencing for build. Acceptance criteria become tickets.
-                  Tokens and components map to the repo. Open risks are tracked with owners. If you bring another
-                  vendor, the documentation is still portable.
+                  The same specs and models feed the build we do next: acceptance criteria become tickets, tokens and
+                  components map to the repo, and risks stay tracked with owners. If another team writes the code, you
+                  still leave with clear requirements and diagrams you can share.
                 </AccordionContent>
               </AccordionItem>
             </Accordion>

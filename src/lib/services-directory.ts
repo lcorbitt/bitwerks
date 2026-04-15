@@ -14,7 +14,7 @@ const blurbs: Partial<Record<string, string>> = {
   "/services/white-label-partnerships":
     "Ship under your brand with a partner who owns delivery, quality, and communication.",
   "/services/strategy-consulting":
-    "Discovery, roadmaps, and technical direction so every build starts with clarity.",
+    "We can help with discovery, roadmaps, and planning for your website or custom software build.",
   "/services/seo-growth":
     "Organic visibility, content structure, and performance tuned for sustainable growth.",
   "/services/ecommerce":

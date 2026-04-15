@@ -59,20 +59,21 @@ const ctaFallback = (
 export const metadata: Metadata = {
   title: "BitWerks | Strategy & Technical Consulting",
   description:
-    "Business logic, technical discovery, content architecture, UX research, and design systems structured for engineering handoff and measurable product decisions.",
+    "Strategy and consulting for websites and custom software: discovery, requirements, UX, content modeling, and roadmaps you can use while we work with you on the build.",
   keywords: [
+    "web development consulting",
+    "software development consulting",
     "product discovery",
     "technical consulting",
     "requirements definition",
     "UX research",
     "content modeling",
-    "design tokens",
-    "software strategy",
+    "web app planning",
   ],
   openGraph: {
     title: "BitWerks | Strategy & Technical Consulting",
     description:
-      "Discovery and specifications that align stakeholders, design, and engineering before you commit build time.",
+      "We can help with discovery and planning for your website or custom software, then carry that work into development with BitWerks.",
   },
 }
 
