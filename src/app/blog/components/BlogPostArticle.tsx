@@ -74,7 +74,7 @@ export const BlogPostArticle = ({ post, variant = "public" }: BlogPostArticlePro
             ) : null}
             {post.excerpt ? (
               <p
-                className="mt-6 max-w-2xl border-l-[3px] border-brand/55 pl-5 text-pretty text-xl font-medium leading-relaxed text-foreground/90 dark:border-brand/50 dark:text-foreground/88 md:mt-8 md:text-2xl md:leading-snug"
+                className="my-8 max-w-2xl border-l-[3px] border-brand/55 pl-5 text-pretty text-xl font-medium leading-relaxed text-foreground/90 dark:border-brand/50 dark:text-foreground/88 md:mt-8 md:text-2xl md:leading-snug"
                 role="doc-subtitle"
               >
                 {post.excerpt}
