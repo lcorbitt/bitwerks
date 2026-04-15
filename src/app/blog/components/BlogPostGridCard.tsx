@@ -17,7 +17,7 @@ export const BlogPostGridCard = ({ post }: BlogPostGridCardProps) => {
   return (
     <Link
       href={href}
-      className="group flex flex-col overflow-hidden rounded-2xl border border-border/60 bg-card shadow-sm ring-1 ring-black/5 transition-all duration-300 hover:-translate-y-1 hover:border-brand/25 hover:shadow-lg dark:border-border/40 dark:bg-card/80 dark:ring-white/10"
+      className="group flex flex-col overflow-hidden rounded-none shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand/25 hover:shadow-lg"
     >
       <div className="relative aspect-[4/3] bg-muted/40">
         {imageUrl ? (
