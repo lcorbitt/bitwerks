@@ -1,0 +1,44 @@
+/**
+ * Editorial image layouts: floats wrap like print; center-wide breaks the flow.
+ * Container uses flow-root so floats are contained at section boundaries.
+ */
+.blogDocument {
+  display: flow-root;
+}
+
+.blogDocument figure[data-blog-attachment-image][data-blog-img-layout="center-wide"] {
+  clear: both;
+  float: none;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto 1.75rem;
+}
+
+.blogDocument figure[data-blog-attachment-image][data-blog-img-layout="float-left"] {
+  float: left;
+  clear: none;
+  width: min(45%, 20rem);
+  max-width: 45%;
+  margin: 0.2rem 1.25rem 1rem 0;
+}
+
+.blogDocument figure[data-blog-attachment-image][data-blog-img-layout="float-right"] {
+  float: right;
+  clear: none;
+  width: min(45%, 20rem);
+  max-width: 45%;
+  margin: 0.2rem 0 1rem 1.25rem;
+}
+
+.blogDocument figure[data-blog-attachment-image] img {
+  width: 100%;
+  height: auto;
+  vertical-align: middle;
+  border-radius: 0.75rem;
+}
+
+/* New sections start below floats (magazine-style column break). */
+.blogDocument :global(h2),
+.blogDocument :global(h3) {
+  clear: both;
+}

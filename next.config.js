@@ -7,6 +7,23 @@ const nextConfig = {
     minimumCacheTTL: 31536000, // 1 year
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+    remotePatterns: [
+      { protocol: "https", hostname: "images.unsplash.com" },
+      { protocol: "https", hostname: "*.supabase.co", pathname: "/storage/v1/object/public/**" },
+      // Local Supabase (`supabase start`) — blog-images and other public buckets
+      {
+        protocol: "http",
+        hostname: "127.0.0.1",
+        port: "54321",
+        pathname: "/storage/v1/object/public/**",
+      },
+      {
+        protocol: "http",
+        hostname: "localhost",
+        port: "54321",
+        pathname: "/storage/v1/object/public/**",
+      },
+    ],
   },
   experimental: {
     optimizeCss: true,

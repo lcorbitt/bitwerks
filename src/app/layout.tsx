@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
-import { Navbar } from "@/components/navbar";
-import { Footer } from "@/components/footer";
+import { Footer } from "@/app/components/Footer";
 import { Toaster } from "sonner";
 import { ThemeProvider } from "@/components/theme-provider";
+import { AdminAwareNavbar } from "@/app/components/AdminAwareNavbar";
 
 const outfit = Outfit({ 
   subsets: ["latin"],
@@ -94,7 +94,7 @@ export default function RootLayout({
       </head>
       <body className={cn(outfit.className, "min-h-screen bg-background antialiased")}>
         <ThemeProvider>
-          <Navbar />
+          <AdminAwareNavbar />
           <main>{children}</main>
           <Footer />
           <Toaster />

@@ -72,6 +72,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.8,
     },
+    ...(
+      [
+        "strategy-consulting",
+        "seo-growth",
+        "ecommerce",
+        "ux-ui-design",
+        "maintenance-support",
+        "migration-modernization",
+      ] as const
+    ).map((slug) => ({
+      url: `${baseUrl}/services/${slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.75,
+    })),
   ]
 
   // Services to generate location pages for

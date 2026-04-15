@@ -9,7 +9,7 @@ export const sampleCaseStudies: CaseStudy[] = [
   {
     id: "clickk",
     company: "Clickk",
-    image: "/clickk-case-study.png",
+    image: "/clickk-website.png",
     alt: "Clickk case study"
   },
   {

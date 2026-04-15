@@ -1,6 +1,4 @@
 import Image from "next/image"
-import Link from "next/link"
-import { LinkWithArrow } from "./link-with-arrow"
 
 interface CaseStudy {
   id: string
@@ -20,10 +18,10 @@ export function CaseStudiesShowcase({ caseStudies, className = "" }: CaseStudies
       {/* Case Study 1 - Top Left */}
       <div className="absolute top-0 left-0 w-80 h-48 rounded-lg overflow-hidden shadow-lg transition-shadow duration-300 z-30 group">
         <Image
-          src={caseStudies[0]?.image || "/placeholder-case-study-1.jpg"}
+          src={caseStudies[0]?.image || "/clickk-website.png"}
           alt={caseStudies[0]?.alt || "Case study 1"}
           fill
-          className="object-cover object-left"
+          className="object-cover object-center"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           quality={75}
           placeholder="blur"
