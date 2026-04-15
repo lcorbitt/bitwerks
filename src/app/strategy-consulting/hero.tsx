@@ -15,10 +15,9 @@ export function Hero() {
             <p className="mb-2 font-normal uppercase tracking-widest text-muted-light dark:text-muted-dark">
               STRATEGY & CONSULTING
             </p>
-            <Heading1 className="relative z-10 mx-auto max-w-3xl lg:mx-0 lg:max-w-none">Product <span className="text-brand">clarity</span></Heading1>
+            <Heading1 className="relative z-10 mx-auto max-w-3xl lg:mx-0 lg:max-w-none mb-6">Product <span className="text-brand">clarity</span></Heading1>
             <p className="relative z-10 mx-auto mb-8 max-w-2xl text-base text-muted-foreground md:text-lg lg:mx-0 lg:max-w-xl">
-              Ground discovery, requirements, and UX in how your stack actually works. Roadmap, content model, and UI
-              patterns align before the first production commit.
+              Using your business goals as the compass, we define future goals, align priorities, and develop actionable roadmaps.
             </p>
             <div className="relative z-10 flex justify-center gap-4 lg:justify-start">
               <Button asChild variant="brand" size="lg">
@@ -29,7 +28,7 @@ export function Hero() {
           <div className="relative hidden items-center justify-end lg:flex">
             <div className="h-auto w-full max-w-[450px]">
               <Image
-                src="/laptop-mock.png"
+                src="/strategy-hero.jpg"
                 alt="Product strategy and technical discovery"
                 width={500}
                 height={500}
