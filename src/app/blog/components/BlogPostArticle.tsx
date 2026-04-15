@@ -6,6 +6,8 @@ import { faqAnswerMarkdownToSafeHtml } from "@/lib/blog/faq-answer"
 import { getPostFeaturedImageUrl } from "@/lib/blog/post-preview-media"
 import { sanitizeBlogHtml } from "@/lib/blog/sanitize"
 
+import { CTA } from "@/components/sections/cta"
+
 import { BlogPostAuthorCard } from "./BlogPostAuthorCard"
 import { BlogDocument } from "./BlogDocument"
 import { BlogPostFaqSection } from "./BlogPostFaqSection"
@@ -33,7 +35,7 @@ export const BlogPostArticle = ({ post, variant = "public" }: BlogPostArticlePro
   const heroAlt = resolveHeroAlt(post, heroUrl)
 
   return (
-    <article className="w-full pb-16 md:pb-24">
+    <article className="w-full">
       <div className="container py-16 md:py-24">
         <div className="mx-auto max-w-3xl">
           <div className="mb-8">
@@ -108,6 +110,7 @@ export const BlogPostArticle = ({ post, variant = "public" }: BlogPostArticlePro
           ) : null}
         </div>
       </div>
+      <CTA />
     </article>
   )
 }
