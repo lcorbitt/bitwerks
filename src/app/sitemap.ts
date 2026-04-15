@@ -1,10 +1,19 @@
 import { MetadataRoute } from "next"
+
+import { listPublishedPostsPublic } from "@/lib/blog/queries-public"
 import { majorUSCities } from "@/lib/us-cities"
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://bitwerks.dev"
-  
-  // Base pages
+
+  let blogPosts: { slug: string; updated_at: string }[] = []
+  try {
+    const posts = await listPublishedPostsPublic()
+    blogPosts = posts.map((p) => ({ slug: p.slug, updated_at: p.updated_at }))
+  } catch {
+    // Build/deploy without Supabase: omit dynamic blog URLs rather than failing the sitemap.
+  }
+
   const routes: MetadataRoute.Sitemap = [
     {
       url: baseUrl,
@@ -31,25 +40,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: `${baseUrl}/blog`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.85,
+    },
+    {
       url: `${baseUrl}/pricing`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/web-development`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/software-development`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/white-label-partnerships`,
+      url: `${baseUrl}/services`,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.9,
@@ -87,21 +90,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       priority: 0.75,
     })),
+    ...blogPosts.map((post) => ({
+      url: `${baseUrl}/blog/${post.slug}`,
+      lastModified: new Date(post.updated_at),
+      changeFrequency: "weekly" as const,
+      priority: 0.7,
+    })),
   ]
 
-  // Services to generate location pages for
   const services = ["web-development", "software-development", "white-label-partnerships"]
-  const redirectServices = ["app-development", "web-design"] // These redirect to main services
+  const redirectServices = ["app-development", "web-design"]
 
-  // Generate location-based pages for each service
   const locationPages: MetadataRoute.Sitemap = []
-  
+
   for (const city of majorUSCities) {
     for (const service of services) {
-      // Priority based on city priority (1 = highest, 3 = lowest)
-      // Higher priority cities get higher sitemap priority
       const priority = city.priority === 1 ? 0.8 : city.priority === 2 ? 0.7 : 0.6
-      
+
       locationPages.push({
         url: `${baseUrl}/services/${service}/${city.slug}/${city.stateSlug}`,
         lastModified: new Date(),
@@ -109,11 +114,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority,
       })
     }
-    
-    // Add redirect service pages (web-design and app-development)
+
     for (const service of redirectServices) {
       const priority = city.priority === 1 ? 0.7 : city.priority === 2 ? 0.6 : 0.5
-      
+
       locationPages.push({
         url: `${baseUrl}/${service}/${city.slug}/${city.stateSlug}`,
         lastModified: new Date(),
@@ -124,4 +128,4 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }
 
   return [...routes, ...locationPages]
-} 
+}

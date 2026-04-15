@@ -79,21 +79,23 @@ export function Navbar() {
                       {item.title}
                     </button>
                     <div 
-                      className={`absolute top-full left-0 mt-2 w-72 max-h-[min(70vh,28rem)] overflow-y-auto bg-white dark:bg-tertiary rounded-lg shadow-lg border border-gray-200 dark:border-[#1f1f1f]/70 transition-all duration-200 z-50 ${isServicesOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}
+                      className={`absolute top-full left-1/2 z-50 mt-2 w-[min(42rem,calc(100vw-2rem))] max-h-[min(70vh,28rem)] -translate-x-1/2 overflow-y-auto bg-white dark:bg-tertiary rounded-lg shadow-lg border border-gray-200 dark:border-[#1f1f1f]/70 transition-all duration-200 ${isServicesOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}
                       onMouseEnter={() => setIsServicesOpen(true)}
                       onMouseLeave={() => setIsServicesOpen(false)}
                     >
                       <div className="p-4">
-                        {item.children?.map((child) => (
-                          <Link
-                            key={child.href}
-                            href={child.href}
-                            className={`block px-3 py-2 text-sm hover:text-brand hover:bg-gray-50 dark:hover:bg-black/30 rounded-md transition-colors ${isActive(child.href) ? 'text-brand bg-gray-50 dark:bg-black/30' : 'text-gray-700 dark:text-gray-300'}`}
-                            onClick={() => setIsServicesOpen(false)}
-                          >
-                            {child.title}
-                          </Link>
-                        ))}
+                        <div className="grid grid-cols-3 gap-x-2 gap-y-1">
+                          {item.children?.map((child) => (
+                            <Link
+                              key={child.href}
+                              href={child.href}
+                              className={`block px-2 py-2 text-sm hover:text-brand hover:bg-gray-50 dark:hover:bg-black/30 rounded-md transition-colors ${isActive(child.href) ? 'text-brand bg-gray-50 dark:bg-black/30' : 'text-gray-700 dark:text-gray-300'}`}
+                              onClick={() => setIsServicesOpen(false)}
+                            >
+                              {child.title}
+                            </Link>
+                          ))}
+                        </div>
                       </div>
                     </div>
                   </>
