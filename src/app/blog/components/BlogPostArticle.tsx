@@ -78,12 +78,6 @@ export const BlogPostArticle = ({ post, variant = "public" }: BlogPostArticlePro
                 {post.excerpt}
               </p>
             ) : null}
-            <p
-              className={`text-sm text-muted-foreground ${post.excerpt ? "mt-4" : post.published_at ? "mt-4" : "mt-6"}`}
-            >
-              <span className="font-medium text-foreground/85">Article written:</span>{" "}
-              <time dateTime={post.created_at}>{formatArticleDateLabel(post.created_at)}</time>
-            </p>
           </header>
 
           <div className={heroUrl ? "mt-6 mb-8" : "mt-6 mb-10"}>
