@@ -8,6 +8,7 @@ import type { BlogFaqPair } from "@/lib/blog/blog-seo"
 import { splitListInput } from "@/lib/blog/blog-seo"
 import type { BlogPostWithImages } from "@/types/blog"
 import { getEmptyBlogDocument } from "@/lib/blog/document"
+import { isBlogEditorDirty } from "@/lib/blog/blog-editor-dirty"
 
 import {
   clearBlogCoverImageAction,
@@ -20,11 +21,12 @@ import { BlogSeoSection } from "../BlogSeoSection"
 interface BlogLayerEditorProps {
   post: BlogPostWithImages
   onPostChange: (post: BlogPostWithImages) => void
+  onDirtyChange?: (dirty: boolean) => void
 }
 
 const listToInput = (values: string[]) => values.join(", ")
 
-export const BlogLayerEditor = ({ post, onPostChange }: BlogLayerEditorProps) => {
+export const BlogLayerEditor = ({ post, onPostChange, onDirtyChange }: BlogLayerEditorProps) => {
   const [title, setTitle] = React.useState(post.title)
   const [slug, setSlug] = React.useState(post.slug)
   const [excerpt, setExcerpt] = React.useState(post.excerpt ?? "")
@@ -68,6 +70,44 @@ export const BlogLayerEditor = ({ post, onPostChange }: BlogLayerEditorProps) =>
       setCoverOp("idle")
     }
   }, [post])
+
+  const isDirty = React.useMemo(
+    () =>
+      isBlogEditorDirty({
+        title,
+        slug,
+        excerpt,
+        status,
+        contentDocument,
+        metaTitle,
+        metaDescription,
+        canonicalUrl,
+        ogImageUrl,
+        keywordsInput,
+        tagsInput,
+        faqItems,
+        post,
+      }),
+    [
+      title,
+      slug,
+      excerpt,
+      status,
+      contentDocument,
+      metaTitle,
+      metaDescription,
+      canonicalUrl,
+      ogImageUrl,
+      keywordsInput,
+      tagsInput,
+      faqItems,
+      post,
+    ]
+  )
+
+  React.useEffect(() => {
+    onDirtyChange?.(isDirty)
+  }, [isDirty, onDirtyChange])
 
   const onSave = async () => {
     setIsSaving(true)

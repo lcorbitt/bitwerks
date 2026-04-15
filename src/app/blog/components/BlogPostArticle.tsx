@@ -3,25 +3,16 @@ import Link from "next/link"
 import type { BlogPostWithImages } from "@/types/blog"
 
 import { faqAnswerMarkdownToSafeHtml } from "@/lib/blog/faq-answer"
+import { getPostFeaturedImageUrl } from "@/lib/blog/post-preview-media"
 import { sanitizeBlogHtml } from "@/lib/blog/sanitize"
 
 import { BlogPostAuthorCard } from "./BlogPostAuthorCard"
 import { BlogDocument } from "./BlogDocument"
+import { BlogPostFaqSection } from "./BlogPostFaqSection"
 
 interface BlogPostArticleProps {
   post: BlogPostWithImages
   variant?: "public" | "admin-preview"
-}
-
-/** Prefer dedicated cover; then SEO image; then first gallery image (sorted). */
-const resolveHeroImageUrl = (post: BlogPostWithImages): string | null => {
-  const cover = post.cover_image_url?.trim()
-  if (cover) return cover
-  const og = post.og_image_url?.trim()
-  if (og) return og
-  const sorted = [...(post.images ?? [])].sort((a, b) => a.sort_order - b.sort_order)
-  const first = sorted[0]?.public_url?.trim()
-  return first || null
 }
 
 const resolveHeroAlt = (post: BlogPostWithImages, url: string | null): string => {
@@ -38,7 +29,7 @@ export const BlogPostArticle = ({ post, variant = "public" }: BlogPostArticlePro
   const isAdminPreview = variant === "admin-preview"
   const backHref = isAdminPreview ? "/admin" : "/blog"
   const backLabel = isAdminPreview ? "← Back to Admin" : "← Back to Blog"
-  const heroUrl = resolveHeroImageUrl(post)
+  const heroUrl = getPostFeaturedImageUrl(post)
   const heroAlt = resolveHeroAlt(post, heroUrl)
 
   return (
@@ -114,25 +105,14 @@ export const BlogPostArticle = ({ post, variant = "public" }: BlogPostArticlePro
           <BlogDocument html={post.content_html} />
 
           {post.faq_schema.length ? (
-            <section className="mt-14 border-t border-border/40 pt-12" aria-labelledby="blog-faq-heading">
-              <h2 id="blog-faq-heading" className="text-2xl font-semibold tracking-tight">
-                FAQ
-              </h2>
-              <dl className="mt-8 space-y-8">
-                {post.faq_schema.map((item, index) => (
-                  <div key={`${item.question}-${index}`}>
-                    <dt className="text-base font-medium text-foreground">{item.question}</dt>
-                    <dd className="mt-2 text-muted-foreground prose prose-neutral max-w-none dark:prose-invert prose-p:my-0 prose-a:text-brand prose-a:underline-offset-4">
-                      <p
-                        dangerouslySetInnerHTML={{
-                          __html: sanitizeBlogHtml(faqAnswerMarkdownToSafeHtml(item.answer)),
-                        }}
-                      />
-                    </dd>
-                  </div>
-                ))}
-              </dl>
-            </section>
+            <div className="mt-16 sm:-mx-5 md:-mx-10 md:mt-20">
+              <BlogPostFaqSection
+                items={post.faq_schema.map((item) => ({
+                  question: item.question,
+                  answerHtml: sanitizeBlogHtml(faqAnswerMarkdownToSafeHtml(item.answer)),
+                }))}
+              />
+            </div>
           ) : null}
         </div>
       </div>

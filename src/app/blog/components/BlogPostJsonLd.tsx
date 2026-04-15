@@ -1,6 +1,7 @@
 import type { BlogPostWithImages } from "@/types/blog"
 
 import { faqAnswerToStructuredDataPlainText } from "@/lib/blog/faq-answer"
+import { getPostFeaturedImageUrl, toAbsoluteMediaUrl } from "@/lib/blog/post-preview-media"
 import { getSiteBaseUrl } from "@/lib/blog/site-base-url"
 
 interface BlogPostJsonLdProps {
@@ -11,7 +12,9 @@ export const BlogPostJsonLd = ({ post }: BlogPostJsonLdProps) => {
   const base = getSiteBaseUrl()
   const url = `${base}/blog/${post.slug}`
   const description = post.meta_description?.trim() || post.excerpt?.trim() || undefined
-  const images = [post.og_image_url, post.cover_image_url].filter((v): v is string => Boolean(v && v.trim()))
+  const featuredRaw = getPostFeaturedImageUrl(post)
+  const featuredAbs = featuredRaw ? toAbsoluteMediaUrl(featuredRaw, base) ?? featuredRaw : null
+  const images = featuredAbs ? [featuredAbs] : []
 
   const blogPosting: Record<string, unknown> = {
     "@type": "BlogPosting",
@@ -25,7 +28,7 @@ export const BlogPostJsonLd = ({ post }: BlogPostJsonLdProps) => {
     publisher: { "@type": "Organization", name: "BitWerks", url: base },
   }
 
-  if (images.length) blogPosting.image = images
+  if (images.length > 0) blogPosting.image = images
   if (post.seo_keywords.length) blogPosting.keywords = post.seo_keywords.join(", ")
   if (post.tags.length) blogPosting.articleSection = post.tags.join(", ")
 

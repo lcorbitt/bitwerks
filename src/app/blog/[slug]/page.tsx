@@ -4,6 +4,7 @@ import { notFound } from "next/navigation"
 import { BlogPostArticle } from "@/app/blog/components/BlogPostArticle"
 import { BlogPostJsonLd } from "@/app/blog/components/BlogPostJsonLd"
 import { getPublishedPostBySlugPublic } from "@/lib/blog/queries-public"
+import { getPostFeaturedImageUrl, toAbsoluteMediaUrl } from "@/lib/blog/post-preview-media"
 import { getSiteBaseUrl } from "@/lib/blog/site-base-url"
 
 interface BlogPostPageProps {
@@ -19,7 +20,8 @@ export const generateMetadata = async ({ params }: BlogPostPageProps): Promise<M
   const title = post.meta_title?.trim() || post.title
   const description =
     post.meta_description?.trim() || post.excerpt?.trim() || `Read "${post.title}".`
-  const ogImage = post.og_image_url?.trim() || post.cover_image_url?.trim() || undefined
+  const ogImageRaw = getPostFeaturedImageUrl(post)
+  const ogImage = ogImageRaw ? toAbsoluteMediaUrl(ogImageRaw, base) ?? ogImageRaw : undefined
 
   return {
     title,

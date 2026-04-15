@@ -6,6 +6,7 @@ import { Footer } from "@/app/components/Footer";
 import { Toaster } from "sonner";
 import { ThemeProvider } from "@/components/theme-provider";
 import { AdminAwareNavbar } from "@/app/components/AdminAwareNavbar";
+import { getSiteBaseUrl } from "@/lib/blog/site-base-url";
 
 const outfit = Outfit({ 
   subsets: ["latin"],
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
     template: "%s | BitWerks",
   },
   description: "Professional grade web and software development tailored to your business needs. Serving businesses nationwide from Denver, CO.",
-  metadataBase: new URL('https://bitwerks.dev'),
+  metadataBase: new URL(getSiteBaseUrl()),
   keywords: [
     "web development",
     "software development",
