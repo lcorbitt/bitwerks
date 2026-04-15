@@ -81,7 +81,7 @@ export const BlogPostAuthorCard = () => {
             <li key={item.href}>
               <Link
                 href={item.href}
-                className="inline-flex rounded-md border border-black/10 bg-transparent px-3 py-1 text-xs font-medium text-foreground transition-colors hover:border-brand/50 hover:text-brand dark:border-black/10 dark:bg-black/5"
+                className="inline-flex rounded-md border border-black/10 bg-transparent px-3 py-1 text-xs font-medium text-foreground transition-colors hover:border-brand/50 hover:text-brand dark:border-white/50 dark:hover:border-orange-500/50"
               >
                 {item.title}
               </Link>

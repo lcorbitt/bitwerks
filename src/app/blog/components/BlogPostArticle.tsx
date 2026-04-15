@@ -104,7 +104,7 @@ export const BlogPostArticle = ({ post, variant = "public" }: BlogPostArticlePro
               <img
                 src={heroUrl}
                 alt={heroAlt}
-                className="block aspect-[16/9] w-full max-h-[min(55vh,520px)] rounded-xl border border-border/30 bg-muted/20 object-cover object-center"
+                className="block aspect-[16/9] w-full max-h-[min(55vh,520px)] rounded-none bg-muted/20 object-cover object-center"
                 fetchPriority={variant === "public" ? "high" : "auto"}
                 decoding="async"
               />
