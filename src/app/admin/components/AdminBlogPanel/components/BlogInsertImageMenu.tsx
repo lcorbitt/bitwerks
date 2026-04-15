@@ -98,7 +98,7 @@ export const BlogInsertImageMenu = ({
       </Button>
       {open ? (
         <div
-          className="absolute left-0 top-full z-50 mt-1 w-[min(calc(100vw-2rem),300px)] rounded-xl border bg-popover p-2 shadow-md"
+          className="absolute left-0 top-full z-50 mt-1 w-[min(calc(100vw-2rem),300px)] rounded-xl border bg-white p-2 shadow-md"
           role="dialog"
           aria-label="Insert or upload an image"
         >
