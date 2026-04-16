@@ -19,7 +19,7 @@ export function NewsletterBanner() {
             className="mx-auto mt-8 max-w-md text-lg text-primary dark:text-white"
             style={{ lineHeight: "1.5" }}
           >
-            Get occasional updates on product launches, insights, and new work.
+            Updates on product launches, insights, and new work.
           </p>
           <div className="mx-auto mt-8 w-full max-w-md">
             <NewsletterSubscribe source="homepage-banner" className="w-full" />
