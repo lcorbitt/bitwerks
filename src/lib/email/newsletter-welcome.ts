@@ -19,6 +19,10 @@ const trimEnv = (value: string | undefined): string | undefined => {
   return t && t.length > 0 ? t : undefined
 }
 
+const BITWERKS_LINKEDIN_URL = "https://www.linkedin.com/company/bitwerks"
+/** Set `BITWERKS_FACEBOOK_URL` if the default page slug does not match your Facebook presence. */
+const BITWERKS_FACEBOOK_URL = trimEnv(process.env.BITWERKS_FACEBOOK_URL) ?? "https://www.facebook.com/bitwerks"
+
 const emailPostImageAlt = (post: BlogPostWithImages): string => {
   const url = getPostListImageUrl(post)
   const fromAttachment = url ? post.images?.find((i) => i.public_url === url)?.alt?.trim() : undefined
@@ -29,6 +33,7 @@ const emailPostImageAlt = (post: BlogPostWithImages): string => {
 const buildWelcomeCopy = (baseUrl: string, latestPost: BlogPostWithImages | null, unsubscribeUrl: string) => {
   const base = baseUrl.replace(/\/$/, "")
   const insightsUrl = `${base}/insights`
+  const privacyUrl = `${base}/privacy-policy`
   const latestUrl = latestPost ? `${base}/insights/${latestPost.slug}` : insightsUrl
   const safeTitle = latestPost ? escapeHtml(latestPost.title) : ""
   const excerpt = latestPost?.excerpt?.trim()
@@ -36,9 +41,14 @@ const buildWelcomeCopy = (baseUrl: string, latestPost: BlogPostWithImages | null
   const listImageUrl = latestPost ? toAbsoluteMediaUrl(getPostListImageUrl(latestPost), base) : null
   const safeListImageAlt = latestPost ? escapeHtml(emailPostImageAlt(latestPost)) : ""
   const logoSrc = `${base}/logo-light.png`
+  const copyrightYear = new Date().getFullYear()
+  const copyrightLine = `© 2017 - ${copyrightYear} BitWerks. All rights reserved.`
+  const unsubscribeNotice =
+    "This promotional message has been sent to you because you are currently subscribed to 'BitWerks: Insights'. To unsubscribe, click here:"
+  const socialLine = `Facebook: ${BITWERKS_FACEBOOK_URL}\nLinkedIn: ${BITWERKS_LINKEDIN_URL}`
 
   const textLines = [
-    "Thanks for subscribing to BitWerks.",
+    "You're in.",
     "",
     "We will email you when we publish new insights.",
     "",
@@ -50,10 +60,13 @@ const buildWelcomeCopy = (baseUrl: string, latestPost: BlogPostWithImages | null
     "",
     "BitWerks",
     "",
-    `You received this email because you subscribed at ${base.replace(/^https?:\/\//, "")}.`,
+    socialLine,
     "",
-    "Unsubscribe:",
-    unsubscribeUrl,
+    `${unsubscribeNotice} ${unsubscribeUrl}`,
+    "",
+    `Privacy policy: ${privacyUrl}`,
+    "",
+    copyrightLine,
   ]
 
   const latestImageRow =
@@ -92,7 +105,7 @@ const buildWelcomeCopy = (baseUrl: string, latestPost: BlogPostWithImages | null
                       : ""
                   }
                   <a href="${latestUrl}" style="display:inline-block;padding:12px 22px;background:${BRAND};color:#ffffff !important;text-decoration:none;border-radius:6px;font-size:15px;font-weight:600;">
-                    Read article
+                    Read
                   </a>
                 </td>
               </tr>
@@ -121,16 +134,16 @@ const buildWelcomeCopy = (baseUrl: string, latestPost: BlogPostWithImages | null
         <td align="center">
           <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="max-width:560px;">
             <tr>
-              <td style="padding:0 4px 20px;">
+              <td align="center" style="padding:0 4px 24px;">
                 <a href="${base}/" style="text-decoration:none;display:inline-block;">
-                  <img src="${logoSrc}" alt="BitWerks" width="132" height="40" style="display:block;height:40px;width:auto;max-width:160px;border:0;" />
+                  <img src="${logoSrc}" alt="BitWerks" width="220" height="67" style="display:block;height:67px;width:auto;max-width:220px;margin:0 auto;border:0;" />
                 </a>
               </td>
             </tr>
             <tr>
               <td style="background:#ffffff;border:1px solid ${BORDER};border-radius:12px;padding:32px 28px 28px;border-top:3px solid ${BRAND};">
                 <h1 style="margin:0 0 14px;font-size:22px;line-height:1.3;font-weight:700;color:${TEXT};letter-spacing:-0.02em;">
-                  Thanks for subscribing
+                  You're in.
                 </h1>
                 <p style="margin:0 0 26px;font-size:15px;line-height:1.6;color:${MUTED};">
                   We will only email you when we publish something new. The full archive is always on the site.
@@ -139,13 +152,31 @@ const buildWelcomeCopy = (baseUrl: string, latestPost: BlogPostWithImages | null
                 <p style="margin:0;font-size:15px;line-height:1.6;color:${MUTED};">
                   <a href="${insightsUrl}" style="color:${ACCENT};font-weight:600;text-decoration:none;">Insights</a>
                   <span style="color:${BORDER};"> · </span>
-                  <a href="mailto:bitwerksco@gmail.com" style="color:${ACCENT};font-weight:600;text-decoration:none;">Reply</a> if you have a question.
                 </p>
               </td>
             </tr>
             <tr>
-              <td style="padding:22px 8px 0;text-align:center;font-size:12px;line-height:1.5;color:${MUTED};">
-                BitWerks · ${escapeHtml(base.replace(/^https?:\/\//, ""))}
+              <td style="padding:26px 8px 0;text-align:center;">
+                <table role="presentation" cellspacing="0" cellpadding="0" align="center" style="margin:0 auto;">
+                  <tr>
+                    <td style="padding:0 8px 0 0;">
+                      <a href="${BITWERKS_FACEBOOK_URL}" style="text-decoration:none;display:inline-block;" aria-label="BitWerks on Facebook">
+                        <span style="display:inline-block;width:44px;height:44px;line-height:44px;border-radius:999px;background:#1877F2;color:#ffffff;font-size:22px;font-weight:700;font-family:Georgia,'Times New Roman',serif;text-align:center;">f</span>
+                      </a>
+                    </td>
+                    <td style="padding:0;">
+                      <a href="${BITWERKS_LINKEDIN_URL}" style="text-decoration:none;display:inline-block;" aria-label="BitWerks on LinkedIn">
+                        <span style="display:inline-block;width:44px;height:44px;line-height:44px;border-radius:999px;background:#0A66C2;color:#ffffff;font-size:13px;font-weight:700;font-family:ui-sans-serif,system-ui,sans-serif;text-align:center;letter-spacing:-0.02em;">in</span>
+                      </a>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding:18px 12px 0;text-align:center;font-size:12px;line-height:1.6;color:${MUTED};">
+                This promotional message has been sent to you because you are currently subscribed to &lsquo;BitWerks: Insights&rsquo;. To unsubscribe, click
+                <a href="${unsubscribeUrl}" style="color:${ACCENT};font-weight:600;text-decoration:underline;">here</a>.
               </td>
             </tr>
             <tr>
@@ -153,6 +184,16 @@ const buildWelcomeCopy = (baseUrl: string, latestPost: BlogPostWithImages | null
                 <a href="${unsubscribeUrl}" style="display:inline-block;padding:10px 18px;border:1px solid ${BORDER};border-radius:999px;background:#ffffff;color:${MUTED} !important;text-decoration:none;font-size:12px;font-weight:600;">
                   Unsubscribe
                 </a>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding:16px 8px 0;text-align:center;font-size:12px;line-height:1.5;">
+                <a href="${privacyUrl}" style="color:${ACCENT};font-weight:600;text-decoration:none;">Privacy policy</a>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding:10px 12px 28px;text-align:center;font-size:11px;line-height:1.5;color:${MUTED};">
+                ${escapeHtml(copyrightLine)}
               </td>
             </tr>
           </table>

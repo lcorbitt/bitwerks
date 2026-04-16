@@ -116,7 +116,7 @@ export const subscribeNewsletterAction = async (formData: FormData): Promise<Sub
     sendNewsletterWelcomeEmail(email, latestPost, unsubscribeToken),
   ])
 
-  return { ok: true, message: "Thanks! We sent a short welcome note to your inbox." }
+  return { ok: true, message: "Subscribed. Thanks for joining." }
 }
 
 export type UnsubscribeNewsletterResult =
