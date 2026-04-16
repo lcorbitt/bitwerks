@@ -20,9 +20,7 @@ export const notifyContactFormInbox = async (data: ContactFormData) => {
   try {
     const to = process.env.CONTACT_FORM_EMAIL?.trim()
     if (!to) {
-      if (process.env.NODE_ENV === "development") {
-        console.warn("[email] CONTACT_FORM_EMAIL is not set; skipping contact notification.")
-      }
+      console.warn("[email] CONTACT_FORM_EMAIL is not set; skipping contact notification.")
       return
     }
 
@@ -69,6 +67,9 @@ export const notifyContactFormInbox = async (data: ContactFormData) => {
     if (!result.ok && !result.skipped) {
       console.error("[email] Contact form notification failed:", result.error)
     }
+    if (!result.ok && result.skipped) {
+      console.warn("[email] Contact form notification skipped (Resend not configured).")
+    }
   } catch (err) {
     console.error("[email] Contact form notification threw:", err)
   }
@@ -81,9 +82,7 @@ export const notifyNewsletterInbox = async (email: string, source?: string) => {
   try {
     const to = process.env.NEWSLETTER_EMAIL?.trim()
     if (!to) {
-      if (process.env.NODE_ENV === "development") {
-        console.warn("[email] NEWSLETTER_EMAIL is not set; skipping newsletter notification.")
-      }
+      console.warn("[email] NEWSLETTER_EMAIL is not set; skipping newsletter notification.")
       return
     }
 
@@ -108,6 +107,9 @@ export const notifyNewsletterInbox = async (email: string, source?: string) => {
 
     if (!result.ok && !result.skipped) {
       console.error("[email] Newsletter notification failed:", result.error)
+    }
+    if (!result.ok && result.skipped) {
+      console.warn("[email] Newsletter inbox notification skipped (Resend not configured).")
     }
   } catch (err) {
     console.error("[email] Newsletter notification threw:", err)

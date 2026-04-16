@@ -16,11 +16,10 @@ export const sendEmail = async (input: SendEmailInput): Promise<SendEmailResult>
   const from = trimEnv(process.env.EMAIL_FROM)
 
   if (!apiKey || !from) {
-    if (process.env.NODE_ENV === "development") {
-      console.warn(
-        "[email] Skipping send: set RESEND_API_KEY and EMAIL_FROM to enable outbound mail.",
-      )
-    }
+    const missing = [!apiKey && "RESEND_API_KEY", !from && "EMAIL_FROM"].filter(Boolean).join(", ")
+    console.warn(
+      `[email] Skipping outbound mail (${missing} not set). Set both in production — including newsletter and contact notifications.`,
+    )
     return { ok: false, skipped: true, error: "Email is not configured." }
   }
 
