@@ -27,10 +27,6 @@ export const CONTACT_FORM = {
     success: "Thank you! We will get back to you soon.",
     error: "Something went wrong. Please try again.",
   },
-  email: {
-    companyFallback: "Not provided",
-    notSelected: "Not selected",
-  },
   step1: {
     nameLabel: "Full name *",
     namePlaceholder: "Your full name",

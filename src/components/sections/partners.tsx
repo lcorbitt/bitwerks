@@ -69,7 +69,7 @@ export function Partners() {
 
         {/* Desktop layout - side by side */}
         <div className="hidden md:flex items-stretch flex-row justify-between gap-8 mb-12">
-          <div className="flex items-start">
+          <div className="flex items-center justify-evenly">
             <div>
               <p className="font-normal tracking-widest mb-2 text-muted-light dark:text-muted-dark">OUR PARTNERS</p>
               <Heading2>Proud to work with</Heading2>

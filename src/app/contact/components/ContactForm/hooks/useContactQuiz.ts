@@ -1,12 +1,12 @@
 "use client"
 
 import * as React from "react"
-import emailjs from "@emailjs/browser"
 import { toast } from "sonner"
+
+import { submitContactAction } from "@/app/actions/contact"
 
 import { CONTACT_FORM } from "../constants"
 import type { ContactFormData } from "../schemas"
-import { getEmailLabelMaps } from "../utils"
 
 const { storage } = CONTACT_FORM
 
@@ -102,30 +102,12 @@ export const useContactQuiz = (totalSteps: number) => {
       setIsSubmitting(true)
       try {
         const dataToSubmit = finalFormData ?? formDataRef.current
-        const maps = getEmailLabelMaps()
+        const result = await submitContactAction(dataToSubmit)
 
-        const emailParams = {
-          from_name: dataToSubmit.name ?? "",
-          from_email: dataToSubmit.email ?? "",
-          company: dataToSubmit.company?.trim() ? dataToSubmit.company : CONTACT_FORM.email.companyFallback,
-          project_type:
-            maps.projectType[dataToSubmit.projectType as string] ?? dataToSubmit.projectType ?? CONTACT_FORM.email.notSelected,
-          project_scope:
-            maps.projectScope[dataToSubmit.projectScope as string] ??
-            dataToSubmit.projectScope ??
-            CONTACT_FORM.email.notSelected,
-          timeline:
-            maps.timeline[dataToSubmit.timeline as string] ?? dataToSubmit.timeline ?? CONTACT_FORM.email.notSelected,
-          budget: maps.budget[dataToSubmit.budget as string] ?? dataToSubmit.budget ?? CONTACT_FORM.email.notSelected,
-          message: dataToSubmit.message ?? "",
+        if (!result.ok) {
+          toast.error(result.error ?? CONTACT_FORM.toasts.error)
+          return
         }
-
-        await emailjs.send(
-          process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "service_w0qm9cn",
-          process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "",
-          emailParams,
-          process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "",
-        )
 
         if (typeof window !== "undefined") {
           localStorage.removeItem(storage.dataKey)

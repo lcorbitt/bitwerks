@@ -34,7 +34,7 @@ export const NewsletterSubscribe = ({
   className = "",
   triggerLabel = "Subscribe to updates",
   title = "Email updates",
-  description = "Occasional notes on web development, product work, and what we’re building — no spam.",
+  description = "Updates on web development, product work, and what we’re building — no spam.",
   triggerClassName,
   triggerVariant = "outline",
   triggerSize,
@@ -57,7 +57,7 @@ export const NewsletterSubscribe = ({
   const form = (
     <form ref={formRef} className="grid w-full gap-3" onSubmit={onSubmit} noValidate>
       <input type="hidden" name="source" value={source} />
-      <div className="flex w-full min-w-0 flex-col gap-2 sm:flex-row sm:items-stretch">
+      <div className="flex w-full min-w-0 flex-col gap-2 sm:flex-row sm:items-center">
         <label htmlFor={`newsletter-email-${source}`} className="sr-only">
           Email address
         </label>
@@ -70,22 +70,13 @@ export const NewsletterSubscribe = ({
           inputMode="email"
           placeholder="you@company.com"
           disabled={isPending}
-          className="min-w-0 flex-1"
+          className="min-w-0 flex-1 !h-auto px-4 py-2 !text-lg font-semibold leading-normal md:!text-lg"
           aria-invalid={state?.error ? true : undefined}
         />
-        <Button type="submit" disabled={isPending} className="shrink-0 sm:w-auto">
+        <Button type="submit" disabled={isPending} className="w-full shrink-0 sm:w-auto">
           {isPending ? "Sending…" : "Subscribe"}
         </Button>
       </div>
-      <div aria-live="polite" className="min-h-[1.25rem] text-sm">
-        {state?.error ? <p className="text-destructive">{state.error}</p> : null}
-        {state?.message ? (
-          <p className="text-green-700 dark:text-green-400">{state.message}</p>
-        ) : null}
-      </div>
-      <p className={cn("text-xs text-muted-foreground", variant === "dialog" ? "" : "dark:text-white/70")}>
-        We use your email only for BitWerks updates. Unsubscribe any time.
-      </p>
     </form>
   )
 

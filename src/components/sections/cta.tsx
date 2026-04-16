@@ -34,14 +34,6 @@ export function CTA({ className = "" }: CTAProps) {
                 <Button variant="brand" asChild size="lg">
                   <Link href="/contact">Get In Touch</Link>
                 </Button>
-                <NewsletterSubscribe
-                  variant="dialog"
-                  source="cta"
-                  triggerLabel="Subscribe for updates"
-                  triggerVariant="outline"
-                  triggerSize="lg"
-                  triggerClassName="border-brand text-brand hover:bg-brand/10 dark:border-brand dark:text-brand"
-                />
               </div>
             </div>
           </div>

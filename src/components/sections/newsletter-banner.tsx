@@ -12,7 +12,7 @@ export function NewsletterBanner() {
         {/* Mobile — same rhythm as Partners (no logo grid) */}
         <div className="mb-12 text-center md:hidden">
           <p className="mb-2 font-normal uppercase tracking-widest text-muted-light dark:text-muted-dark">
-            Newsletter
+            BitWerks Newsletter
           </p>
           <Heading2>Stay in the loop</Heading2>
           <p
@@ -26,22 +26,27 @@ export function NewsletterBanner() {
           </div>
         </div>
 
-        {/* Desktop — matches Partners header row */}
-        <div className="mb-12 hidden flex-row items-stretch justify-between gap-8 md:flex">
-          <div className="flex items-start">
-            <div>
-              <p className="mb-2 font-normal tracking-widest text-muted-light dark:text-muted-dark">NEWSLETTER</p>
-              <Heading2>Stay in the loop</Heading2>
+        {/* Desktop — headline + rule grouped left; copy + form fill remaining width */}
+        <div className="hidden w-full md:block">
+          <div className="flex w-full items-start gap-8 lg:gap-10">
+            <div className="flex shrink-0 items-stretch gap-4 lg:gap-6">
+              <div>
+                <p className="mb-2 font-normal tracking-widest text-muted-light dark:text-muted-dark">NEWSLETTER</p>
+                <Heading2>Stay in the loop</Heading2>
+              </div>
+              <div
+                className="w-px shrink-0 self-stretch bg-black/10 dark:bg-white/20"
+                aria-hidden
+              />
             </div>
-            <div className="mx-4 self-stretch border-l border-black/10 dark:border-white/20" />
-            <div className="flex flex-col items-stretch gap-6 md:ml-8 md:w-1/2">
+            <div className="flex min-w-0 flex-1 flex-col gap-6">
               <p
-                className="px-4 pt-4 text-base text-primary dark:text-white lg:text-lg"
+                className="text-base text-primary dark:text-white lg:text-lg lg:pr-4"
                 style={{ lineHeight: "1.5" }}
               >
-                Occasional notes on web development, product work, and what we&apos;re building — no spam.
+                Updates on what we are building, shipping, and learning.
               </p>
-              <div className="w-full px-4 pb-4">
+              <div className="w-full max-w-xl lg:max-w-2xl">
                 <NewsletterSubscribe source="homepage-banner" className="w-full" />
               </div>
             </div>

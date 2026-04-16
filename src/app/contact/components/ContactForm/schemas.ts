@@ -31,8 +31,10 @@ export const step5Schema = z.object({
     ),
 })
 
-export type ContactFormData = z.infer<typeof step1Schema> &
-  z.infer<typeof step2Schema> &
-  z.infer<typeof step3Schema> &
-  z.infer<typeof step4Schema> &
-  z.infer<typeof step5Schema>
+export const contactFormSchema = step1Schema
+  .merge(step2Schema)
+  .merge(step3Schema)
+  .merge(step4Schema)
+  .merge(step5Schema)
+
+export type ContactFormData = z.infer<typeof contactFormSchema>
