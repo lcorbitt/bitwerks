@@ -35,6 +35,15 @@ export const subscribeNewsletterAction = async (formData: FormData): Promise<Sub
   const source = parsed.data.source
 
   const supabase = createClient()
+
+  const { data: alreadyExists, error: existsRpcError } = await supabase.rpc("newsletter_lead_exists", {
+    p_email: email,
+  })
+
+  if (!existsRpcError && alreadyExists === true) {
+    return { ok: false, error: "You’re already subscribed." }
+  }
+
   const { error } = await supabase.from("newsletter_leads").insert({
     email,
     source: source ?? null,
@@ -42,7 +51,7 @@ export const subscribeNewsletterAction = async (formData: FormData): Promise<Sub
 
   if (error) {
     if (error.code === "23505") {
-      return { ok: true, message: "You’re already subscribed." }
+      return { ok: false, error: "You’re already subscribed." }
     }
     return { ok: false, error: error.message || "Something went wrong. Try again later." }
   }

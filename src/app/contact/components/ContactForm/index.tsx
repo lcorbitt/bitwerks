@@ -4,7 +4,7 @@ import * as React from "react"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import * as z from "zod"
-import { ArrowLeft, ArrowRight, Building, Calendar, Check, DollarSign } from "lucide-react"
+import { ArrowLeft, ArrowRight, Building, Calendar, Check } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -211,7 +211,6 @@ export const ContactForm = () => {
       resolver: zodResolver(step4Schema),
       defaultValues: {
         timeline: formData.timeline,
-        budget: formData.budget,
       },
     })
 
@@ -252,36 +251,6 @@ export const ContactForm = () => {
                     <span className="font-medium">{option.label}</span>
                     <p className="text-sm text-muted-foreground">{option.description}</p>
                   </div>
-                </label>
-              ))}
-            </div>
-          </div>
-          <div>
-            <h3 className="mb-4 flex items-center text-lg font-semibold">
-              <DollarSign className="mr-2 h-5 w-5" />
-              {CONTACT_FORM.step4.budgetHeading}
-            </h3>
-            <div className="space-y-3">
-              {CONTACT_FORM.budgetOptions.map((option) => (
-                <label
-                  key={option.value}
-                  className={`relative flex cursor-pointer space-x-3 rounded-lg border-2 p-3 transition-all hover:shadow-md ${
-                    form.watch("budget") === option.value
-                      ? "border-brand bg-brand/5"
-                      : "border-gray-200 hover:border-brand/50 dark:border-[#1f1f1f]/70"
-                  }`}
-                >
-                  <input type="radio" value={option.value} {...form.register("budget")} className="sr-only" />
-                  <div
-                    className={`flex h-4 w-4 flex-shrink-0 rounded-full border-2 ${
-                      form.watch("budget") === option.value ? "border-brand bg-brand" : "border-gray-300 dark:border-gray-600"
-                    }`}
-                  >
-                    {form.watch("budget") === option.value ? (
-                      <div className="mx-auto mt-0.5 h-2 w-2 rounded-full bg-white" />
-                    ) : null}
-                  </div>
-                  <span className="font-medium">{option.label}</span>
                 </label>
               ))}
             </div>

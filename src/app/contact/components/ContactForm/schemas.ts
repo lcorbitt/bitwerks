@@ -18,7 +18,6 @@ export const step3Schema = z.object({
 
 export const step4Schema = z.object({
   timeline: z.enum(["asap", "1-3months", "3-6months", "6months+", "flexible"]),
-  budget: z.enum(["under-1k", "1k-5k", "5k-10k", "10k+", "discuss"]),
 })
 
 export const step5Schema = z.object({

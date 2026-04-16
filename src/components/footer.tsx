@@ -19,7 +19,7 @@ export function Footer() {
                 </p>
               </div>
               <div className="space-y-3 flex flex-col">
-                <h4 className="text-sm font-extrabold">Subscribe</h4>
+                <h4 className="text-sm font-extrabold">Newsletter</h4>
                 <NewsletterSubscribe source="footer" compact stacked className="w-full" />
               </div>
             </div>

@@ -41,19 +41,18 @@ export const CONTACT_FORM = {
   },
   step4: {
     timelineHeading: "Timeline",
-    budgetHeading: "Budget",
   },
   steps: [
     { title: "About you", description: "Basic contact details so we can respond." },
     { title: "Project type", description: "What kind of work are you considering?" },
     { title: "Scope", description: "New build, existing product, or redesign?" },
-    { title: "Timeline & budget", description: "Rough preferences are fine." },
+    { title: "Timeline", description: "Rough preferences are fine." },
     { title: "Anything else?", description: "Share context that will help us prepare." },
   ],
   projectTypes: [
     { value: "website" as const, label: "Website", description: "Marketing site, landing pages, or content site." },
     { value: "software" as const, label: "Software", description: "Web app, internal tools, or product work." },
-    { value: "white-label" as const, label: "Partnership", description: "You sell; we build under your brand." },
+    { value: "white-label" as const, label: "Partnership", description: "You sell, we build under your brand." },
   ],
   projectScopes: [
     { value: "new" as const, label: "New initiative", description: "Starting from a blank slate." },
@@ -66,13 +65,6 @@ export const CONTACT_FORM = {
     { value: "3-6months" as const, label: "3–6 months", description: "Medium-term roadmap." },
     { value: "6months+" as const, label: "6+ months", description: "Exploratory or long-range." },
     { value: "flexible" as const, label: "Flexible", description: "No fixed deadline yet." },
-  ],
-  budgetOptions: [
-    { value: "under-1k" as const, label: "Under $1,000" },
-    { value: "1k-5k" as const, label: "$1,000 – $5,000" },
-    { value: "5k-10k" as const, label: "$5,000 – $10,000" },
-    { value: "10k+" as const, label: "$10,000+" },
-    { value: "discuss" as const, label: "Prefer to discuss" },
   ],
 } as const
 

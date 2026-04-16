@@ -102,6 +102,17 @@ export const NewsletterSubscribe = ({
           {isPending ? "Sending…" : "Subscribe"}
         </Button>
       </div>
+      {(state?.error ?? state?.message) ? (
+        <p
+          role="status"
+          className={cn(
+            "text-sm",
+            state?.error ? "text-destructive" : "text-muted-foreground dark:text-white/80",
+          )}
+        >
+          {state.error ?? state.message}
+        </p>
+      ) : null}
     </form>
   )
 

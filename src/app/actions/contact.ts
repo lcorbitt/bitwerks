@@ -19,7 +19,6 @@ export const submitContactAction = async (input: unknown): Promise<SubmitContact
       parsed.error.flatten().fieldErrors.projectType?.[0] ??
       parsed.error.flatten().fieldErrors.projectScope?.[0] ??
       parsed.error.flatten().fieldErrors.timeline?.[0] ??
-      parsed.error.flatten().fieldErrors.budget?.[0] ??
       parsed.error.flatten().fieldErrors.message?.[0] ??
       parsed.error.flatten().formErrors[0]
     return { ok: false, error: first ?? "Invalid input." }
@@ -36,7 +35,6 @@ export const submitContactAction = async (input: unknown): Promise<SubmitContact
     project_type: data.projectType,
     project_scope: data.projectScope,
     timeline: data.timeline,
-    budget: data.budget,
     message: data.message.trim(),
   })
 
