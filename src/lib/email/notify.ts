@@ -37,10 +37,14 @@ export const notifyContactFormInbox = async (data: ContactFormData) => {
       "",
       "Message:",
       data.message.trim(),
+      "",
+      `Reply to them: mailto:${encodeURIComponent(data.email.trim().toLowerCase())}`,
     ].join("\n")
 
     const safeName = escapeHtml(data.name.trim())
-    const safeEmail = escapeHtml(data.email.trim().toLowerCase())
+    const contactEmail = data.email.trim().toLowerCase()
+    const safeEmail = escapeHtml(contactEmail)
+    const mailtoHref = `mailto:${encodeURIComponent(contactEmail)}`
     const safeCompany = data.company?.trim() ? escapeHtml(data.company.trim()) : "—"
     const safeMessage = escapeHtml(data.message.trim()).replaceAll("\n", "<br />")
 
@@ -54,6 +58,7 @@ export const notifyContactFormInbox = async (data: ContactFormData) => {
     <strong>Timeline:</strong> ${escapeHtml(labelForTimeline(data.timeline))}</p>
     <h2>Message</h2>
     <p>${safeMessage}</p>
+    <p><a href="${mailtoHref}">Compose email to this contact</a></p>
   `.trim()
 
     const result = await sendEmail({
@@ -61,7 +66,6 @@ export const notifyContactFormInbox = async (data: ContactFormData) => {
       subject: `Contact: ${data.name.trim()}`,
       text,
       html,
-      replyTo: data.email.trim().toLowerCase(),
     })
 
     if (!result.ok && !result.skipped) {
@@ -89,12 +93,21 @@ export const notifyNewsletterInbox = async (email: string, source?: string) => {
     const normalized = email.toLowerCase().trim()
     const sourceLine = source?.trim() ? `Source: ${source.trim()}` : "Source: (not provided)"
 
-    const text = ["New newsletter signup", "", `Email: ${normalized}`, sourceLine].join("\n")
+    const mailtoHref = `mailto:${encodeURIComponent(normalized)}`
+    const text = [
+      "New newsletter signup",
+      "",
+      `Email: ${normalized}`,
+      sourceLine,
+      "",
+      `Reply to them: ${mailtoHref}`,
+    ].join("\n")
 
     const html = `
     <h1>New newsletter signup</h1>
     <p><strong>Email:</strong> ${escapeHtml(normalized)}<br/>
     <strong>Source:</strong> ${source?.trim() ? escapeHtml(source.trim()) : "(not provided)"}</p>
+    <p><a href="${mailtoHref}">Compose email to this address</a></p>
   `.trim()
 
     const result = await sendEmail({
@@ -102,7 +115,6 @@ export const notifyNewsletterInbox = async (email: string, source?: string) => {
       subject: `Newsletter signup: ${normalized}`,
       text,
       html,
-      replyTo: normalized,
     })
 
     if (!result.ok && !result.skipped) {

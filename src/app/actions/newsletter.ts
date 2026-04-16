@@ -1,11 +1,21 @@
 "use server"
 
+import { headers } from "next/headers"
 import { z } from "zod"
 
 import { getLatestPublishedPostPublic } from "@/lib/blog/queries-public"
 import { notifyNewsletterInbox, sendNewsletterWelcomeEmail } from "@/lib/email"
+import { NEWSLETTER_RECAPTCHA_ACTION } from "@/lib/recaptcha/newsletter-action"
+import { verifyRecaptchaV3 } from "@/lib/recaptcha/verify-recaptcha-v3"
 import { createClient } from "@/lib/supabase/server"
 import type { BlogPostWithImages } from "@/types/blog"
+
+const getClientIp = (): string | undefined => {
+  const h = headers()
+  const xff = h.get("x-forwarded-for")
+  if (xff) return xff.split(",")[0]?.trim() || undefined
+  return h.get("x-real-ip")?.trim() || undefined
+}
 
 const subscribeInputSchema = z.object({
   email: z.string().trim().max(254).email("Enter a valid email address."),
@@ -36,6 +46,30 @@ export const subscribeNewsletterAction = async (formData: FormData): Promise<Sub
 
   const email = parsed.data.email.toLowerCase().trim()
   const source = parsed.data.source
+
+  const recaptchaToken = String(formData.get("recaptchaToken") ?? "").trim()
+  const recaptchaSecret = process.env.RECAPTCHA_SECRET_KEY?.trim()
+  const isProduction = process.env.NODE_ENV === "production"
+
+  if (isProduction && !recaptchaSecret) {
+    console.error("[newsletter] RECAPTCHA_SECRET_KEY is required in production.")
+    return { ok: false, error: "Something went wrong. Try again later." }
+  }
+
+  if (recaptchaSecret) {
+    if (!recaptchaToken) {
+      return { ok: false, error: "Could not verify this request. Please refresh and try again." }
+    }
+    const captcha = await verifyRecaptchaV3({
+      token: recaptchaToken,
+      remoteip: getClientIp(),
+      expectedAction: NEWSLETTER_RECAPTCHA_ACTION,
+    })
+    if (!captcha.ok) {
+      console.warn("[newsletter] reCAPTCHA rejected:", captcha.error, captcha.score)
+      return { ok: false, error: "Could not verify you are human. Please try again." }
+    }
+  }
 
   const supabase = createClient()
 

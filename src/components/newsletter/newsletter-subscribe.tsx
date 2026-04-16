@@ -3,6 +3,7 @@
 import * as React from "react"
 
 import { subscribeNewsletterAction, type SubscribeNewsletterResult } from "@/app/actions/newsletter"
+import { getNewsletterRecaptchaToken } from "@/components/newsletter/execute-recaptcha-v3"
 import { Button } from "@/components/ui/button"
 import {
   Dialog,
@@ -54,6 +55,18 @@ export const NewsletterSubscribe = ({
     setState(null)
     const formData = new FormData(event.currentTarget)
     startTransition(async () => {
+      const token = await getNewsletterRecaptchaToken()
+      if (process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY?.trim()) {
+        if (!token) {
+          setState({
+            ok: false,
+            error: "Security check did not load. Please refresh the page and try again.",
+          })
+          return
+        }
+        formData.set("recaptchaToken", token)
+      }
+
       const result = await subscribeNewsletterAction(formData)
       setState(result)
       if (result.ok) formRef.current?.reset()
@@ -111,6 +124,29 @@ export const NewsletterSubscribe = ({
           )}
         >
           {state.error ?? state.message}
+        </p>
+      ) : null}
+      {process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY?.trim() ? (
+        <p className="text-[10px] leading-snug text-muted-foreground dark:text-white/60">
+          This site is protected by reCAPTCHA and the Google{" "}
+          <a
+            href="https://policies.google.com/privacy"
+            target="_blank"
+            rel="noreferrer"
+            className="underline underline-offset-2 hover:text-foreground"
+          >
+            Privacy Policy
+          </a>{" "}
+          and{" "}
+          <a
+            href="https://policies.google.com/terms"
+            target="_blank"
+            rel="noreferrer"
+            className="underline underline-offset-2 hover:text-foreground"
+          >
+            Terms of Service
+          </a>{" "}
+          apply.
         </p>
       ) : null}
     </form>
