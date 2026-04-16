@@ -112,12 +112,21 @@ const buildWelcomeCopy = (baseUrl: string, latestPost: BlogPostWithImages | null
             </table>
           `.trim()
     : `
-            <p style="margin:0 0 20px;font-size:15px;line-height:1.6;color:${MUTED};">
+            <p style="margin:0;font-size:15px;line-height:1.6;color:${MUTED};">
               New stories will appear on the insights page as soon as they go live.
             </p>
-            <a href="${insightsUrl}" style="display:inline-block;padding:12px 22px;background:${BRAND};color:#ffffff !important;text-decoration:none;border-radius:6px;font-size:15px;font-weight:600;">
-              Browse insights
-            </a>
+          `.trim()
+
+  const insightsCtaRow = `
+            <table role="presentation" width="100%" cellspacing="0" cellpadding="0">
+              <tr>
+                <td align="center" style="padding:${latestPost ? "8px 0 0" : "22px 0 0"};">
+                  <a href="${insightsUrl}" style="display:inline-block;padding:12px 26px;background:${BRAND};color:#ffffff !important;text-decoration:none;border-radius:6px;font-size:15px;font-weight:600;">
+                    Browse insights
+                  </a>
+                </td>
+              </tr>
+            </table>
           `.trim()
 
   const html = `
@@ -134,14 +143,16 @@ const buildWelcomeCopy = (baseUrl: string, latestPost: BlogPostWithImages | null
         <td align="center">
           <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="max-width:560px;">
             <tr>
-              <td align="center" style="padding:0 4px 24px;">
-                <a href="${base}/" style="text-decoration:none;display:inline-block;">
-                  <img src="${logoSrc}" alt="BitWerks" width="220" height="67" style="display:block;height:67px;width:auto;max-width:220px;margin:0 auto;border:0;" />
-                </a>
-              </td>
-            </tr>
-            <tr>
-              <td style="background:#ffffff;border:1px solid ${BORDER};border-radius:12px;padding:32px 28px 28px;border-top:3px solid ${BRAND};">
+              <td style="background:#ffffff;border:1px solid ${BORDER};border-radius:12px;padding:28px 28px 24px;border-top:3px solid ${BRAND};">
+                <table role="presentation" width="100%" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td align="center" style="padding:0 0 22px;">
+                      <a href="${base}/" style="text-decoration:none;display:inline-block;">
+                        <img src="${logoSrc}" alt="BitWerks" width="220" height="67" style="display:block;height:67px;width:auto;max-width:220px;margin:0 auto;border:0;" />
+                      </a>
+                    </td>
+                  </tr>
+                </table>
                 <h1 style="margin:0 0 14px;font-size:22px;line-height:1.3;font-weight:700;color:${TEXT};letter-spacing:-0.02em;">
                   You're in.
                 </h1>
@@ -149,10 +160,7 @@ const buildWelcomeCopy = (baseUrl: string, latestPost: BlogPostWithImages | null
                   We will only email you when we publish something new. The full archive is always on the site.
                 </p>
                 ${latestBlock}
-                <p style="margin:0;font-size:15px;line-height:1.6;color:${MUTED};">
-                  <a href="${insightsUrl}" style="color:${ACCENT};font-weight:600;text-decoration:none;">Insights</a>
-                  <span style="color:${BORDER};"> · </span>
-                </p>
+                ${insightsCtaRow}
               </td>
             </tr>
             <tr>
