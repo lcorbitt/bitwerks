@@ -92,7 +92,6 @@ export default function Services() {
               imageSrc="/hodinkee-mockup.png"
               imageAlt="Hodinkee case study"
               orientation="center"
-              device="mobile"
             />
           </ScrollFadeIn>
         </Suspense>

@@ -12,7 +12,6 @@ interface CaseStudyProps {
   imageAlt: string
   orientation?: string
   className?: string
-  device?: "mobile" | "desktop"
   imageClassName?: string
 }
 
@@ -25,7 +24,6 @@ export function CaseStudy({
   imageAlt,
   orientation = "center",
   className = "",
-  device = "desktop",
   imageClassName = "",
 }: CaseStudyProps) {
   return (

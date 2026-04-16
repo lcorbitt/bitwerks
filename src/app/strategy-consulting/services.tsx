@@ -54,13 +54,12 @@ export default function Services() {
           <ScrollFadeIn>
             <LazyCaseStudy
               title="Case study"
-              company="Hodinkee"
-              description="Strategy and delivery aligned: a shared design system, tighter product UX, and internal tooling grounded in how their stack and editorial workflows run day to day."
-              technologies={["React", "Design systems", "Rails", "PostgreSQL"]}
-              imageSrc="/hodinkee-mockup.png"
-              imageAlt="Hodinkee product and design system work"
+              company="Clickk"
+              description="Strategy and delivery aligned: an improved system design, tighter product UX, and internal tooling grounded in how their stack and workflows run day to day."
+              technologies={["System Design", "Software Architecture", "Rust", "Next.js"]}
+              imageSrc="/clickk-mockup.jpg"
+              imageAlt="Clickk product work"
               orientation="center"
-              device="mobile"
             />
           </ScrollFadeIn>
         </Suspense>

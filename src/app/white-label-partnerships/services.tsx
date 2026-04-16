@@ -105,7 +105,6 @@ export default function Services() {
               technologies={["Web Design & Development", "WordPress", "Oxygen", "SEO Optimization"]}
               imageSrc="/beyond-blue-mockup.png"
               imageAlt="Digital Marketing Agency case study - white label development partnership"
-              device="desktop"
             />
           </ScrollFadeIn>
         </Suspense>
