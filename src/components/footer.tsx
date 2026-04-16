@@ -8,14 +8,20 @@ export function Footer() {
       <div className="dark:text-white">
         <div className="container pb-4 pt-12">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
-            <div className="max-md:order-1 space-y-4 text-left">
-              <h3 className="text-lg font-bold">
-                <span className="text-brand">Bit</span>Werks
-              </h3>
-              <p className="text-sm text-muted-foreground dark:text-white/80">
-                Since 2017, we&apos;ve built software for businesses of all sizes, from early-stage startups to
-                established organizations.
-              </p>
+            <div className="max-md:order-1 space-y-6 text-left">
+              <div className="space-y-4">
+                <h3 className="text-lg font-bold">
+                  <span className="text-brand">Bit</span>Werks
+                </h3>
+                <p className="text-sm text-muted-foreground dark:text-white/80">
+                  Since 2017, we&apos;ve built software for businesses of all sizes, from early-stage startups to
+                  established organizations.
+                </p>
+              </div>
+              <div className="space-y-3 flex flex-col">
+                <h4 className="text-sm font-extrabold">Subscribe</h4>
+                <NewsletterSubscribe source="footer" compact stacked className="w-full" />
+              </div>
             </div>
 
             <div className="hidden text-left md:block">
@@ -132,10 +138,6 @@ export function Footer() {
               </div>
             </div>
 
-            <div className="max-md:order-2 border-t border-border/40 pt-8 text-left dark:border-white/10 md:col-span-2 lg:col-span-2 lg:col-start-1 lg:row-start-2">
-              <p className="mb-4 text-sm font-extrabold">Newsletter</p>
-              <NewsletterSubscribe source="footer" className="w-full max-w-2xl" />
-            </div>
           </div>
 
           <div className="mt-8 pt-4">

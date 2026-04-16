@@ -17,6 +17,10 @@ import { cn } from "@/lib/utils"
 
 interface NewsletterSubscribeProps {
   variant?: "inline" | "dialog"
+  /** Tighter typography for footer and other dense layouts */
+  compact?: boolean
+  /** Input above button, both full width (e.g. footer) */
+  stacked?: boolean
   source: string
   className?: string
   triggerLabel?: string
@@ -30,6 +34,8 @@ interface NewsletterSubscribeProps {
 
 export const NewsletterSubscribe = ({
   variant = "inline",
+  compact = false,
+  stacked = false,
   source,
   className = "",
   triggerLabel = "Subscribe to updates",
@@ -55,9 +61,14 @@ export const NewsletterSubscribe = ({
   }
 
   const form = (
-    <form ref={formRef} className="grid w-full gap-3" onSubmit={onSubmit} noValidate>
+    <form ref={formRef} className={cn("w-full flex flex-col", compact ? "gap-2" : "gap-3")} onSubmit={onSubmit} noValidate>
       <input type="hidden" name="source" value={source} />
-      <div className="flex w-full min-w-0 flex-col gap-2 sm:flex-row sm:items-center">
+      <div
+        className={cn(
+          "flex w-full min-w-0 gap-2",
+          stacked ? "flex-col" : "flex-col sm:flex-row sm:items-center",
+        )}
+      >
         <label htmlFor={`newsletter-email-${source}`} className="sr-only">
           Email address
         </label>
@@ -70,10 +81,24 @@ export const NewsletterSubscribe = ({
           inputMode="email"
           placeholder="you@company.com"
           disabled={isPending}
-          className="min-w-0 flex-1 !h-auto px-4 py-2 !text-lg font-semibold leading-normal md:!text-lg"
+          className={cn(
+            "min-w-0 !h-auto leading-normal",
+            stacked ? "w-full" : "flex-1",
+            compact
+              ? "px-3 py-2 text-sm font-medium md:text-sm"
+              : "px-4 py-2 !text-lg font-semibold md:!text-lg",
+          )}
           aria-invalid={state?.error ? true : undefined}
         />
-        <Button type="submit" disabled={isPending} className="w-full shrink-0 sm:w-auto">
+        <Button
+          type="submit"
+          disabled={isPending}
+          className={cn(
+            "w-full shrink-0",
+            !stacked && "sm:w-auto",
+            compact && "py-2 text-sm font-semibold md:text-sm",
+          )}
+        >
           {isPending ? "Sending…" : "Subscribe"}
         </Button>
       </div>
