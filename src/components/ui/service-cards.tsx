@@ -17,7 +17,7 @@ export function ServiceCards({ services, className = "" }: ServiceCardsProps) {
         {services.map((service) => (
           <div 
             key={service.title} 
-            className="flex items-center gap-4 p-4 rounded-lg bg-gray-50 dark:bg-[#1f1f1f]/50 border border-gray-100 dark:border-[#1f1f1f]/70 transition-colors duration-200 hover:bg-gray-100 dark:hover:bg-[#1f1f1f]/70"
+            className="flex items-center gap-4 p-4 rounded-lg bg-gray-50 dark:bg-[#1f1f1f]/50 border border-gray-100 dark:border-[#1f1f1f]/70"
           >
             {/* Icon */}
             <div className="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-lg bg-white dark:bg-[#1f1f1f]/70 border border-gray-200 dark:border-[#1f1f1f]/70">
@@ -38,10 +38,10 @@ export function ServiceCards({ services, className = "" }: ServiceCardsProps) {
 
       {/* Desktop: Card grid */}
       <div className={`hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-8 ${className}`}>
-        {services.map((service, index) => (
+        {services.map((service) => (
           <div 
             key={service.title} 
-            className="group bg-white dark:bg-[#1f1f1f]/70 rounded-lg shadow-sm hover:shadow-xl border border-gray-100 dark:border-[#1f1f1f]/70 transition-all duration-300 p-8 hover:-translate-y-2 hover:scale-105"
+            className="bg-white dark:bg-[#1f1f1f]/70 rounded-lg shadow-sm border border-gray-100 dark:border-[#1f1f1f]/70 p-8"
           >
             {/* Icon - Simple black outline style */}
             <div className="mb-6">

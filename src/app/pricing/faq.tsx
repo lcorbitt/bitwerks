@@ -1,88 +1,57 @@
 "use client"
 
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
-import { Heading2 } from "@/components/ui/heading"
+import { FaqAccordionSection } from "@/components/sections/faq-accordion-section"
+
+const FAQ_ITEMS = [
+  {
+    value: "item-1",
+    question: "What's the difference between website and software pricing?",
+    answer:
+      "Website pricing is for static sites and simple web presence, while Software pricing is for interactive applications with user accounts, databases, and complex functionality. Enterprise tiers include design system handoffs and complete audits/refactoring of existing projects.",
+  },
+  {
+    value: "item-2",
+    question: "What's included in the hosting?",
+    answer: "All plans include 1 year of hosting.",
+  },
+  {
+    value: "item-3",
+    question: "Can I upgrade my plan later?",
+    answer:
+      "Yes! You can upgrade within the same category (Basic to Professional, etc.) or switch between Website and Software pricing. We'll credit your previous payment toward the upgrade.",
+  },
+  {
+    value: "item-4",
+    question: "What's included in the Enterprise design system handoff?",
+    answer:
+      "Enterprise plans include a complete design system with component library, style guide, brand guidelines, and documentation. This allows your internal team to maintain and extend the design consistently across all future projects.",
+  },
+  {
+    value: "item-5",
+    question: "What does the audit and refactor service include?",
+    answer:
+      "We'll analyze your existing website or application for performance issues, security vulnerabilities, outdated code, and UX problems. Then we'll refactor, modernize, and optimize everything while maintaining your brand and functionality.",
+  },
+  {
+    value: "item-6",
+    question: "What happens after the first year?",
+    answer:
+      "After the first year, hosting costs $25/month for Websites and $50/month for Software. We'll handle the renewal and keep your project running smoothly.",
+  },
+  {
+    value: "item-7",
+    question: "Do you provide ongoing support?",
+    answer: "Yes! All plans include 24/7 support, bug fixes, and security updates.",
+  },
+] as const
 
 export function FAQSection() {
   return (
-    <section className="bg-light dark:bg-tertiary pt-40 -mt-20">
-      <div className="container">
-        <div className="mx-auto text-center mb-16">
-          <Heading2 className="mb-6">
-            FAQs
-          </Heading2>
-          <p className="text-lg text-gray-600 dark:text-gray-300">
-            Common questions about our pricing and services.
-          </p>
-        </div>
-        
-        <div className="mx-auto w-full">
-          <Accordion type="single" collapsible className="w-full">
-            <AccordionItem value="item-1">
-              <AccordionTrigger className="text-lg font-semibold text-gray-900 dark:text-white">
-                What&apos;s the difference between website and software pricing?
-              </AccordionTrigger>
-              <AccordionContent className="text-gray-600 dark:text-gray-300">
-                Website pricing is for static sites and simple web presence, while Software pricing is for interactive applications with user accounts, databases, and complex functionality. Enterprise tiers include design system handoffs and complete audits/refactoring of existing projects.
-              </AccordionContent>
-            </AccordionItem>
-            
-            <AccordionItem value="item-2">
-              <AccordionTrigger className="text-lg font-semibold text-gray-900 dark:text-white">
-                What&apos;s included in the hosting?
-              </AccordionTrigger>
-              <AccordionContent className="text-gray-600 dark:text-gray-300">
-                All plans include 1 year of hosting.
-              </AccordionContent>
-            </AccordionItem>
-            
-            <AccordionItem value="item-3">
-              <AccordionTrigger className="text-lg font-semibold text-gray-900 dark:text-white">
-                Can I upgrade my plan later?
-              </AccordionTrigger>
-              <AccordionContent className="text-gray-600 dark:text-gray-300">
-                Yes! You can upgrade within the same category (Basic to Professional, etc.) or switch between Website and Software pricing. We&apos;ll credit your previous payment toward the upgrade.
-              </AccordionContent>
-            </AccordionItem>
-            
-            <AccordionItem value="item-4">
-              <AccordionTrigger className="text-lg font-semibold text-gray-900 dark:text-white">
-                What&apos;s included in the Enterprise design system handoff?
-              </AccordionTrigger>
-              <AccordionContent className="text-gray-600 dark:text-gray-300">
-                Enterprise plans include a complete design system with component library, style guide, brand guidelines, and documentation. This allows your internal team to maintain and extend the design consistently across all future projects.
-              </AccordionContent>
-            </AccordionItem>
-            
-            <AccordionItem value="item-5">
-              <AccordionTrigger className="text-lg font-semibold text-gray-900 dark:text-white">
-                What does the audit and refactor service include?
-              </AccordionTrigger>
-              <AccordionContent className="text-gray-600 dark:text-gray-300">
-                We&apos;ll analyze your existing website or application for performance issues, security vulnerabilities, outdated code, and UX problems. Then we&apos;ll refactor, modernize, and optimize everything while maintaining your brand and functionality.
-              </AccordionContent>
-            </AccordionItem>
-            
-            <AccordionItem value="item-6">
-              <AccordionTrigger className="text-lg font-semibold text-gray-900 dark:text-white">
-                What happens after the first year?
-              </AccordionTrigger>
-              <AccordionContent className="text-gray-600 dark:text-gray-300">
-                After the first year, hosting costs $25/month for Websites and $50/month for Software. We&apos;ll handle the renewal and keep your project running smoothly.
-              </AccordionContent>
-            </AccordionItem>
-            
-            <AccordionItem value="item-7">
-              <AccordionTrigger className="text-lg font-semibold text-gray-900 dark:text-white">
-                Do you provide ongoing support?
-              </AccordionTrigger>
-              <AccordionContent className="text-gray-600 dark:text-gray-300">
-                Yes! All plans include 24/7 support, bug fixes, and security updates.
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
-        </div>
-      </div>
-    </section>
+    <FaqAccordionSection
+      title="FAQs"
+      description="Common questions about our pricing and services."
+      items={[...FAQ_ITEMS]}
+      withScrollFadeIn={false}
+    />
   )
 }

@@ -6,6 +6,7 @@ import { Services } from "@/app/page/components/Services"
 import { TechMarqueeSection } from "@/components/sections/tech-marquee-section"
 import { Partners } from "@/components/sections/partners"
 import { Process } from "@/components/sections/process"
+import { NewsletterBanner } from "@/components/sections/newsletter-banner"
 import { Testimonials } from "@/components/ui/testimonials"
 import { CTA } from "@/components/sections/cta"
 import { sampleTestimonials } from "@/lib/testimonials-data"
@@ -77,6 +78,9 @@ export default async function Home({ searchParams = {} }: PageProps) {
       </ScrollFadeIn>
       <ScrollFadeIn>
         <Process />
+      </ScrollFadeIn>
+      <ScrollFadeIn>
+        <NewsletterBanner />
       </ScrollFadeIn>
       <DecorativeCircles inverted className="bottom-48" />
       <ScrollFadeIn>

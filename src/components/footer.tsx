@@ -76,6 +76,11 @@ export function Footer() {
                     </Link>
                   </li>
                   <li>
+                    <Link href="/privacy-policy" className="text-muted-foreground hover:text-brand dark:text-white/80 dark:hover:text-brand transition-colors duration-300">
+                      Privacy Policy
+                    </Link>
+                  </li>
+                  <li>
                     <Link href="/sitemap.xml" className="text-muted-foreground hover:text-brand dark:text-white/80 dark:hover:text-brand transition-colors duration-300">
                       Sitemap
                     </Link>
@@ -90,13 +95,17 @@ export function Footer() {
                 <Button asChild variant="outline">
                   <Link href="/contact">Schedule a Call</Link>
                 </Button>
-                <div className="border-t border-border/40 pt-4 dark:border-white/10">
-                  <p className="mb-3 text-sm font-extrabold">Newsletter</p>
-                  <NewsletterSubscribe source="footer" />
-                </div>
               </div>
             </div>
           </div>
+
+          <div className="mt-10 border-t border-border/40 pt-10 dark:border-white/10">
+            <div className="mx-auto w-full max-w-3xl">
+              <p className="mb-4 text-sm font-extrabold">Newsletter</p>
+              <NewsletterSubscribe source="footer" className="w-full" />
+            </div>
+          </div>
+
           <div className="mt-8 pt-4">
             <p className="text-center text-xs text-muted-foreground dark:text-white/80">
               © 2017 - {new Date().getFullYear()} BitWerks. All rights reserved.

@@ -55,9 +55,9 @@ export const NewsletterSubscribe = ({
   }
 
   const form = (
-    <form ref={formRef} className="grid gap-3" onSubmit={onSubmit} noValidate>
+    <form ref={formRef} className="grid w-full gap-3" onSubmit={onSubmit} noValidate>
       <input type="hidden" name="source" value={source} />
-      <div className="flex flex-col gap-2 sm:flex-row sm:items-stretch">
+      <div className="flex w-full min-w-0 flex-col gap-2 sm:flex-row sm:items-stretch">
         <label htmlFor={`newsletter-email-${source}`} className="sr-only">
           Email address
         </label>
@@ -70,7 +70,7 @@ export const NewsletterSubscribe = ({
           inputMode="email"
           placeholder="you@company.com"
           disabled={isPending}
-          className="sm:min-w-0 sm:flex-1"
+          className="min-w-0 flex-1"
           aria-invalid={state?.error ? true : undefined}
         />
         <Button type="submit" disabled={isPending} className="shrink-0 sm:w-auto">

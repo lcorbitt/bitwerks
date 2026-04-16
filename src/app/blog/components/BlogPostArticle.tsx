@@ -99,16 +99,16 @@ export const BlogPostArticle = ({ post, variant = "public" }: BlogPostArticlePro
           ) : null}
 
           <BlogDocument html={post.content_html} />
-
-          {post.faq_schema.length ? (
-            <BlogPostFaqSection
-              items={post.faq_schema.map((item) => ({
-                question: item.question,
-                answerHtml: sanitizeBlogHtml(faqAnswerMarkdownToSafeHtml(item.answer)),
-              }))}
-            />
-          ) : null}
         </div>
+
+        {post.faq_schema.length ? (
+          <BlogPostFaqSection
+            items={post.faq_schema.map((item) => ({
+              question: item.question,
+              answerHtml: sanitizeBlogHtml(faqAnswerMarkdownToSafeHtml(item.answer)),
+            }))}
+          />
+        ) : null}
       </div>
       <CTA />
     </article>

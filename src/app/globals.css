@@ -220,7 +220,7 @@
   }
 
   .animate-fade-in {
-    animation: fadeIn 1000ms ease-in;
+    animation: fadeIn 300ms ease-in;
   }
 
   @keyframes fadeInUp {
@@ -235,7 +235,7 @@
   }
 
   .animate-fade-in-up {
-    animation: fadeInUp 800ms ease-out;
+    animation: fadeInUp 300ms ease-out;
   }
 }
 

@@ -6,8 +6,16 @@ export const Heading1 = ({ children, className = "" }: { children: React.ReactNo
   </h1>
 );
 
-export const Heading2 = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => (
-  <h2 className={`titlecase text-4xl tracking-tight leading-tight md:text-5xl font-extrabold ${className}`}>
+export const Heading2 = ({
+  children,
+  className = "",
+  id,
+}: {
+  children: React.ReactNode
+  className?: string
+  id?: string
+}) => (
+  <h2 id={id} className={`titlecase text-4xl tracking-tight leading-tight md:text-5xl font-extrabold ${className}`}>
     {children}
   </h2>
 );
