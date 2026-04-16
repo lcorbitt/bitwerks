@@ -10,7 +10,7 @@ interface BlogPostJsonLdProps {
 
 export const BlogPostJsonLd = ({ post }: BlogPostJsonLdProps) => {
   const base = getSiteBaseUrl()
-  const url = `${base}/blog/${post.slug}`
+  const url = `${base}/insights/${post.slug}`
   const description = post.meta_description?.trim() || post.excerpt?.trim() || undefined
   const featuredRaw = getPostFeaturedImageUrl(post)
   const featuredAbs = featuredRaw ? toAbsoluteMediaUrl(featuredRaw, base) ?? featuredRaw : null

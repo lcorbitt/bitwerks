@@ -30,7 +30,7 @@ const expertiseItems =
 export const BlogPostAuthorCard = () => {
   return (
     <section
-      aria-labelledby="blog-author-heading"
+      aria-labelledby="insights-author-heading"
       className="rounded-xl bg-black/5 px-5 py-5 dark:border-amber-500/30 dark:bg-amber-500/10"
     >
       <div className="flex gap-4">
@@ -51,7 +51,7 @@ export const BlogPostAuthorCard = () => {
           />
         </div>
         <div className="min-w-0 flex-1">
-          <h2 id="blog-author-heading" className="text-2xl font-bold tracking-tight text-foreground">
+          <h2 id="insights-author-heading" className="text-2xl font-bold tracking-tight text-foreground">
             By{" "}
             <span className="underline decoration-brand/70 decoration-2 underline-offset-4">BitWerks Editorial Team</span>
           </h2>

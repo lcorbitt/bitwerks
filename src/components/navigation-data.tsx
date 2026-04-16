@@ -79,8 +79,8 @@ export const navigationItems: NavigationItem[] = [
   //   type: "link"
   // },
   {
-    title: "BLOG",
-    href: "/blog",
+    title: "INSIGHTS",
+    href: "/insights",
     type: "link"
   }
 ]

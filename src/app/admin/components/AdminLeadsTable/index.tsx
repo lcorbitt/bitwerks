@@ -15,6 +15,7 @@ export const AdminLeadsTable = ({ initialLeads }: AdminLeadsTableProps) => {
             <tr className="border-b bg-muted/40">
               <th className="px-4 py-3 font-medium">Email</th>
               <th className="px-4 py-3 font-medium">Source</th>
+              <th className="px-4 py-3 font-medium">Status</th>
               <th className="px-4 py-3 font-medium">Subscribed</th>
             </tr>
           </thead>
@@ -23,6 +24,9 @@ export const AdminLeadsTable = ({ initialLeads }: AdminLeadsTableProps) => {
               <tr key={lead.id} className="border-b border-border/60 last:border-0">
                 <td className="px-4 py-3 font-medium">{lead.email}</td>
                 <td className="px-4 py-3 text-muted-foreground">{lead.source ?? "—"}</td>
+                <td className="px-4 py-3 text-muted-foreground whitespace-nowrap">
+                  {lead.unsubscribed_at ? "Unsubscribed" : "Active"}
+                </td>
                 <td className="px-4 py-3 text-muted-foreground whitespace-nowrap">
                   {new Date(lead.created_at).toLocaleString()}
                 </td>

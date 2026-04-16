@@ -19,7 +19,7 @@ export function Footer() {
                 </p>
               </div>
               <div className="space-y-3 flex flex-col">
-                <h4 className="text-sm font-extrabold">Newsletter</h4>
+                <h4 className="text-sm font-extrabold">Insights</h4>
                 <NewsletterSubscribe source="footer" compact stacked className="w-full" />
               </div>
             </div>
@@ -105,10 +105,10 @@ export function Footer() {
                   </li>
                   <li>
                     <Link
-                      href="/blog"
+                      href="/insights"
                       className="text-muted-foreground transition-colors duration-300 hover:text-brand dark:text-white/80 dark:hover:text-brand"
                     >
-                      Blog
+                      Insights
                     </Link>
                   </li>
                   <li>

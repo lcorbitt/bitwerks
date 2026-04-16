@@ -1,8 +1,8 @@
 import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 
-import { BlogPostArticle } from "@/app/blog/components/BlogPostArticle"
-import { BlogPostJsonLd } from "@/app/blog/components/BlogPostJsonLd"
+import { BlogPostArticle } from "@/app/insights/components/BlogPostArticle"
+import { BlogPostJsonLd } from "@/app/insights/components/BlogPostJsonLd"
 import { getPublishedPostBySlugPublic } from "@/lib/blog/queries-public"
 import { getPostFeaturedImageUrl, toAbsoluteMediaUrl } from "@/lib/blog/post-preview-media"
 import { getSiteBaseUrl } from "@/lib/blog/site-base-url"
@@ -16,7 +16,7 @@ export const generateMetadata = async ({ params }: BlogPostPageProps): Promise<M
   if (!post) return { title: "Post not found" }
 
   const base = getSiteBaseUrl()
-  const canonical = post.canonical_url?.trim() || `${base}/blog/${params.slug}`
+  const canonical = post.canonical_url?.trim() || `${base}/insights/${params.slug}`
   const title = post.meta_title?.trim() || post.title
   const description =
     post.meta_description?.trim() || post.excerpt?.trim() || `Read "${post.title}".`

@@ -35,8 +35,8 @@ values ('00000000-0000-0000-0000-000000000000');
 ## 4) Use the app
 
 - Public blog:
-  - `GET /blog` (published posts only; cached via `BLOG_PUBLIC_CACHE_TAG`)
-  - `GET /blog/[slug]`
+  - `GET /insights` (published posts only; cached via `BLOG_PUBLIC_CACHE_TAG`)
+  - `GET /insights/[slug]`
 - Admin:
   - `GET /admin` (Navbar auto-hides on `/admin/*`)
   - Sign in with email/password, then manage drafts, publish, and upload images.

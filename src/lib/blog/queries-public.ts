@@ -25,6 +25,27 @@ export const listPublishedPostsPublic = unstable_cache(
   { tags: [BLOG_PUBLIC_CACHE_TAG] },
 )
 
+export const getLatestPublishedPostPublic = unstable_cache(
+  async (): Promise<BlogPostWithImages | null> => {
+    const supabase = getSupabasePublicReadClient()
+
+    const { data, error } = await supabase
+      .from("blog_posts")
+      .select(blogPostWithImagesSelect)
+      .eq("status", "published")
+      .not("published_at", "is", null)
+      .order("published_at", { ascending: false })
+      .limit(1)
+      .maybeSingle()
+
+    if (error) throw new Error(error.message)
+    if (!data) return null
+    return normalizeBlogPostWithImages(data as BlogPostWithImages)
+  },
+  ["blog", "latest-published-post"],
+  { tags: [BLOG_PUBLIC_CACHE_TAG] },
+)
+
 export const getPublishedPostBySlugPublic = (slug: string) =>
   unstable_cache(
     async (): Promise<BlogPostWithImages | null> => {

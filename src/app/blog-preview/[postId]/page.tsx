@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import { notFound, redirect } from "next/navigation"
 
-import { BlogPostArticle } from "@/app/blog/components/BlogPostArticle"
+import { BlogPostArticle } from "@/app/insights/components/BlogPostArticle"
 import { getBlogPostByIdForAdmin } from "@/lib/blog/queries-admin"
 import { isSupabaseConfigured } from "@/lib/supabase/config"
 import { getIsAdminUser } from "@/lib/supabase/admin-guard"

@@ -1,5 +1,6 @@
 "use server"
 
+import { notifyContactFormInbox } from "@/lib/email"
 import { createClient } from "@/lib/supabase/server"
 
 import { contactFormSchema } from "@/app/contact/components/ContactForm/schemas"
@@ -41,6 +42,8 @@ export const submitContactAction = async (input: unknown): Promise<SubmitContact
   if (error) {
     return { ok: false, error: error.message || "Something went wrong. Try again later." }
   }
+
+  await notifyContactFormInbox(data)
 
   return { ok: true }
 }

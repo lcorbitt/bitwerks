@@ -114,7 +114,7 @@ export const AdminApp = ({ configured, user = null, isAdmin = false, initialPost
           ].join(" ")}
           onClick={() => setActiveTab("blog")}
         >
-          Blog
+          Insights
         </button>
         <button
           type="button"

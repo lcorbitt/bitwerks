@@ -1,16 +1,16 @@
 import type { Metadata } from "next"
 
-import { BlogIndexHero } from "@/app/blog/components/BlogIndexHero"
-import { BlogPostGridCard } from "@/app/blog/components/BlogPostGridCard"
+import { BlogIndexHero } from "@/app/insights/components/BlogIndexHero"
+import { BlogPostGridCard } from "@/app/insights/components/BlogPostGridCard"
 import { CTA } from "@/components/sections/cta"
 import { listPublishedPostsPublic } from "@/lib/blog/queries-public"
 
 export const metadata: Metadata = {
-  title: "Blog",
+  title: "Insights",
   description: "Articles on web development, software delivery, and how we build at BitWerks.",
 }
 
-export default async function BlogIndexPage() {
+export default async function InsightsIndexPage() {
   const posts = await listPublishedPostsPublic()
   const [featured, ...rest] = posts
 
@@ -39,9 +39,12 @@ export default async function BlogIndexPage() {
       {rest.length > 0 ? (
         <section
           className="w-full bg-black/5 dark:bg-white/5"
-          aria-labelledby="blog-more-heading"
+          aria-labelledby="insights-more-heading"
         >
           <div className="mx-auto max-w-6xl px-4 sm:px-6">
+            <h2 id="insights-more-heading" className="sr-only">
+              More insights
+            </h2>
             <ul className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-10">
               {rest.map((post) => (
                 <li key={post.id}>

@@ -106,7 +106,7 @@ export const AdminBlogEditorClient = ({ initialPost }: AdminBlogEditorClientProp
               ← Admin
             </Link>
             <div className="h-4 w-px bg-border" aria-hidden />
-            <h1 className="text-lg font-semibold tracking-tight">Blog editor</h1>
+            <h1 className="text-lg font-semibold tracking-tight">Insights editor</h1>
           </div>
           <div className="flex flex-wrap items-center gap-3 text-sm">
             <Link
@@ -118,7 +118,7 @@ export const AdminBlogEditorClient = ({ initialPost }: AdminBlogEditorClientProp
               Layout preview
             </Link>
             {post.status === "published" && post.slug ? (
-              <Link href={`/blog/${post.slug}`} target="_blank" rel="noopener noreferrer" className="text-muted-foreground underline underline-offset-4">
+              <Link href={`/insights/${post.slug}`} target="_blank" rel="noopener noreferrer" className="text-muted-foreground underline underline-offset-4">
                 Live post
               </Link>
             ) : null}

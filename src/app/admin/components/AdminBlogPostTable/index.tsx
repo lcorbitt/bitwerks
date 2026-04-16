@@ -92,7 +92,7 @@ export const AdminBlogPostTable = ({ initialPosts }: AdminBlogPostTableProps) =>
                     </Link>
                     {post.status === "published" && post.slug ? (
                       <Link
-                        href={`/blog/${post.slug}`}
+                        href={`/insights/${post.slug}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="rounded-lg border border-transparent px-3 py-1.5 text-xs font-medium text-muted-foreground underline underline-offset-4"

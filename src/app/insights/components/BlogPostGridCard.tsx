@@ -11,7 +11,7 @@ interface BlogPostGridCardProps {
 export const BlogPostGridCard = ({ post }: BlogPostGridCardProps) => {
   const imageUrl = getPostListImageUrl(post)
   const imageAlt = getPostListImageAlt(post, imageUrl)
-  const href = `/blog/${post.slug}`
+  const href = `/insights/${post.slug}`
   const dateLabel = formatPublishedDate(post.published_at)
 
   return (

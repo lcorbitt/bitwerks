@@ -17,7 +17,7 @@ export const BlogPostFaqSection = ({ items }: BlogPostFaqSectionProps) => {
   return (
     <FaqAccordionSection
       sectionVariant="article"
-      headingId="blog-faq-heading"
+      headingId="insights-faq-heading"
       title="FAQ"
       items={items.map((item, index) => ({
         value: `faq-${index}`,

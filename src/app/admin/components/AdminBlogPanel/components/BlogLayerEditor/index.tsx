@@ -165,7 +165,7 @@ export const BlogLayerEditor = ({ post, onPostChange, onDirtyChange }: BlogLayer
         <div>
           <div className="text-sm font-semibold">Article</div>
           <div className="mt-1 text-xs text-muted-foreground">
-            {post.status === "published" && post.slug ? `/blog/${post.slug}` : "Draft"}
+            {post.status === "published" && post.slug ? `/insights/${post.slug}` : "Draft"}
           </div>
         </div>
         <div className="flex flex-wrap items-center gap-3">
@@ -228,7 +228,7 @@ export const BlogLayerEditor = ({ post, onPostChange, onDirtyChange }: BlogLayer
       <div className="grid gap-3 rounded-xl border bg-background/50 px-4 py-4">
         <div className="text-xs font-medium">Cover / hero image</div>
         <p className="text-xs text-muted-foreground">
-          One image for the post header and blog cards. Replacing it overwrites the previous file. Article images belong in
+          One image for the post header and insights cards. Replacing it overwrites the previous file. Article images belong in
           the editor (Insert image).
         </p>
         <div className="flex flex-wrap items-center gap-4">

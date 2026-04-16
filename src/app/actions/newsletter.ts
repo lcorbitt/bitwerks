@@ -2,7 +2,10 @@
 
 import { z } from "zod"
 
+import { getLatestPublishedPostPublic } from "@/lib/blog/queries-public"
+import { notifyNewsletterInbox, sendNewsletterWelcomeEmail } from "@/lib/email"
 import { createClient } from "@/lib/supabase/server"
+import type { BlogPostWithImages } from "@/types/blog"
 
 const subscribeInputSchema = z.object({
   email: z.string().trim().max(254).email("Enter a valid email address."),
@@ -44,10 +47,14 @@ export const subscribeNewsletterAction = async (formData: FormData): Promise<Sub
     return { ok: false, error: "You’re already subscribed." }
   }
 
-  const { error } = await supabase.from("newsletter_leads").insert({
-    email,
-    source: source ?? null,
-  })
+  const { data: inserted, error } = await supabase
+    .from("newsletter_leads")
+    .insert({
+      email,
+      source: source ?? null,
+    })
+    .select("unsubscribe_token")
+    .single()
 
   if (error) {
     if (error.code === "23505") {
@@ -56,5 +63,45 @@ export const subscribeNewsletterAction = async (formData: FormData): Promise<Sub
     return { ok: false, error: error.message || "Something went wrong. Try again later." }
   }
 
+  let latestPost: BlogPostWithImages | null = null
+  try {
+    latestPost = await getLatestPublishedPostPublic()
+  } catch (err) {
+    console.error("[newsletter] Could not load latest post for welcome email:", err)
+  }
+
+  const unsubscribeToken = inserted?.unsubscribe_token
+  if (!unsubscribeToken) {
+    console.error("[newsletter] Missing unsubscribe_token after insert; skipping welcome email.")
+    await notifyNewsletterInbox(email, source)
+    return { ok: true, message: "Thanks — you’re on the list." }
+  }
+
+  await Promise.all([
+    notifyNewsletterInbox(email, source),
+    sendNewsletterWelcomeEmail(email, latestPost, unsubscribeToken),
+  ])
+
   return { ok: true, message: "Thanks — you’re on the list." }
+}
+
+export type UnsubscribeNewsletterResult =
+  | { ok: true }
+  | { ok: false; reason: "invalid_token" }
+  | { ok: false; reason: "request_failed" }
+
+export const unsubscribeNewsletterLeadAction = async (rawToken: string): Promise<UnsubscribeNewsletterResult> => {
+  const trimmed = rawToken?.trim() ?? ""
+  const uuid = z.string().uuid().safeParse(trimmed)
+  if (!uuid.success) return { ok: false, reason: "invalid_token" }
+
+  const supabase = createClient()
+  const { error } = await supabase.rpc("newsletter_lead_unsubscribe_by_token", { p_token: uuid.data })
+
+  if (error) {
+    console.error("[newsletter] Unsubscribe RPC failed:", error.message)
+    return { ok: false, reason: "request_failed" }
+  }
+
+  return { ok: true }
 }

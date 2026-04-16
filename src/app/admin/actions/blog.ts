@@ -10,6 +10,7 @@ import { normalizeBlogPostWithImages } from "@/lib/blog/normalize-blog-post"
 import { blogPostWithImagesSelect } from "@/lib/blog/post-select-fragment"
 import { normalizePostSlug } from "@/lib/blog/slug"
 import { parseBlogDocument } from "@/lib/blog/validate"
+import { sendInsightPublishedToLeads } from "@/lib/email"
 import { createClient } from "@/lib/supabase/server"
 import type { BlogPostWithImages } from "@/types/blog"
 
@@ -61,9 +62,9 @@ export const deletePostAction = async ({ postId }: DeletePostActionInput) => {
   if (error) throw new Error(error.message)
 
   revalidateTag(BLOG_PUBLIC_CACHE_TAG)
-  revalidatePath("/blog")
+  revalidatePath("/insights")
   revalidatePath("/admin")
-  if (existingPost?.slug) revalidatePath(`/blog/${existingPost.slug}`)
+  if (existingPost?.slug) revalidatePath(`/insights/${existingPost.slug}`)
 }
 
 export const createEmptyDraftAction = async (): Promise<BlogPostWithImages> => {
@@ -133,7 +134,7 @@ export const savePostAction = async (input: SavePostActionInput): Promise<BlogPo
 
   const { data: existingPost, error: existingPostError } = await supabase
     .from("blog_posts")
-    .select("published_at")
+    .select("published_at, status")
     .eq("id", input.postId)
     .single()
   if (existingPostError) throw new Error(existingPostError.message)
@@ -174,13 +175,26 @@ export const savePostAction = async (input: SavePostActionInput): Promise<BlogPo
   if (reloadError) throw new Error(reloadError.message)
 
   revalidateTag(BLOG_PUBLIC_CACHE_TAG)
-  revalidatePath("/blog")
+  revalidatePath("/insights")
   revalidatePath("/admin")
   revalidateBlogPreviewPath(input.postId)
   revalidateAdminBlogEditorPath(input.postId)
-  if (normalizedSlug) revalidatePath(`/blog/${normalizedSlug}`)
+  if (normalizedSlug) revalidatePath(`/insights/${normalizedSlug}`)
 
-  return normalizeBlogPostWithImages(nextRow as BlogPostWithImages)
+  const normalizedPost = normalizeBlogPostWithImages(nextRow as BlogPostWithImages)
+
+  const shouldNotifySubscribers =
+    input.status === "published" &&
+    existingPost.status !== "published" &&
+    Boolean(normalizedSlug)
+
+  if (shouldNotifySubscribers) {
+    void sendInsightPublishedToLeads({ supabase, post: normalizedPost }).catch((err) => {
+      console.error("[email] Insight subscriber broadcast failed:", err)
+    })
+  }
+
+  return normalizedPost
 }
 
 interface SetCoverImageActionInput {
@@ -198,11 +212,11 @@ export const setCoverImageAction = async ({ postId, coverImageUrl }: SetCoverIma
   if (error) throw new Error(error.message)
 
   revalidateTag(BLOG_PUBLIC_CACHE_TAG)
-  revalidatePath("/blog")
+  revalidatePath("/insights")
   revalidatePath("/admin")
   revalidateBlogPreviewPath(postId)
   revalidateAdminBlogEditorPath(postId)
-  if (post.slug) revalidatePath(`/blog/${post.slug}`)
+  if (post.slug) revalidatePath(`/insights/${post.slug}`)
 }
 
 /** Uploads a single file as cover/hero only (fixed `cover.{ext}` path). Does not create `blog_post_images` rows. */
@@ -243,11 +257,11 @@ export const uploadBlogCoverImageAction = async (formData: FormData): Promise<Bl
   if (error) throw new Error(error.message)
 
   revalidateTag(BLOG_PUBLIC_CACHE_TAG)
-  revalidatePath("/blog")
+  revalidatePath("/insights")
   revalidatePath("/admin")
   revalidateBlogPreviewPath(postId)
   revalidateAdminBlogEditorPath(postId)
-  if (postRow.slug) revalidatePath(`/blog/${postRow.slug}`)
+  if (postRow.slug) revalidatePath(`/insights/${postRow.slug}`)
 
   return normalizeBlogPostWithImages(data as BlogPostWithImages)
 }
@@ -272,11 +286,11 @@ export const clearBlogCoverImageAction = async ({ postId }: { postId: string }):
   if (error) throw new Error(error.message)
 
   revalidateTag(BLOG_PUBLIC_CACHE_TAG)
-  revalidatePath("/blog")
+  revalidatePath("/insights")
   revalidatePath("/admin")
   revalidateBlogPreviewPath(postId)
   revalidateAdminBlogEditorPath(postId)
-  if (postRow.slug) revalidatePath(`/blog/${postRow.slug}`)
+  if (postRow.slug) revalidatePath(`/insights/${postRow.slug}`)
 
   return normalizeBlogPostWithImages(data as BlogPostWithImages)
 }
@@ -331,7 +345,7 @@ export const registerBlogPostImagesAction = async (formData: FormData): Promise<
   if (error) throw new Error(error.message)
 
   revalidateTag(BLOG_PUBLIC_CACHE_TAG)
-  revalidatePath("/blog")
+  revalidatePath("/insights")
   revalidatePath("/admin")
   revalidateBlogPreviewPath(postId)
   revalidateAdminBlogEditorPath(postId)
@@ -362,7 +376,7 @@ export const removeBlogPostImageAction = async ({ imageId }: RemoveBlogPostImage
   if (error) throw new Error(error.message)
 
   revalidateTag(BLOG_PUBLIC_CACHE_TAG)
-  revalidatePath("/blog")
+  revalidatePath("/insights")
   revalidatePath("/admin")
   revalidateBlogPreviewPath(image.post_id)
   revalidateAdminBlogEditorPath(image.post_id)
@@ -396,7 +410,7 @@ export const updateBlogPostImageAltAction = async ({
   if (error) throw new Error(error.message)
 
   revalidateTag(BLOG_PUBLIC_CACHE_TAG)
-  revalidatePath("/blog")
+  revalidatePath("/insights")
   revalidatePath("/admin")
   revalidateBlogPreviewPath(image.post_id)
   revalidateAdminBlogEditorPath(image.post_id)
@@ -424,7 +438,7 @@ export const reorderBlogPostImagesAction = async ({
   if (error) throw new Error(error.message)
 
   revalidateTag(BLOG_PUBLIC_CACHE_TAG)
-  revalidatePath("/blog")
+  revalidatePath("/insights")
   revalidatePath("/admin")
   revalidateBlogPreviewPath(postId)
   revalidateAdminBlogEditorPath(postId)

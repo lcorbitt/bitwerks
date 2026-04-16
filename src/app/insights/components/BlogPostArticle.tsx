@@ -29,8 +29,8 @@ const formatArticleDateLabel = (iso: string) =>
 
 export const BlogPostArticle = ({ post, variant = "public" }: BlogPostArticleProps) => {
   const isAdminPreview = variant === "admin-preview"
-  const backHref = isAdminPreview ? "/admin" : "/blog"
-  const backLabel = isAdminPreview ? "← Back to Admin" : "← Back to Blog"
+  const backHref = isAdminPreview ? "/admin" : "/insights"
+  const backLabel = isAdminPreview ? "← Back to Admin" : "← Back to Insights"
   const heroUrl = getPostFeaturedImageUrl(post)
   const heroAlt = resolveHeroAlt(post, heroUrl)
 
@@ -54,12 +54,12 @@ export const BlogPostArticle = ({ post, variant = "public" }: BlogPostArticlePro
               {post.status === "published" && post.slug ? (
                 <p className="mt-2">
                   <span className="text-muted-foreground">Live URL: </span>
-                  <Link href={`/blog/${post.slug}`} className="text-brand underline underline-offset-4">
-                    /blog/{post.slug}
+                  <Link href={`/insights/${post.slug}`} className="text-brand underline underline-offset-4">
+                    /insights/{post.slug}
                   </Link>
                 </p>
               ) : (
-                <p className="mt-2 text-muted-foreground">Draft — not available on the public blog until published.</p>
+                <p className="mt-2 text-muted-foreground">Draft — not available on the public insights feed until published.</p>
               )}
             </div>
           ) : null}

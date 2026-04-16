@@ -16,7 +16,7 @@ interface FaqAccordionSectionProps {
   title: ReactNode
   description?: ReactNode
   items: FaqAccordionSectionItem[]
-  /** Service pages overlap the prior curved section; blog uses padded spacing after article body. */
+  /** Service pages overlap the prior curved section; insights articles use padded spacing after article body. */
   sectionVariant?: "service" | "article"
   /** When false, inner layout renders without ScrollFadeIn (e.g. pricing). */
   withScrollFadeIn?: boolean
