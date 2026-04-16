@@ -57,7 +57,7 @@ export default function Services() {
               company="Clickk"
               description="Strategy and delivery aligned: an improved system design, tighter product UX, and internal tooling grounded in how their stack and workflows run day to day."
               technologies={["System Design", "Software Architecture", "Rust", "Next.js"]}
-              imageSrc="/clickk-mockup.jpg"
+              imageSrc="/clickk-mockup.png"
               imageAlt="Clickk product work"
               orientation="center"
             />
