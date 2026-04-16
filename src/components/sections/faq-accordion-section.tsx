@@ -26,7 +26,7 @@ interface FaqAccordionSectionProps {
 
 const sectionShellClass: Record<"service" | "article", string> = {
   service: "-mt-20 bg-light pt-40 dark:bg-tertiary",
-  article: "bg-light py-16 dark:bg-tertiary md:py-20 lg:py-24",
+  article: "bg-transparent py-16 md:py-20 lg:py-24",
 }
 
 export const FaqAccordionSection = ({

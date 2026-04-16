@@ -19,7 +19,6 @@ export const BlogPostFaqSection = ({ items }: BlogPostFaqSectionProps) => {
       sectionVariant="article"
       headingId="blog-faq-heading"
       title="FAQ"
-      description="Common questions related to this article."
       items={items.map((item, index) => ({
         value: `faq-${index}`,
         question: item.question,
