@@ -2,6 +2,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Heading3 } from "@/components/ui/heading"
 import { ScrollFadeIn } from "@/components/ui/scroll-fade-in"
+import { NewsletterSubscribe } from "@/components/newsletter/newsletter-subscribe"
 interface CTAProps {
   className?: string
 }
@@ -29,9 +30,19 @@ export function CTA({ className = "" }: CTAProps) {
               {/* <p className="mb-8 text-muted-foreground">
                 Build beautifully and scale successfully.
               </p> */}
-              <Button variant="brand" asChild size="lg">
-                <Link href="/contact">Get In Touch</Link>
-              </Button>
+              <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
+                <Button variant="brand" asChild size="lg">
+                  <Link href="/contact">Get In Touch</Link>
+                </Button>
+                <NewsletterSubscribe
+                  variant="dialog"
+                  source="cta"
+                  triggerLabel="Subscribe for updates"
+                  triggerVariant="outline"
+                  triggerSize="lg"
+                  triggerClassName="border-brand text-brand hover:bg-brand/10 dark:border-brand dark:text-brand"
+                />
+              </div>
             </div>
           </div>
         </div>

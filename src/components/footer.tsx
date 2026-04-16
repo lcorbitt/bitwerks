@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
+import { NewsletterSubscribe } from "@/components/newsletter/newsletter-subscribe"
 
 export function Footer() {
   return (
@@ -89,6 +90,10 @@ export function Footer() {
                 <Button asChild variant="outline">
                   <Link href="/contact">Schedule a Call</Link>
                 </Button>
+                <div className="border-t border-border/40 pt-4 dark:border-white/10">
+                  <p className="mb-3 text-sm font-extrabold">Newsletter</p>
+                  <NewsletterSubscribe source="footer" />
+                </div>
               </div>
             </div>
           </div>

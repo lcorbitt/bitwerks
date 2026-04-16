@@ -1,6 +1,6 @@
 export const ADMIN_APP = {
   title: "Admin",
-  subtitle: "Site tools and content. Open the Blog tab to manage posts.",
+  subtitle: "Manage blog posts and review newsletter signups under Leads.",
   signOut: "Sign out",
   signingOut: "Signing out…",
 } as const

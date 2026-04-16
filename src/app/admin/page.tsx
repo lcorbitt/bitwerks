@@ -4,6 +4,7 @@ import { isSupabaseConfigured } from "@/lib/supabase/config"
 import { createClient } from "@/lib/supabase/server"
 import { getIsAdminUser } from "@/lib/supabase/admin-guard"
 import { listAllBlogPostsForAdmin } from "@/lib/blog/queries-admin"
+import { listNewsletterLeadsForAdmin } from "@/lib/newsletter/queries-admin"
 
 import type { BlogPostWithImages } from "@/types/blog"
 import { AdminApp } from "@/app/admin/components/AdminApp"
@@ -31,7 +32,7 @@ export default async function AdminPage() {
   const isAdmin = await getIsAdminUser(user.id)
   if (!isAdmin) return <AdminApp configured user={user} isAdmin={false} initialPosts={[]} />
 
-  const initialPosts = await listAllBlogPostsForAdmin()
-  return <AdminApp configured user={user} isAdmin initialPosts={initialPosts} />
+  const [initialPosts, initialLeads] = await Promise.all([listAllBlogPostsForAdmin(), listNewsletterLeadsForAdmin()])
+  return <AdminApp configured user={user} isAdmin initialPosts={initialPosts} initialLeads={initialLeads} />
 }
 

@@ -5,11 +5,13 @@ import * as React from "react"
 import type { User } from "@supabase/supabase-js"
 
 import type { BlogPostWithImages } from "@/types/blog"
+import type { NewsletterLead } from "@/types/newsletter"
 import { createClient } from "@/lib/supabase/browser"
 import { Button } from "@/components/ui/button"
 
 import { AdminSignIn } from "../AdminSignIn"
 import { AdminBlogPanel } from "../AdminBlogPanel"
+import { AdminLeadsTable } from "../AdminLeadsTable"
 import { ADMIN_APP } from "./constants"
 
 interface AdminAppProps {
@@ -17,6 +19,7 @@ interface AdminAppProps {
   user?: User | null
   isAdmin?: boolean
   initialPosts?: BlogPostWithImages[]
+  initialLeads?: NewsletterLead[]
 }
 
 const useSignOut = () => {
@@ -41,8 +44,8 @@ const useSignOut = () => {
   return { signOut, isSigningOut, signOutError }
 }
 
-export const AdminApp = ({ configured, user = null, isAdmin = false, initialPosts = [] }: AdminAppProps) => {
-  const [activeTab, setActiveTab] = React.useState<"blog" | "more">("blog")
+export const AdminApp = ({ configured, user = null, isAdmin = false, initialPosts = [], initialLeads = [] }: AdminAppProps) => {
+  const [activeTab, setActiveTab] = React.useState<"blog" | "leads">("blog")
   const { signOut, isSigningOut, signOutError } = useSignOut()
 
   if (!configured)
@@ -116,17 +119,20 @@ export const AdminApp = ({ configured, user = null, isAdmin = false, initialPost
         <button
           type="button"
           role="tab"
-          aria-selected={false}
-          disabled
-          aria-disabled
-          className="cursor-not-allowed rounded-t-lg px-4 py-2.5 text-sm font-medium text-muted-foreground/50"
+          aria-selected={activeTab === "leads"}
+          className={[
+            "rounded-t-lg px-4 py-2.5 text-sm font-medium transition-colors",
+            activeTab === "leads" ? "bg-muted text-foreground" : "text-muted-foreground hover:text-foreground",
+          ].join(" ")}
+          onClick={() => setActiveTab("leads")}
         >
-          More tools
+          Leads
         </button>
       </div>
 
       <div className="mt-6" role="tabpanel">
         {activeTab === "blog" ? <AdminBlogPanel initialPosts={initialPosts} /> : null}
+        {activeTab === "leads" ? <AdminLeadsTable initialLeads={initialLeads} /> : null}
       </div>
     </div>
   )

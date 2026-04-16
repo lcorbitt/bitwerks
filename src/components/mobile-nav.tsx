@@ -10,7 +10,6 @@ import {
   Sheet,
   SheetContent,
   SheetHeader,
-  SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet"
 import { navigationItems } from "./navigation-data"
@@ -20,65 +19,75 @@ export function MobileNav() {
   const pathname = usePathname()
 
   const isActive = (href: string) => {
-    if (href === '/') {
-      return pathname === '/'
+    if (href === "/") {
+      return pathname === "/"
     }
     return pathname.startsWith(href)
   }
 
-  const isServicesActive = () => {
-    return pathname.startsWith('/services') || pathname.startsWith('/web-development') || pathname.startsWith('/software-development') || pathname.startsWith('/technical-consulting')
-  }
+  const isServicesActive = () =>
+    pathname.startsWith("/services") ||
+    pathname.startsWith("/web-development") ||
+    pathname.startsWith("/software-development") ||
+    pathname.startsWith("/technical-consulting")
 
   return (
     <Sheet open={open} onOpenChange={setOpen}>
       <SheetTrigger asChild>
         <Button
           variant="ghost"
-          className="px-0 hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 lg:hidden flex items-center justify-center"
+          className="flex items-center justify-center px-0 hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 lg:hidden"
         >
           <Menu className="h-6 w-6" />
           <span className="sr-only">Toggle menu</span>
         </Button>
       </SheetTrigger>
-      <SheetContent side="top" className="w-full bg-white dark:bg-primary border-b-[#1f1f1f]/70">
-        <SheetHeader className="mb-4">
-          <div className="relative h-20 w-auto mx-auto">
+      <SheetContent
+        side="top"
+        className="w-full gap-0 bg-white p-4 pb-5 pt-12 dark:bg-primary border-b-[#1f1f1f]/70"
+      >
+        <SheetHeader className="mb-3 space-y-0">
+          <div className="relative mx-auto h-14 w-auto">
             <Link href="/" onClick={() => setOpen(false)}>
-              <Image 
-                src="/logo-light.png" 
-                alt="BitWerks Logo" 
+              <Image
+                src="/logo-light.png"
+                alt="BitWerks Logo"
                 width={160}
                 height={64}
-                className="h-20 w-auto dark:hidden transition-opacity duration-300 object-contain"
+                className="h-14 w-auto object-contain transition-opacity duration-300 dark:hidden"
                 priority
               />
-              <Image 
-                src="/logo-dark.png" 
-                alt="BitWerks Logo" 
-                width={160} 
+              <Image
+                src="/logo-dark.png"
+                alt="BitWerks Logo"
+                width={160}
                 height={64}
-                className="h-20 w-auto hidden dark:block transition-opacity duration-300 object-contain"
+                className="hidden h-14 w-auto object-contain transition-opacity duration-300 dark:block"
                 priority
               />
             </Link>
           </div>
         </SheetHeader>
-        <nav className="">
-          <div className="space-y-2">
+
+        <nav className="flex flex-col">
+          <div className="max-h-[calc(100dvh-13.5rem)] space-y-1 overflow-y-auto overscroll-contain pr-1">
             {navigationItems.map((item) => (
               <div key={item.title}>
-                {item.type === 'dropdown' ? (
-                  <div className="space-y-2">
-                    <div className={`flex w-full items-center justify-between rounded-md p-3 text-left ${isServicesActive() ? 'text-brand' : 'text-black dark:text-white'}`}>
-                      <span className="text-sm font-medium">{item.title}</span>
-                    </div>
-                    <div className="ml-4 space-y-1 border-l-2 border-gray-200 dark:border-[#1f1f1f]/70 pl-4">
+                {item.type === "dropdown" ? (
+                  <div className="space-y-1">
+                    <Link
+                      href={item.href}
+                      className={`block rounded-md px-2 py-2.5 font-bold transition-colors hover:text-brand focus:text-brand ${isServicesActive() ? "text-brand" : "text-black dark:text-white"}`}
+                      onClick={() => setOpen(false)}
+                    >
+                      {item.title}
+                    </Link>
+                    <div className="ml-2 space-y-0.5 border-l-2 border-gray-200 pl-3 dark:border-[#1f1f1f]/70">
                       {item.children?.map((child) => (
                         <Link
                           key={child.href}
                           href={child.href}
-                          className={`block rounded-md p-2 text-sm hover:text-black dark:hover:text-white hover:bg-gray-50 dark:hover:bg-[#1f1f1f]/70 transition-colors duration-200 ${isActive(child.href) ? 'text-brand bg-gray-50 dark:bg-[#1f1f1f]/70' : 'text-gray-600 dark:text-gray-300'}`}
+                          className={`block rounded-md px-2 py-2 text-sm transition-colors hover:text-brand hover:bg-gray-50 dark:hover:bg-black/30 ${isActive(child.href) ? "bg-gray-50 text-brand dark:bg-black/30" : "text-gray-700 dark:text-gray-300"}`}
                           onClick={() => setOpen(false)}
                         >
                           {child.title}
@@ -89,24 +98,23 @@ export function MobileNav() {
                 ) : (
                   <Link
                     href={item.href}
-                    className={`flex items-center rounded-md p-3 hover:bg-gray-100 dark:hover:bg-[#1f1f1f]/70 transition-colors duration-200 ${isActive(item.href) ? 'text-brand bg-gray-100 dark:bg-[#1f1f1f]/70' : 'text-black dark:text-white'}`}
+                    className={`block rounded-md px-2 py-2.5 font-bold transition-colors hover:text-brand focus:text-brand ${isActive(item.href) ? "text-brand" : "text-black dark:text-white"}`}
                     onClick={(e) => {
                       setOpen(false)
-                      if (item.href === '/' && window.location.pathname === '/') {
+                      if (item.href === "/" && window.location.pathname === "/") {
                         e.preventDefault()
-                        window.scrollTo({ top: 0, behavior: 'smooth' })
+                        window.scrollTo({ top: 0, behavior: "smooth" })
                       }
                     }}
                   >
-                    <span className="text-sm font-medium">{item.title}</span>
+                    {item.title}
                   </Link>
                 )}
               </div>
             ))}
           </div>
 
-          {/* CTA Button */}
-          <div className="flex justify-center mt-16">
+          <div className="mt-4 border-t border-gray-200 pt-4 dark:border-[#1f1f1f]/70">
             <Button asChild variant="outline" className="w-full">
               <Link href="/contact" onClick={() => setOpen(false)}>
                 Schedule a Call
@@ -117,4 +125,4 @@ export function MobileNav() {
       </SheetContent>
     </Sheet>
   )
-} 
+}
