@@ -92,6 +92,7 @@ export default function RootLayout({
         <link rel="icon" type="image/png" href="/logo-light.png" />
         <link rel="shortcut icon" type="image/png" href="/logo-light.png" />
         <link rel="apple-touch-icon" href="/logo-light.png" />
+        <meta name="google-site-verification" content="cClHOsSgAwv7YWedNJ0b56X9X7JcKoSK-fJkPwf1PWE" />
       </head>
       <body className={cn(outfit.className, "min-h-screen bg-background antialiased")}>
         <ThemeProvider>
