@@ -109,9 +109,6 @@ const buildWelcomeCopy = (baseUrl: string, latestPost: BlogPostWithImages | null
                 <h1 style="margin:0 0 12px;font-size:24px;line-height:1.25;font-weight:700;color:${TEXT};">
                   You are on the list
                 </h1>
-                <p style="margin:0 0 20px;font-size:16px;line-height:1.6;color:${TEXT};">
-                  Thanks for trusting us with your email. We treat that as a serious invitation — not a license to spam you.
-                </p>
                 <p style="margin:0 0 24px;font-size:16px;line-height:1.6;color:${TEXT};">
                   From time to time we will share <strong style="color:${TEXT};">insights from the work we do</strong>: shipping fast without breaking things, sharpening product UX, and the occasional opinion we have earned the hard way.
                 </p>
@@ -143,7 +140,7 @@ const buildWelcomeCopy = (baseUrl: string, latestPost: BlogPostWithImages | null
             </tr>
             <tr>
               <td style="padding:10px 8px 0;text-align:center;font-size:11px;line-height:1.45;color:${MUTED};">
-                Prefer a lighter inbox? One click is enough — we will stop notes about new insights immediately.
+                Want to unsubscribe?
               </td>
             </tr>
           </table>

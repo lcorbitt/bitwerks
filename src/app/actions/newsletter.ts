@@ -74,7 +74,7 @@ export const subscribeNewsletterAction = async (formData: FormData): Promise<Sub
   if (!unsubscribeToken) {
     console.error("[newsletter] Missing unsubscribe_token after insert; skipping welcome email.")
     await notifyNewsletterInbox(email, source)
-    return { ok: true, message: "Thanks — you’re on the list." }
+    return { ok: true, message: "Thanks! You’re on the list." }
   }
 
   await Promise.all([
@@ -82,7 +82,7 @@ export const subscribeNewsletterAction = async (formData: FormData): Promise<Sub
     sendNewsletterWelcomeEmail(email, latestPost, unsubscribeToken),
   ])
 
-  return { ok: true, message: "Thanks — you’re on the list." }
+  return { ok: true, message: "Thanks! You’re on the list." }
 }
 
 export type UnsubscribeNewsletterResult =
