@@ -8,9 +8,12 @@ import { sanitizeBlogHtml } from "@/lib/blog/sanitize"
 
 import { CTA } from "@/components/sections/cta"
 
+import { getSiteBaseUrl } from "@/lib/blog/site-base-url"
+
 import { BlogPostAuthorCard } from "./BlogPostAuthorCard"
 import { BlogDocument } from "./BlogDocument"
 import { BlogPostFaqSection } from "./BlogPostFaqSection"
+import { BlogShareMenu } from "./BlogShareMenu"
 
 interface BlogPostArticleProps {
   post: BlogPostWithImages
@@ -33,15 +36,20 @@ export const BlogPostArticle = ({ post, variant = "public" }: BlogPostArticlePro
   const backLabel = isAdminPreview ? "← Back to Admin" : "← Back to Insights"
   const heroUrl = getPostFeaturedImageUrl(post)
   const heroAlt = resolveHeroAlt(post, heroUrl)
+  const shareUrl =
+    !isAdminPreview && post.slug
+      ? `${getSiteBaseUrl()}/insights/${post.slug}`
+      : null
 
   return (
     <article className="w-full">
       <div className="container py-16 md:py-24">
         <div className="mx-auto max-w-3xl">
-          <div className="mb-8">
-              <Link href={backHref} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                {backLabel}
-              </Link>
+          <div className="mb-8 flex flex-wrap items-start justify-between gap-3">
+            <Link href={backHref} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+              {backLabel}
+            </Link>
+            {shareUrl ? <BlogShareMenu shareUrl={shareUrl} /> : null}
           </div>
 
           {isAdminPreview ? (
