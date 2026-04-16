@@ -109,26 +109,28 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const locationPages: MetadataRoute.Sitemap = []
 
+  const serviceLocationPriority = (p: number) =>
+    p === 0 ? 0.9 : p === 1 ? 0.8 : p === 2 ? 0.7 : 0.6
+
+  const redirectLocationPriority = (p: number) =>
+    p === 0 ? 0.88 : p === 1 ? 0.7 : p === 2 ? 0.6 : 0.5
+
   for (const city of majorUSCities) {
     for (const service of services) {
-      const priority = city.priority === 1 ? 0.8 : city.priority === 2 ? 0.7 : 0.6
-
       locationPages.push({
         url: `${baseUrl}/services/${service}/${city.slug}/${city.stateSlug}`,
         lastModified: new Date(),
         changeFrequency: "monthly",
-        priority,
+        priority: serviceLocationPriority(city.priority),
       })
     }
 
     for (const service of redirectServices) {
-      const priority = city.priority === 1 ? 0.7 : city.priority === 2 ? 0.6 : 0.5
-
       locationPages.push({
         url: `${baseUrl}/${service}/${city.slug}/${city.stateSlug}`,
         lastModified: new Date(),
         changeFrequency: "monthly",
-        priority,
+        priority: redirectLocationPriority(city.priority),
       })
     }
   }

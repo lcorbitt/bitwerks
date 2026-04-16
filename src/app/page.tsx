@@ -1,5 +1,5 @@
 import { Metadata } from "next"
-import { LocalBusinessSchema } from "@/components/schema"
+import { LocalBusinessSchema, SiteOrganizationSchema } from "@/components/schema"
 import { getLocationFromParams, type LocationData } from "@/lib/location"
 import { Hero } from "@/app/page/components/Hero"
 import { Services } from "@/app/page/components/Services"
@@ -15,18 +15,36 @@ import { ScrollFadeIn } from "@/components/ui/scroll-fade-in"
 
 export const metadata: Metadata = {
   title: "BitWerks | Custom Web Development & Software Solutions",
-  description: "Professional web and software development based in northern Colorado, serving businesses nationwide.",
-  keywords: ["web development", "software development", "white label partnerships", "Denver", "Boulder", "Colorado Springs", "Colorado", "small business"],
+  description:
+    "Professional web and software development rooted in Denver and Northern Colorado, serving businesses nationwide.",
+  keywords: [
+    "web development",
+    "software development",
+    "white label partnerships",
+    "Denver",
+    "Northern Colorado",
+    "Fort Collins",
+    "Boulder",
+    "Greeley",
+    "Loveland",
+    "Longmont",
+    "Windsor",
+    "Colorado",
+    "Colorado Springs",
+    "small business",
+  ],
   openGraph: {
     title: "BitWerks | Custom Web Development & Software Solutions",
-    description: "Transform your business with professional web and software solutions. Based in Denver, CO, serving businesses nationwide.",
+    description:
+      "Transform your business with professional web and software solutions. Rooted in Denver and Northern Colorado, serving teams nationwide.",
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
     title: "BitWerks | Custom Web Development & Software Solutions",
-    description: "Professional web and software development serving businesses nationwide.",
+    description:
+      "Professional web and software development rooted in Denver and Northern Colorado, serving businesses nationwide.",
   },
   robots: {
     index: true,
@@ -54,6 +72,7 @@ export default async function Home({ searchParams = {} }: PageProps) {
       <link rel="preload" href="/hero-background.png" as="image" type="image/png" />
       
       <div className="flex flex-col overflow-hidden">
+      <SiteOrganizationSchema />
       <LocalBusinessSchema location={location} />
       <ScrollFadeIn>
         <Hero />

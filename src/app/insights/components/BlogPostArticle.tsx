@@ -43,7 +43,7 @@ export const BlogPostArticle = ({ post, variant = "public" }: BlogPostArticlePro
 
   return (
     <article className="w-full">
-      <div className="container py-16 md:py-24">
+      <div className="container py-8 md:py-16">
         <div className="mx-auto max-w-3xl">
           <div className="mb-8 flex flex-wrap items-start justify-between gap-3">
             <Link href={backHref} className="text-sm text-muted-foreground hover:text-foreground transition-colors">

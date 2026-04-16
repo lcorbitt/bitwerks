@@ -1,17 +1,52 @@
+import { getSiteBaseUrl } from "@/lib/blog/site-base-url"
 import { LocationData } from "@/lib/location"
 
 interface SchemaProps {
   location: LocationData
 }
 
+/** Sitewide Organization JSON-LD for answer engines and brand panels. */
+export const SiteOrganizationSchema = () => {
+  const baseUrl = getSiteBaseUrl()
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": `${baseUrl}/#organization`,
+    name: "BitWerks",
+    url: baseUrl,
+    logo: `${baseUrl}/logo-light.png`,
+    description:
+      "BitWerks designs and builds custom web and software for teams in Denver, Northern Colorado, and nationwide.",
+    areaServed: [
+      {
+        "@type": "City",
+        name: "Denver",
+        containedInPlace: { "@type": "State", name: "Colorado" },
+      },
+      {
+        "@type": "AdministrativeArea",
+        name: "Northern Colorado",
+        containedInPlace: { "@type": "State", name: "Colorado" },
+      },
+      { "@type": "Country", name: "United States" },
+    ],
+  }
+
+  return (
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+  )
+}
+
 export function LocalBusinessSchema({ location }: SchemaProps) {
-  const baseUrl = "https://bitwerks.dev"
+  const baseUrl = getSiteBaseUrl()
   const schema = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "@id": baseUrl,
     name: "BitWerks",
-    description: `Professional web and software development serving ${location.city}, ${location.state} and businesses nationwide.`,
+    description: location.isDefault
+      ? "Professional web and software development rooted in Denver and Northern Colorado, serving businesses nationwide."
+      : `Professional web and software development rooted in Denver and Northern Colorado, also serving ${location.city}, ${location.state} and businesses nationwide.`,
     url: baseUrl,
     address: {
       "@type": "PostalAddress",

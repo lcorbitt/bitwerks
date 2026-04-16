@@ -7,7 +7,8 @@ export interface USCity {
   stateName: string
   slug: string
   stateSlug: string
-  priority: number // Higher priority = more important for SEO
+  /** 0 = flagship regional hub, 1 = major market, 2 = secondary, 3+ = tertiary (used for sitemap weighting). */
+  priority: number
 }
 
 // Top 100+ major US cities by population and business activity
@@ -43,20 +44,22 @@ export const majorUSCities: USCity[] = [
   { city: "Irvine", state: "CA", stateName: "California", slug: "irvine", stateSlug: "ca", priority: 2 },
   { city: "Santa Barbara", state: "CA", stateName: "California", slug: "santa-barbara", stateSlug: "ca", priority: 3 },
   
-  // Colorado
-  { city: "Denver", state: "CO", stateName: "Colorado", slug: "denver", stateSlug: "co", priority: 1 },
+  // Colorado — priority 0: Denver + Northern Colorado corridor (sitemap and copy prioritize these first)
+  { city: "Denver", state: "CO", stateName: "Colorado", slug: "denver", stateSlug: "co", priority: 0 },
+  { city: "Fort Collins", state: "CO", stateName: "Colorado", slug: "fort-collins", stateSlug: "co", priority: 0 },
+  { city: "Boulder", state: "CO", stateName: "Colorado", slug: "boulder", stateSlug: "co", priority: 0 },
+  { city: "Greeley", state: "CO", stateName: "Colorado", slug: "greeley", stateSlug: "co", priority: 0 },
+  { city: "Loveland", state: "CO", stateName: "Colorado", slug: "loveland", stateSlug: "co", priority: 0 },
+  { city: "Longmont", state: "CO", stateName: "Colorado", slug: "longmont", stateSlug: "co", priority: 0 },
+  { city: "Windsor", state: "CO", stateName: "Colorado", slug: "windsor", stateSlug: "co", priority: 0 },
   { city: "Colorado Springs", state: "CO", stateName: "Colorado", slug: "colorado-springs", stateSlug: "co", priority: 1 },
   { city: "Aurora", state: "CO", stateName: "Colorado", slug: "aurora-co", stateSlug: "co", priority: 1 },
-  { city: "Fort Collins", state: "CO", stateName: "Colorado", slug: "fort-collins", stateSlug: "co", priority: 1 },
-  { city: "Boulder", state: "CO", stateName: "Colorado", slug: "boulder", stateSlug: "co", priority: 1 },
   { city: "Lakewood", state: "CO", stateName: "Colorado", slug: "lakewood", stateSlug: "co", priority: 1 },
   { city: "Thornton", state: "CO", stateName: "Colorado", slug: "thornton", stateSlug: "co", priority: 2 },
   { city: "Arvada", state: "CO", stateName: "Colorado", slug: "arvada", stateSlug: "co", priority: 2 },
   { city: "Westminster", state: "CO", stateName: "Colorado", slug: "westminster", stateSlug: "co", priority: 2 },
   { city: "Pueblo", state: "CO", stateName: "Colorado", slug: "pueblo", stateSlug: "co", priority: 2 },
-  { city: "Greeley", state: "CO", stateName: "Colorado", slug: "greeley", stateSlug: "co", priority: 2 },
   { city: "Grand Junction", state: "CO", stateName: "Colorado", slug: "grand-junction", stateSlug: "co", priority: 2 },
-  { city: "Loveland", state: "CO", stateName: "Colorado", slug: "loveland", stateSlug: "co", priority: 2 },
   { city: "Broomfield", state: "CO", stateName: "Colorado", slug: "broomfield", stateSlug: "co", priority: 2 },
   
   // Connecticut

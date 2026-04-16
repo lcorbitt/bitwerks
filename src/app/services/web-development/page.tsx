@@ -60,7 +60,8 @@ const LazyCTA = dynamic(() => import("@/components/sections/cta").then(mod => ({
 
 export const metadata: Metadata = {
   title: "BitWerks | Web Design & Development Services",
-  description: "Professional web design & development services based in Denver, CO, serving businesses nationwide. Transform your digital presence with expert web design and custom development solutions.",
+  description:
+    "Web design and development from BitWerks, rooted in Denver and Northern Colorado with delivery nationwide. Expert sites and custom engineering.",
   keywords: [
     "web design",
     "web development",
@@ -72,10 +73,16 @@ export const metadata: Metadata = {
     "custom web development",
     "professional web design",
     "professional web development",
+    "Denver",
+    "Northern Colorado",
+    "Longmont",
+    "Windsor",
+    "Colorado",
   ],
   openGraph: {
     title: "BitWerks | Web Design & Development Services",
-    description: "Transform your business with professional web design & development solutions. Expert designers and developers based in Denver, CO, serving businesses nationwide.",
+    description:
+      "Professional web design and development rooted in Denver and Northern Colorado, serving teams nationwide.",
   },
 }
 

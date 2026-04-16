@@ -82,12 +82,12 @@ export function MobileNav() {
                     >
                       {item.title}
                     </Link>
-                    <div className="ml-2 space-y-0.5 border-l-2 border-gray-200 pl-3 dark:border-[#1f1f1f]/70">
+                    <div className="ml-2 grid grid-cols-2 gap-x-2 gap-y-0.5 border-l-2 border-gray-200 pl-3 dark:border-[#1f1f1f]/70">
                       {item.children?.map((child) => (
                         <Link
                           key={child.href}
                           href={child.href}
-                          className={`block rounded-md px-2 py-2 text-sm transition-colors hover:text-brand hover:bg-gray-50 dark:hover:bg-black/30 ${isActive(child.href) ? "bg-gray-50 text-brand dark:bg-black/30" : "text-gray-700 dark:text-gray-300"}`}
+                          className={`block min-w-0 rounded-md px-2 py-2 text-sm transition-colors hover:text-brand hover:bg-gray-50 dark:hover:bg-black/30 ${isActive(child.href) ? "bg-gray-50 text-brand dark:bg-black/30" : "text-gray-700 dark:text-gray-300"}`}
                           onClick={() => setOpen(false)}
                         >
                           {child.title}
