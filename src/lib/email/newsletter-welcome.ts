@@ -138,11 +138,6 @@ const buildWelcomeCopy = (baseUrl: string, latestPost: BlogPostWithImages | null
                 </a>
               </td>
             </tr>
-            <tr>
-              <td style="padding:10px 8px 0;text-align:center;font-size:11px;line-height:1.45;color:${MUTED};">
-                Want to unsubscribe?
-              </td>
-            </tr>
           </table>
         </td>
       </tr>
