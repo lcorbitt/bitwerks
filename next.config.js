@@ -30,7 +30,10 @@ const nextConfig = {
     optimizePackageImports: ['lucide-react', '@radix-ui/react-icons'],
   },
   compiler: {
-    removeConsole: process.env.NODE_ENV === 'production',
+    // Production default strips all `console.*`, which removes server-action logs too
+    // (e.g. Resend / newsletter diagnostics). Keep warnings and errors for observability.
+    removeConsole:
+      process.env.NODE_ENV === "production" ? { exclude: ["error", "warn"] } : false,
   },
   compress: true,
   poweredByHeader: false,
