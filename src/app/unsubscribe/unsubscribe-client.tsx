@@ -43,12 +43,9 @@ export const UnsubscribeClient = ({ token }: UnsubscribeClientProps) => {
       <div className="space-y-5">
         <h1 className="text-2xl font-semibold tracking-tight text-foreground">You are unsubscribed</h1>
         <p className="text-muted-foreground leading-relaxed">
-          We are genuinely sorry to see you go — and thankful for the attention you already gave us. You will not
-          receive further emails about new insights or list updates from Bitwerks. If you change your mind, you are
+          We are genuinely sorry to see you go. You will not
+          receive further emails about new insights or list updates from BitWerks. If you change your mind, you are
           always welcome to subscribe again from the site.
-        </p>
-        <p className="text-muted-foreground text-sm leading-relaxed">
-          This page is all that is required; there is nothing else you need to click.
         </p>
         <Button asChild variant="outline" className="text-base">
           <Link href="/">Return home</Link>

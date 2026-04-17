@@ -15,7 +15,7 @@ export const sampleClients: Client[] = [
     logo: {
       light: "/clickk.png",
     },
-    caseStudyLink: "https://clickk.com/",
+    caseStudyLink: "/our-work/clickk",
     services: ["Software Development", "Next.js", "React", "Tailwind", "PostgreSQL", "AWS"],
   },
   {

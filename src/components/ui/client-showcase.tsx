@@ -56,7 +56,8 @@ export function ClientShowcase({ clients, className = "", initialCount }: Client
                 key={client.id} 
                 href={client.caseStudyLink || "#"}
                 className="aspect-square bg-light dark:bg-gray-100 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer relative overflow-hidden group block"
-                target={client.caseStudyLink ? "_blank" : undefined}
+                target={client.caseStudyLink.startsWith("http") ? "_blank" : undefined}
+                rel={client.caseStudyLink.startsWith("http") ? "noopener noreferrer" : undefined}
               >
                 <div className="absolute inset-4 z-40">
                   <Image

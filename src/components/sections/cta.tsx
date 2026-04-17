@@ -2,8 +2,8 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Heading3 } from "@/components/ui/heading"
 import { ScrollFadeIn } from "@/components/ui/scroll-fade-in"
-import { NewsletterSubscribe } from "@/components/newsletter/newsletter-subscribe"
-interface CTAProps {
+
+export interface CTAProps {
   className?: string
 }
 

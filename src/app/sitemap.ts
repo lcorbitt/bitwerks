@@ -1,6 +1,7 @@
 import { MetadataRoute } from "next"
 
 import { listPublishedPostsPublic } from "@/lib/blog/queries-public"
+import { listCaseStudySlugs } from "@/lib/case-studies/registry"
 import { majorUSCities } from "@/lib/us-cities"
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -33,6 +34,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "weekly",
       priority: 0.9,
     },
+    ...listCaseStudySlugs().map((slug) => ({
+      url: `${baseUrl}/our-work/${slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.88,
+    })),
     {
       url: `${baseUrl}/contact`,
       lastModified: new Date(),
