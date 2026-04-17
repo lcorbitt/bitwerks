@@ -20,7 +20,6 @@ const trimEnv = (value: string | undefined): string | undefined => {
 }
 
 const BITWERKS_LINKEDIN_URL = "https://www.linkedin.com/company/bitwerks-dev"
-/** Set `BITWERKS_FACEBOOK_URL` if the default page slug does not match your Facebook presence. */
 const BITWERKS_FACEBOOK_URL = "https://www.facebook.com/bitwerks"
 
 const emailPostImageAlt = (post: BlogPostWithImages): string => {
