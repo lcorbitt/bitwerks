@@ -2,10 +2,8 @@ import type { Metadata } from "next"
 
 import { BlogIndexHero } from "@/app/insights/components/BlogIndexHero"
 import { BlogPostGridCard } from "@/app/insights/components/BlogPostGridCard"
-import { BlogShareMenu } from "@/app/insights/components/BlogShareMenu"
 import { CTA } from "@/components/sections/cta"
 import { listPublishedPostsPublic } from "@/lib/blog/queries-public"
-import { getSiteBaseUrl } from "@/lib/blog/site-base-url"
 
 export const metadata: Metadata = {
   title: "Insights",
@@ -15,7 +13,6 @@ export const metadata: Metadata = {
 export default async function InsightsIndexPage() {
   const posts = await listPublishedPostsPublic()
   const [featured, ...rest] = posts
-  const insightsIndexUrl = `${getSiteBaseUrl()}/insights`
 
   return (
     <div className="relative">
@@ -26,9 +23,6 @@ export default async function InsightsIndexPage() {
         />
 
         <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
-          <div className="flex justify-end pb-2 pt-4 sm:pt-6">
-            <BlogShareMenu shareUrl={insightsIndexUrl} />
-          </div>
           {featured ? (
             <BlogIndexHero post={featured} />
           ) : null}
