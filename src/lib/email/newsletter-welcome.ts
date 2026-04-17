@@ -21,7 +21,7 @@ const trimEnv = (value: string | undefined): string | undefined => {
 
 const BITWERKS_LINKEDIN_URL = "https://www.linkedin.com/company/bitwerks"
 /** Set `BITWERKS_FACEBOOK_URL` if the default page slug does not match your Facebook presence. */
-const BITWERKS_FACEBOOK_URL = trimEnv(process.env.BITWERKS_FACEBOOK_URL) ?? "https://www.facebook.com/bitwerks"
+const BITWERKS_FACEBOOK_URL = "https://www.facebook.com/bitwerks"
 
 const emailPostImageAlt = (post: BlogPostWithImages): string => {
   const url = getPostListImageUrl(post)
@@ -122,7 +122,7 @@ const buildWelcomeCopy = (baseUrl: string, latestPost: BlogPostWithImages | null
               <tr>
                 <td align="center" style="padding:${latestPost ? "8px 0 0" : "22px 0 0"};">
                   <a href="${insightsUrl}" style="display:inline-block;padding:12px 26px;background:${BRAND};color:#ffffff !important;text-decoration:none;border-radius:6px;font-size:15px;font-weight:600;">
-                    Browse insights
+                    Browse Insights
                   </a>
                 </td>
               </tr>
@@ -183,15 +183,8 @@ const buildWelcomeCopy = (baseUrl: string, latestPost: BlogPostWithImages | null
             </tr>
             <tr>
               <td style="padding:18px 12px 0;text-align:center;font-size:12px;line-height:1.6;color:${MUTED};">
-                This promotional message has been sent to you because you are currently subscribed to &lsquo;BitWerks: Insights&rsquo;. To unsubscribe, click
+                This promotional message has been sent to you because you are currently subscribed to BitWerks: Insights. To unsubscribe, click
                 <a href="${unsubscribeUrl}" style="color:${ACCENT};font-weight:600;text-decoration:underline;">here</a>.
-              </td>
-            </tr>
-            <tr>
-              <td style="padding:14px 8px 0;text-align:center;">
-                <a href="${unsubscribeUrl}" style="display:inline-block;padding:10px 18px;border:1px solid ${BORDER};border-radius:999px;background:#ffffff;color:${MUTED} !important;text-decoration:none;font-size:12px;font-weight:600;">
-                  Unsubscribe
-                </a>
               </td>
             </tr>
             <tr>

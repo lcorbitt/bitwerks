@@ -133,7 +133,8 @@ const buildInsightEmail = (params: {
 }
 
 /**
- * Sends a concise “new insight” email to active newsletter leads.
+ * Sends a concise “new insight” email to active newsletter subscribers only.
+ * Recipients come from `newsletter_leads_for_insight_broadcast()` (unsubscribed_at is null).
  * Intended to run only on the first transition from draft → published for a post.
  */
 export const sendInsightPublishedToLeads = async (params: {
@@ -144,17 +145,17 @@ export const sendInsightPublishedToLeads = async (params: {
 
   if (post.status !== "published" || !post.slug?.trim()) return
 
-  const { data: leads, error } = await supabase
-    .from("newsletter_leads")
-    .select("email, unsubscribe_token")
-    .is("unsubscribed_at", null)
+  const { data: leads, error } = await supabase.rpc("newsletter_leads_for_insight_broadcast")
 
   if (error) {
-    console.error("[email] Could not load newsletter leads for insight broadcast:", error.message)
+    console.error("[email] Could not load subscribed newsletter leads for insight broadcast:", error.message)
     return
   }
 
-  const recipients = (leads ?? []) as NewsletterLeadRecipient[]
+  const rawRecipients = (leads ?? []) as NewsletterLeadRecipient[]
+  const recipients = rawRecipients.filter(
+    (lead) => lead.email.trim().length > 0 && String(lead.unsubscribe_token).trim().length > 0,
+  )
   if (!recipients.length) return
 
   const baseUrl = getSiteBaseUrl()
