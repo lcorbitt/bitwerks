@@ -69,7 +69,11 @@ const CaseStudyHero = ({
             src={featuredImage.src}
             alt={featuredImage.alt}
             fill
-            className="object-cover object-top"
+            className={
+              data.featuredImageFit === "contain"
+                ? "object-contain object-center p-8 md:p-12"
+                : "object-cover object-top"
+            }
             sizes="(min-width: 768px) 42rem, 100vw"
             priority
           />

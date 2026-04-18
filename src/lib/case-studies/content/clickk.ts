@@ -9,17 +9,14 @@ export const clickkCaseStudyPage: CaseStudyPageData = {
   businessGoal:
     "Clickk’s product had to move beyond fast moving prototypes into an architecture the whole team could build on without throttling delivery. The focus was a coherent frontend system, tighter API and data contracts with backend services, and repeatable engineering standards so new work stayed maintainable as scope and team size grew.",
   accomplishments: [
-    "Led the evolution of the engineering system from early stage development into a scalable, production ready platform by defining architecture, standards, and frontend and backend alignment.",
-    "Drove end to end frontend architecture, establishing modular patterns, clear separation of concerns, and scalable component design.",
-    "Partnered with backend engineers to improve API design and data contracts, increasing consistency, performance, and developer efficiency.",
-    "Established and enforced engineering standards across the codebase, significantly improving maintainability, readability, and long term scalability.",
-    "Standardized approaches to state management, data fetching, and component structure, reducing duplication and accelerating development.",
-    "Influenced engineering processes, team workflows, and development expectations, improving overall velocity and reducing rework.",
-    "Mentored engineers on system design and best practices, elevating team wide technical quality and decision making.",
-    "Contributed to hiring and leveling efforts, helping define engineering standards and expectations for new team members.",
-    "Built and maintained comprehensive technical documentation, reducing onboarding time and eliminating knowledge silos.",
-    "Acted as a cross functional technical leader, aligning frontend, backend, and product to deliver cohesive, scalable solutions.",
-    "Played a key role in bringing the product from concept to market ready by establishing a reliable and extensible engineering foundation.",
+    "Helped Clickk move from early-stage builds toward a more scalable, production-ready platform, with shared architecture direction and closer alignment between frontend, backend, and product.",
+    "Shaped the frontend around modular patterns, clearer boundaries, and components that could grow with scope without turning every release into a rewrite.",
+    "Worked alongside Clickk’s engineering group to tighten API design and data contracts so interfaces, services, and data stayed consistent, faster to change, and easier to reason about.",
+    "Introduced and maintained engineering standards across the codebase to improve maintainability, readability, and long-term scalability as the team and feature surface grew.",
+    "Aligned state, data-fetching, and UI structure so teams shipped with less duplication, fewer one-off patterns, and steadier delivery cadence.",
+    "Supported clearer engineering process, review expectations, and day-to-day workflow so delivery stayed predictable and rework dropped.",
+    "Invested in documentation, shared practices, and onboarding-friendly structure so knowledge spread across the team instead of living in isolated pockets.",
+    "Coordinated delivery across disciplines so roadmap work landed as cohesive product increments rather than disconnected UI or backend passes.",
   ],
   servicesUsed: [
     "Software Development",
@@ -43,5 +40,5 @@ export const clickkCaseStudyPage: CaseStudyPageData = {
   websiteUrl: "https://clickk.com/",
   seoTitle: "Clickk: Case Study",
   seoDescription:
-    "How BitWerks helped Clickk scale product engineering: frontend architecture, API alignment, standards, documentation, and technical leadership from concept toward market ready delivery.",
+    "How BitWerks helped Clickk scale product engineering: frontend architecture, API alignment, shared standards, documentation, and cross-team delivery from early builds toward market-ready releases.",
 }

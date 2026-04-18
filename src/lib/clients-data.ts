@@ -24,7 +24,7 @@ export const sampleClients: Client[] = [
     logo: {
       light: "/urban_sky_dark.png",
     },
-    caseStudyLink: "https://urbansky.com/",
+    caseStudyLink: "/our-work/urban-sky",
     services: ["Software Development", "NestJS", "React", "Tailwind", "PostgreSQL", "Playwright", "AWS"],
   },
   {

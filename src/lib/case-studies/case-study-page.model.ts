@@ -16,6 +16,8 @@ export interface CaseStudyPageData {
   accomplishments: string[]
   /** BitWerks service lines applied on the engagement (labels only; optional). */
   servicesUsed?: string[]
+  /** Shown above the hero image when `images[0]` exists. Default `cover`; use `contain` for logos or marks. */
+  featuredImageFit?: "contain" | "cover"
   images: CaseStudyGalleryImage[]
   results?: string
   websiteUrl?: string
