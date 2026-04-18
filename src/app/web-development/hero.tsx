@@ -21,8 +21,8 @@ export function Hero({ location }: HeroProps) {
             </p>
             <Heading1 className="mx-auto lg:mx-0 max-w-3xl lg:max-w-none relative z-10">Sleek, responsive</Heading1>
             <Heading1 className="mb-6 mx-auto lg:mx-0 max-w-3xl lg:max-w-none relative z-10 text-brand">websites</Heading1>
-            <p className="mb-8 text-basetext-muted-foreground md:text-lg mx-auto lg:mx-0 max-w-2xl lg:max-w-xl relative z-10">
-              Work with dedicated experts to design and develop your website to maximize credibility for your brand.
+            <p className="mb-8 text-basetext-muted-foreground md:text-lg mx-auto lg:mx-0 max-w-2xl lg:max-w-xl relative z-10 leading-relaxed">
+              Work with dedicated experts to design and develop your website to maximize credibility for your brand.{" "}
             </p>
             <div className="flex gap-4 justify-center lg:justify-start relative z-10">
               <Button

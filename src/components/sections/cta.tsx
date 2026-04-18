@@ -1,3 +1,4 @@
+import type { ReactNode } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Heading3 } from "@/components/ui/heading"
@@ -5,9 +6,11 @@ import { ScrollFadeIn } from "@/components/ui/scroll-fade-in"
 
 export interface CTAProps {
   className?: string
+  /** When set, replaces the default headline (e.g. location service pages). */
+  headline?: ReactNode
 }
 
-export function CTA({ className = "" }: CTAProps) {
+export function CTA({ className = "", headline }: CTAProps) {
   return (
     <section className={`relative bg-brand dark:bg-brand/80 pt-16 md:pt-24 overflow-hidden ${className}`}>
       {/* Circuit board background */}
@@ -26,10 +29,13 @@ export function CTA({ className = "" }: CTAProps) {
           <div className="mx-auto max-w-4xl text-center">
             {/* Card */}
             <div className="bg-white dark:bg-primary rounded-lg p-8 md:p-12 shadow-lg dark:shadow-2xl">
-              <Heading3 className="mb-8">Let&apos;s bring your vision to <span className="text-brand">life.</span></Heading3>
-              {/* <p className="mb-8 text-muted-foreground">
-                Build beautifully and scale successfully.
-              </p> */}
+              <Heading3 className="mb-8">
+                {headline ?? (
+                  <>
+                    Let&apos;s bring your vision to <span className="text-brand">life.</span>
+                  </>
+                )}
+              </Heading3>
               <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
                 <Button variant="brand" asChild size="lg">
                   <Link href="/contact">Get In Touch</Link>

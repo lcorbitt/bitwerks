@@ -5,6 +5,7 @@ import { getLocationFromParams, type LocationData } from "@/lib/location"
 import { majorUSCities, getCityBySlug, formatLocationDisplay } from "@/lib/us-cities"
 import { generateLocationMetadata, generateLocationStructuredData } from "@/lib/seo-utils"
 import { Hero } from "@/app/white-label-partnerships/hero"
+import { LocationSeoInsert } from "@/components/location-seo/location-seo-insert"
 import { DecorativeCircles } from "@/components/ui/decorative-circles"
 import dynamic from "next/dynamic"
 import Services from "@/app/white-label-partnerships/services"
@@ -115,7 +116,9 @@ export default function CityPage({ params }: PageProps) {
         <Hero location={locationDisplay || undefined} />
         {/* Curved section divider */}
         <section className="clip-top-large-circle relative -left-[15%] h-72 w-[130%] bg-white dark:bg-primary -mt-20 md:-mt-52 z-10"></section>
-        
+
+        {city ? <LocationSeoInsert city={city} service="white-label-partnerships" /> : null}
+
         <Services />
         
         <DecorativeCircles className="bottom-16" />
@@ -171,7 +174,15 @@ export default function CityPage({ params }: PageProps) {
             </div>
           </div>
         </div>}>
-          <LazyCTA />
+          <LazyCTA
+            headline={
+              locationDisplay ? (
+                <>
+                  Ready to scale delivery in <span className="text-brand">{locationDisplay}</span>?
+                </>
+              ) : undefined
+            }
+          />
         </Suspense>
       </div>
     </>

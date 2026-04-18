@@ -5,6 +5,10 @@ interface LocationMetadataOptions {
   city: USCity
   service: "web-development" | "software-development" | "white-label-partnerships" | "web-design" | "app-development"
   baseUrl?: string
+  /** Absolute page URL path for phrase landings, e.g. `/fort-collins-web-design` (no trailing slash). */
+  canonicalPath?: string
+  /** Optional `<title>` override (phrase SEO pages). */
+  titleOverride?: string
 }
 
 const isColoradoPrimaryHub = (city: USCity) => city.state === "CO" && city.priority === 0
@@ -29,18 +33,27 @@ export function generateLocationMetadata({
   city,
   service,
   baseUrl = "https://bitwerks.dev",
+  canonicalPath,
+  titleOverride,
 }: LocationMetadataOptions): Metadata {
+  const root = baseUrl.replace(/\/$/, "")
   const locationString = formatLocationString(city)
   const locationDisplay = formatLocationDisplay(city)
   const serviceName = serviceNames[service]
   const serviceDesc = serviceDescriptions[service]
   // Redirect services (web-design, app-development) are at root level, not in /services/
   const isRedirectService = service === "web-design" || service === "app-development"
-  const url = isRedirectService 
-    ? `${baseUrl}/${service}/${city.slug}/${city.stateSlug}`
-    : `${baseUrl}/services/${service}/${city.slug}/${city.stateSlug}`
+  const defaultUrl = isRedirectService
+    ? `${root}/${service}/${city.slug}/${city.stateSlug}`
+    : `${root}/services/${service}/${city.slug}/${city.stateSlug}`
+  const path = canonicalPath
+    ? canonicalPath.startsWith("/")
+      ? canonicalPath
+      : `/${canonicalPath}`
+    : null
+  const url = path ? `${root}${path}` : defaultUrl
 
-  const title = `${serviceName} in ${locationString} | BitWerks`
+  const title = titleOverride ?? `${serviceName} in ${locationString} | BitWerks`
   const description = isColoradoPrimaryHub(city)
     ? `Professional ${serviceDesc} in ${locationDisplay} and across Denver and Northern Colorado. Expert ${serviceName.toLowerCase()} for Front Range teams and nationwide clients.`
     : `Professional ${serviceDesc} services in ${locationDisplay}. Expert ${serviceName.toLowerCase()} solutions tailored to businesses in ${locationString} and nationwide.`
@@ -108,16 +121,18 @@ export function generateLocationMetadata({
 
 export function generateLocationStructuredData(
   city: USCity,
-  service: "web-development" | "software-development" | "white-label-partnerships" | "web-design" | "app-development"
+  service: "web-development" | "software-development" | "white-label-partnerships" | "web-design" | "app-development",
+  options?: { pageUrl?: string },
 ) {
   const locationString = formatLocationString(city)
   const serviceName = serviceNames[service]
   const baseUrl = "https://bitwerks.dev"
   // Redirect services (web-design, app-development) are at root level, not in /services/
   const isRedirectService = service === "web-design" || service === "app-development"
-  const url = isRedirectService 
+  const defaultUrl = isRedirectService
     ? `${baseUrl}/${service}/${city.slug}/${city.stateSlug}`
     : `${baseUrl}/services/${service}/${city.slug}/${city.stateSlug}`
+  const url = options?.pageUrl ?? defaultUrl
 
   const areaServed = isColoradoPrimaryHub(city)
     ? [

@@ -2,6 +2,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Heading1 } from "@/components/ui/heading"
+import { whiteLabelHeroSupportingCopy } from "@/lib/value-propositions"
 
 interface HeroProps {
   location?: string
@@ -22,8 +23,9 @@ export function Hero({ location }: HeroProps) {
               <br />
               <span className="text-brand">you present it</span>
             </Heading1>
-            <p className="mb-8 text-basetext-muted-foreground md:text-lg mx-auto lg:mx-0 max-w-2xl lg:max-w-xl relative z-10">
-              We work with agencies to build custom websites and applications that deliver exceptional results for their clients.
+            <p className="mb-8 text-basetext-muted-foreground md:text-lg mx-auto lg:mx-0 max-w-2xl lg:max-w-xl relative z-10 leading-relaxed">
+              We work with agencies to build custom websites and applications that deliver exceptional results for their clients.{" "}
+              {whiteLabelHeroSupportingCopy}
             </p>
             <div className="flex gap-4 justify-center lg:justify-start relative z-10">
               <Button

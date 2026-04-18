@@ -8,6 +8,7 @@ import { Heading2 } from "@/components/ui/heading"
 import { Process } from "@/components/sections/process"
 import { Testimonials } from "@/components/ui/testimonials"
 import { sampleTestimonials } from "@/lib/testimonials-data"
+import { servicesDirectoryIntroSecondary } from "@/lib/value-propositions"
 
 export const metadata: Metadata = {
   title: "Services",
@@ -27,8 +28,8 @@ export default function ServicesPage() {
           <Heading2 className="mb-4">
             Everything you need to <span className="text-brand">build</span> and grow
           </Heading2>
-          <p className="mx-auto mb-4 max-w-2xl text-muted-foreground md:text-lg">
-            Pick a service to see scope, typical deliverables, and how we work with you.
+          <p className="mx-auto mb-4 max-w-2xl text-muted-foreground md:text-lg leading-relaxed">
+            Pick a service to see scope, typical deliverables, and how we work with you. {servicesDirectoryIntroSecondary}
           </p>
         </div>
 

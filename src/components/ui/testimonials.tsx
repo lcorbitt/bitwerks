@@ -1,3 +1,5 @@
+import type { ReactNode } from "react"
+
 import { Heading2 } from "./heading"
 
 import { Quote } from "./quote"
@@ -12,7 +14,7 @@ interface Testimonial {
 interface TestimonialsProps {
   title?: string
   subtitle?: string
-  description?: string
+  description?: ReactNode
   testimonials: Testimonial[]
   className?: string
 }
@@ -33,6 +35,11 @@ export function Testimonials({
               {subtitle}
             </p>
             <Heading2 className="mb-8">{title}</Heading2>
+            {description ? (
+              <p className="mb-10 text-pretty text-base leading-relaxed text-muted-foreground md:text-lg">
+                {description}
+              </p>
+            ) : null}
           </div>
         {/* Testimonials Grid */}
         <div className="grid md:grid-cols-3 gap-16 md:gap-8 max-w-6xl mx-auto">

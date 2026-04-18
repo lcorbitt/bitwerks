@@ -67,8 +67,11 @@ export default function Services() {
           </Suspense>
 
           <Heading2 className="mb-8">Your Product Engineering Partner</Heading2>
-          <p className="text-xl text-muted-light dark:text-muted-dark">
+          <p className="text-xl text-muted-light dark:text-muted-dark leading-relaxed">
             Whether you&apos;re building new custom applications or looking to improve and enhance existing software, we create solutions designed to make your business run smarter and adapt to your evolving needs.
+          </p>
+          <p className="mt-6 text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">
+            You collaborate with the engineer shipping your build, not a revolving support desk. Interfaces stay coherent on small screens, and we keep interactions quick because performance changes how people trust a product.
           </p>
         </div>
 

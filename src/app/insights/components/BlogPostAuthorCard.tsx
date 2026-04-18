@@ -72,7 +72,7 @@ export const BlogPostAuthorCard = () => {
         </div>
       </div>
       <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-        {`Since 2017, we've built software for businesses of all sizes, from early-stage startups to established organizations. The company's goal is to create lasting value throughout the entire digital transformation journey.`}
+        {`Since 2017, we've delivered projects for businesses of all sizes, from early-stage startups to established organizations. The company's goal is to create lasting value throughout the entire digital transformation journey.`}
       </p>
       <div className="mt-5">
         <p className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground">Expertise</p>

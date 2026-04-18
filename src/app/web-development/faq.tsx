@@ -53,11 +53,24 @@ const FAQ_ITEMS = [
   },
 ] as const
 
-export function FAQSection() {
+export interface WebDevelopmentFAQSectionProps {
+  /** When set, title becomes "{locationLabel} {serviceKeyword} FAQs" (e.g. Colorado Web Development FAQs). */
+  locationLabel?: string
+  /** Word or phrase before "FAQs" when `locationLabel` is set; also used for the default title when no location. Defaults to "Web Development". */
+  serviceKeyword?: string
+}
+
+export function FAQSection({ locationLabel, serviceKeyword = "Web Development" }: WebDevelopmentFAQSectionProps) {
+  const loc = locationLabel?.trim()
+  const title = loc ? `${loc} ${serviceKeyword} FAQs` : `${serviceKeyword} FAQs`
+  const description = loc
+    ? `Common questions about our web development services and process in ${loc}.`
+    : "Common questions about our web development services and process."
+
   return (
     <FaqAccordionSection
-      title="Web Development FAQs"
-      description="Common questions about our web development services and process."
+      title={title}
+      description={description}
       items={[...FAQ_ITEMS]}
     />
   )

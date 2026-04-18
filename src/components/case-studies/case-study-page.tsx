@@ -1,188 +1,144 @@
-import type { ReactNode } from "react"
 import Image from "next/image"
 import Link from "next/link"
 
+import { Badge } from "@/components/ui/badge"
 import { CTA } from "@/components/sections/cta"
 import { Heading1 } from "@/components/ui/heading"
-import type { CaseStudyPageData } from "@/lib/case-studies/case-study-page.model"
+import type { CaseStudyGalleryImage, CaseStudyPageData } from "@/lib/case-studies/case-study-page.model"
 
 interface CaseStudyPageProps {
   data: CaseStudyPageData
 }
 
-const SectionLabel = ({ children }: { children: ReactNode }) => (
-  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">{children}</p>
-)
-
-const CaseStudyHero = ({ data }: { data: CaseStudyPageData }) => (
-  <header className="relative border-b border-border/70 bg-muted/25 dark:bg-muted/10">
-    <div
-      className="pointer-events-none absolute inset-x-0 top-0 h-[min(28rem,70vh)] bg-gradient-to-b from-brand/[0.07] via-transparent to-transparent dark:from-brand/10"
-      aria-hidden
-    />
-    <div className="relative mx-auto max-w-4xl px-4 sm:px-6">
-      <div className="pb-16 pt-10 md:pb-24 md:pt-14">
-        <div className="flex flex-wrap items-center gap-3">
-          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-brand">Case study</span>
-          {data.industry ? (
-            <span className="rounded-full border border-border/80 bg-background/80 px-3 py-1 text-xs font-medium text-muted-foreground backdrop-blur-sm dark:bg-background/40">
-              {data.industry}
-            </span>
-          ) : null}
+const CaseStudyHero = ({
+  data,
+  featuredImage,
+}: {
+  data: CaseStudyPageData
+  featuredImage?: CaseStudyGalleryImage
+}) => {
+  if (!featuredImage) {
+    return (
+      <header>
+        <div className="mx-auto max-w-3xl px-4 py-14 sm:px-6 md:py-20">
+          <Heading1 className="mt-4 text-pretty text-4xl !leading-tight md:text-5xl">{data.clientName}</Heading1>
+          <p
+            className="mt-6 max-w-2xl border-l-[3px] border-brand pl-5 text-pretty text-lg leading-relaxed text-muted-foreground md:text-xl"
+            role="doc-subtitle"
+          >
+            {data.tagline}
+          </p>
         </div>
-        <Heading1 className="mt-6 max-w-4xl text-pretty text-4xl !leading-[1.05] md:text-6xl">
-          {data.clientName}
-        </Heading1>
+      </header>
+    )
+  }
+
+  return (
+    <header>
+      <div className="mx-auto max-w-5xl px-4 sm:px-6">
+        <Heading1 className="mt-4 text-pretty text-3xl !leading-tight sm:text-4xl md:text-5xl">{data.clientName}</Heading1>
         <p
-          className="mt-8 max-w-2xl border-l-[3px] border-brand/50 pl-5 text-pretty text-lg font-medium leading-relaxed text-foreground/90 dark:border-brand/45 dark:text-foreground/90 md:text-xl md:leading-snug"
+          className="mt-4 max-w-2xl border-l-[3px] border-brand pl-5 text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg"
           role="doc-subtitle"
         >
           {data.tagline}
         </p>
-        {data.websiteUrl ? (
-          <p className="mt-8 text-sm text-muted-foreground">
-            <span className="text-muted-foreground">Live site: </span>
-            <Link
-              href={data.websiteUrl}
-              className="font-medium text-foreground underline decoration-border underline-offset-4 transition-colors hover:text-brand hover:decoration-brand"
-              target="_blank"
-              rel="noopener noreferrer"
+
+        {data.servicesUsed?.length ? (
+          <section aria-labelledby="bitwerks-services-heading" className="mx-auto justify-center flex flex-col items-center pt-16 pb-4">
+            <h2
+              id="bitwerks-services-heading"
+              className="text-xl font-semibold tracking-tight text-foreground md:text-2xl"
             >
-              {data.websiteUrl.replace(/^https?:\/\//, "")}
-            </Link>
-          </p>
+              BitWerks Services Used
+            </h2>
+            <ul className="mt-4 flex flex-wrap gap-2 md:mt-5" role="list">
+              {data.servicesUsed.map((service) => (
+                <li key={service}>
+                  <Badge variant="outline" className="border-border/80 px-3 py-1.5 text-sm font-medium dark:border-brand/50 dark:bg-brand/30">
+                    {service}
+                  </Badge>
+                </li>
+              ))}
+            </ul>
+          </section>
         ) : null}
-      </div>
-    </div>
-  </header>
-)
 
-const NarrativeBlock = ({
-  label,
-  headingId,
-  title,
-  children,
-}: {
-  label: string
-  headingId: string
-  title: string
-  children: ReactNode
-}) => (
-  <section className="border-b border-border/60 py-0" aria-labelledby={headingId}>
-    <div className="mx-auto max-w-4xl px-4 sm:px-6 py-16 md:py-24">
-      <SectionLabel>{label}</SectionLabel>
-      <h2 id={headingId} className="mt-4 text-2xl font-semibold tracking-tight text-foreground md:text-3xl">
-        {title}
-      </h2>
-      <div className="mt-8 space-y-5 text-base leading-relaxed text-muted-foreground md:text-lg md:leading-relaxed">
-        {children}
+        <div className="relative my-8 aspect-[16/10] w-full overflow-hidden rounded-lg bg-muted/20">
+          <Image
+            src={featuredImage.src}
+            alt={featuredImage.alt}
+            fill
+            className="object-cover object-top"
+            sizes="(min-width: 768px) 42rem, 100vw"
+            priority
+          />
+        </div>
       </div>
-    </div>
-  </section>
-)
-
-const CaseStudyGallery = ({ images }: { images: CaseStudyPageData["images"] }) => {
-  if (!images.length) return null
-
-  return (
-    <section className="border-b border-border/60 py-0" aria-labelledby="case-study-gallery-heading">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 py-16 md:py-24">
-        <SectionLabel>Project gallery</SectionLabel>
-        <h2
-          id="case-study-gallery-heading"
-          className="mt-4 max-w-2xl text-2xl font-semibold tracking-tight text-foreground md:text-3xl"
-        >
-          Curated views from the engagement
-        </h2>
-        <ul className="mt-12 space-y-12 md:space-y-16">
-          {images.map((image, index) => {
-            const isOffset = index % 2 === 1
-            return (
-              <li
-                key={`${image.src}-${index}`}
-                className={isOffset ? "md:flex md:justify-end" : ""}
-              >
-                <figure
-                  className={`space-y-4 ${isOffset ? "w-full md:max-w-[92%] md:pl-10" : "w-full md:pr-10"}`}
-                >
-                  <div className="relative aspect-[16/10] w-full overflow-hidden rounded-xl border border-border/60 bg-muted/20 shadow-sm dark:border-border/50 dark:shadow-none">
-                    <Image
-                      src={image.src}
-                      alt={image.alt}
-                      fill
-                      sizes="(min-width: 1024px) 72rem, 100vw"
-                      className="object-cover object-top"
-                      priority={index === 0}
-                    />
-                  </div>
-                  {image.caption ? (
-                    <figcaption className="text-sm text-muted-foreground md:text-base">{image.caption}</figcaption>
-                  ) : null}
-                </figure>
-              </li>
-            )
-          })}
-        </ul>
-      </div>
-    </section>
+    </header>
   )
 }
 
-const ResultsBlock = ({ results }: { results: string }) => (
-  <section className="border-b border-border/60 py-0" aria-labelledby="case-study-results-heading">
-    <div className="mx-auto max-w-4xl px-4 sm:px-6 py-16 md:py-24">
-      <SectionLabel>Results</SectionLabel>
-      <h2 id="case-study-results-heading" className="mt-4 text-2xl font-semibold tracking-tight text-foreground md:text-3xl">
-        Outcomes
-      </h2>
-      <div className="mt-10 rounded-2xl border border-border/70 bg-muted/15 p-8 md:p-10 dark:bg-muted/5">
-        <p className="text-base leading-relaxed text-foreground/90 md:text-lg md:leading-relaxed">{results}</p>
+export const CaseStudyPage = ({ data }: CaseStudyPageProps) => {
+  const featuredImage = data.images[0]
+  const galleryImages = data.images.length > 1 ? data.images.slice(1) : []
+
+  return (
+    <article className="min-h-screen bg-background">
+      <div className="mx-auto max-w-5xl px-4 pt-6 sm:px-6 sm:pt-8">
+        <Link
+          href="/our-work"
+          className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+        >
+          ← Our Work
+        </Link>
       </div>
-    </div>
-  </section>
-)
 
-export const CaseStudyPage = ({ data }: CaseStudyPageProps) => (
-  <article className="min-h-screen bg-background">
-    <div className="mx-auto max-w-6xl px-4 pt-8 sm:px-6 md:pt-12">
-      <Link
-        href="/our-work"
-        className="inline-flex text-sm text-muted-foreground transition-colors hover:text-foreground"
-      >
-        ← Back to Our Work
-      </Link>
-    </div>
+      <CaseStudyHero data={data} featuredImage={featuredImage} />
 
-    <CaseStudyHero data={data} />
+      <div className="mx-auto max-w-3xl px-4 pb-12 sm:px-6 md:pb-16">
+        <section aria-labelledby="project-overview-heading" className="py-4">
+          <h2
+            id="project-overview-heading"
+            className="text-xl font-semibold tracking-tight text-foreground md:text-2xl"
+          >
+            Project Overview
+          </h2>
+          <p className="mt-4 text-base leading-relaxed text-muted-foreground md:mt-5 md:text-lg">
+            {data.businessGoal}
+          </p>
+        </section>
 
-    <NarrativeBlock label="Business context" headingId="business-goal-heading" title="What they needed to achieve">
-      <p>{data.businessGoal}</p>
-    </NarrativeBlock>
+        <hr className="my-4 text-black/5" />
 
-    <section className="border-b border-border/60 py-0" aria-labelledby="our-role-heading">
-      <div className="mx-auto max-w-4xl px-4 sm:px-6 py-16 md:py-24">
-        <SectionLabel>Engagement</SectionLabel>
-        <h2 id="our-role-heading" className="mt-4 text-2xl font-semibold tracking-tight text-foreground md:text-3xl">
-          How BitWerks partnered
-        </h2>
-        <p className="mt-6 text-base leading-relaxed text-muted-foreground md:text-lg">
-          We owned delivery across the stack—clear interfaces, pragmatic tradeoffs, and steady communication—so
-          leadership could focus on the business while we advanced the product surface.
-        </p>
-        <ul className="mt-10 space-y-6 border-l border-border/80 pl-6 md:pl-8">
-          {data.ourRole.map((line, roleIndex) => (
-            <li key={`${roleIndex}-${line.slice(0, 24)}`} className="text-base leading-relaxed text-foreground/90 md:text-lg">
-              {line}
-            </li>
-          ))}
-        </ul>
+        <section aria-labelledby="our-role-heading" className="py-4">
+          <h2 id="our-role-heading" className="text-xl font-semibold tracking-tight text-foreground md:text-2xl">
+            Our Role
+          </h2>
+          <ul className="mt-4 list-disc space-y-3 pl-5 marker:text-brand md:mt-5">
+            {data.accomplishments.map((line, i) => (
+              <li key={i} className="text-base leading-relaxed text-foreground/90 md:text-lg">
+                {line}
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <hr className="my-4 text-black/5" />
+
+        {data.results ? (
+          <section aria-labelledby="results-heading" className="py-4">  
+            <h2 id="results-heading" className="text-xl font-semibold tracking-tight text-foreground md:text-2xl">
+              Outcome
+            </h2>
+            <p className="mt-4 text-base leading-relaxed text-muted-foreground md:mt-5 md:text-lg">
+              {data.results}
+            </p>
+          </section>
+        ) : null}
       </div>
-    </section>
 
-    <CaseStudyGallery images={data.images} />
-
-    {data.results ? <ResultsBlock results={data.results} /> : null}
-
-    <CTA {...(data.ctaProps ?? {})} />
-  </article>
-)
+      <CTA {...(data.ctaProps ?? {})} />
+    </article>
+  )
+}

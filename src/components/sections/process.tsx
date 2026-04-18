@@ -45,7 +45,7 @@ export function Process() {
               <span className="uppercase text-xs text-muted dark:text-muted-dark font-bold tracking-widest">Step 1</span>
               <h3 className="text-xl font-bold mt-1 mb-2">Share your project.</h3>
               <p className="text-muted dark:text-muted-dark max-w-md text-lg">
-                Tell us about your vision, goals, and requirements. We&apos;ll listen carefully to understand exactly what you need to succeed.
+                Tell us about your vision, goals, and requirements.
               </p>
             </div>
           </div>
@@ -60,7 +60,7 @@ export function Process() {
               <span className="uppercase text-xs text-muted dark:text-muted-dark font-bold tracking-widest">Step 2</span>
               <h3 className="text-xl font-bold mt-1 mb-2">We scope & quote.</h3>
               <p className="text-muted dark:text-muted-dark max-w-md text-lg">
-                We&apos;ll analyze your requirements, create a detailed scope of work, and provide you with a transparent, fixed-price quote.
+                We&apos;ll analyze your requirements, create a proposal with a detailed scope of work, and provide you with a transparent quote.
               </p>
             </div>
           </div>
@@ -75,7 +75,7 @@ export function Process() {
               <span className="uppercase text-xs text-muted dark:text-muted-dark font-bold tracking-widest">Step 3</span>
               <h3 className="text-xl font-bold mt-1 mb-2">We deliver fast.</h3>
               <p className="text-muted dark:text-muted-dark max-w-md text-lg">
-                Once approved, we&apos;ll get to work immediately. We deliver high-quality results quickly, keeping you updated throughout the process.
+                Once approved, we begin the build. We deliver high-quality results quickly, keeping you updated throughout the process.
               </p>
             </div>
           </div>

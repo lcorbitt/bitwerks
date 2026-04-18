@@ -3,6 +3,7 @@ import Image from "next/image"
 
 import { Button } from "@/components/ui/button"
 import { Heading1 } from "@/components/ui/heading"
+import { servicesHeroSupportingCopy } from "@/lib/value-propositions"
 
 export const ServicesHero = () => {
   return (
@@ -14,9 +15,9 @@ export const ServicesHero = () => {
             <Heading1 className="relative z-10 mx-auto mb-6 max-w-3xl lg:mx-0 lg:max-w-none">
               Tap into our end-to-end <span className="text-brand">tech solutions</span>
             </Heading1>
-            <p className="relative z-10 mx-auto mb-8 max-w-2xl text-muted-foreground md:text-lg lg:mx-0 lg:max-w-xl">
+            <p className="relative z-10 mx-auto mb-8 max-w-2xl text-muted-foreground md:text-lg lg:mx-0 lg:max-w-xl leading-relaxed">
               From first concept to launch and beyond, we combine strategy, design, and engineering so your product
-              feels premium and performs when it matters.
+              feels premium and performs when it matters. {servicesHeroSupportingCopy}
             </p>
             <div className="relative z-10 flex justify-center gap-4 lg:justify-start">
               <Button asChild variant="brand" size="lg">

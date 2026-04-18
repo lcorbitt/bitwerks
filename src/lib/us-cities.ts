@@ -9,6 +9,8 @@ export interface USCity {
   stateSlug: string
   /** 0 = flagship regional hub, 1 = major market, 2 = secondary, 3+ = tertiary (used for sitemap weighting). */
   priority: number
+  /** When set, used in hero and prose instead of `${city}, ${stateName}` (avoids e.g. "Colorado, Colorado"). */
+  seoLocationLabel?: string
 }
 
 // Top 100+ major US cities by population and business activity
@@ -52,6 +54,24 @@ export const majorUSCities: USCity[] = [
   { city: "Loveland", state: "CO", stateName: "Colorado", slug: "loveland", stateSlug: "co", priority: 0 },
   { city: "Longmont", state: "CO", stateName: "Colorado", slug: "longmont", stateSlug: "co", priority: 0 },
   { city: "Windsor", state: "CO", stateName: "Colorado", slug: "windsor", stateSlug: "co", priority: 0 },
+  {
+    city: "Northern Colorado",
+    state: "CO",
+    stateName: "Colorado",
+    slug: "northern-colorado",
+    stateSlug: "co",
+    priority: 0,
+    seoLocationLabel: "Northern Colorado",
+  },
+  {
+    city: "Colorado",
+    state: "CO",
+    stateName: "Colorado",
+    slug: "colorado",
+    stateSlug: "co",
+    priority: 0,
+    seoLocationLabel: "Colorado",
+  },
   { city: "Colorado Springs", state: "CO", stateName: "Colorado", slug: "colorado-springs", stateSlug: "co", priority: 1 },
   { city: "Aurora", state: "CO", stateName: "Colorado", slug: "aurora-co", stateSlug: "co", priority: 1 },
   { city: "Lakewood", state: "CO", stateName: "Colorado", slug: "lakewood", stateSlug: "co", priority: 1 },
@@ -272,6 +292,7 @@ export function formatLocationString(city: USCity): string {
 }
 
 export function formatLocationDisplay(city: USCity): string {
+  if (city.seoLocationLabel) return city.seoLocationLabel
   return `${city.city}, ${city.stateName}`
 }
 

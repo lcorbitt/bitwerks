@@ -55,7 +55,7 @@ export function Hero() {
             <p className="mb-8 text-sm text-muted-light dark:text-muted-dark md:text-lg mx-auto lg:mx-0 max-w-2xl relative z-10">
               Web Design & Development • Software Development<span className="hidden lg:inline"> • White Label Partnerships</span>
             </p>
-            <p className="mb-8 text-base text-black dark:text-white md:text-lg mx-auto md:mx-0 max-w-[16rem] md:max-w-xl relative z-10">
+            <p className="mb-4 text-base text-black dark:text-white md:text-lg mx-auto md:mx-0 max-w-[16rem] md:max-w-xl relative z-10">
               Building <span className="text-brand">beautiful, high-performing</span> digital solutions to power your business.
             </p>
             <div className="flex gap-4 justify-center lg:justify-start relative z-10">

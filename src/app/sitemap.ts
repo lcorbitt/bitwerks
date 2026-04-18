@@ -2,6 +2,7 @@ import { MetadataRoute } from "next"
 
 import { listPublishedPostsPublic } from "@/lib/blog/queries-public"
 import { listCaseStudySlugs } from "@/lib/case-studies/registry"
+import { buildColoradoGeoStaticParams } from "@/lib/geo-seo-phrases"
 import { majorUSCities } from "@/lib/us-cities"
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -39,6 +40,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: new Date(),
       changeFrequency: "monthly" as const,
       priority: 0.88,
+    })),
+    ...buildColoradoGeoStaticParams().map(({ geoSlug }) => ({
+      url: `${baseUrl}/${geoSlug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.86,
     })),
     {
       url: `${baseUrl}/contact`,

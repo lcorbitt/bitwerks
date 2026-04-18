@@ -14,8 +14,8 @@ export function Services() {
               WHAT WE DO
             </p>
             <Heading2 className="mb-8">From Concept to Completion</Heading2>
-            <p className="mb-16 md:mb-32 text-muted-foreground tracking-wide text-lg">
-              BitWerks delivers custom digital solutions for businesses, from websites and e-commerce to full web and mobile apps, SaaS platforms, and internal tools. We cover strategy, UX/UI design, full-stack engineering, and ongoing support. Every build is hand-coded so thoughtful design meets high performance and reliability. No page builders and no shortcuts, just a transparent partnership focused on results that help your business grow.
+            <p className="mb-6 md:mb-8 text-muted-foreground tracking-wide text-lg leading-relaxed">
+            BitWerks delivers custom digital solutions for businesses, from websites to full web apps, SaaS platforms, and internal tools. We cover strategy, UX/UI design, full-stack engineering, and ongoing support. Every build is hand-coded so thoughtful design meets high performance and reliability. No page builders and no shortcuts, just a transparent partnership focused on results that help your business grow.
             </p>
           </div>
           <div className="grid gap-24 md:gap-8 md:grid-cols-2 lg:grid-cols-3 mt-32">

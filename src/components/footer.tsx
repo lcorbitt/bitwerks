@@ -14,7 +14,7 @@ export function Footer() {
                   <span className="text-brand">Bit</span>Werks
                 </h3>
                 <p className="text-sm text-muted-foreground dark:text-white/80">
-                  Since 2017, we&apos;ve built software for businesses of all sizes, from early-stage startups to
+                  Since 2017, we&apos;ve delivered projects for businesses of all sizes, from early-stage startups to
                   established organizations.
                 </p>
               </div>
@@ -27,6 +27,14 @@ export function Footer() {
             <div className="hidden text-left md:block">
               <h4 className="mb-4 text-sm font-extrabold">Company</h4>
               <ul className="space-y-2 text-sm">
+                <li>
+                  <Link
+                    href="/"
+                    className="text-muted-foreground transition-colors duration-300 hover:text-brand dark:text-white/80 dark:hover:text-brand"
+                  >
+                    www.bitwerks.dev
+                  </Link>
+                </li>
                 <li>
                   <Link
                     href="mailto:bitwerksco@gmail.com"

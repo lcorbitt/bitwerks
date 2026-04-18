@@ -12,7 +12,10 @@ export interface CaseStudyPageData {
   tagline: string
   industry?: string
   businessGoal: string
-  ourRole: string[]
+  /** Concrete outcomes and responsibilities (e.g. engineering leadership, delivery). */
+  accomplishments: string[]
+  /** BitWerks service lines applied on the engagement (labels only; optional). */
+  servicesUsed?: string[]
   images: CaseStudyGalleryImage[]
   results?: string
   websiteUrl?: string
