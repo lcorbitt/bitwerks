@@ -1,6 +1,9 @@
 import Link from "next/link"
+import { Facebook, Linkedin } from "lucide-react"
+
 import { Button } from "@/components/ui/button"
 import { NewsletterSubscribe } from "@/components/newsletter/newsletter-subscribe"
+import { BITWERKS_FACEBOOK_URL, BITWERKS_LINKEDIN_URL } from "@/lib/social-links"
 
 export function Footer() {
   return (
@@ -143,6 +146,33 @@ export function Footer() {
                 <Button asChild variant="outline">
                   <Link href="/contact">Schedule a Call</Link>
                 </Button>
+                <div className="space-y-3 pt-2">
+                  <h4 className="text-sm font-extrabold">Follow Us</h4>
+                  <ul className="flex flex-wrap gap-4" aria-label="BitWerks on social media">
+                    <li>
+                      <Link
+                        href={BITWERKS_LINKEDIN_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex text-muted-foreground transition-colors hover:text-brand dark:text-white/80 dark:hover:text-brand"
+                        aria-label="BitWerks on LinkedIn"
+                      >
+                        <Linkedin className="h-5 w-5" strokeWidth={1.75} aria-hidden />
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href={BITWERKS_FACEBOOK_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex text-muted-foreground transition-colors hover:text-brand dark:text-white/80 dark:hover:text-brand"
+                        aria-label="BitWerks on Facebook"
+                      >
+                        <Facebook className="h-5 w-5" strokeWidth={1.75} aria-hidden />
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
 

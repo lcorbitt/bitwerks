@@ -3,6 +3,8 @@ import { getPostListImageUrl, toAbsoluteMediaUrl } from "@/lib/blog/post-preview
 import { buildNewsletterUnsubscribeUrl } from "@/lib/newsletter/unsubscribe-url"
 import type { BlogPostWithImages } from "@/types/blog"
 
+import { BITWERKS_FACEBOOK_URL, BITWERKS_LINKEDIN_URL } from "@/lib/social-links"
+
 import { escapeHtml } from "./html-escape"
 import { sendEmail } from "./send-email"
 
@@ -18,9 +20,6 @@ const trimEnv = (value: string | undefined): string | undefined => {
   const t = value?.trim()
   return t && t.length > 0 ? t : undefined
 }
-
-const BITWERKS_LINKEDIN_URL = "https://www.linkedin.com/company/bitwerks-dev"
-const BITWERKS_FACEBOOK_URL = "https://www.facebook.com/bitwerks"
 
 const emailPostImageAlt = (post: BlogPostWithImages): string => {
   const url = getPostListImageUrl(post)
