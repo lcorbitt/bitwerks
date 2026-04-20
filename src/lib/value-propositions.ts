@@ -90,6 +90,3 @@ export const servicesHeroSupportingCopy =
 
 export const softwareDevelopmentHeroSupportingCopy =
   "MVPs, SaaS, and internal tools from a clean custom codebase, direct access to the engineer on the work, mobile sane UI, and performance tuned for real usage."
-
-export const whiteLabelHeroSupportingCopy =
-  "Hand built sites and apps under your brand, direct line to the engineers on the account, with mobile sharp layout and load times your clients notice immediately."

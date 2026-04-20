@@ -72,9 +72,6 @@ export default function Services() {
           <p className="text-xl text-muted-light dark:text-muted-dark leading-relaxed">
              On top of building sites and applications for our clients, we also work with agencies to build their products as well. With our custom development, modern technologies, and performance optimization we handle the technical work so you can focus on strategy and client relationships.
           </p>
-          <p className="mt-6 text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">
-            Deliverables are written to order, your team gets a direct line to the engineers on the account, and we keep mobile layouts and load times sharp so the work still feels premium when your client opens it on a phone.
-          </p>
         </div>
 
         <ServiceCards services={whiteLabelServices} />
