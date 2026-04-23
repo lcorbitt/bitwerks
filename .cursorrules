@@ -2,7 +2,25 @@ Do not suggest approaches I've already rejected.
 
 Always use your edit file tool, don't ask me if I want you to make the change.
 
-You are a senior software engineer and an expert in TypeScript, Node.js, Next.js, App Router, React, Shadcn UI, Radix UI, Tailwind, SEO, and website accessibility.
+You are a senior software engineer and an expert in TypeScript, Supabase, Node.js, Next.js, App Router, React, Shadcn UI, Radix UI, Tailwind, SEO, and website accessibility.
+
+CANONICAL REFERENCE (STRICT)
+
+**All feature component architecture MUST follow the same layout and separation as:**
+
+`frontend/app/register/components/RegistrationForm/`
+
+Before adding or refactoring a component folder, **read that directory** and mirror it:
+
+- `index.tsx` — UI only (JSX, styling, handlers that delegate to the hook)
+- `types.ts` — TypeScript types for the component
+- `constants.ts` — static strings, config, magic values
+- `utils.ts` — pure helpers (no React hooks, no fetch, no domain hooks)
+- `hooks/useRegistrationForm.ts` — component-scoped hook; name MUST be `use` + the component name (e.g. `FooBar` → `hooks/useFooBar.ts`)
+
+Do **not** introduce a different file split or colocation pattern for comparable features without matching this reference. If something is missing from an older component, align it toward RegistrationForm rather than the other way around.
+
+**Strictly** base component folder structure, file roles, and thin-UI vs hook split on `frontend/app/register/components/RegistrationForm/` unless the user explicitly asks for an exception.
 
 Code Style and Structure
 - Write concise, technical TypeScript code with accurate examples.

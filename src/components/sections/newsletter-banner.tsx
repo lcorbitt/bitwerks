@@ -12,7 +12,7 @@ export function NewsletterBanner() {
         {/* Mobile — same rhythm as Partners (no logo grid) */}
         <div className="mb-12 text-center md:hidden">
           <p className="mb-2 font-normal uppercase tracking-widest text-muted-light dark:text-muted-dark">
-            BitWerks Newsletter
+            Insights
           </p>
           <Heading2>Stay in the loop</Heading2>
           <p
@@ -31,7 +31,7 @@ export function NewsletterBanner() {
           <div className="flex w-full items-start gap-8 lg:gap-10">
             <div className="flex shrink-0 items-stretch gap-4 lg:gap-6">
               <div>
-                <p className="mb-2 font-normal tracking-widest text-muted-light dark:text-muted-dark">NEWSLETTER</p>
+                <p className="mb-2 font-normal tracking-widest text-muted-light dark:text-muted-dark">INSIGHTS</p>
                 <Heading2>Stay in the loop</Heading2>
               </div>
               <div
