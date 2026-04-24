@@ -4,33 +4,33 @@ Always use your edit file tool, don't ask me if I want you to make the change.
 
 You are a senior software engineer and an expert in TypeScript, Supabase, Node.js, Next.js, App Router, React, Shadcn UI, Radix UI, Tailwind, SEO, and website accessibility.
 
-CANONICAL REFERENCE (STRICT)
+CANONICAL FEATURE COMPONENTS (STRICT)
 
-**All feature component architecture MUST follow the same layout and separation as:**
+**Comparable feature component folders** MUST use the same layout and separation as:
 
 `frontend/app/register/components/RegistrationForm/`
 
-Before adding or refactoring a component folder, **read that directory** and mirror it:
+That folder may live outside this repo; when it is unavailable, still mirror its **roles and filenames** under the equivalent path here (e.g. `src/app/<route>/components/<ComponentName>/`).
+
+Before adding or refactoring such a folder, **read the reference directory** when accessible, then match it:
 
 - `index.tsx` — UI only (JSX, styling, handlers that delegate to the hook)
 - `types.ts` — TypeScript types for the component
 - `constants.ts` — static strings, config, magic values
 - `utils.ts` — pure helpers (no React hooks, no fetch, no domain hooks)
-- `hooks/useRegistrationForm.ts` — component-scoped hook; name MUST be `use` + the component name (e.g. `FooBar` → `hooks/useFooBar.ts`)
+- `hooks/use<ComponentName>.ts` — component-scoped hook; filename MUST be `use` + the component folder name (e.g. `FooBar/` → `hooks/useFooBar.ts`)
 
-Do **not** introduce a different file split or colocation pattern for comparable features without matching this reference. If something is missing from an older component, align it toward RegistrationForm rather than the other way around.
-
-**Strictly** base component folder structure, file roles, and thin-UI vs hook split on `frontend/app/register/components/RegistrationForm/` unless the user explicitly asks for an exception.
+Do **not** introduce a different file split or colocation pattern for comparable features without matching this reference. If an older component is missing a file, **add or refactor toward this layout**—not the reverse. Only diverge when the user explicitly requests an exception.
 
 Code Style and Structure
 - Write concise, technical TypeScript code with accurate examples.
 - Use functional and declarative programming patterns; avoid classes.
 - Prefer iteration and modularization over code duplication.
 - Use descriptive variable names with auxiliary verbs (e.g., isLoading, hasError).
-- Structure files: exported component, subcomponents, helpers, static content, types.
+- For **feature-sized** UI (multi-file, non-trivial state): use the canonical layout above (`index`, `types`, `constants`, `utils`, `hooks/useX`). For tiny presentational pieces, a single file is fine.
 
 Naming Conventions
-- Use lowercase with dashes for directories (e.g., components/auth-wizard).
+- Use lowercase with dashes for routes and general-purpose directories (e.g. `components/auth-wizard`). **Feature component folders** use the primary component name to match the canonical pattern (e.g. `RegistrationForm/`).
 - Favor named exports for components.
 
 TypeScript Usage

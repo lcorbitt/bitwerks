@@ -23,9 +23,9 @@ const FAQ_ITEMS = [
   },
   {
     value: "item-4",
-    question: "Is logo design included in the $399 package? What about brand colors?",
+    question: "Is logo design included in the website development package? What about brand colors?",
     answer:
-      "Logo design is not included in the $399 package. If you need a logo, we can add one for $75, including multiple variations and full deliverables you can use anywhere. For the website itself, we design to your brand colors: if you already have a palette, we will implement it consistently; if not, we can help select a clean, professional palette that fits your positioning.",
+      "Logo design is not included in the website development package. If you need a logo, we can add one for an additional fee, including multiple variations and full deliverables you can use anywhere. For the website itself, we design to your brand colors: if you already have a palette, we will implement it consistently; if not, we can help select a clean, professional palette that fits your positioning.",
   },
   {
     value: "item-5",
