@@ -132,6 +132,14 @@ export function Footer() {
                   </li>
                   <li>
                     <Link
+                      href="/terms"
+                      className="text-muted-foreground transition-colors duration-300 hover:text-brand dark:text-white/80 dark:hover:text-brand"
+                    >
+                      Terms
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
                       href="/sitemap.xml"
                       className="text-muted-foreground transition-colors duration-300 hover:text-brand dark:text-white/80 dark:hover:text-brand"
                     >
