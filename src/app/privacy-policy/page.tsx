@@ -12,7 +12,7 @@ const SITE_URL = getSiteBaseUrl()
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
-    "How BitWerks collects, uses, stores, and protects personal information when you use our website, newsletter, and contact forms.",
+    "How BitWerks collects, uses, stores, and protects personal information for our website, newsletter, contact forms, and client projects we host or manage.",
   robots: { index: true, follow: true },
 }
 
@@ -203,7 +203,27 @@ export default function PrivacyPolicyPage() {
               </p>
             </PolicySection>
 
-            <PolicySection id="third-party" title="6. Third-party sites and links">
+            <PolicySection id="client-projects" title="6. Client websites, applications, and project data">
+              <p className="text-muted-foreground dark:text-white/80">
+                When we build or operate a website or application for a business client, we may host or process
+                information on their behalf—including, for example, contact or lead form submissions, blog or CMS
+                content, authentication records, or other user-generated content. In those situations, our client is
+                typically responsible for their relationship with their own end users and for providing an appropriate
+                privacy notice to those users.
+              </p>
+              <p className="text-muted-foreground dark:text-white/80">
+                Our client generally owns the business data associated with their property. We process that data to
+                deliver the agreed professional services and to keep systems running, using subprocessors such as those
+                listed in Section 5. Ownership, export, migration, infrastructure usage, and handoff of administrative
+                access are described in our{" "}
+                <Link href="/terms" className="font-medium text-brand underline-offset-4 hover:underline">
+                  Terms of Service
+                </Link>{" "}
+                and in the applicable project or services agreement.
+              </p>
+            </PolicySection>
+
+            <PolicySection id="third-party" title="7. Third-party sites and links">
               <p className="text-muted-foreground dark:text-white/80">
                 The Services may link to third-party websites or services (for example, social profiles or partner
                 sites). We are not responsible for their privacy practices. Please review their policies before sharing
@@ -211,7 +231,7 @@ export default function PrivacyPolicyPage() {
               </p>
             </PolicySection>
 
-            <PolicySection id="retention" title="7. Data retention">
+            <PolicySection id="retention" title="8. Data retention">
               <p className="text-muted-foreground dark:text-white/80">
                 We retain personal information only as long as reasonably necessary for the purposes described in
                 this Privacy Policy, unless a longer period is required or permitted by law (for example, certain
@@ -223,9 +243,13 @@ export default function PrivacyPolicyPage() {
                 emails. You may request deletion of your personal information by contacting us; we will respond within
                 a reasonable timeframe, subject to legal retention obligations.
               </p>
+              <p className="text-muted-foreground dark:text-white/80">
+                For data stored in connection with a client project we host or manage, retention and export are also
+                governed by our Terms of Service and your written agreement with us.
+              </p>
             </PolicySection>
 
-            <PolicySection id="security" title="8. Security">
+            <PolicySection id="security" title="9. Security">
               <p className="text-muted-foreground dark:text-white/80">
                 We use technical and organizational measures designed to protect personal information, including
                 encryption in transit (such as HTTPS) and access controls appropriate to the nature of our Services.
@@ -233,7 +257,7 @@ export default function PrivacyPolicyPage() {
               </p>
             </PolicySection>
 
-            <PolicySection id="international" title="9. International transfers">
+            <PolicySection id="international" title="10. International transfers">
               <p className="text-muted-foreground dark:text-white/80">
                 Our service providers may process and store information in the United States and other countries where
                 they operate. If you access the Services from outside those countries, your information may be
@@ -243,7 +267,7 @@ export default function PrivacyPolicyPage() {
               </p>
             </PolicySection>
 
-            <PolicySection id="children" title="10. Children’s privacy">
+            <PolicySection id="children" title="11. Children’s privacy">
               <p className="text-muted-foreground dark:text-white/80">
                 The Services are not directed to children under 13 (or under 16 where a higher age applies under local
                 law). We do not knowingly collect personal information from children. If you believe we have collected
@@ -251,7 +275,7 @@ export default function PrivacyPolicyPage() {
               </p>
             </PolicySection>
 
-            <PolicySection id="rights" title="11. Your privacy rights">
+            <PolicySection id="rights" title="12. Your privacy rights">
               <p className="text-muted-foreground dark:text-white/80">
                 Depending on where you live, you may have rights to access, correct, delete, or restrict certain
                 processing of your personal information, to object to certain processing, to data portability, or to
@@ -276,7 +300,18 @@ export default function PrivacyPolicyPage() {
                 rights under local law, including the right to lodge a complaint with a supervisory authority.
               </p>
 
-              <PolicySubheading>C. How to exercise your rights</PolicySubheading>
+              <PolicySubheading>C. Business clients and hosted projects</PolicySubheading>
+              <p className="text-muted-foreground dark:text-white/80">
+                If you are our client and we process personal data in systems we operate for your project, you may
+                contact us regarding access, correction, export, or deletion coordination. Technical export formats and
+                transition steps may depend on your stack and are described at a high level in our{" "}
+                <Link href="/terms" className="font-medium text-brand underline-offset-4 hover:underline">
+                  Terms of Service
+                </Link>
+                .
+              </p>
+
+              <PolicySubheading>D. How to exercise your rights</PolicySubheading>
               <p className="text-muted-foreground dark:text-white/80">
                 To submit a request, contact us at{" "}
                 <Link
@@ -289,7 +324,7 @@ export default function PrivacyPolicyPage() {
               </p>
             </PolicySection>
 
-            <PolicySection id="changes" title="12. Changes to this Privacy Policy">
+            <PolicySection id="changes" title="13. Changes to this Privacy Policy">
               <p className="text-muted-foreground dark:text-white/80">
                 We may update this Privacy Policy from time to time. We will post the updated version on this page and
                 revise the &ldquo;Last updated&rdquo; date. If changes are material, we will provide additional notice
@@ -297,7 +332,7 @@ export default function PrivacyPolicyPage() {
               </p>
             </PolicySection>
 
-            <PolicySection id="contact" title="13. Contact us">
+            <PolicySection id="contact" title="14. Contact us">
               <p className="text-muted-foreground dark:text-white/80">
                 If you have questions about this Privacy Policy or our data practices, contact BitWerks at{" "}
                 <Link href={`mailto:${CONTACT_EMAIL}`} className="font-medium text-brand underline-offset-4 hover:underline">
