@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { SmartImage } from "../ui/smart-image";
 import { Heading2 } from "../ui/heading";
 
 interface Partner {
@@ -93,14 +93,16 @@ export function Partners() {
             >
               {partner.darkImage ? (
                 <>
-                  <Image
+                  <SmartImage
+                    variant="logo"
                     src={partner.lightImage}
                     alt={partner.alt}
                     width={128}
                     height={64}
                     className="w-full object-contain dark:hidden transition-transform duration-300"
                   />
-                  <Image
+                  <SmartImage
+                    variant="logo"
                     src={partner.darkImage}
                     alt={partner.alt}
                     width={128}
@@ -109,7 +111,8 @@ export function Partners() {
                   />
                 </>
               ) : (
-                <Image
+                <SmartImage
+                  variant="logo"
                   src={partner.lightImage}
                   alt={partner.alt}
                   width={128}

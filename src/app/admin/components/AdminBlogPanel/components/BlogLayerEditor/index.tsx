@@ -1,7 +1,6 @@
 "use client"
 
 import * as React from "react"
-import Link from "next/link"
 
 import { BlogAttachmentThumbnail } from "@/lib/blog/blog-attachment-thumbnail"
 import type { BlogFaqPair } from "@/lib/blog/blog-seo"
@@ -15,6 +14,7 @@ import {
   savePostAction,
   uploadBlogCoverImageAction,
 } from "@/app/admin/actions/blog"
+import { BlogEditorActionBar } from "../BlogEditorActionBar"
 import { BlogRichTextEditor } from "../BlogRichTextEditor"
 import { BlogSeoSection } from "../BlogSeoSection"
 
@@ -160,31 +160,11 @@ export const BlogLayerEditor = ({ post, onPostChange, onDirtyChange }: BlogLayer
   }
 
   return (
-    <div className="grid gap-8">
-      <div className="flex flex-wrap items-start justify-between gap-6">
-        <div>
-          <div className="text-sm font-semibold">Article</div>
-          <div className="mt-1 text-xs text-muted-foreground">
-            {post.status === "published" && post.slug ? `/insights/${post.slug}` : "Draft"}
-          </div>
-        </div>
-        <div className="flex flex-wrap items-center gap-3">
-          <label className="flex items-center gap-2 text-sm">
-            <input
-              type="checkbox"
-              checked={status === "published"}
-              onChange={(e) => setStatus(e.target.checked ? "published" : "draft")}
-            />
-            Published
-          </label>
-          <button
-            type="button"
-            className="h-10 rounded-xl bg-brand px-4 text-sm font-medium text-white disabled:opacity-60"
-            onClick={onSave}
-            disabled={isSaving}
-          >
-            {isSaving ? "Saving…" : "Save"}
-          </button>
+    <div className="grid gap-8 pb-32">
+      <div>
+        <div className="text-sm font-semibold">Article</div>
+        <div className="mt-1 text-xs text-muted-foreground">
+          {post.status === "published" && post.slug ? `/insights/${post.slug}` : "Draft"}
         </div>
       </div>
 
@@ -315,17 +295,7 @@ export const BlogLayerEditor = ({ post, onPostChange, onDirtyChange }: BlogLayer
       </div>
 
       <div className="grid gap-2">
-        <div className="flex flex-wrap items-center justify-between gap-2">
-          <div className="text-xs font-medium">Content</div>
-          <Link
-            href={`/blog-preview/${post.id}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-xs font-medium text-brand underline underline-offset-4"
-          >
-            Open layout preview
-          </Link>
-        </div>
+        <div className="text-xs font-medium">Content</div>
         <p className="text-xs text-muted-foreground">
           Preview uses the last saved version from the database. Use <strong>Insert image</strong> in the toolbar to add
           images inside the article; they stay in the editor until you save.
@@ -340,11 +310,14 @@ export const BlogLayerEditor = ({ post, onPostChange, onDirtyChange }: BlogLayer
         />
       </div>
 
-      {saveError ? (
-        <div className="rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-800 dark:border-red-900/60 dark:bg-red-950/40 dark:text-red-200" role="alert">
-          {saveError}
-        </div>
-      ) : null}
+      <BlogEditorActionBar
+        status={status}
+        onStatusChange={setStatus}
+        isSaving={isSaving}
+        saveError={saveError}
+        onSave={onSave}
+        previewHref={`/blog-preview/${post.id}`}
+      />
     </div>
   )
 }

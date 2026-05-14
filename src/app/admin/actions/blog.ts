@@ -219,7 +219,15 @@ export const setCoverImageAction = async ({ postId, coverImageUrl }: SetCoverIma
   if (post.slug) revalidatePath(`/insights/${post.slug}`)
 }
 
-/** Uploads a single file as cover/hero only (fixed `cover.{ext}` path). Does not create `blog_post_images` rows. */
+/**
+ * Matches both the legacy fixed cover filename (`cover.{ext}`) and the
+ * cache-busting variant (`cover-{stamp}.{ext}`) so we can clean either up
+ * regardless of when the post was first published.
+ */
+const isCoverFileName = (name: string): boolean =>
+  /^cover(-[^.]+)?\.[^.]+$/i.test(name)
+
+/** Uploads a single file as the post cover/hero. Does not create `blog_post_images` rows. */
 export const uploadBlogCoverImageAction = async (formData: FormData): Promise<BlogPostWithImages> => {
   const postId = String(formData.get("postId") ?? "")
   const file = formData.get("file")
@@ -233,12 +241,15 @@ export const uploadBlogCoverImageAction = async (formData: FormData): Promise<Bl
 
   const { data: listed, error: listErr } = await supabase.storage.from("blog-images").list(postId)
   if (!listErr && listed?.length) {
-    const coverPaths = listed.filter((f) => f.name.startsWith("cover.")).map((f) => `${postId}/${f.name}`)
+    const coverPaths = listed.filter((f) => isCoverFileName(f.name)).map((f) => `${postId}/${f.name}`)
     if (coverPaths.length) await supabase.storage.from("blog-images").remove(coverPaths)
   }
 
-  const ext = file.name.split(".").pop() || "bin"
-  const storagePath = `${postId}/cover.${ext}`
+  const ext = (file.name.split(".").pop() || "bin").toLowerCase()
+  // Stamp the filename so each upload produces a new public URL. Without this
+  // the URL string is byte-identical across uploads, and the browser /
+  // next/image optimizer caches keep serving the prior image.
+  const storagePath = `${postId}/cover-${Date.now()}.${ext}`
 
   const { error: uploadError } = await supabase.storage.from("blog-images").upload(storagePath, file, {
     upsert: true,
@@ -266,7 +277,7 @@ export const uploadBlogCoverImageAction = async (formData: FormData): Promise<Bl
   return normalizeBlogPostWithImages(data as BlogPostWithImages)
 }
 
-/** Clears cover URL and removes `cover.*` objects for this post from storage. */
+/** Clears cover URL and removes any cover objects for this post from storage. */
 export const clearBlogCoverImageAction = async ({ postId }: { postId: string }): Promise<BlogPostWithImages> => {
   const supabase = createClient()
 
@@ -275,7 +286,7 @@ export const clearBlogCoverImageAction = async ({ postId }: { postId: string }):
 
   const { data: listed, error: listErr } = await supabase.storage.from("blog-images").list(postId)
   if (!listErr && listed?.length) {
-    const coverPaths = listed.filter((f) => f.name.startsWith("cover.")).map((f) => `${postId}/${f.name}`)
+    const coverPaths = listed.filter((f) => isCoverFileName(f.name)).map((f) => `${postId}/${f.name}`)
     if (coverPaths.length) await supabase.storage.from("blog-images").remove(coverPaths)
   }
 

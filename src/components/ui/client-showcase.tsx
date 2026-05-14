@@ -1,9 +1,8 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import Image from "next/image"
 import Link from "next/link"
-import { Heading3 } from "./heading"
+import { SmartImage } from "./smart-image"
 import { Button } from "./button"
 
 interface Client {
@@ -60,7 +59,8 @@ export function ClientShowcase({ clients, className = "", initialCount }: Client
                 rel={client.caseStudyLink.startsWith("http") ? "noopener noreferrer" : undefined}
               >
                 <div className="absolute inset-4 z-40">
-                  <Image
+                  <SmartImage
+                    variant="logoCard"
                     src={client.logo.light}
                     alt={`${client.name} Logo`}
                     fill
@@ -71,7 +71,8 @@ export function ClientShowcase({ clients, className = "", initialCount }: Client
               ) : (
                 <div key={client.id} className="aspect-square bg-light dark:bg-gray-100 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer relative overflow-hidden group block">
                   <div className="absolute inset-4 z-40">
-                    <Image
+                    <SmartImage
+                      variant="logoCard"
                       src={client.logo.light}
                       alt={`${client.name} Logo`}
                       fill
