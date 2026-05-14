@@ -109,14 +109,6 @@ export const AdminBlogEditorClient = ({ initialPost }: AdminBlogEditorClientProp
             <h1 className="text-lg font-semibold tracking-tight">Insights editor</h1>
           </div>
           <div className="flex flex-wrap items-center gap-3 text-sm">
-            <Link
-              href={`/blog-preview/${post.id}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-brand underline underline-offset-4"
-            >
-              Layout preview
-            </Link>
             {post.status === "published" && post.slug ? (
               <Link href={`/insights/${post.slug}`} target="_blank" rel="noopener noreferrer" className="text-muted-foreground underline underline-offset-4">
                 Live post
