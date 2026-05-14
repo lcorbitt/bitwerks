@@ -25,8 +25,12 @@ export function ScrollFadeIn({ children, className = "", delay = 0, useTransform
         }
       },
       {
-        threshold: 0.15,
-        rootMargin: "0px 0px -50px 0px",
+        // Trigger as soon as any pixel of the section enters the expanded
+        // viewport. The positive bottom rootMargin pre-fires the reveal ~200px
+        // before the section actually crosses the fold so content is fading in
+        // by the time the user scrolls to it, rather than after.
+        threshold: 0.10,
+        rootMargin: "0px 0px 200px 0px",
       }
     )
 
