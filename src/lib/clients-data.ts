@@ -19,6 +19,15 @@ export const sampleClients: Client[] = [
     services: ["Software Development", "Next.js", "React", "Tailwind", "PostgreSQL", "AWS"],
   },
   {
+    id: "american-heart-association",
+    name: "American Heart Association",
+    logo: {
+      light: "/aha-light.png",
+    },
+    caseStudyLink: "/our-work/american-heart-association",
+    services: ["Software Development", "NestJS", "Node.js", "TypeScript", "PostgreSQL", "Azure", "REST APIs"],
+  },
+  {
     id: "urban-sky",
     name: "Urban Sky",
     logo: {
@@ -64,30 +73,13 @@ export const sampleClients: Client[] = [
     services: ["Web Development", "Next.js", "React", "Tailwind"],
   },
   {
-    id: "inner-strength-healing",
-    name: "Inner Strength Healing",
+    id: "zuri-group",
+    name: "Zuri Group",
     logo: {
-      light: "/ish-logo.png",
+      light: "/zuri-group-light.png",
     },
-    caseStudyLink: "https://ishtherapy.com/",
-    services: ["Web Development", "WordPress", "Oxygen"],
-  },
-  {
-    id: "Superconductor Studios",
-    name: "Superconductor Studios",
-    logo: {
-      light: "/superconductor_studios.png",
-    },
-    caseStudyLink: "https://superconductor-studios.vercel.app/",
-    services: ["Web Development", "WordPress", "Oxygen"],
-  },
-  {
-    id: "zestful",
-    name: "Zestful",
-    logo: {
-      light: "/zestful.webp",
-    },
-    services: ["Software Development", "Ruby on Rails", "Stimulus.js", "Tailwind"],
+    caseStudyLink: "https://zurigroup.com/",
+    services: ["Software Development", "Partner Agency", "Nonprofit Tech"],
   },
 ]
 

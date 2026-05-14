@@ -18,6 +18,12 @@ const partners: Partner[] = [
     darkImage: "/clickk-dark.png",
   },
   {
+    name: "American Heart Association",
+    alt: "American Heart Association Logo",
+    lightImage: "/aha-light.png",
+    darkImage: "/aha-dark.png",
+  },
+  {
     name: "Urban Sky",
     alt: "Urban Sky Logo",
     lightImage: "/urban_sky_dark.png",
@@ -39,11 +45,6 @@ const partners: Partner[] = [
     name: "Trace First",
     alt: "Trace First Logo",
     lightImage: "/tracefirst_dark.png",
-  },
-  {
-    name: "Errantry Studios",
-    alt: "Errantry Studios Logo",
-    lightImage: "/errantry_studios.png",
   },
   // {
   //   name: "Zestful",
