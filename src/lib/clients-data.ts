@@ -37,6 +37,15 @@ export const sampleClients: Client[] = [
     services: ["Software Development", "NestJS", "React", "Tailwind", "PostgreSQL", "Playwright", "AWS"],
   },
   {
+    id: "containerly",
+    name: "Containerly",
+    logo: {
+      light: "/containerly-logo.png",
+    },
+    caseStudyLink: "/our-work/containerly",
+    services: ["Software Development", "Product Strategy", "Next.js", "React", "TypeScript", "Supabase"],
+  },
+  {
     id: "hodinkee",
     name: "Hodinkee",
     logo: {
