@@ -6,6 +6,16 @@ export const containerlyCaseStudyPage: CaseStudyPageData = {
   tagline:
     "Replacing shipment email chaos with a shared customer experience, turning every shipment into a single, shareable workspace that keeps customers and operators aligned without inbox-heavy workflows.",
   industry: "Logistics / freight & supply chain communication",
+  excerpt:
+    "Bespoke logistics software born from a real operational problem—one shareable workspace per shipment that replaces inbox-driven coordination for brokers and 3PLs.",
+  featured: true,
+  sortOrder: 6,
+  highlights: [
+    { label: "Sector", value: "Logistics & freight" },
+    { label: "Engagement", value: "Product strategy & build" },
+    { label: "Stack", value: "Next.js, TypeScript, Supabase" },
+    { label: "Stage", value: "Active beta" },
+  ],
   businessGoal:
     "In logistics, shipment visibility technically already exists. Tracking systems, TMS platforms, and internal tools all provide status. The real problem lives outside those systems, in the communication around each shipment: endless “any update?” emails, documents scattered across threads, manual status checks, and constant confusion over approvals and ownership. Teams aren’t struggling to track shipments; they’re struggling to manage the communication around them, and for high-volume operators like freight brokers and 3PLs that becomes a daily operational bottleneck. The core issue isn’t missing data. It’s fragmented communication. Containerly set out to introduce a new layer into the logistics stack: a shared, customer-facing space per shipment that replaces email threads entirely.",
   servicesUsed: [
@@ -15,6 +25,11 @@ export const containerlyCaseStudyPage: CaseStudyPageData = {
     "API Architecture",
   ],
   featuredImageFit: "contain",
+  heroImage: {
+    src: "/containerly-logo.png",
+    alt: "Containerly logo",
+    caption: "Logistics communication platform",
+  },
   images: [
     {
       src: "/containerly-logo.png",
@@ -36,5 +51,5 @@ export const containerlyCaseStudyPage: CaseStudyPageData = {
     "Containerly reduces the operational burden of shipment communication by eliminating repetitive status-update emails, cutting time spent searching for documents, improving customer visibility and transparency, and streamlining approvals. It shifts logistics teams away from inbox-driven workflows toward structured, scalable coordination, letting them grow shipment volume without growing communication overhead. The product is currently in active development and early beta, with a small group of early users helping shape it against real shipment workflows and communication patterns.",
   seoTitle: "Containerly: Case Study",
   seoDescription:
-    "How Bitwerks built Containerly, a logistics communication platform that turns every shipment into a single, shareable workspace, replacing email chaos with centralized documents, approvals, and structured updates.",
+    "How BitWerks built Containerly, a logistics communication platform that turns every shipment into a single, shareable workspace, replacing email chaos with centralized documents, approvals, and structured updates.",
 }

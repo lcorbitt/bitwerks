@@ -19,10 +19,17 @@ interface ClientShowcaseProps {
   clients: Client[]
   className?: string
   initialCount?: number
+  /** When true, show every client without a See More toggle (for secondary partner grids). */
+  showAllByDefault?: boolean
 }
 
-export function ClientShowcase({ clients, className = "", initialCount }: ClientShowcaseProps) {
-  const [showAll, setShowAll] = useState(false)
+export function ClientShowcase({
+  clients,
+  className = "",
+  initialCount,
+  showAllByDefault = false,
+}: ClientShowcaseProps) {
+  const [showAll, setShowAll] = useState(showAllByDefault)
   const [responsiveInitialCount, setResponsiveInitialCount] = useState(8)
 
   useEffect(() => {

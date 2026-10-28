@@ -101,13 +101,12 @@ export default function Services() {
         <ScrollFadeIn>  
           <LazyCaseStudy
             title="Case Study"
-            company="Urban Sky"
-            description="By partnering with BitWerks, Urban Sky accelerated the development of a robust, mission-critical software application and internal tools tailored for high-performance aerospace operations."
-            technologies={["React", "Tailwind", "Node", "NestJS", "PostgreSQL"]}
-            imageSrc="/urban-sky-mockup.png"
-            imageAlt="Urban Sky case study - software development for aerospace operations"
+            company="Clickk"
+            description="BitWerks helped Clickk evolve fast-moving prototypes into a scalable, production-ready platform with a modular frontend architecture, tighter API contracts, and engineering standards that kept delivery predictable as the team grew."
+            technologies={["Next.js", "React", "Tailwind", "PostgreSQL", "AWS"]}
+            imageSrc="/clickk-case-study.png"
+            imageAlt="Clickk case study - software development for a B2B growth platform"
             orientation="object-center"
-            imageClassName="scale-[1.2]"
           />
         </ScrollFadeIn>
         </Suspense>

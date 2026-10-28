@@ -6,10 +6,26 @@ export const americanHeartAssociationCaseStudyPage: CaseStudyPageData = {
   tagline:
     "Partnering through Zuri Group to expand the American Heart Association’s Donations and Rewards programs across their established web application.",
   industry: "Nonprofit / health & donations",
+  excerpt:
+    "Backend services, API architecture, and PostgreSQL evolution for AHA’s national-scale Donations and Rewards platform—delivered with Zuri Group on Azure.",
+  featured: true,
+  sortOrder: 5,
+  partners: ["Zuri Group"],
+  highlights: [
+    { label: "Sector", value: "Nonprofit / health" },
+    { label: "Engagement", value: "API & data platform" },
+    { label: "Stack", value: "NestJS, TypeScript, PostgreSQL" },
+    { label: "Cloud", value: "Microsoft Azure" },
+  ],
   businessGoal:
     "The American Heart Association runs a production web platform that powers donor engagement and rewards programs at national scale. The work focuses on backend services, API architecture, and database design — extending an existing system with scalable, well-documented capabilities for donations and rewards while preserving reliability for the experiences that already depend on it. Delivery happens in Azure with TypeScript, NestJS, and PostgreSQL, alongside Zuri Group and AHA’s cross-functional teams.",
   servicesUsed: ["Software Development", "API Architecture", "Database Design"],
   featuredImageFit: "contain",
+  heroImage: {
+    src: "/aha-light.png",
+    alt: "American Heart Association logo",
+    caption: "National health nonprofit",
+  },
   images: [
     {
       src: "/aha-light.png",

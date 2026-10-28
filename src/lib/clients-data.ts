@@ -28,15 +28,6 @@ export const sampleClients: Client[] = [
     services: ["Software Development", "NestJS", "Node.js", "TypeScript", "PostgreSQL", "Azure", "REST APIs"],
   },
   {
-    id: "urban-sky",
-    name: "Urban Sky",
-    logo: {
-      light: "/urban_sky_dark.png",
-    },
-    caseStudyLink: "/our-work/urban-sky",
-    services: ["Software Development", "NestJS", "React", "Tailwind", "PostgreSQL", "Playwright", "AWS"],
-  },
-  {
     id: "containerly",
     name: "Containerly",
     logo: {
@@ -51,7 +42,7 @@ export const sampleClients: Client[] = [
     logo: {
       light: "/hodinkee_dark.png",
     },
-    caseStudyLink: "https://hodinkee.com/",
+    caseStudyLink: "/our-work/hodinkee",
     services: ["Software Development", "Ruby on Rails", "React", "Tailwind", "RSpec","PostgreSQL", "AWS"],
   },
   {

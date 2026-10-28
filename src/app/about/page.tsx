@@ -81,10 +81,14 @@ export default function AboutPage() {
               <div className="order-1 space-y-6 md:order-2">
                 <p className="text-lg text-muted-foreground">
                   As the founder and lead engineer at BitWerks, I&apos;ve spent my career building digital products
-                  and websites that help businesses succeed online. From ecommerce platforms to custom web applications
-                  and even aerospace software, each project has taught me something new about solving complex problems with
-                  elegant, thoughtful code. I enjoy turning ideas into intuitive and reliable digital experiences that
-                  make a real difference for users.
+                  and websites that help businesses succeed online. From ecommerce platforms to custom web applications,
+                  each project has taught me something new about solving complex problems with elegant, thoughtful code.
+                  I enjoy turning ideas into intuitive and reliable digital experiences that make a real difference for
+                  users.
+                </p>
+                <p className="text-lg text-muted-foreground">
+                  Before founding BitWerks, I worked as a software engineer on aerospace mission operations software,
+                  building real-time telemetry, command workflows, and flight planning tools.
                 </p>
                 <p className="text-lg text-muted-foreground">
                   This mix of experiences gives me a unique perspective on web development and software alike. I

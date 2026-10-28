@@ -6,6 +6,16 @@ export const clickkCaseStudyPage: CaseStudyPageData = {
   tagline:
     "Evolving Clickk’s product engineering from early systems into a scalable, production ready platform, including architecture, standards, and alignment across teams.",
   industry: "B2B marketing & growth",
+  excerpt:
+    "Scaled Clickk from fast-moving prototypes into a production-ready platform—frontend architecture, API contracts, and engineering standards that kept delivery predictable as the team grew.",
+  featured: true,
+  sortOrder: 3,
+  highlights: [
+    { label: "Sector", value: "B2B marketing & growth" },
+    { label: "Engagement", value: "Product engineering & architecture" },
+    { label: "Stack", value: "Next.js, React, PostgreSQL" },
+    { label: "Outcome", value: "Market-ready platform" },
+  ],
   businessGoal:
     "Clickk’s product had to move beyond fast moving prototypes into an architecture the whole team could build on without throttling delivery. The focus was a coherent frontend system, tighter API and data contracts with backend services, and repeatable engineering standards so new work stayed maintainable as scope and team size grew.",
   accomplishments: [
@@ -23,6 +33,12 @@ export const clickkCaseStudyPage: CaseStudyPageData = {
     "Strategy & Consulting",
     "UX & UI Design",
   ],
+  featuredImageFit: "cover",
+  heroImage: {
+    src: "/clickk-website.png",
+    alt: "Clickk marketing website homepage on a desktop viewport",
+    caption: "Homepage hero and primary narrative stack",
+  },
   images: [
     {
       src: "/clickk-website.png",

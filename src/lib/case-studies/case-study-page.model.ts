@@ -6,6 +6,11 @@ export interface CaseStudyGalleryImage {
   caption?: string
 }
 
+export interface CaseStudyHighlight {
+  label: string
+  value: string
+}
+
 export interface CaseStudyPageData {
   slug: string
   clientName: string
@@ -19,6 +24,18 @@ export interface CaseStudyPageData {
   /** Shown above the hero image when `images[0]` exists. Default `cover`; use `contain` for logos or marks. */
   featuredImageFit?: "contain" | "cover"
   images: CaseStudyGalleryImage[]
+  /** Primary visual for index cards and detail hero; defaults to images[0]. */
+  heroImage?: CaseStudyGalleryImage
+  /** Short summary for portfolio index cards. */
+  excerpt?: string
+  /** Include in featured section on /our-work. */
+  featured?: boolean
+  /** Featured section ordering (lower = earlier). */
+  sortOrder?: number
+  /** Partner or ecosystem names for credibility strip (client context only). */
+  partners?: string[]
+  /** Scannable facts for detail page highlight row. */
+  highlights?: CaseStudyHighlight[]
   results?: string
   websiteUrl?: string
   seoTitle?: string

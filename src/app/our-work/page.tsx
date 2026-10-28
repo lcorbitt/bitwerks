@@ -1,52 +1,37 @@
-import { Hero } from "./hero"
-import { ClientShowcase } from "@/components/ui/client-showcase"
+import type { Metadata } from "next"
+
+import { OurWorkIndex } from "@/app/our-work/components/OurWorkIndex"
+import { getSecondaryClients } from "@/app/our-work/components/OurWorkIndex/utils"
 import { sampleClients } from "@/lib/clients-data"
-import { CTA } from "@/components/sections/cta"
-import { DecorativeCircles } from "@/components/ui/decorative-circles"
-import { Heading2 } from "@/components/ui/heading"
-import { Process } from "@/components/sections/process"
-import { Testimonials } from "@/components/ui/testimonials"
-import { sampleTestimonials } from "@/lib/testimonials-data"
+import { listFeaturedCaseStudies } from "@/lib/case-studies/registry"
+import { getSiteBaseUrl } from "@/lib/blog/site-base-url"
+
+const title = "Our Work — Case Studies & Client Portfolio"
+const description =
+  "Explore how BitWerks partners with Hodinkee, the American Heart Association, Clickk, Containerly, and more on web and software delivery."
+
+export const metadata: Metadata = {
+  title,
+  description,
+  alternates: {
+    canonical: `${getSiteBaseUrl()}/our-work`,
+  },
+  openGraph: {
+    title,
+    description,
+    url: `${getSiteBaseUrl()}/our-work`,
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+  },
+}
 
 export default function OurWorkPage() {
-  return (
-    <div className="flex flex-col overflow-hidden">
-      <Hero />
-      
-      {/* Curved section divider */}
-      <section className="clip-top-large-circle relative -left-[15%] h-72 w-[130%] bg-white dark:bg-primary -mt-20 md:-mt-48 z-10"></section>
+  const featuredStudies = listFeaturedCaseStudies()
+  const secondaryClients = getSecondaryClients(sampleClients, featuredStudies)
 
-      {/* Client Showcase - Main Section */}
-      <section id="case-studies" className="py-0 -mt-48 z-20 -mb-16">
-        <div className="container mx-auto text-center max-w-4xl"> 
-          <Heading2 className="mb-4">
-            10 Years of Delivering
-          </Heading2>
-
-          {/* <p className="text-xl text-muted-light dark:text-muted-dark">
-            We&apos;ve partnered with companies across various industries to create custom web and software solutions that deliver exceptional results.
-          </p> */}
-        </div>
-
-        <ClientShowcase clients={sampleClients} />
-
-        <DecorativeCircles className="bottom-16" />
-      </section>
-
-      {/* Curved section divider */}
-      <section className="clip-bottom-large-circle relative -left-[15%] h-72 w-[130%] bg-white dark:bg-primary -mt-32 z-10"></section>
-
-      {/* Process Section */}
-      <div className="pt-32 -mt-20">
-        <div className="w-full py-32 -mt-[19rem] bg-light dark:bg-tertiary"></div>
-        <Process />
-      </div>
-
-      <DecorativeCircles inverted className="bottom-32" />
-
-      <Testimonials testimonials={sampleTestimonials} />
-
-      <CTA />
-    </div>
-  )
+  return <OurWorkIndex featuredStudies={featuredStudies} secondaryClients={secondaryClients} />
 }

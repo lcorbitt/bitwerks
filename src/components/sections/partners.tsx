@@ -24,12 +24,6 @@ const partners: Partner[] = [
     darkImage: "/aha-dark.png",
   },
   {
-    name: "Urban Sky",
-    alt: "Urban Sky Logo",
-    lightImage: "/urban_sky_dark.png",
-    darkImage: "/urban_sky_white.png",
-  },
-  {
     name: "Hodinkee",
     alt: "Hodinkee Logo",
     lightImage: "/hodinkee_dark.png",

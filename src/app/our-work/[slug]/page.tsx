@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 
-import { CaseStudyPage } from "@/components/case-studies/case-study-page"
+import { CaseStudyDetail } from "@/app/our-work/components/CaseStudyDetail"
 import { getCaseStudyPageBySlug, listCaseStudySlugs } from "@/lib/case-studies/registry"
 import { getSiteBaseUrl } from "@/lib/blog/site-base-url"
 
@@ -42,5 +42,5 @@ export default function CaseStudySlugPage({ params }: CaseStudySlugPageProps) {
   const data = getCaseStudyPageBySlug(params.slug)
   if (!data) notFound()
 
-  return <CaseStudyPage data={data} />
+  return <CaseStudyDetail data={data} />
 }

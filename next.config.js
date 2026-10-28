@@ -48,6 +48,7 @@ const nextConfig = {
     return [
       { source: "/blog", destination: "/insights", permanent: true },
       { source: "/blog/:slug", destination: "/insights/:slug", permanent: true },
+      { source: "/our-work/urban-sky", destination: "/our-work", permanent: true },
     ]
   },
   async headers() {
